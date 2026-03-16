@@ -1,98 +1,178 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "의료진 소개 | 김정재탑내과의원",
-};
-
-const doctors = [
-  {
-    name: "김정재",
-    role: "대표원장",
-    specialty: "내과 전문의 · 소화기내과",
-    image: null,
-    bio: "서울대학교 의과대학 졸업 후 서울대학교병원에서 내과 전공의 수련을 마쳤습니다. 소화기내과 분과 전문의로서 위·대장 내시경 및 소화기 질환 치료에 풍부한 경험을 보유하고 있습니다.",
-    career: [
-      "서울대학교 의과대학 졸업",
-      "서울대학교병원 내과 전공의 수료",
-      "서울대학교병원 소화기내과 전임의",
-      "대한내과학회 정회원",
-      "대한소화기학회 정회원",
-      "대한소화기내시경학회 정회원",
-      "현) 김정재탑내과의원 대표원장",
-    ],
-  },
-  {
-    name: "이수진",
-    role: "진료원장",
-    specialty: "내과 전문의 · 순환기내과",
-    image: null,
-    bio: "순환기내과 전문의로서 고혈압, 고지혈증, 심장질환 등 심혈관 질환의 진단과 치료를 담당하고 있습니다. 만성질환 관리와 예방의학에 깊은 관심을 갖고 환자 맞춤형 진료를 제공합니다.",
-    career: [
-      "연세대학교 의과대학 졸업",
-      "세브란스병원 내과 전공의 수료",
-      "세브란스병원 순환기내과 전임의",
-      "대한내과학회 정회원",
-      "대한순환기학회 정회원",
-      "현) 김정재탑내과의원 진료원장",
-    ],
-  },
-];
+import Image from "next/image";
+import ScrollReveal from "@/components/ScrollReveal";
+import PageHeader from "@/components/PageHeader";
 
 export default function DoctorsPage() {
   return (
     <>
-      <section className="bg-primary-700 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">의료진 소개</h1>
-          <p className="text-primary-200">
-            전문성과 따뜻함을 겸비한 의료진을 소개합니다.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="의료진 소개"
+        subtitle="전문성과 따뜻함을 겸비한 의료진을 소개합니다."
+      />
 
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 space-y-16">
-          {doctors.map((doc) => (
-            <div
-              key={doc.name}
-              className="grid md:grid-cols-[240px_1fr] gap-8 items-start"
-            >
-              {/* 프로필 이미지 영역 */}
-              <div className="flex flex-col items-center">
-                <div className="w-48 h-56 bg-gray-100 rounded-xl flex items-center justify-center text-gray-300 mb-4">
-                  <svg
-                    className="w-20 h-20"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                  </svg>
+      {/* ===== 김정재 원장 ===== */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-[1180px] mx-auto px-5 lg:px-6">
+          {/* Kicker */}
+          <ScrollReveal>
+            <div className="flex items-center gap-3.5 mb-9">
+              <div className="w-14 h-0.5 bg-navy-900 opacity-90" />
+              <span className="text-xs font-[850] tracking-[0.22em] text-navy-900 uppercase">
+                DOCTOR PROFILE
+              </span>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-9 lg:gap-14 items-start">
+            {/* Left — Portrait */}
+            <ScrollReveal>
+              <aside className="lg:sticky lg:top-24 max-w-[420px] mx-auto lg:mx-0">
+                <div className="border border-gray-100 bg-white rounded-2xl overflow-hidden shadow-[0_22px_70px_-42px_rgba(2,6,23,.45)]">
+                  <div className="relative aspect-[4/5.3] overflow-hidden">
+                    <Image
+                      src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/8426903259b3e.png"
+                      alt="김정재 원장님 프로필"
+                      fill
+                      className="object-cover object-[50%_35%]"
+                      sizes="(max-width:1024px) 420px, 360px"
+                    />
+                  </div>
+                  <div className="px-5 py-4 border-t border-gray-50 bg-gradient-to-b from-white to-[#fbfcfe]">
+                    <p className="text-[15px] font-extrabold text-gray-900 tracking-tight">
+                      김정재 원장
+                    </p>
+                    <p className="text-[13px] text-gray-500 font-semibold mt-1.5 leading-relaxed">
+                      내과 · 소화기 · 내시경 전문의
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">{doc.name}</h3>
-                <p className="text-primary-600 font-medium">{doc.role}</p>
-                <p className="text-sm text-gray-500">{doc.specialty}</p>
-              </div>
+              </aside>
+            </ScrollReveal>
 
-              {/* 소개 */}
-              <div>
-                <p className="text-gray-700 leading-relaxed mb-6">{doc.bio}</p>
-                <h4 className="text-lg font-bold text-gray-900 mb-3">
-                  학력 및 경력
-                </h4>
-                <ul className="space-y-2">
-                  {doc.career.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-gray-600"
-                    >
-                      <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            {/* Right — Content */}
+            <div>
+              {/* Header */}
+              <ScrollReveal>
+                <header className="pb-6 border-b border-gray-900/10">
+                  <h2 className="text-[34px] lg:text-[42px] font-[950] tracking-tight text-gray-900 leading-tight flex flex-wrap items-baseline gap-2.5 lg:gap-3.5">
+                    김정재
+                    <span className="text-lg font-extrabold text-navy-800 tracking-tight opacity-95">
+                      내과 · 소화기 · 내시경 전문의
+                    </span>
+                  </h2>
+                  <p className="mt-3 text-[15px] text-gray-500 font-semibold leading-relaxed">
+                    가천대 길병원 소화기내과 임상교수 역임
+                  </p>
+
+                  <div className="flex flex-wrap gap-2.5 mt-4">
+                    {[
+                      "위·대장내시경 세부 전문",
+                      "심장초음파 / 복부초음파",
+                      "중환자 진료 경험",
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-2 border border-gray-100 rounded-full bg-white text-[13px] text-gray-500 font-semibold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </header>
+              </ScrollReveal>
+
+              {/* Statement */}
+              <ScrollReveal delay={100}>
+                <div className="mt-7 bg-[#f6f8fb] border border-gray-100 rounded-2xl px-6 lg:px-7 py-6">
+                  <h3 className="text-lg font-black text-gray-900 tracking-tight mb-2.5">
+                    진료 철학
+                  </h3>
+                  <p className="text-[15.5px] leading-[1.85] text-gray-800 font-semibold">
+                    경제적으로 어려운 시기,{" "}
+                    <strong className="text-navy-800 font-black">
+                      건강이라는 가장 중요한 자산
+                    </strong>
+                    을 정직하게 지켜드리는 든든한 지역 주치의가 되겠습니다.
+                  </p>
+                  <p className="text-[15.5px] leading-[1.85] text-gray-800 font-semibold mt-3">
+                    대학병원 임상교수로서 다양한 케이스를 진단하며 쌓은 경험을
+                    바탕으로,{" "}
+                    <strong className="text-navy-800 font-black">
+                      꼭 필요한 검사와 치료
+                    </strong>
+                    만을 제안하겠습니다. 과잉 진료에 대한 불안함 없이, 가족을
+                    대하는 마음으로 곁을 지키겠습니다.
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              {/* Blocks */}
+              <div className="mt-7 grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-4">
+                <ScrollReveal delay={150}>
+                  <div className="border border-gray-100 rounded-2xl bg-white p-5 lg:p-6 h-full">
+                    <h4 className="flex items-center gap-2.5 text-base font-black text-gray-900 tracking-tight mb-4">
+                      <span className="w-2.5 h-2.5 rounded-sm bg-navy-900 opacity-90" />
+                      주요 약력 및 자격
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {[
+                        { bold: "가천대 길병원", text: " 소화기내과 임상교수 역임" },
+                        { bold: "내과 전문의", text: " 자격 취득" },
+                        { bold: "소화기 내과 전문의", text: " 자격 취득" },
+                        { bold: "위·대장 세부 내시경 전문의", text: " 자격 취득" },
+                        { bold: "심장초음파 / 복부초음파", text: " 인증의" },
+                        { bold: "", text: "전) 코로나 19 중환자실 전담의" },
+                        { bold: "", text: "전) 심장 · 호흡기 · 응급 중환자실 전담의" },
+                      ].map((item, i) => (
+                        <li
+                          key={i}
+                          className="relative pl-3.5 text-sm leading-relaxed text-gray-800 font-semibold"
+                        >
+                          <span className="absolute left-0 top-[0.62em] w-1.5 h-1.5 rounded-sm bg-navy-900/85" />
+                          {item.bold && (
+                            <strong className="font-black text-gray-900">
+                              {item.bold}
+                            </strong>
+                          )}
+                          {item.text}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal delay={200}>
+                  <div className="border border-gray-100 rounded-2xl bg-white p-5 lg:p-6 h-full">
+                    <h4 className="flex items-center gap-2.5 text-base font-black text-gray-900 tracking-tight mb-4">
+                      <span className="w-2.5 h-2.5 rounded-sm bg-navy-900 opacity-90" />
+                      전문 학회 활동
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {[
+                        "대한내과학회 정회원",
+                        "대한간학회 정회원",
+                        "대한심초음파학회 정회원",
+                        "대한소화기내시경학회 정회원",
+                        "대한소화기협회 정회원",
+                        "대한내분비학회 정회원",
+                        "대한고혈압학회 정회원",
+                      ].map((item, i) => (
+                        <li
+                          key={i}
+                          className="relative pl-3.5 text-sm leading-relaxed text-gray-800 font-semibold"
+                        >
+                          <span className="absolute left-0 top-[0.62em] w-1.5 h-1.5 rounded-sm bg-navy-900/85" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
     </>

@@ -1,47 +1,204 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
-const navLinks = [
-  { href: "/", label: "홈" },
-  { href: "/medical-info", label: "진료안내" },
-  { href: "/doctors", label: "의료진 소개" },
-  { href: "/notices", label: "공지사항" },
+interface SubMenu {
+  label: string;
+  href: string;
+  disabled?: boolean;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: SubMenu[];
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "병원소개",
+    href: "#",
+    children: [
+      { label: "의료진 소개", href: "/doctors" },
+      { label: "비급여 안내", href: "/medical-info#non-covered" },
+      { label: "진료시간", href: "/about/hours" },
+      { label: "오시는 길", href: "/about/location" },
+    ],
+  },
+  {
+    label: "진료과목",
+    href: "#",
+    children: [
+      { label: "소화기센터", href: "/departments/sowhagi" },
+      { label: "순환기센터", href: "/departments/soonhwangi" },
+      { label: "호흡기센터", href: "/departments/hoheupgi" },
+      { label: "알레르기센터", href: "/departments/allergy" },
+      { label: "이비인후과", href: "/departments/ent" },
+    ],
+  },
+  {
+    label: "건강검진센터",
+    href: "#",
+    children: [
+      { label: "5대암검진", href: "/checkup/cancer" },
+      { label: "국가검진", href: "/checkup/national" },
+      { label: "종합검진", href: "/checkup/comprehensive" },
+      { label: "채용검진", href: "/checkup/employment" },
+    ],
+  },
+  {
+    label: "내시경클리닉",
+    href: "#",
+    children: [
+      { label: "위내시경", href: "/endoscopy/stomach" },
+      { label: "대장내시경", href: "/endoscopy/colon" },
+      { label: "용종절제술", href: "/endoscopy/polypectomy" },
+      { label: "수면내시경", href: "/endoscopy/sedation" },
+    ],
+  },
+  {
+    label: "만성질환클리닉",
+    href: "#",
+    children: [
+      { label: "고혈압", href: "/chronic/hypertension" },
+      { label: "당뇨", href: "/chronic/diabetes" },
+      { label: "고지혈증", href: "/chronic/hyperlipidemia" },
+      { label: "골다공증", href: "/chronic/osteoporosis" },
+      { label: "심장 폐질환", href: "/chronic/cardiopulmonary" },
+    ],
+  },
+  {
+    label: "특수클리닉",
+    href: "#",
+    children: [
+      { label: "비만클리닉", href: "/special/obesity" },
+      { label: "탈모클리닉", href: "/special/hair-loss" },
+      { label: "수액클리닉", href: "/special/iv-therapy" },
+      { label: "방문진료 (준비 중)", href: "#", disabled: true },
+      { label: "치매클리닉", href: "/special/dementia" },
+    ],
+  },
+  {
+    label: "많이 찾는 Q&A",
+    href: "/qna",
+  },
+  {
+    label: "진료시간 및 오시는길",
+    href: "/info",
+  },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<number | null>(null);
+
+  // Close mobile menu on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMenuOpen(false);
+        setMobileExpanded(null);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-sm">
-            탑
-          </div>
-          <span className="text-lg font-bold text-primary-800">
-            김정재탑내과의원
-          </span>
+    <header
+      className="sticky top-0 z-50 bg-transparent"
+    >
+      <div className="max-w-7xl mx-auto px-4 h-48 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="shrink-0">
+          <Image
+            src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/210280187c640.png"
+            alt="김정재탑내과의원"
+            width={640}
+            height={200}
+            style={{ height: "200px", width: "auto" }}
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+        <nav
+          className="hidden lg:flex items-center gap-0.5"
+          onMouseLeave={() => setActiveDropdown(null)}
+        >
+          {navItems.map((item, idx) => (
+            <div
+              key={idx}
+              className="relative"
+              onMouseEnter={() =>
+                item.children ? setActiveDropdown(idx) : setActiveDropdown(null)
+              }
             >
-              {link.label}
-            </Link>
+              <Link
+                href={item.href}
+                onClick={(e) => {
+                  if (item.href === "#") e.preventDefault();
+                }}
+                className={`px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap inline-block text-white/90 hover:text-white hover:bg-white/10 ${activeDropdown === idx ? "bg-white/10 text-white" : ""}`}
+              >
+                {item.label}
+                {item.children && (
+                  <svg
+                    className={`inline-block w-3.5 h-3.5 ml-0.5 transition-transform duration-200 ${
+                      activeDropdown === idx ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                )}
+              </Link>
+
+              {/* Dropdown */}
+              {item.children && activeDropdown === idx && (
+                <div className="absolute top-full left-0 pt-2 animate-slide-down">
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[180px] overflow-hidden">
+                    {item.children.map((sub, si) => (
+                      <Link
+                        key={si}
+                        href={sub.disabled ? "#" : sub.href}
+                        onClick={(e) => {
+                          if (sub.disabled) e.preventDefault();
+                          setActiveDropdown(null);
+                        }}
+                        className={`block px-5 py-2.5 text-sm transition-all duration-200 ${
+                          sub.disabled
+                            ? "text-gray-300 cursor-not-allowed"
+                            : "text-navy-700 hover:bg-gradient-to-r hover:from-navy-50 hover:to-sky-50 hover:text-navy-900 hover:pl-6"
+                        }`}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 text-gray-700"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden p-2 rounded-lg transition-colors text-white"
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+            setMobileExpanded(null);
+          }}
           aria-label="메뉴 열기"
         >
           <svg
@@ -71,17 +228,80 @@ export default function Header() {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <nav className="md:hidden border-t bg-white">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 border-b border-gray-100"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
+        <nav className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 animate-slide-down max-h-[80vh] overflow-y-auto">
+          {navItems.map((item, idx) => (
+            <div key={idx} className="border-b border-gray-50">
+              {item.children ? (
+                <>
+                  <button
+                    className="w-full flex items-center justify-between px-6 py-3.5 text-navy-700 hover:bg-navy-50 font-medium transition-colors"
+                    onClick={() =>
+                      setMobileExpanded(mobileExpanded === idx ? null : idx)
+                    }
+                  >
+                    {item.label}
+                    <svg
+                      className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                        mobileExpanded === idx ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {mobileExpanded === idx && (
+                    <div className="bg-navy-50/50 animate-slide-down">
+                      {item.children.map((sub, si) => (
+                        <Link
+                          key={si}
+                          href={sub.disabled ? "#" : sub.href}
+                          onClick={(e) => {
+                            if (sub.disabled) e.preventDefault();
+                            else {
+                              setMenuOpen(false);
+                              setMobileExpanded(null);
+                            }
+                          }}
+                          className={`block pl-10 pr-6 py-3 text-sm transition-colors ${
+                            sub.disabled
+                              ? "text-gray-300 cursor-not-allowed"
+                              : "text-navy-600 hover:text-navy-900 hover:bg-navy-100/50"
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="block px-6 py-3.5 text-navy-700 hover:bg-navy-50 hover:text-navy-900 font-medium transition-colors"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileExpanded(null);
+                  }}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
           ))}
+          <a
+            href="tel:02-6798-8880"
+            className="block px-6 py-3.5 text-gold-400 font-semibold hover:bg-gold-100 transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            전화 예약: 02-6798-8880
+          </a>
         </nav>
       )}
     </header>

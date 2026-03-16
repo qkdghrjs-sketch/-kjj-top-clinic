@@ -1,9 +1,7 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "공지사항 | 김정재탑내과의원",
-};
+import ScrollReveal from "@/components/ScrollReveal";
+import PageHeader from "@/components/PageHeader";
 
 const notices = [
   {
@@ -62,73 +60,74 @@ const notices = [
   },
 ];
 
-const categoryColor: Record<string, string> = {
-  진료안내: "bg-blue-100 text-blue-700",
-  예방접종: "bg-green-100 text-green-700",
-  검진안내: "bg-purple-100 text-purple-700",
-  공지: "bg-gray-100 text-gray-700",
+const categoryStyle: Record<string, string> = {
+  진료안내: "bg-sky-100 text-sky-700 border-sky-200",
+  예방접종: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  검진안내: "bg-violet-50 text-violet-700 border-violet-200",
+  공지: "bg-navy-50 text-navy-700 border-navy-200",
 };
 
 export default function NoticesPage() {
   return (
     <>
-      <section className="bg-primary-700 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">공지사항</h1>
-          <p className="text-primary-200">
-            병원의 주요 소식과 안내사항을 확인하세요.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="공지사항"
+        subtitle="병원의 주요 소식과 안내사항을 확인하세요."
+      />
 
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="space-y-4">
-            {notices.map((notice) => (
-              <article
-                key={notice.id}
-                className={`border rounded-xl p-5 hover:shadow-md transition-shadow ${
-                  notice.pinned
-                    ? "border-primary-300 bg-primary-50"
-                    : "border-gray-200"
-                }`}
-              >
-                <div className="flex flex-wrap items-center gap-2 mb-2">
-                  {notice.pinned && (
-                    <span className="bg-primary-600 text-white text-xs font-semibold px-2 py-0.5 rounded">
-                      중요
+            {notices.map((notice, i) => (
+              <ScrollReveal key={notice.id} delay={i * 80}>
+                <article
+                  className={`border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-default ${
+                    notice.pinned
+                      ? "border-gold-200 bg-gradient-to-r from-gold-100/30 to-white shadow-md"
+                      : "border-gray-100 bg-white hover:border-navy-200"
+                  }`}
+                >
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    {notice.pinned && (
+                      <span className="bg-gradient-to-r from-gold-400 to-gold-500 text-white text-xs font-bold px-2.5 py-1 rounded-md shadow-sm">
+                        중요
+                      </span>
+                    )}
+                    <span
+                      className={`text-xs font-medium px-2.5 py-1 rounded-md border ${
+                        categoryStyle[notice.category] || categoryStyle["공지"]
+                      }`}
+                    >
+                      {notice.category}
                     </span>
-                  )}
-                  <span
-                    className={`text-xs font-medium px-2 py-0.5 rounded ${
-                      categoryColor[notice.category] || categoryColor["공지"]
-                    }`}
-                  >
-                    {notice.category}
-                  </span>
-                  <span className="text-xs text-gray-400">{notice.date}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  {notice.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {notice.content}
-                </p>
-              </article>
+                    <span className="text-xs text-gray-400 ml-auto">
+                      {notice.date}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-navy-900 mb-2">
+                    {notice.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {notice.content}
+                  </p>
+                </article>
+              </ScrollReveal>
             ))}
           </div>
 
-          <div className="mt-12 flex justify-center gap-2">
-            <button className="w-9 h-9 rounded-lg bg-primary-600 text-white font-medium text-sm">
-              1
-            </button>
-            <button className="w-9 h-9 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 font-medium text-sm">
-              2
-            </button>
-            <button className="w-9 h-9 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 font-medium text-sm">
-              3
-            </button>
-          </div>
+          <ScrollReveal delay={500}>
+            <div className="mt-14 flex justify-center gap-2">
+              <button className="w-10 h-10 rounded-xl bg-navy-800 text-white font-medium text-sm shadow-md">
+                1
+              </button>
+              <button className="w-10 h-10 rounded-xl bg-gray-100 text-gray-500 hover:bg-navy-100 hover:text-navy-700 font-medium text-sm transition-colors">
+                2
+              </button>
+              <button className="w-10 h-10 rounded-xl bg-gray-100 text-gray-500 hover:bg-navy-100 hover:text-navy-700 font-medium text-sm transition-colors">
+                3
+              </button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

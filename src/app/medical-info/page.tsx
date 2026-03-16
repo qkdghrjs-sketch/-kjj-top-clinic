@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "진료안내 | 김정재탑내과의원",
-};
+import ScrollReveal from "@/components/ScrollReveal";
+import PageHeader from "@/components/PageHeader";
 
 const nonCoveredItems = [
   { name: "일반 건강검진 (기본)", price: "80,000" },
@@ -24,103 +23,61 @@ const nonCoveredItems = [
 export default function MedicalInfoPage() {
   return (
     <>
-      {/* 페이지 헤더 */}
-      <section className="bg-primary-700 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">진료안내</h1>
-          <p className="text-primary-200">
-            진료시간 및 비급여 항목 안내입니다.
-          </p>
-        </div>
-      </section>
-
-      {/* 진료시간 */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">진료시간</h2>
-          <div className="w-12 h-1 bg-primary-500 mb-8"></div>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-6 py-3 text-left font-semibold">요일</th>
-                  <th className="px-6 py-3 text-left font-semibold">
-                    진료시간
-                  </th>
-                  <th className="px-6 py-3 text-left font-semibold">비고</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-medium">월요일 ~ 금요일</td>
-                  <td className="px-6 py-4">09:00 - 18:00</td>
-                  <td className="px-6 py-4 text-gray-500">
-                    점심시간 13:00 - 14:00
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-medium">토요일</td>
-                  <td className="px-6 py-4">09:00 - 13:00</td>
-                  <td className="px-6 py-4 text-gray-500">
-                    점심시간 없이 진료
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-medium text-red-500">
-                    일요일 · 공휴일
-                  </td>
-                  <td className="px-6 py-4 text-red-500">휴진</td>
-                  <td className="px-6 py-4 text-gray-500">-</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-6 bg-primary-50 border-l-4 border-primary-500 p-4 rounded-r-lg">
-            <p className="text-sm text-gray-700">
-              <strong>안내:</strong> 내시경 검사는 사전 예약제로 운영됩니다.
-              전화(02-1234-5678)로 미리 예약해 주시기 바랍니다.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader title="진료안내" subtitle="진료시간 및 비급여 항목 안내입니다." />
 
       {/* 비급여 항목 */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            비급여 항목 안내
-          </h2>
-          <div className="w-12 h-1 bg-primary-500 mb-4"></div>
-          <p className="text-gray-500 text-sm mb-8">
-            아래 비용은 변동될 수 있으며, 정확한 비용은 병원으로 문의해 주시기
-            바랍니다.
-          </p>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-6 py-3 text-left font-semibold">항목</th>
-                  <th className="px-6 py-3 text-right font-semibold">
-                    비용 (원)
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {nonCoveredItems.map((item) => (
-                  <tr key={item.name} className="hover:bg-gray-50">
-                    <td className="px-6 py-3">{item.name}</td>
-                    <td className="px-6 py-3 text-right font-medium">
-                      {item.price}
-                    </td>
+          <ScrollReveal>
+            <span className="text-gold-400 font-semibold text-sm uppercase tracking-widest">
+              Non-Covered Items
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mt-2 mb-2">
+              비급여 항목 안내
+            </h2>
+            <div className="w-12 h-0.5 bg-gold-400 mb-4"></div>
+            <p className="text-gray-400 text-sm mb-8">
+              아래 비용은 변동될 수 있으며, 정확한 비용은 병원으로 문의해 주시기
+              바랍니다.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <div className="overflow-x-auto rounded-2xl shadow-lg border border-gray-100">
+              <table className="w-full border-collapse bg-white">
+                <thead>
+                  <tr className="bg-gradient-to-r from-navy-800 to-navy-700 text-white">
+                    <th className="px-6 py-4 text-left font-semibold">항목</th>
+                    <th className="px-6 py-4 text-right font-semibold">
+                      비용 (원)
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-xs text-gray-400">
-            * 상기 금액은 부가세 포함 금액이며, 의료보험 적용 여부에 따라 달라질
-            수 있습니다.
-          </p>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {nonCoveredItems.map((item, i) => (
+                    <tr
+                      key={item.name}
+                      className={`hover:bg-navy-50 transition-colors ${
+                        i % 2 === 1 ? "bg-gray-50/50" : ""
+                      }`}
+                    >
+                      <td className="px-6 py-3.5 text-navy-800">{item.name}</td>
+                      <td className="px-6 py-3.5 text-right font-semibold text-navy-700">
+                        {item.price}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <p className="mt-4 text-xs text-gray-400">
+              * 상기 금액은 부가세 포함 금액이며, 의료보험 적용 여부에 따라
+              달라질 수 있습니다.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
     </>
