@@ -58,7 +58,7 @@ export default function EntPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&auto=format&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/993b4f8749e43.jpeg')" }}
                 />
               </div>
             </ScrollReveal>

@@ -47,6 +47,7 @@ export default function PolypectomyPage() {
         overlay="당일 용종절제 가능"
         description="검사 당일 용종을 즉시 제거하는 원스톱 서비스를 제공합니다."
         features={["검사 당일 절제 가능", "소화기내시경 세부전문의", "안전한 시술", "빠른 회복"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
       />
 
       {/* Stats Banner */}
@@ -77,7 +78,7 @@ export default function PolypectomyPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/7400da604ad1c.jpeg')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/3ba604da11869.jpeg')" }}
                 />
               </div>
             </ScrollReveal>

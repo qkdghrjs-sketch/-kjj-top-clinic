@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import { handleReservation } from "@/utils/reservation";
 
 interface WhyKimtopProps {
   box: string;
@@ -85,15 +85,15 @@ export default function WhyKimtop({ box, overlay, description, features, image }
                 ))}
               </div>
 
-              <Link
-                href="tel:02-6798-8880"
-                className="inline-flex items-center gap-2 bg-gold-400 text-navy-900 font-bold px-6 py-3 rounded-lg hover:bg-gold-500 hover:-translate-y-0.5 transition-all duration-300 shadow-lg text-sm"
+              <button
+                onClick={handleReservation}
+                className="inline-flex items-center gap-2 bg-gold-400 text-navy-900 font-bold px-6 py-3 rounded-lg hover:bg-gold-500 hover:-translate-y-0.5 transition-all duration-300 shadow-lg text-sm cursor-pointer"
               >
                 지금 바로 예약하기
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </ScrollReveal>
         </div>

@@ -19,6 +19,7 @@ export default function HyperlipidemiaPage() {
         overlay="고지혈증 전문 클리닉"
         description="고지혈증은 꾸준한 관리가 치료입니다. 전문의와 함께 체계적으로 관리하세요."
         features={["전문의 직접 진료", "개인별 맞춤 관리", "정기적 모니터링", "합병증 예방 관리"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cc44d338606ae.jpeg"
       />
 
       {/* Stats Banner */}
@@ -45,7 +46,7 @@ export default function HyperlipidemiaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/b5e344e582a9c.jpeg"
                   alt="고지혈증 관리"
                   fill
                   className="object-cover"

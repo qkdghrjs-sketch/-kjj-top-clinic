@@ -49,6 +49,7 @@ export default function SedationEndoscopyPage() {
         overlay="편안한 수면내시경"
         description="통증 없이 편안하게 받는 수면내시경으로 정확한 검사를 제공합니다."
         features={["통증 없는 검사", "안전한 수면 유도", "소화기내시경 세부전문의", "빠른 회복"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
       />
 
       {/* Stats Banner */}
@@ -79,7 +80,7 @@ export default function SedationEndoscopyPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&auto=format&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/4d8aa5f4e327a.jpeg')" }}
                 />
               </div>
             </ScrollReveal>

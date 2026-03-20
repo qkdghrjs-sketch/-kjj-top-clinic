@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { handleReservation } from "@/utils/reservation";
 
 type TooltipId = "blog" | "phone" | "kakao" | null;
 
@@ -35,15 +36,8 @@ export default function FloatingButtons() {
 
       {/* 전화예약 */}
       <div className="relative">
-        {activeTooltip === "phone" && (
-          <Tooltip
-            text="02-6798-8880으로 전화 연결합니다"
-            href="tel:02-6798-8880"
-            onClose={() => setActiveTooltip(null)}
-          />
-        )}
         <button
-          onClick={() => toggle("phone")}
+          onClick={handleReservation}
           className="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
           aria-label="전화예약"
         >

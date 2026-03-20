@@ -18,6 +18,7 @@ export default function DementiaPage() {
         overlay="치매 조기검진 클리닉"
         description="치매 조기검진과 예방 관리로 건강한 노후를 지원합니다."
         features={["MMSE 검사", "조기 발견", "전문의 직접 진료", "예방 관리 프로그램"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
       {/* Stats Banner */}
@@ -47,7 +48,7 @@ export default function DementiaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/6be165f9af0aa.jpeg"
                   alt="치매클리닉 소개"
                   fill
                   className="object-cover"

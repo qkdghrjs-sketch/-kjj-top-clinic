@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { handleReservation } from "@/utils/reservation";
 
 interface SubMenu {
   label: string;
@@ -94,8 +95,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Close mobile menu on resize
+  // Close mobile menu on resize + scroll detection
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -103,15 +105,28 @@ export default function Header() {
         setMobileExpanded(null);
       }
     };
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <header
-      className="sticky top-0 z-50 bg-transparent"
+      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${
+        scrolled
+          ? "bg-navy-900/85 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-4 h-24 md:h-48 flex items-center justify-between">
+      <div className={`max-w-7xl mx-auto px-4 flex items-center justify-between transition-all duration-300 ${
+        scrolled ? "h-16 md:h-20" : "h-24 md:h-48"
+      }`}>
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -119,7 +134,9 @@ export default function Header() {
             alt="김정재탑내과의원"
             width={640}
             height={200}
-            className="h-[80px] md:h-[200px] w-auto"
+            className={`w-auto transition-all duration-300 ${
+              scrolled ? "h-[40px] md:h-[50px]" : "h-[80px] md:h-[200px]"
+            }`}
             priority
           />
         </Link>
@@ -295,13 +312,15 @@ export default function Header() {
               )}
             </div>
           ))}
-          <a
-            href="tel:02-6798-8880"
-            className="block px-6 py-3.5 text-gold-400 font-semibold hover:bg-gold-100 transition-colors"
-            onClick={() => setMenuOpen(false)}
+          <button
+            className="block w-full text-left px-6 py-3.5 text-gold-400 font-semibold hover:bg-gold-100 transition-colors cursor-pointer"
+            onClick={() => {
+              setMenuOpen(false);
+              handleReservation();
+            }}
           >
             전화 예약: 02-6798-8880
-          </a>
+          </button>
         </nav>
       )}
     </header>

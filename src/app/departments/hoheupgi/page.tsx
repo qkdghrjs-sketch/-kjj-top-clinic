@@ -58,7 +58,7 @@ export default function HoheupgiPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1559757175-7cb057fba93c?w=800&auto=format&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/5409a8db27bec.jpeg')" }}
                 />
               </div>
             </ScrollReveal>

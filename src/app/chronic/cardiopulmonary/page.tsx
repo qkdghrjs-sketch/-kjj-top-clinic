@@ -18,6 +18,7 @@ export default function CardiopulmonaryPage() {
         overlay="심장·폐 전문 클리닉"
         description="심장과 폐 질환의 정밀 진단과 체계적인 관리를 제공합니다."
         features={["심전도 검사", "폐기능 검사", "전문의 직접 진료", "정기적 모니터링"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cc44d338606ae.jpeg"
       />
 
       {/* Stats Banner */}
@@ -47,7 +48,7 @@ export default function CardiopulmonaryPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1628348068343-eb9c7bd51d6e?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/b573d276a5c84.jpeg"
                   alt="심장 폐질환 관리"
                   fill
                   className="object-cover"

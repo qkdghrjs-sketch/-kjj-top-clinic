@@ -19,6 +19,7 @@ export default function StomachEndoscopyPage() {
         overlay="위내시경 전문 클리닉"
         description="소화기내시경 세부전문의가 직접 시행하는 안전하고 정확한 위내시경 검사입니다."
         features={["소화기내시경 세부전문의", "수면내시경 시행", "당일 용종절제 가능", "멸균 소독 철저"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
       />
 
       {/* 통계 배너 */}

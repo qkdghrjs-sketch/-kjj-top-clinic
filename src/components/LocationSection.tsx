@@ -16,11 +16,11 @@ const hours = [
   { day: "일요일", time: "정기휴무", note: "", dayNum: 0 },
 ];
 
-export default function LocationSection() {
+export default function LocationSection({ forceShow = false }: { forceShow?: boolean }) {
   const pathname = usePathname();
   const today = new Date().getDay();
 
-  if (HIDDEN_PATHS.includes(pathname)) return null;
+  if (!forceShow && HIDDEN_PATHS.includes(pathname)) return null;
 
   return (
     <section id="location" className="py-12 sm:py-20 md:py-28 bg-white">

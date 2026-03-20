@@ -18,6 +18,7 @@ export default function IVTherapyPage() {
         overlay="수액 전문 클리닉"
         description="목적에 맞는 다양한 수액 치료로 건강하고 활기찬 생활을 지원합니다."
         features={["전문의 직접 처방", "다양한 수액 종류", "안전한 시술", "빠른 효과"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
       {/* Stats Banner */}
@@ -47,7 +48,7 @@ export default function IVTherapyPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1815f9c56aac8.jpeg"
                   alt="수액클리닉 소개"
                   fill
                   className="object-cover"

@@ -19,6 +19,7 @@ export default function HairLossPage() {
         overlay="탈모 전문 클리닉"
         description="탈모 유형에 맞는 맞춤형 치료로 건강한 모발을 되찾으세요."
         features={["전문의 직접 진료", "탈모 유형 분석", "개인 맞춤 치료", "안전한 시술"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
       {/* Stats Banner */}
@@ -42,7 +43,7 @@ export default function HairLossPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1585747860019-8e8ef6399bc1?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/f68ef42023b83.jpeg"
                   alt="탈모클리닉 소개"
                   fill
                   className="object-cover"

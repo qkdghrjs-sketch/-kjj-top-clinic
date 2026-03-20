@@ -42,7 +42,7 @@ export default function Home() {
                 desc: "최신 장비로 위·대장내시경\n정확하고 편안하게",
                 image:
                   "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/747e8bf1cb3a3.jpeg",
-                href: "/endoscopy/gastroscopy",
+                href: "/endoscopy/stomach",
               },
               {
                 title: "만성질환클리닉",
@@ -108,7 +108,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {[
               {
                 num: "01",
@@ -144,14 +144,14 @@ export default function Home() {
               <ScrollReveal key={step.num} delay={i * 80}>
                 <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
                   <div
-                    className="h-48 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    className="h-32 sm:h-48 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url('${step.image}')` }}
                   />
-                  <div className="p-5 text-center">
-                    <div className="w-10 h-10 rounded-full bg-green-500 text-white font-bold text-sm flex items-center justify-center mx-auto -mt-10 relative z-10 border-4 border-white shadow-md">
+                  <div className="p-3 sm:p-5 text-center">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center mx-auto -mt-7 sm:-mt-10 relative z-10 border-3 sm:border-4 border-white shadow-md">
                       {step.num}
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mt-3 whitespace-pre-line">
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed sm:leading-loose mt-3 sm:mt-4 whitespace-pre-line">
                       {step.desc}
                     </p>
                   </div>
@@ -169,7 +169,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-gold-400 rounded-full blur-[100px]"></div>
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
             {[
               {
                 num: "01",
@@ -238,22 +238,22 @@ export default function Home() {
               },
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 100}>
-                <div className="group bg-white/[0.06] backdrop-blur-md border border-white/[0.1] rounded-2xl p-7 text-center cursor-default transition-all duration-400 hover:-translate-y-2 hover:border-sky-400/50 hover:bg-white/[0.12] hover:shadow-[0_0_30px_rgba(56,189,248,0.15)]">
+                <div className="group bg-white/[0.06] backdrop-blur-md border border-white/[0.1] rounded-2xl p-4 sm:p-7 text-center cursor-default transition-all duration-400 hover:-translate-y-2 hover:border-sky-400/50 hover:bg-white/[0.12] hover:shadow-[0_0_30px_rgba(56,189,248,0.15)]">
                   {/* Icon */}
-                  <div className="text-sky-400 group-hover:text-gold-400 transition-colors duration-400 flex justify-center mb-5">
+                  <div className="text-sky-400 group-hover:text-gold-400 transition-colors duration-400 flex justify-center mb-3 sm:mb-5 [&>svg]:w-7 [&>svg]:h-7 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
                     {item.icon}
                   </div>
 
                   {/* Number badge */}
-                  <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs flex items-center justify-center mx-auto mb-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-sky-500 text-white font-bold text-[10px] sm:text-xs flex items-center justify-center mx-auto mb-2 sm:mb-4">
                     {item.num}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-white font-bold text-base mb-2">{item.title}</h3>
+                  <h3 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2">{item.title}</h3>
 
                   {/* Description */}
-                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed sm:leading-loose">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${geistSans.variable} antialiased`}>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen pt-24 md:pt-48">{children}</main>
         <LocationSection />
         <Footer />
         <FloatingButtons />

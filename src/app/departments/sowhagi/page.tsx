@@ -50,7 +50,7 @@ export default function SowhagiPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/32aa67ccc2fad.jpeg')" }}
                 />
               </div>
             </ScrollReveal>

@@ -19,6 +19,7 @@ export default function ObesityPage() {
         overlay="비만 전문 클리닉"
         description="전문의가 직접 진료하는 체계적인 비만 관리 프로그램을 제공합니다."
         features={["전문의 직접 진료", "개인 맞춤 처방", "체성분 분석", "안전한 시술"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
       {/* Stats Banner */}
@@ -42,7 +43,7 @@ export default function ObesityPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/09ffd47583176.jpeg"
                   alt="비만클리닉 소개"
                   fill
                   className="object-cover"

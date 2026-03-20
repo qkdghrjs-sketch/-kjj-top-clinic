@@ -19,6 +19,7 @@ export default function OsteoporosisPage() {
         overlay="골다공증 전문 클리닉"
         description="골다공증은 조기 발견과 꾸준한 관리가 중요합니다."
         features={["전문의 직접 진료", "골밀도 검사", "개인별 맞춤 관리", "낙상 예방 관리"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cc44d338606ae.jpeg"
       />
 
       {/* Stats Banner */}
@@ -45,7 +46,7 @@ export default function OsteoporosisPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop"
+                  src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/3f4ea5c16be14.jpeg"
                   alt="골다공증 관리"
                   fill
                   className="object-cover"

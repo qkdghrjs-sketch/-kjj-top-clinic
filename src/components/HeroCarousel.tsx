@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { handleReservation } from "@/utils/reservation";
 
 interface SlideData {
   image: string;
@@ -39,7 +40,7 @@ const slides: SlideData[] = [
       "폐",
     ],
     buttonText: "내시경클리닉 보기 →",
-    buttonHref: "/endoscopy/gastroscopy",
+    buttonHref: "/endoscopy/stomach",
   },
   {
     image:
@@ -233,12 +234,12 @@ export default function HeroCarousel() {
                 >
                   {slide.buttonText}
                 </Link>
-                <a
-                  href="tel:02-6798-8880"
-                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base"
+                <button
+                  onClick={handleReservation}
+                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base cursor-pointer"
                 >
                   전화 예약: 02-6798-8880
-                </a>
+                </button>
               </div>
             </div>
           </div>
