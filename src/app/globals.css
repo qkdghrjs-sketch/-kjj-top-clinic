@@ -43,10 +43,12 @@ body {
   background: #ffffff;
   color: #1f2937;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Fade-in animations */
@@ -176,6 +178,15 @@ html {
   color: #38bdf8;
   text-shadow: 0 0 12px rgba(56, 189, 248, 0.6),
     0 0 30px rgba(56, 189, 248, 0.3);
+}
+
+/* Hide scrollbar for horizontal tab scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* Gold accent underline */

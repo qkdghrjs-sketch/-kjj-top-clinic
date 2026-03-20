@@ -10,7 +10,7 @@ export default function HomeVisitPage() {
         title="방문진료"
         subtitle="거동이 불편한 환자를 위한 가정방문 진료 서비스"
       />
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="flex items-center justify-center min-h-[400px]">

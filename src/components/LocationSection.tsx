@@ -23,21 +23,21 @@ export default function LocationSection() {
   if (HIDDEN_PATHS.includes(pathname)) return null;
 
   return (
-    <section id="location" className="py-20 md:py-28 bg-white">
+    <section id="location" className="py-12 sm:py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-gold-400 font-semibold text-sm uppercase tracking-widest">
               Location
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold text-navy-900 mt-3 mb-5">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-navy-900 mt-3 mb-5">
               오시는 길
             </h2>
             <div className="w-16 h-0.5 bg-gold-400 mx-auto"></div>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
           <ScrollReveal>
             <div className="flex flex-col h-full">
               <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex-1">
@@ -123,9 +123,9 @@ export default function LocationSection() {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-navy-900 text-white">
-                      <th className="px-5 py-3 text-left text-sm font-semibold">요일</th>
-                      <th className="px-5 py-3 text-left text-sm font-semibold">진료시간</th>
-                      <th className="px-5 py-3 text-left text-sm font-semibold">비고</th>
+                      <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold">요일</th>
+                      <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold">진료시간</th>
+                      <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold hidden sm:table-cell">비고</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -146,16 +146,16 @@ export default function LocationSection() {
                                   : "bg-white"
                           }`}
                         >
-                          <td className={`px-5 py-3 text-sm font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
+                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
                             {h.day}
                             {isToday && (
-                              <span className="ml-2 inline-block px-1.5 py-0.5 bg-sky-500 text-white text-[10px] font-bold rounded">TODAY</span>
+                              <span className="ml-1 sm:ml-2 inline-block px-1 py-0.5 bg-sky-500 text-white text-[9px] sm:text-[10px] font-bold rounded">TODAY</span>
                             )}
                           </td>
-                          <td className={`px-5 py-3 text-sm ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
+                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
                             {h.time}
                           </td>
-                          <td className={`px-5 py-3 text-sm ${isToday ? "text-sky-600" : "text-gray-400"}`}>
+                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm hidden sm:table-cell ${isToday ? "text-sky-600" : "text-gray-400"}`}>
                             {h.note}
                           </td>
                         </tr>

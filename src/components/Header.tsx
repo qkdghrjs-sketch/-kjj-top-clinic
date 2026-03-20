@@ -111,7 +111,7 @@ export default function Header() {
     <header
       className="sticky top-0 z-50 bg-transparent"
     >
-      <div className="max-w-7xl mx-auto px-4 h-48 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 h-24 md:h-48 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -119,7 +119,7 @@ export default function Header() {
             alt="김정재탑내과의원"
             width={640}
             height={200}
-            style={{ height: "200px", width: "auto" }}
+            className="h-[80px] md:h-[200px] w-auto"
             priority
           />
         </Link>
@@ -194,7 +194,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden p-2 rounded-lg transition-colors text-white"
+          className="lg:hidden p-3 rounded-lg transition-colors text-white"
           onClick={() => {
             setMenuOpen(!menuOpen);
             setMobileExpanded(null);
@@ -202,7 +202,7 @@ export default function Header() {
           aria-label="메뉴 열기"
         >
           <svg
-            className="w-6 h-6"
+            className="w-7 h-7"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

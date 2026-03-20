@@ -52,29 +52,29 @@ export default function SedationEndoscopyPage() {
       />
 
       {/* Stats Banner */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={99} suffix="%" label="수면내시경 만족도" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">5~15분</p>
-              <p className="text-sky-300 text-sm font-medium">검사 소요시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5~15분</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">검사 소요시간</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">30~60분</p>
-              <p className="text-sky-300 text-sm font-medium">회복시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">30~60분</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">회복시간</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* 수면내시경이란 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
@@ -84,7 +84,7 @@ export default function SedationEndoscopyPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">통증 없이 편안하게, 더 정확하게 검사합니다</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">통증 없이 편안하게, 더 정확하게 검사합니다</h2>
               <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"수면내시경은 안전한 수면 유도제를 사용하여\n검사 중 의식이 없는 상태에서 진행하는 내시경입니다.\n\n검사 중 아무런 불편감을 느끼지 못하며\n검사 내용을 기억하지 못하는 것이 정상입니다.\n\n일반 내시경보다 환자의 협조가 잘 되어\n더 꼼꼼하고 정확한 검사가 가능합니다."}</p>
             </ScrollReveal>
           </div>
@@ -92,10 +92,10 @@ export default function SedationEndoscopyPage() {
       </section>
 
       {/* 수면내시경의 장점 */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               수면내시경의 <span className="text-sky-500">장점</span>
             </h2>
           </ScrollReveal>
@@ -118,10 +118,10 @@ export default function SedationEndoscopyPage() {
       </section>
 
       {/* 수면 유도제 안전성 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               <span className="text-sky-500">안전</span>하게 관리됩니다
             </h2>
           </ScrollReveal>
@@ -142,10 +142,10 @@ export default function SedationEndoscopyPage() {
       </section>
 
       {/* 주의사항 */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               수면내시경 <span className="text-sky-500">주의사항</span>
             </h2>
           </ScrollReveal>
@@ -171,10 +171,10 @@ export default function SedationEndoscopyPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               자주 묻는 <span className="text-sky-500">질문</span>
             </h2>
           </ScrollReveal>

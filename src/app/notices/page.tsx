@@ -75,7 +75,7 @@ export default function NoticesPage() {
         subtitle="병원의 주요 소식과 안내사항을 확인하세요."
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="space-y-4">
             {notices.map((notice, i) => (

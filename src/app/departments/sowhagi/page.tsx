@@ -29,12 +29,12 @@ export default function SowhagiPage() {
       />
 
       {/* Stats Banner */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={100000} suffix="+" label="위내시경 시행" />
             <CountUp end={49} suffix="%" label="선종발견율" />
             <CountUp end={100} suffix="%" label="당일 용종절제" />
@@ -43,9 +43,9 @@ export default function SowhagiPage() {
       </section>
 
       {/* Intro */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
@@ -55,7 +55,7 @@ export default function SowhagiPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">소화기 전문 진료</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">소화기 전문 진료</h2>
               <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"위·장·간 질환의 정확한 진단과 치료를 제공합니다.\n김정재탑내과는 소화기내시경 세부전문의가 직접 진료합니다."}</p>
             </ScrollReveal>
           </div>
@@ -63,10 +63,10 @@ export default function SowhagiPage() {
       </section>
 
       {/* Disease Cards */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               주요 진료 <span className="text-sky-500">질환</span>
             </h2>
           </ScrollReveal>
@@ -89,10 +89,10 @@ export default function SowhagiPage() {
       </section>
 
       {/* Diagnosis */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               <span className="text-sky-500">검사</span> 방법
             </h2>
           </ScrollReveal>
@@ -112,7 +112,7 @@ export default function SowhagiPage() {
       </section>
 
       {/* Cautions */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
@@ -139,10 +139,10 @@ export default function SowhagiPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               자주 묻는 <span className="text-sky-500">질문</span>
             </h2>
           </ScrollReveal>

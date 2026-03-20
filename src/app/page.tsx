@@ -60,7 +60,7 @@ export default function Home() {
               },
             ].map((card, i) => (
               <ScrollReveal key={card.title} delay={i * 100}>
-                <div className="group relative rounded-2xl overflow-hidden h-72 cursor-default shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="group relative rounded-2xl overflow-hidden h-56 sm:h-72 cursor-default shadow-md hover:shadow-xl transition-shadow duration-300">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                     style={{ backgroundImage: `url('${card.image}')` }}
@@ -96,11 +96,11 @@ export default function Home() {
       <EndoscopyShowcase />
 
       {/* 꼼꼼한 내시경소독 6STEP 과정 */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 sm:py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="text-center mb-14">
-              <h2 className="text-2xl md:text-4xl font-bold text-navy-900">
+            <div className="text-center mb-8 sm:mb-14">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-navy-900">
                 꼼꼼한{" "}
                 <span className="text-sky-500">내시경소독</span>{" "}
                 6STEP 과정
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* 우수내시경실 인증 */}
-      <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#0b2348" }}>
+      <section className="py-12 sm:py-20 md:py-28 relative overflow-hidden" style={{ background: "#0b2348" }}>
         <div className="absolute inset-0 opacity-[0.07]">
           <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sky-400 rounded-full blur-[120px]"></div>
           <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-gold-400 rounded-full blur-[100px]"></div>
@@ -262,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* 프리미엄 의료장비 */}
-      <section className="relative w-screen overflow-hidden flex items-center" style={{ minHeight: "560px" }}>
+      <section className="relative w-full overflow-hidden flex items-center" style={{ minHeight: "auto" }}>
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -272,19 +272,19 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-navy-900/75" />
 
-        <div className="relative z-10 w-full py-16 md:py-24 px-6">
+        <div className="relative z-10 w-full py-12 md:py-24 px-4 sm:px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="inline-block bg-sky-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
+            <div className="text-center mb-8 sm:mb-16">
+              <span className="inline-block bg-sky-500 text-white text-[10px] sm:text-xs font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-full uppercase tracking-wider mb-3 sm:mb-4">
                 PREMIUM MEDICAL DEVICE
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-white">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                 프리미엄 장비를 통한 효과적인 치료
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-10 md:gap-24 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 max-w-6xl mx-auto">
             {/* 좌측 - 초음파 장비 */}
             <ScrollReveal>
               <div className="md:pr-12 md:border-r border-white/20 text-center md:text-right">
@@ -337,9 +337,9 @@ export default function Home() {
       </section>
 
       {/* 병원 3가지 강점 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <ScrollReveal>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-4 flex items-center justify-center">

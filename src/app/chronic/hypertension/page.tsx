@@ -22,13 +22,13 @@ export default function HypertensionPage() {
       />
 
       {/* Stats Banner */}
-      <section className="py-16 bg-gradient-to-r from-navy-900 to-navy-800">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-navy-900 to-navy-800">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
             <CountUp end={1200} suffix="만명" label="국내 고혈압 환자" />
             <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-white mb-2">1위</p>
-              <p className="text-sky-300 text-sm font-medium">뇌졸중 원인</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">1위</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">뇌졸중 원인</p>
             </div>
             <CountUp end={95} suffix="%+" label="약물치료 효과" />
           </div>
@@ -36,10 +36,10 @@ export default function HypertensionPage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&fit=crop"
@@ -49,7 +49,7 @@ export default function HypertensionPage() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-navy-900 mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   고혈압이란?
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
@@ -62,11 +62,11 @@ export default function HypertensionPage() {
       </section>
 
       {/* Risk Cards */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 고혈압 합병증
               </h2>
               <p className="text-gray-500">
@@ -74,7 +74,7 @@ export default function HypertensionPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 title: "뇌졸중",
@@ -109,11 +109,11 @@ export default function HypertensionPage() {
       </section>
 
       {/* Management Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 생활습관 관리
               </h2>
               <p className="text-gray-500">
@@ -141,7 +141,7 @@ export default function HypertensionPage() {
       </section>
 
       {/* Cautions */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="bg-white rounded-2xl shadow-lg p-10 border-l-4 border-sky-500">
@@ -170,11 +170,11 @@ export default function HypertensionPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 자주 묻는 질문
               </h2>
               <p className="text-gray-500">

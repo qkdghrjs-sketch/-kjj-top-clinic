@@ -12,7 +12,7 @@ export default function FloatingButtons() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
       {/* 블로그 */}
       <div className="relative">
         {activeTooltip === "blog" && (
@@ -25,7 +25,7 @@ export default function FloatingButtons() {
         )}
         <button
           onClick={() => toggle("blog")}
-          className="w-14 h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+          className="w-11 h-11 sm:w-14 sm:h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
           style={{ backgroundColor: "#03C75A" }}
           aria-label="블로그 바로가기"
         >
@@ -44,7 +44,7 @@ export default function FloatingButtons() {
         )}
         <button
           onClick={() => toggle("phone")}
-          className="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+          className="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
           aria-label="전화예약"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -65,7 +65,7 @@ export default function FloatingButtons() {
         )}
         <button
           onClick={() => toggle("kakao")}
-          className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+          className="w-11 h-11 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
           style={{ backgroundColor: "#FEE500" }}
           aria-label="카카오톡 상담"
         >
@@ -90,7 +90,7 @@ function Tooltip({
   onClose: () => void;
 }) {
   return (
-    <div className="absolute right-[calc(100%+12px)] top-1/2 -translate-y-1/2 animate-fade-in">
+    <div className="absolute right-[calc(100%+12px)] top-1/2 -translate-y-1/2 animate-fade-in hidden sm:block">
       <div className="relative bg-white rounded-xl shadow-xl px-4 py-3 whitespace-nowrap flex items-center gap-3">
         <span className="text-navy-900 text-sm font-medium">{text}</span>
         <div className="flex items-center gap-1.5">
@@ -112,7 +112,6 @@ function Tooltip({
             </svg>
           </button>
         </div>
-        {/* Arrow */}
         <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-white rotate-45 shadow-sm" />
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function DoctorsPage() {
       />
 
       {/* ===== 김정재 원장 ===== */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-12 sm:py-16 lg:py-28 bg-white">
         <div className="max-w-[1180px] mx-auto px-5 lg:px-6">
           {/* Kicker */}
           <ScrollReveal>

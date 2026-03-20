@@ -25,7 +25,7 @@ export default function FAQ({ items }: FAQProps) {
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="w-full flex items-center justify-between px-6 py-5 text-left"
+              className="w-full flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 text-left min-h-[48px]"
             >
               <span className="flex items-center gap-3">
                 <span className="w-7 h-7 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
@@ -52,7 +52,7 @@ export default function FAQ({ items }: FAQProps) {
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <div className="px-6 pb-5 pl-16">
+              <div className="px-4 pb-4 pl-12 sm:px-6 sm:pb-5 sm:pl-16">
                 <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{item.a}</p>
               </div>
             </div>

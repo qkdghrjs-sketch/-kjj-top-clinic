@@ -91,7 +91,7 @@ export default function DepartmentsPage() {
         subtitle="김정재탑내과의원의 전문 진료 센터를 소개합니다."
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {centers.map((center, i) => (

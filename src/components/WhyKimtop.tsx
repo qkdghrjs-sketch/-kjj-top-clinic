@@ -22,7 +22,7 @@ const DEFAULT_IMAGE = "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/41981d
 
 export default function WhyKimtop({ box, overlay, description, features, image }: WhyKimtopProps) {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
+    <section className="relative py-12 md:py-24 overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
       {/* Decorative blurs */}
       <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
         <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-sky-400 rounded-full blur-[120px]" />
@@ -30,12 +30,12 @@ export default function WhyKimtop({ box, overlay, description, features, image }
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-[45%_55%] gap-10 items-center">
-          {/* Left - Clipped image */}
+        <div className="grid md:grid-cols-[45%_55%] gap-8 md:gap-10 items-center">
+          {/* Left - Clipped image (top on mobile) */}
           <ScrollReveal>
             <div className="relative">
               <div
-                className="w-full h-[380px] bg-cover bg-center shadow-2xl"
+                className="w-full h-[240px] sm:h-[320px] md:h-[380px] bg-cover bg-center shadow-2xl"
                 style={{
                   backgroundImage:
                     `url('${image || DEFAULT_IMAGE}')`,
@@ -60,7 +60,7 @@ export default function WhyKimtop({ box, overlay, description, features, image }
           <ScrollReveal delay={150}>
             <div>
               <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className="text-white text-3xl md:text-4xl font-bold italic">
+                <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold italic">
                   WHY KIMTOP
                 </span>
                 <span className="inline-block bg-sky-500 text-white text-xs font-bold px-4 py-2 rounded-lg">

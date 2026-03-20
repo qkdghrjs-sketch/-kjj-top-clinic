@@ -21,30 +21,30 @@ export default function DementiaPage() {
       />
 
       {/* Stats Banner */}
-      <section className="py-16 bg-gradient-to-r from-navy-900 to-navy-800">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-navy-900 to-navy-800">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
             <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-white mb-2">10명 중 1명</p>
-              <p className="text-sky-300 text-sm font-medium">65세 이상 치매</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">10명 중 1명</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">65세 이상 치매</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-white mb-2">조기발견</p>
-              <p className="text-sky-300 text-sm font-medium">진행 지연 가능</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">조기발견</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">진행 지연 가능</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-white mb-2">66세 이상</p>
-              <p className="text-sky-300 text-sm font-medium">무료 치매검진</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">66세 이상</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">무료 치매검진</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
               <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&auto=format&fit=crop"
@@ -54,7 +54,7 @@ export default function DementiaPage() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-navy-900 mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   치매클리닉 소개
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
@@ -67,11 +67,11 @@ export default function DementiaPage() {
       </section>
 
       {/* Symptom Cards */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 치매 조기 증상
               </h2>
               <p className="text-gray-500">
@@ -79,7 +79,7 @@ export default function DementiaPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 title: "기억력 저하",
@@ -114,11 +114,11 @@ export default function DementiaPage() {
       </section>
 
       {/* Diagnosis Steps */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 검사 방법
               </h2>
               <p className="text-gray-500">
@@ -153,11 +153,11 @@ export default function DementiaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 자주 묻는 질문
               </h2>
               <p className="text-gray-500">

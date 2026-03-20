@@ -26,13 +26,13 @@ export default function MedicalInfoPage() {
       <PageHeader title="진료안내" subtitle="진료시간 및 비급여 항목 안내입니다." />
 
       {/* 비급여 항목 */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <span className="text-gold-400 font-semibold text-sm uppercase tracking-widest">
               Non-Covered Items
             </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mt-2 mb-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mt-2 mb-2">
               비급여 항목 안내
             </h2>
             <div className="w-12 h-0.5 bg-gold-400 mb-4"></div>

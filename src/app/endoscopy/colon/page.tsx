@@ -22,26 +22,26 @@ export default function ColonEndoscopyPage() {
       />
 
       {/* 통계 배너 */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={49} suffix="%" label="선종발견율" />
             <CountUp end={90} suffix="%+" label="대장암 예방율" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">당일 가능</p>
-              <p className="text-sky-300 text-sm font-medium">용종절제</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 가능</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">용종절제</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* 대장내시경이란 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
@@ -52,7 +52,7 @@ export default function ColonEndoscopyPage() {
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">
                   대장암 조기발견의 가장 확실한 방법입니다
                 </h2>
                 <p className="text-gray-600 leading-relaxed whitespace-pre-line">
@@ -65,10 +65,10 @@ export default function ColonEndoscopyPage() {
       </section>
 
       {/* 이런 증상이 있다면 */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               이런 증상이 있다면 <span className="text-sky-500">대장내시경</span>을 받아보세요
             </h2>
           </ScrollReveal>
@@ -108,10 +108,10 @@ export default function ColonEndoscopyPage() {
       </section>
 
       {/* 장정결 안내 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               검사 전 이렇게 <span className="text-sky-500">준비</span>하세요
             </h2>
           </ScrollReveal>
@@ -146,7 +146,7 @@ export default function ColonEndoscopyPage() {
       </section>
 
       {/* 검사 후 주의사항 */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
@@ -175,10 +175,10 @@ export default function ColonEndoscopyPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               자주 묻는 <span className="text-sky-500">질문</span>
             </h2>
           </ScrollReveal>

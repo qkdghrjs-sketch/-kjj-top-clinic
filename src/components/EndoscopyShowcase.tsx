@@ -80,7 +80,7 @@ export default function EndoscopyShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-28 md:py-36 overflow-hidden"
+      className="relative py-16 sm:py-28 md:py-36 overflow-hidden"
     >
       {/* Ken Burns background */}
       <div
@@ -126,7 +126,7 @@ export default function EndoscopyShowcase() {
         </p>
 
         {/* Main title with neon glow */}
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-16">
+        <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-8 md:mb-16">
           전문{" "}
           <span className="endoscopy-neon-text">내시경</span>
           센터

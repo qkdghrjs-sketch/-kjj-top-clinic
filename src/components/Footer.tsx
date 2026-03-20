@@ -6,8 +6,8 @@ export default function Footer() {
       {/* Gold accent line */}
       <div className="h-1 bg-gradient-to-r from-gold-400 via-gold-200 to-gold-400"></div>
 
-      <div className="max-w-6xl mx-auto px-4 py-14">
-        <div className="grid md:grid-cols-3 gap-10">
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-navy-600 to-sky-600 flex items-center justify-center text-white font-bold text-sm">

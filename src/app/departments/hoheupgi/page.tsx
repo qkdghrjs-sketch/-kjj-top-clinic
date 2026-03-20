@@ -28,32 +28,32 @@ export default function HoheupgiPage() {
       />
 
       {/* Stats Banner */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-white mb-2">폐기능 검사</p>
-              <p className="text-sky-300 text-sm font-medium">정밀 호흡 능력 측정</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">폐기능 검사</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">정밀 호흡 능력 측정</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-white mb-2">흉부 X-ray 당일 판독</p>
-              <p className="text-sky-300 text-sm font-medium">빠른 결과 확인</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">흉부 X-ray 당일 판독</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">빠른 결과 확인</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-white mb-2">금연 클리닉 연계</p>
-              <p className="text-sky-300 text-sm font-medium">체계적 금연 지원</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">금연 클리닉 연계</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">체계적 금연 지원</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
@@ -63,7 +63,7 @@ export default function HoheupgiPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">호흡기 전문 진료</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">호흡기 전문 진료</h2>
               <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"폐와 기도 질환의 체계적인 진단과 관리를 제공합니다."}</p>
             </ScrollReveal>
           </div>
@@ -71,10 +71,10 @@ export default function HoheupgiPage() {
       </section>
 
       {/* Disease Cards */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               주요 진료 <span className="text-sky-500">질환</span>
             </h2>
           </ScrollReveal>
@@ -97,10 +97,10 @@ export default function HoheupgiPage() {
       </section>
 
       {/* Diagnosis */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               <span className="text-sky-500">검사</span> 방법
             </h2>
           </ScrollReveal>
@@ -120,7 +120,7 @@ export default function HoheupgiPage() {
       </section>
 
       {/* Cautions */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
@@ -147,10 +147,10 @@ export default function HoheupgiPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               자주 묻는 <span className="text-sky-500">질문</span>
             </h2>
           </ScrollReveal>

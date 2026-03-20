@@ -27,15 +27,15 @@ export default function StomachEndoscopyPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={100000} suffix="+" label="위내시경 시행" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">5~10분</p>
-              <p className="text-sky-300 text-sm font-medium">검사 소요시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5~10분</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">검사 소요시간</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">당일 가능</p>
-              <p className="text-sky-300 text-sm font-medium">용종절제</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 가능</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">용종절제</p>
             </div>
           </div>
         </div>

@@ -50,29 +50,29 @@ export default function PolypectomyPage() {
       />
 
       {/* Stats Banner */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]">
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={90} suffix="%+" label="대장암이 용종에서 시작" />
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">당일 가능</p>
-              <p className="text-sky-300 text-sm font-medium">즉시 절제</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 가능</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">즉시 절제</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">5~20분</p>
-              <p className="text-sky-300 text-sm font-medium">시술 소요시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5~20분</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">시술 소요시간</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* 용종이란 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
@@ -82,7 +82,7 @@ export default function PolypectomyPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">대장암 예방의 첫걸음, 용종을 조기에 제거하세요</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">대장암 예방의 첫걸음, 용종을 조기에 제거하세요</h2>
               <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"용종은 대장 점막에서 혹처럼 돌출된 조직으로\n대부분 무증상으로 발견이 어렵습니다.\n\n선종성 용종은 방치할 경우 5~10년 내\n대장암으로 진행될 수 있어 조기 제거가 매우 중요합니다.\n\n김정재탑내과는 검사와 동시에 당일 즉시 절제가 가능하여\n별도의 입원 없이 원스톱으로 치료합니다."}</p>
             </ScrollReveal>
           </div>
@@ -90,10 +90,10 @@ export default function PolypectomyPage() {
       </section>
 
       {/* 왜 제거해야 하나요 */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               왜 <span className="text-sky-500">제거</span>해야 하나요?
             </h2>
           </ScrollReveal>
@@ -116,10 +116,10 @@ export default function PolypectomyPage() {
       </section>
 
       {/* 절제 방법 */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-4">
               절제 <span className="text-sky-500">방법</span>
             </h2>
             <p className="text-gray-500 text-center mb-12">용종 크기와 종류에 따라 최적의 방법으로 제거합니다</p>
@@ -141,10 +141,10 @@ export default function PolypectomyPage() {
       </section>
 
       {/* 시술 후 관리 */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               시술 후 <span className="text-sky-500">관리</span>
             </h2>
           </ScrollReveal>
@@ -168,10 +168,10 @@ export default function PolypectomyPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
               자주 묻는 <span className="text-sky-500">질문</span>
             </h2>
           </ScrollReveal>

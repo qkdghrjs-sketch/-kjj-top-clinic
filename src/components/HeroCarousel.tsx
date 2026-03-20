@@ -133,7 +133,7 @@ export default function HeroCarousel() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[85vh] -mt-48 pt-48 overflow-hidden">
+    <section className="relative h-[75vh] md:h-[85vh] -mt-24 pt-24 md:-mt-48 md:pt-48 overflow-hidden">
       {/* Slides background */}
       {slides.map((s, i) => (
         <div
@@ -166,13 +166,13 @@ export default function HeroCarousel() {
               key={`badge-${current}`}
               className="animate-fade-in-up mb-8"
             >
-              <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2">
+              <div className="inline-flex items-center gap-2 sm:gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 py-1.5 sm:px-5 sm:py-2">
                 <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-                <span className="text-sm text-white/80 font-medium tracking-wider uppercase">
+                <span className="text-xs sm:text-sm text-white/80 font-medium tracking-wider uppercase">
                   {slide.badgeEn}
                 </span>
                 <span className="w-px h-3.5 bg-white/30" />
-                <span className="text-sm text-sky-300 font-medium">
+                <span className="text-xs sm:text-sm text-sky-300 font-medium">
                   {slide.badgeKo}
                 </span>
               </div>
@@ -180,7 +180,7 @@ export default function HeroCarousel() {
 
             {/* Title */}
             <div key={`title-${current}`} className="animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                 <TitleLine parts={slide.titleParts} />
                 {slide.titleLine2 && (
                   <>
@@ -196,7 +196,7 @@ export default function HeroCarousel() {
               key={`sub-${current}`}
               className="animate-fade-in-up animation-delay-200"
             >
-              <p className="text-lg md:text-xl text-gray-300/90 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-lg md:text-xl text-gray-300/90 mb-6 md:mb-8 leading-relaxed">
                 {slide.subtitle}
               </p>
             </div>
@@ -206,14 +206,14 @@ export default function HeroCarousel() {
               key={`tags-${current}`}
               className="animate-fade-in-up animation-delay-400"
             >
-              <div className="flex flex-wrap justify-center gap-2 mb-10">
-                <span className="px-3 py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-sm font-semibold border border-sky-400/30">
+              <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-6 md:mb-10">
+                <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-xs sm:text-sm font-semibold border border-sky-400/30">
                   {slide.tagLabel}
                 </span>
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1.5 rounded-full bg-white/8 backdrop-blur-sm text-white/70 text-sm border border-white/10 hover:bg-sky-500/20 hover:text-sky-300 hover:border-sky-400/30 transition-all duration-300 cursor-default"
+                    className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/8 backdrop-blur-sm text-white/70 text-xs sm:text-sm border border-white/10 hover:bg-sky-500/20 hover:text-sky-300 hover:border-sky-400/30 transition-all duration-300 cursor-default"
                   >
                     {tag}
                   </span>
@@ -229,13 +229,13 @@ export default function HeroCarousel() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href={slide.buttonHref}
-                  className="group border-2 border-white/40 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
+                  className="group border-2 border-white/40 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
                 >
                   {slide.buttonText}
                 </Link>
                 <a
                   href="tel:02-6798-8880"
-                  className="bg-sky-500 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30"
+                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base"
                 >
                   전화 예약: 02-6798-8880
                 </a>
@@ -248,7 +248,7 @@ export default function HeroCarousel() {
       {/* Arrow buttons */}
       <button
         onClick={prev}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-[4] w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-[4] w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
         aria-label="이전 슬라이드"
       >
         <svg
@@ -267,7 +267,7 @@ export default function HeroCarousel() {
       </button>
       <button
         onClick={next}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-[4] w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
+        className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-[4] w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
         aria-label="다음 슬라이드"
       >
         <svg

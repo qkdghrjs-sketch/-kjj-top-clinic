@@ -50,10 +50,10 @@ export default function CountUp({ end, suffix = "", prefix = "", duration = 2000
 
   return (
     <div ref={ref} className="text-center">
-      <p className="text-4xl md:text-5xl font-bold text-white mb-2">
+      <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
         {prefix}{started ? count.toLocaleString() : "0"}{suffix}
       </p>
-      <p className="text-sky-300 text-sm font-medium">{label}</p>
+      <p className="text-sky-300 text-xs sm:text-sm font-medium">{label}</p>
     </div>
   );
 }

@@ -54,32 +54,32 @@ export default function WhySection() {
   return (
     <section className="py-0">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid lg:grid-cols-[340px_1fr] min-h-[480px] rounded-2xl overflow-hidden shadow-xl">
-          {/* Left - Tabs */}
+        <div className="grid lg:grid-cols-[340px_1fr] min-h-[400px] lg:min-h-[480px] rounded-2xl overflow-hidden shadow-xl">
+          {/* Left/Top - Tabs */}
           <div className="bg-white flex flex-col">
             {/* Header */}
-            <div className="bg-navy-900 px-6 py-6">
-              <h2 className="text-3xl font-bold text-white">WHY</h2>
-              <p className="text-navy-300 text-sm mt-1">
+            <div className="bg-navy-900 px-4 py-4 lg:px-6 lg:py-6">
+              <h2 className="text-2xl lg:text-3xl font-bold text-white">WHY</h2>
+              <p className="text-navy-300 text-xs lg:text-sm mt-1">
                 그래서 김정재탑내과의원입니다.
               </p>
             </div>
 
-            {/* Tab list */}
-            <div className="flex-1 flex flex-col">
+            {/* Tab list - horizontal scroll on mobile, vertical on desktop */}
+            <div className="flex lg:flex-col lg:flex-1 overflow-x-auto lg:overflow-x-visible scrollbar-hide">
               {tabs.map((tab, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`flex items-center justify-between px-6 py-4 text-left text-sm font-medium border-b border-gray-100 transition-all duration-300 ${
+                  className={`flex items-center gap-2 lg:gap-3 lg:justify-between px-4 py-3 lg:px-6 lg:py-4 text-left text-xs lg:text-sm font-medium border-b border-gray-100 transition-all duration-300 whitespace-nowrap shrink-0 ${
                     i === current
                       ? "bg-navy-800 text-white"
                       : "bg-white text-gray-500 hover:bg-navy-50 hover:text-navy-700"
                   }`}
                 >
-                  <span className="flex items-center gap-3">
+                  <span className="flex items-center gap-2 lg:gap-3">
                     <span
-                      className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
+                      className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold shrink-0 ${
                         i === current
                           ? "bg-sky-400 text-white"
                           : "bg-gray-200 text-gray-500"
@@ -90,7 +90,7 @@ export default function WhySection() {
                     {tab.title}
                   </span>
                   <svg
-                    className={`w-4 h-4 shrink-0 transition-colors ${
+                    className={`w-4 h-4 shrink-0 transition-colors hidden lg:block ${
                       i === current ? "text-sky-400" : "text-gray-300"
                     }`}
                     fill="none"
@@ -110,7 +110,7 @@ export default function WhySection() {
           </div>
 
           {/* Right - Slide */}
-          <div className="relative overflow-hidden min-h-[320px] lg:min-h-0">
+          <div className="relative overflow-hidden min-h-[280px] sm:min-h-[320px] lg:min-h-0">
             {tabs.map((tab, i) => (
               <div
                 key={i}

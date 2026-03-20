@@ -24,7 +24,7 @@ export default function InfoPage() {
         subtitle="김정재탑내과의원 방문 안내"
       />
 
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-10">

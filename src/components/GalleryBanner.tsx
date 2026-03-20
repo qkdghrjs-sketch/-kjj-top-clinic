@@ -43,7 +43,7 @@ export default function GalleryBanner() {
   }, []);
 
   return (
-    <section className="relative h-[420px] overflow-hidden">
+    <section className="relative h-[300px] sm:h-[420px] overflow-hidden">
       {/* Left panel */}
       <div className="absolute inset-y-0 left-0 w-1/2">
         {leftImages.map((img, i) => (
@@ -75,16 +75,16 @@ export default function GalleryBanner() {
       {/* Center text box */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div
-          className="px-10 md:px-16 py-10 md:py-12 text-center"
+          className="px-6 sm:px-10 md:px-16 py-6 sm:py-10 md:py-12 text-center"
           style={{ backgroundColor: "rgba(11,35,72,0.88)" }}
         >
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             편안하고 안전한 검진,
           </p>
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4">
             치료의 시작입니다
           </p>
-          <p className="text-white text-xl md:text-2xl mb-6">
+          <p className="text-white text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6">
             김정재탑내과{" "}
             <strong className="font-bold">병원 둘러보기</strong>
           </p>

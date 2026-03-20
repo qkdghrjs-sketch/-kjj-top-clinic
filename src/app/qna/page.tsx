@@ -57,7 +57,7 @@ export default function QnAPage() {
         subtitle="환자분들이 가장 많이 궁금해하시는 질문을 모았습니다."
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <div className="space-y-3">
             {faqs.map((faq, i) => (
