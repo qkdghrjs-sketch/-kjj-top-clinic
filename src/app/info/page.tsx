@@ -2,6 +2,7 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import KakaoMap from "@/components/KakaoMap";
 
 const hours = [
   { day: "월요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 1 },
@@ -31,14 +32,7 @@ export default function InfoPage() {
               <div>
                 <h2 className="text-xl font-bold text-navy-900 mb-4">오시는 길</h2>
                 <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-                  <iframe
-                    src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8+%EA%B0%95%EC%84%9C%EA%B5%AC+%ED%99%94%EA%B3%A1%EB%A1%9C+135&output=embed&hl=ko"
-                    width="100%"
-                    height="360"
-                    style={{ border: 0, borderRadius: "12px" }}
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                  <KakaoMap />
                 </div>
 
                 {/* 네이버지도 / 카카오맵 버튼 */}

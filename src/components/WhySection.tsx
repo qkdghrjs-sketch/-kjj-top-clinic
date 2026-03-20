@@ -18,13 +18,13 @@ const tabs = [
   {
     title: "숙련된 전문의 직접 진료",
     image:
-      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/c8661c07a2f02.jpeg",
+      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/b76181769ad45.jpeg",
     desc: "증상만 보지 않고 검사 결과의 맥락까지 함께 해석합니다. 진단–치료–추적관리의 연결을 끊지 않는 진료를 지향합니다.",
   },
   {
     title: "원스톱 진료 동선",
     image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
+      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/79e90c01190d6.jpeg",
     desc: "당일 진료부터 검사, 시술, 결과 안내, 추후 관리까지 한 흐름으로 연결합니다. 불필요한 이동과 대기 시간을 줄이고 치료 결정을 빠르게 돕습니다.",
   },
   {

@@ -2,63 +2,15 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import CountUp from "@/components/CountUp";
+import FAQ from "@/components/FAQ";
 
-const conditions = [
-  {
-    name: "위염",
-    description:
-      "위 점막에 염증이 발생하는 질환으로, 급성과 만성으로 나뉩니다. 헬리코박터 파일로리균 감염, 과도한 음주, 진통제 남용 등이 주요 원인이며, 적절한 치료 없이 방치하면 위궤양이나 위암으로 진행될 수 있습니다.",
-    symptoms: [
-      "상복부 통증 및 불쾌감",
-      "속쓰림, 소화불량",
-      "오심 및 구토",
-      "식후 복부 팽만감",
-    ],
-  },
-  {
-    name: "역류성식도염",
-    description:
-      "위산이 식도로 역류하여 식도 점막에 염증과 손상을 일으키는 질환입니다. 하부식도괄약근의 기능 저하가 주요 원인이며, 비만, 과식, 취침 전 식사 등의 생활 습관이 증상을 악화시킬 수 있습니다. 만성화되면 바렛식도 등 합병증 위험이 높아집니다.",
-    symptoms: [
-      "가슴 쓰림(흉골 뒤 작열감)",
-      "신트림 및 위산 역류",
-      "만성 기침, 쉰 목소리",
-      "목 이물감, 삼킴 곤란",
-    ],
-  },
-  {
-    name: "과민성장증후군",
-    description:
-      "대장 내시경 등 검사에서 특별한 이상이 발견되지 않음에도 복통, 복부 팽만감, 배변 습관의 변화가 반복되는 기능성 위장 질환입니다. 스트레스, 불규칙한 식습관, 장내 세균 불균형 등이 복합적으로 작용하며, 삶의 질을 크게 저하시킬 수 있습니다.",
-    symptoms: [
-      "반복적인 복통 및 복부 경련",
-      "설사 또는 변비(혹은 교대로 반복)",
-      "복부 팽만감 및 가스",
-      "배변 후 잔변감",
-    ],
-  },
-  {
-    name: "위내시경 검사",
-    description:
-      "내시경을 통해 식도, 위, 십이지장의 점막 상태를 직접 관찰하는 정밀 검사입니다. 수면 내시경을 통해 환자의 불편감을 최소화하면서도 정확한 진단이 가능하며, 조직 검사와 헬리코박터균 검사를 동시에 시행할 수 있습니다.",
-    symptoms: [
-      "만 40세 이상 정기 검진 대상",
-      "지속적인 소화불량 또는 상복부 통증",
-      "체중 감소, 식욕 저하",
-      "위암 가족력이 있는 경우",
-    ],
-  },
-  {
-    name: "용종절제술",
-    description:
-      "대장내시경 검사 중 발견되는 용종(폴립)을 내시경을 통해 즉시 제거하는 시술입니다. 대장 용종은 대장암의 전구 병변으로, 조기 발견 및 절제를 통해 대장암 발생을 효과적으로 예방할 수 있습니다. 시술 후 조직 검사를 통해 악성 여부를 확인합니다.",
-    symptoms: [
-      "대장내시경 검사 중 용종 발견 시",
-      "이전 용종 절제 이력이 있는 경우",
-      "대장암 가족력",
-      "혈변 또는 대변 잠혈 양성",
-    ],
-  },
+const diseases = [
+  { name: "역류성식도염", desc: "식후 가슴이 타는 듯한 느낌이 드신다면 역류성식도염을 의심해보세요.\n위산이 식도로 역류하여 식도 점막을 손상시키는 질환입니다.\n적절한 치료 없이 방치하면 바렛식도, 식도암으로 진행될 수 있습니다." },
+  { name: "위염·위궤양", desc: "상복부 통증, 식후 더부룩함, 구역감이 지속된다면 위염을 의심하세요.\n헬리코박터균 감염이 주요 원인이며 위내시경으로 정확히 진단합니다.\n조기 치료로 위암으로의 진행을 예방할 수 있습니다." },
+  { name: "과민성장증후군", desc: "반복되는 복통, 설사와 변비가 번갈아 나타나신다면 과민성장증후군입니다.\n스트레스와 식이 요인이 주요 원인으로 생활습관 개선이 중요합니다.\n전문의 상담을 통해 맞춤형 치료 계획을 수립하세요." },
+  { name: "대장용종", desc: "대장암의 90%는 용종에서 시작됩니다.\n초기에는 아무런 증상이 없어 정기적인 대장내시경만이 유일한 예방법입니다.\n발견 즉시 당일 절제가 가능하여 암으로의 진행을 막을 수 있습니다." },
 ];
 
 export default function SowhagiPage() {
@@ -69,105 +21,138 @@ export default function SowhagiPage() {
         subtitle="위장관 질환의 정확한 진단과 체계적인 치료를 제공합니다."
       />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* Center overview */}
-          <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                센터 소개
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                김정재탑내과의원 소화기센터는 위, 식도, 대장 등 소화기 전반에
-                걸친 질환을 전문적으로 진료합니다. 최신 내시경 장비를 갖추고
-                수면 내시경을 통한 편안한 검사 환경을 제공하며, 검사 당일 용종이
-                발견될 경우 즉시 절제가 가능합니다. 풍부한 임상 경험을 바탕으로
-                환자 개개인에게 최적화된 치료 계획을 수립하여 소화기 건강을
-                지켜드립니다.
-              </p>
-            </div>
-          </ScrollReveal>
+      <WhyKimtop
+        box="소화기, 왜 김정재탑내과일까?+"
+        overlay="소화기내시경 세부전문의"
+        description="소화기 질환의 정확한 진단과 치료를 위해 대학병원급 장비와 전문의가 함께합니다."
+        features={["소화기내시경 세부전문의", "당일 내시경 가능", "용종 당일 절제", "수면내시경 시행"]}
+      />
 
-          {/* Conditions */}
-          <div className="space-y-10">
-            {conditions.map((condition, index) => (
-              <ScrollReveal key={condition.name} delay={index * 80}>
-                <div className="border border-gray-100 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
-                  <h3 className="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-sky-500 inline-block"></span>
-                    {condition.name}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {condition.description}
-                  </p>
-                  <div>
-                    <h4 className="text-sm font-semibold text-navy-900 mb-2">
-                      주요 증상 및 적응증
-                    </h4>
-                    <ul className="grid sm:grid-cols-2 gap-2">
-                      {condition.symptoms.map((symptom) => (
-                        <li
-                          key={symptom}
-                          className="flex items-center gap-2 text-gray-500 text-sm"
-                        >
-                          <svg
-                            className="w-4 h-4 text-sky-500 shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          {symptom}
-                        </li>
-                      ))}
-                    </ul>
+      {/* Stats Banner */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-3 gap-8">
+            <CountUp end={100000} suffix="+" label="위내시경 시행" />
+            <CountUp end={49} suffix="%" label="선종발견율" />
+            <CountUp end={100} suffix="%" label="당일 용종절제" />
+          </div>
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <ScrollReveal>
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+                <div
+                  className="w-full h-full bg-cover bg-center img-zoom"
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop')" }}
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">소화기 전문 진료</h2>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"위·장·간 질환의 정확한 진단과 치료를 제공합니다.\n김정재탑내과는 소화기내시경 세부전문의가 직접 진료합니다."}</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Disease Cards */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              주요 진료 <span className="text-sky-500">질환</span>
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {diseases.map((d, i) => (
+              <ScrollReveal key={d.name} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                  <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
                   </div>
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">{d.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{d.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Testing section */}
-          <ScrollReveal delay={200}>
-            <div className="mt-16 bg-navy-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                검사 안내
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                본원에서는 최신 고화질 내시경 장비를 사용하여 위내시경 및
-                대장내시경 검사를 시행합니다. 수면 내시경을 통해 검사 중
-                불편감을 최소화하며, 숙련된 전문의가 직접 검사를 진행합니다.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-5">
-                  <h4 className="font-semibold text-navy-900 mb-2">
-                    위내시경
-                  </h4>
-                  <p className="text-gray-500 text-sm">
-                    검사 전날 밤 10시 이후 금식이 필요합니다. 수면 내시경 시
-                    당일 운전이 불가하므로 보호자 동반을 권장합니다. 검사 시간은
-                    약 5~10분 소요됩니다.
-                  </p>
+      {/* Diagnosis */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              <span className="text-sky-500">검사</span> 방법
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {["위내시경", "대장내시경", "복부초음파", "헬리코박터 검사"].map((item, i) => (
+              <ScrollReveal key={item} delay={i * 100}>
+                <div className="text-center p-6 bg-navy-50 rounded-2xl">
+                  <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <p className="text-navy-900 font-semibold text-sm">{item}</p>
                 </div>
-                <div className="bg-white rounded-xl p-5">
-                  <h4 className="font-semibold text-navy-900 mb-2">
-                    대장내시경
-                  </h4>
-                  <p className="text-gray-500 text-sm">
-                    검사 3일 전부터 씨 있는 과일, 해조류 등을 피하고, 전날
-                    장정결제를 복용합니다. 검사 시간은 약 15~30분이며, 용종
-                    발견 시 즉시 절제가 가능합니다.
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cautions */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+                <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                주의사항
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "위내시경 전날 밤 9시 이후 금식",
+                  "대장내시경은 전날부터 장정결 필요",
+                ].map((c) => (
+                  <li key={c} className="flex items-start gap-2 text-gray-700 text-sm">
+                    <span className="text-sky-500 font-bold mt-0.5">※</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              자주 묻는 <span className="text-sky-500">질문</span>
+            </h2>
+          </ScrollReveal>
+          <FAQ items={[
+            { q: "위내시경은 얼마나 자주 받아야 하나요?", a: "일반적으로 40세 이상은 2년마다, 위험군은 매년 권장합니다." },
+            { q: "헬리코박터균이 있으면 꼭 치료해야 하나요?", a: "위궤양, 십이지장궤양, 위암 가족력이 있다면 치료를 권장합니다." },
+            { q: "위내시경과 수면내시경 중 어떤 게 좋나요?", a: "검사에 대한 불안감이 있으시다면 수면내시경을 권장합니다." },
+            { q: "역류성식도염은 완치가 가능한가요?", a: "생활습관 개선과 약물치료로 증상 조절이 가능합니다." },
+            { q: "소화불량이 오래되면 꼭 내시경을 받아야 하나요?", a: "4주 이상 지속되거나 체중감소가 동반된다면 내시경 검사를 권장합니다." },
+          ]} />
         </div>
       </section>
     </>

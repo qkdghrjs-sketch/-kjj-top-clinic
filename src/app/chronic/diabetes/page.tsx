@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import CountUp from "@/components/CountUp";
+import FAQ from "@/components/FAQ";
 
 export default function DiabetesPage() {
   return (
@@ -10,277 +14,184 @@ export default function DiabetesPage() {
         title="당뇨"
         subtitle="혈당 관리의 시작, 정확한 진단과 맞춤 치료"
       />
+      <WhyKimtop
+        box="당뇨, 왜 김정재탑내과일까?+"
+        overlay="당뇨 전문 클리닉"
+        description="당뇨는 꾸준한 관리가 치료입니다. 전문의와 함께 체계적으로 관리하세요."
+        features={["전문의 직접 진료", "혈당 맞춤 관리", "정기적 모니터링", "합병증 예방 관리"]}
+      />
+
+      {/* Stats Banner */}
+      <section className="py-16 bg-gradient-to-r from-navy-900 to-navy-800">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <CountUp end={600} suffix="만명+" label="국내 당뇨 환자" />
+            <CountUp end={60} suffix="%+" label="합병증 예방율" />
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-2">7% 미만</p>
+              <p className="text-sky-300 text-sm font-medium">당화혈색소 목표</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
+                <Image
+                  src="https://images.unsplash.com/photo-1593491034932-844ab981ed7c?w=800&auto=format&fit=crop"
+                  alt="당뇨 관리"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-navy-900 mb-6">
+                  당뇨병이란?
+                </h2>
+                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                  {"당뇨병은 꾸준한 관리가 가장 중요한 치료입니다.\n합병증 예방을 위해 전문의와 함께 관리하세요.\n한국인의 경우 비만과 운동 부족이 주요 위험인자입니다."}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Complication Cards */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                당뇨 합병증
+              </h2>
+              <p className="text-gray-500">
+                당뇨를 방치하면 다양한 합병증이 발생할 수 있습니다
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "망막병증",
+                desc: "시력 저하, 실명으로 이어질 수 있습니다.\n매년 안과 정기검진이 필수입니다.",
+              },
+              {
+                title: "신장병증",
+                desc: "신기능 저하로 투석이 필요할 수 있습니다.\n소변 검사와 혈액 검사로 조기 발견합니다.",
+              },
+              {
+                title: "신경병증",
+                desc: "발 저림, 감각 저하로 당뇨발 위험이 증가합니다.\n매일 발을 점검하고 관리하세요.",
+              },
+              {
+                title: "심혈관 질환",
+                desc: "심근경색, 뇌졸중 위험이 2~4배 높아집니다.\n정기적인 심장 검진이 필요합니다.",
+              },
+            ].map((item, idx) => (
+              <ScrollReveal key={idx} delay={idx * 100}>
+                <div className="bg-white rounded-2xl shadow-md p-8 h-full card-hover-glow">
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                    {item.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Management Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                생활습관 관리
+              </h2>
+              <p className="text-gray-500">
+                당뇨 관리를 위한 5가지 생활습관
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {["규칙적 식사", "탄수화물 조절", "식후 걷기", "자가 혈당 측정", "약물 치료"].map(
+              (item, idx) => (
+                <ScrollReveal key={idx} delay={idx * 100}>
+                  <div className="bg-gray-50 rounded-2xl shadow-md p-6 text-center h-full card-hover-glow">
+                    <span className="inline-flex items-center justify-center w-12 h-12 bg-sky-500 text-white rounded-full font-bold text-lg mb-4">
+                      {idx + 1}
+                    </span>
+                    <h3 className="text-base font-bold text-navy-900">
+                      {item}
+                    </h3>
+                  </div>
+                </ScrollReveal>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Cautions */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-white rounded-2xl shadow-lg p-10 border-l-4 border-sky-500">
+              <h2 className="text-2xl font-bold text-navy-900 mb-6">
+                당뇨 관리 시 주의사항
+              </h2>
+              <div className="space-y-4">
+                {[
+                  "공복혈당 126 이상 시 즉시 진료",
+                  "저혈당 증상 대비 사탕 상비",
+                  "발 상처 매일 점검",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center font-bold text-sm">
+                      {idx + 1}
+                    </span>
+                    <p className="text-gray-700 leading-relaxed pt-1">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          {/* 당뇨란 */}
           <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                당뇨병이란?
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                자주 묻는 질문
               </h2>
-              <p className="text-gray-600 leading-relaxed">
-                당뇨병은 인슐린의 분비 또는 작용에 이상이 생겨 혈액 속 포도당(혈당)이
-                비정상적으로 높아지는 대사 질환입니다. 장기간 높은 혈당이 유지되면
-                전신의 혈관과 신경에 손상을 일으켜 다양한 합병증을 초래합니다.
-                우리나라 30세 이상 성인의 약 16%가 당뇨병을 앓고 있으며, 당뇨
-                전단계까지 포함하면 그 수는 더욱 증가합니다.
+              <p className="text-gray-500">
+                당뇨에 대해 환자분들이 자주 묻는 질문입니다
               </p>
             </div>
           </ScrollReveal>
-
-          {/* 제1형 vs 제2형 */}
-          <ScrollReveal delay={100}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                당뇨병의 유형
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-navy-50 rounded-2xl p-8">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">
-                    제1형 당뇨병
-                  </h3>
-                  <ul className="space-y-3 text-gray-600 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      자가면역 반응으로 췌장의 베타 세포가 파괴되어 인슐린 분비가
-                      거의 불가능한 상태
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      주로 소아 및 청소년기에 발병
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      반드시 인슐린 주사 치료가 필요
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      전체 당뇨 환자의 약 5~10%
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-8">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">
-                    제2형 당뇨병
-                  </h3>
-                  <ul className="space-y-3 text-gray-600 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      인슐린 저항성 증가 및 상대적 인슐린 분비 부족으로 발생
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      주로 40세 이후 발병하나, 최근 젊은 층에서도 증가 추세
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      비만, 운동 부족, 가족력 등이 주요 위험 인자
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-500 font-bold">·</span>
-                      전체 당뇨 환자의 약 90~95%
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 증상 */}
-          <ScrollReveal delay={200}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                당뇨병의 주요 증상
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                당뇨병의 대표적인 증상은 &apos;3다(多) 증상&apos;으로 알려져
-                있습니다. 그러나 제2형 당뇨병은 초기에 증상이 경미하거나 없을 수
-                있어 정기 검진이 중요합니다.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-navy-50 rounded-2xl p-6 text-center">
-                  <div className="text-sky-500 text-2xl font-bold mb-2">다음(多飮)</div>
-                  <p className="text-gray-600 text-sm">
-                    갈증이 심해 물을 많이 마시게 됩니다.
-                  </p>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-6 text-center">
-                  <div className="text-sky-500 text-2xl font-bold mb-2">다뇨(多尿)</div>
-                  <p className="text-gray-600 text-sm">
-                    소변량이 증가하고 소변 횟수가 잦아집니다.
-                  </p>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-6 text-center">
-                  <div className="text-sky-500 text-2xl font-bold mb-2">다식(多食)</div>
-                  <p className="text-gray-600 text-sm">
-                    음식을 많이 먹어도 체중이 감소합니다.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-navy-50 rounded-2xl p-8 mt-6">
-                <h3 className="font-semibold text-navy-900 mb-3">기타 증상</h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                    만성 피로감 및 무기력
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                    상처 회복 지연, 잦은 감염
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                    손발 저림, 시력 변화
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                    피부 가려움증
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 합병증 */}
-          <ScrollReveal delay={300}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                당뇨병 합병증
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                혈당 조절이 제대로 이루어지지 않으면 미세혈관과 대혈관에 손상이
-                생겨 다양한 합병증이 발생합니다.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-navy-50 rounded-2xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">
-                    미세혈관 합병증
-                  </h3>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>· 당뇨 망막병증 (실명 위험)</li>
-                    <li>· 당뇨 신증 (만성 신부전)</li>
-                    <li>· 당뇨 신경병증 (손발 저림, 통증)</li>
-                  </ul>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">
-                    대혈관 합병증
-                  </h3>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>· 관상동맥 질환 (심근경색, 협심증)</li>
-                    <li>· 뇌혈관 질환 (뇌졸중)</li>
-                    <li>· 말초혈관 질환 (당뇨발)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 진단 기준 */}
-          <ScrollReveal delay={400}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                진단 기준
-              </h2>
-              <div className="bg-navy-50 rounded-2xl p-8">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-navy-200">
-                        <th className="text-left py-3 text-navy-900 font-semibold">검사 항목</th>
-                        <th className="text-center py-3 text-navy-900 font-semibold">정상</th>
-                        <th className="text-center py-3 text-navy-900 font-semibold">당뇨 전단계</th>
-                        <th className="text-center py-3 text-navy-900 font-semibold">당뇨병</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-gray-600">
-                      <tr className="border-b border-navy-100">
-                        <td className="py-3">공복 혈당 (mg/dL)</td>
-                        <td className="text-center py-3">&lt; 100</td>
-                        <td className="text-center py-3">100 ~ 125</td>
-                        <td className="text-center py-3 font-medium text-navy-900">≥ 126</td>
-                      </tr>
-                      <tr className="border-b border-navy-100">
-                        <td className="py-3">당화혈색소 HbA1c (%)</td>
-                        <td className="text-center py-3">&lt; 5.7</td>
-                        <td className="text-center py-3">5.7 ~ 6.4</td>
-                        <td className="text-center py-3 font-medium text-navy-900">≥ 6.5</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3">경구당부하 2시간 혈당 (mg/dL)</td>
-                        <td className="text-center py-3">&lt; 140</td>
-                        <td className="text-center py-3">140 ~ 199</td>
-                        <td className="text-center py-3 font-medium text-navy-900">≥ 200</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 치료 방법 */}
-          <ScrollReveal delay={500}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                치료 방법
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                김정재탑내과의원에서는 환자의 당뇨 유형, 혈당 수치, 동반 질환 등을
-                종합적으로 평가하여 개인 맞춤형 치료 계획을 수립합니다.
-              </p>
-              <div className="space-y-4">
-                <div className="bg-navy-50 rounded-2xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">식이 요법</h3>
-                  <p className="text-gray-600 text-sm">
-                    균형 잡힌 식단 구성, 탄수화물 조절, 식이섬유 섭취 증가, 규칙적인
-                    식사 시간 유지를 통해 혈당 변동을 최소화합니다.
-                  </p>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">운동 요법</h3>
-                  <p className="text-gray-600 text-sm">
-                    주 150분 이상의 중등도 유산소 운동과 주 2~3회 근력 운동을
-                    병행하여 인슐린 감수성을 개선합니다.
-                  </p>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">약물 치료</h3>
-                  <p className="text-gray-600 text-sm">
-                    메트포르민, SGLT2 억제제, DPP-4 억제제, GLP-1 수용체 작용제 등
-                    환자 상태에 적합한 약물을 선택하여 처방합니다. 필요 시 인슐린
-                    치료를 시행합니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 생활 관리 */}
-          <ScrollReveal delay={600}>
-            <div className="bg-sky-50 rounded-2xl p-8 border border-sky-100">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                당뇨 생활 관리 수칙
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
-                <div className="flex items-start gap-3">
-                  <span className="bg-sky-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                  <span>정기적으로 혈당을 측정하고 기록하세요.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="bg-sky-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
-                  <span>당화혈색소(HbA1c)를 3개월마다 검사하세요.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="bg-sky-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-                  <span>발 관리에 신경 쓰고, 상처가 생기면 즉시 치료하세요.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="bg-sky-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
-                  <span>연 1회 안저 검사, 신장 기능 검사를 받으세요.</span>
-                </div>
-              </div>
-            </div>
+          <ScrollReveal>
+            <FAQ
+              items={[
+                { q: "당뇨전단계도 치료가 필요한가요?", a: "생활습관 개선으로 당뇨로의 진행을 50% 이상 예방할 수 있습니다." },
+                { q: "당뇨 식이요법에서 완전히 금지해야 하는 음식이 있나요?", a: "완전 금지보다 양 조절이 중요합니다.\n전문 영양 상담을 권장합니다." },
+                { q: "인슐린 주사를 맞으면 중독되나요?", a: "인슐린은 중독성이 없으며 혈당 조절을 위한 필수 치료입니다." },
+                { q: "당뇨가 있으면 운동을 조심해야 하나요?", a: "저혈당에 주의하며 규칙적인 운동을 권장합니다." },
+                { q: "당화혈색소란 무엇인가요?", a: "최근 2~3개월간의 평균 혈당을 반영하는 지표입니다.\n7% 미만을 목표로 합니다." },
+              ]}
+            />
           </ScrollReveal>
         </div>
       </section>

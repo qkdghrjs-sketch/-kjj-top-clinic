@@ -2,6 +2,9 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import CountUp from "@/components/CountUp";
+import FAQ from "@/components/FAQ";
 
 export default function ColonEndoscopyPage() {
   return (
@@ -11,213 +14,183 @@ export default function ColonEndoscopyPage() {
         subtitle="대장 질환의 조기 발견과 예방을 위한 정밀 검사"
       />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* 대장내시경이란 */}
+      <WhyKimtop
+        box="대장내시경, 왜 김정재탑내과일까?+"
+        overlay="대장내시경 전문 클리닉"
+        description="대장암 조기발견을 위한 정밀 대장내시경 검사를 제공합니다."
+        features={["소화기내시경 세부전문의", "당일 용종절제 가능", "수면내시경 시행", "선종발견율 49%"]}
+      />
+
+      {/* 통계 배너 */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-3 gap-8">
+            <CountUp end={49} suffix="%" label="선종발견율" />
+            <CountUp end={90} suffix="%+" label="대장암 예방율" />
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white mb-2">당일 가능</p>
+              <p className="text-sky-300 text-sm font-medium">용종절제</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 대장내시경이란 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <ScrollReveal>
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+                <div
+                  className="w-full h-full bg-cover bg-center img-zoom"
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/747e8bf1cb3a3.jpeg')" }}
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">
+                  대장암 조기발견의 가장 확실한 방법입니다
+                </h2>
+                <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                  {"대장내시경은 항문을 통해 내시경을 삽입하여\n대장 전체를 직접 관찰하는 검사입니다.\n\n대장암의 90%는 용종에서 시작되며,\n용종 단계에서 발견하면 당일 즉시 제거가 가능합니다.\n\n김정재탑내과는 선종발견율 49%의 숙련된 전문의가\n모든 대장내시경을 직접 시행합니다."}
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 이런 증상이 있다면 */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                대장내시경이란?
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                대장내시경은 항문을 통해 내시경을 삽입하여 직장에서 맹장까지 대장
-                전체의 내부를 직접 관찰하는 검사입니다. 대장 점막의 이상 유무를
-                정밀하게 확인할 수 있으며, 용종이 발견될 경우 검사 중 바로
-                절제하여 대장암을 예방할 수 있습니다. 국가암검진 프로그램에서
-                만 50세 이상 성인에게 정기적으로 권고하는 필수 검사입니다.
-              </p>
-            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              이런 증상이 있다면 <span className="text-sky-500">대장내시경</span>을 받아보세요
+            </h2>
           </ScrollReveal>
-
-          {/* 정기 검진의 중요성 */}
-          <ScrollReveal delay={100}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                정기 검진이 중요한 이유
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                대장암은 한국인에게 발생률이 높은 암 중 하나이지만, 조기에
-                발견하면 완치율이 매우 높습니다. 대부분의 대장암은 용종에서
-                시작되며, 용종이 암으로 진행되기까지 평균 5~10년이 걸립니다.
-                정기적인 대장내시경 검사를 통해 용종 단계에서 제거하면 대장암을
-                효과적으로 예방할 수 있습니다.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  "만 50세 이상은 5년마다 정기 검사 권장",
-                  "가족력이 있는 경우 40세부터 검사 권장",
-                  "용종 제거 이력이 있으면 1~3년 후 추적 검사",
-                  "염증성 장질환 환자는 주기적 감시 검사 필요",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 p-3">
-                    <div className="w-5 h-5 rounded-full bg-sky-100 flex items-center justify-center shrink-0 mt-0.5">
-                      <svg
-                        className="w-3 h-3 text-sky-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-gray-600 text-sm">{item}</span>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              {
+                name: "혈변·점액변",
+                desc: "변에 선홍색 피가 묻거나 점액이 섞여 나온다면\n즉시 대장내시경이 필요합니다.\n대장용종, 대장염, 대장암의 초기 증상일 수 있습니다.",
+              },
+              {
+                name: "변비·설사 반복",
+                desc: "변비와 설사가 번갈아 나타난다면\n과민성장증후군이나 대장염을 의심하세요.\n정확한 원인 파악을 위해 대장내시경으로\n직접 확인이 필요합니다.",
+              },
+              {
+                name: "복통·복부 팽만",
+                desc: "식후 또는 특정 음식 섭취 후 심한 복통이 지속된다면\n검사가 필요합니다.\n대장 내부를 직접 관찰하여\n정확한 원인을 찾습니다.",
+              },
+              {
+                name: "대장암 가족력",
+                desc: "직계 가족 중 대장암 환자가 있다면\n40세 이전부터 정기 검진을 강력히 권장합니다.\n조기 발견 시 완치율이 매우 높습니다.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.name} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                  <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
                   </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">{item.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* 검사 과정 */}
-          <ScrollReveal delay={200}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                검사 과정
-              </h2>
-              <div className="grid sm:grid-cols-3 gap-6">
-                {[
-                  {
-                    step: "01",
-                    title: "장정결 준비",
-                    desc: "검사 전날부터 지정된 장정결제를 복용하여 대장 내부를 깨끗이 비웁니다. 깨끗한 장정결이 정확한 검사의 핵심입니다.",
-                  },
-                  {
-                    step: "02",
-                    title: "내시경 검사",
-                    desc: "항문을 통해 내시경을 삽입하여 대장 전체를 관찰합니다. 용종이 발견되면 즉시 절제합니다. 검사 시간은 약 15~30분입니다.",
-                  },
-                  {
-                    step: "03",
-                    title: "결과 상담",
-                    desc: "회복 후 검사 결과를 바로 설명드립니다. 조직 검사를 시행한 경우 약 1주일 후 결과를 확인합니다.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.step}
-                    className="text-center p-6 bg-gray-50 rounded-2xl"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                      {item.step}
-                    </div>
-                    <h3 className="text-lg font-bold text-navy-900 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
+      {/* 장정결 안내 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              검사 전 이렇게 <span className="text-sky-500">준비</span>하세요
+            </h2>
+          </ScrollReveal>
+          <div className="space-y-4">
+            {[
+              { step: "검사 전날 점심", detail: "가벼운 식사 (죽, 미음)" },
+              { step: "검사 전날 저녁", detail: "장정결제 1차 복용 시작" },
+              { step: "검사 당일 새벽", detail: "장정결제 2차 복용" },
+              { step: "완료 기준", detail: "맑은 물 같은 변이 나올 때까지" },
+            ].map((item, i) => (
+              <ScrollReveal key={item.step} delay={i * 80}>
+                <div className="flex items-start gap-4 bg-navy-50 rounded-xl p-5">
+                  <div className="w-10 h-10 rounded-full bg-sky-500 text-white font-bold text-sm flex items-center justify-center shrink-0">
+                    {String(i + 1).padStart(2, "0")}
                   </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 진단 가능한 질환 */}
-          <ScrollReveal delay={300}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                대장내시경으로 진단 가능한 질환
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    name: "대장 용종",
-                    desc: "선종성 용종은 대장암의 전단계로, 발견 즉시 제거하여 암 발생을 예방합니다.",
-                  },
-                  {
-                    name: "대장암 (조기/진행성)",
-                    desc: "조기 대장암은 내시경 절제만으로 완치가 가능하며, 생존율이 90% 이상입니다.",
-                  },
-                  {
-                    name: "염증성 장질환",
-                    desc: "크론병, 궤양성 대장염 등 만성 염증성 장질환을 진단하고 경과를 관찰합니다.",
-                  },
-                  {
-                    name: "대장 게실",
-                    desc: "대장벽이 주머니처럼 돌출된 게실을 확인하고, 게실염 위험을 평가합니다.",
-                  },
-                  {
-                    name: "치질 / 치루",
-                    desc: "항문 주위 질환의 정도와 범위를 정확히 파악합니다.",
-                  },
-                  {
-                    name: "장결핵",
-                    desc: "결핵균에 의한 장 감염을 감별 진단합니다.",
-                  },
-                ].map((disease) => (
-                  <div
-                    key={disease.name}
-                    className="p-4 border border-gray-100 rounded-xl"
-                  >
-                    <h4 className="font-semibold text-navy-900 mb-1">
-                      {disease.name}
-                    </h4>
-                    <p className="text-gray-500 text-sm">{disease.desc}</p>
+                  <div>
+                    <h4 className="text-navy-900 font-bold text-base mb-1">{item.step}</h4>
+                    <p className="text-gray-600 text-sm">{item.detail}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 검사 전 준비 가이드 */}
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
           <ScrollReveal delay={400}>
-            <div className="bg-navy-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                검사 전 준비 가이드
-              </h2>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: "검사 3일 전",
-                    desc: "씨앗류(참외, 포도, 키위, 토마토 등), 잡곡밥, 김, 미역 등 섬유질이 많은 음식을 피합니다. 흰쌀밥, 두부, 계란 등 소화가 잘 되는 음식을 드세요.",
-                  },
-                  {
-                    title: "검사 전날",
-                    desc: "아침, 점심은 죽 또는 미음으로 가볍게 식사합니다. 저녁 6시 이후부터 금식하며, 처방된 장정결제 1차분을 복용합니다.",
-                  },
-                  {
-                    title: "검사 당일 새벽",
-                    desc: "장정결제 2차분을 지정된 시간에 복용합니다. 대변이 맑은 물처럼 나올 때까지 충분히 배출합니다.",
-                  },
-                  {
-                    title: "복용 약물",
-                    desc: "아스피린, 항응고제 등 혈액응고 관련 약물은 검사 5~7일 전부터 중단합니다(담당 의사 상의 필수). 당뇨약, 인슐린은 검사 당일 중단합니다.",
-                  },
-                  {
-                    title: "기타 안내",
-                    desc: "수면내시경 시 보호자 동반이 필요하며, 당일 운전은 불가합니다. 검사 후 1~2시간 안정 후 귀가하시며, 당일 무거운 음식은 피해주세요.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <div className="w-6 h-6 rounded bg-sky-500 flex items-center justify-center shrink-0 mt-0.5">
-                      <svg
-                        className="w-4 h-4 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-navy-900">
-                        {item.title}
-                      </h4>
-                      <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="mt-6 bg-sky-50 border border-sky-200 rounded-xl p-5">
+              <p className="text-gray-700 text-sm whitespace-pre-line">
+                {"장정결이 불충분하면 재검사가 필요합니다.\n충분한 장정결이 정확한 검사의 핵심입니다."}
+              </p>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* 검사 후 주의사항 */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-navy-900 mb-5 flex items-center gap-2">
+                <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                검사 후 주의사항
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "검사 직후: 복부 팽만감이 있을 수 있으나 곧 호전됩니다.",
+                  "식사: 검사 1~2시간 후 가벼운 식사 가능합니다.",
+                  "용종 절제 시: 2~3일 죽 식이, 1주일 음주·운동 금지합니다.",
+                  "이상 증상: 심한 복통, 혈변 시 즉시 내원하세요.",
+                ].map((c) => (
+                  <li key={c} className="flex items-start gap-2 text-gray-700 text-sm">
+                    <span className="text-sky-500 font-bold mt-0.5">※</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              자주 묻는 <span className="text-sky-500">질문</span>
+            </h2>
+          </ScrollReveal>
+          <FAQ
+            items={[
+              { q: "장정결이 너무 힘든데 더 쉬운 방법이 있나요?", a: "맛이 개선된 다양한 장정결제가 있습니다.\n내원 시 상담을 통해 가장 편한 방법을 선택하실 수 있습니다." },
+              { q: "대장내시경은 얼마나 자주 받아야 하나요?", a: "이상 없으면 5년마다, 용종 제거 후에는 1~3년마다 권장합니다.\n가족력이 있다면 더 자주 검사가 필요합니다." },
+              { q: "용종을 제거하면 대장암이 예방되나요?", a: "선종성 용종 제거로 대장암 발생을 90% 이상 예방할 수 있습니다.\n정기적인 추적 검사가 매우 중요합니다." },
+              { q: "수면 대장내시경도 가능한가요?", a: "네, 수면내시경으로 편안하게 받으실 수 있습니다.\n단, 보호자 동반과 당일 운전 금지가 필수입니다." },
+              { q: "대장내시경 중 용종이 발견되면 바로 제거하나요?", a: "네, 발견 즉시 당일 절제가 가능합니다.\n별도 예약 없이 한 번의 검사로 진단과 치료가 동시에 이루어집니다." },
+            ]}
+          />
         </div>
       </section>
     </>

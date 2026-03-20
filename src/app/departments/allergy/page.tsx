@@ -2,63 +2,14 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import FAQ from "@/components/FAQ";
 
-const conditions = [
-  {
-    name: "알레르기 비염",
-    description:
-      "먼지, 꽃가루, 동물 털 등 특정 알레르겐에 대한 면역 과민 반응으로 코 점막에 염증이 발생하는 질환입니다. 계절성과 통년성으로 나뉘며, 만성화되면 부비동염, 중이염, 수면 장애 등 합병증을 유발할 수 있습니다. 원인 알레르겐을 파악하고 회피하는 것이 치료의 첫걸음입니다.",
-    symptoms: [
-      "연속적인 재채기",
-      "맑은 콧물, 코막힘",
-      "코 및 눈 주위 가려움",
-      "후비루(목 뒤로 넘어가는 콧물)",
-    ],
-  },
-  {
-    name: "두드러기",
-    description:
-      "피부에 갑작스럽게 붉고 부풀어 오른 팽진(발진)이 나타나는 알레르기 반응입니다. 음식, 약물, 감염, 스트레스, 물리적 자극 등 다양한 원인에 의해 발생하며, 6주 이상 지속되면 만성 두드러기로 분류됩니다. 심한 경우 혈관부종이나 아나필락시스로 진행할 수 있어 주의가 필요합니다.",
-    symptoms: [
-      "피부 발적 및 팽진(부풀어 오름)",
-      "심한 가려움증",
-      "팽진의 위치가 수시로 변함",
-      "입술, 눈꺼풀 부종(혈관부종)",
-    ],
-  },
-  {
-    name: "아토피 피부염",
-    description:
-      "유전적 소인과 환경적 요인이 복합적으로 작용하여 발생하는 만성 재발성 피부 질환입니다. 피부 장벽 기능의 이상으로 수분 손실이 증가하고 외부 자극에 취약해지며, 심한 가려움증과 건조함이 특징입니다. 적절한 보습 관리와 악화 요인 회피가 치료의 기본이 됩니다.",
-    symptoms: [
-      "심한 가려움증(특히 야간)",
-      "피부 건조, 거칠어짐",
-      "붉은 발진, 진물, 딱지",
-      "피부 주름이 깊어지고 두꺼워짐",
-    ],
-  },
-  {
-    name: "식품 알레르기",
-    description:
-      "특정 음식물의 단백질에 대해 면역 시스템이 과민하게 반응하여 발생하는 질환입니다. 우유, 달걀, 밀, 땅콩, 갑각류 등이 흔한 원인 식품이며, 경미한 피부 반응부터 호흡곤란, 아나필락시스까지 다양한 증상이 나타날 수 있습니다. 정확한 원인 식품 파악과 철저한 회피가 가장 중요한 관리 방법입니다.",
-    symptoms: [
-      "섭취 후 피부 발진, 두드러기",
-      "입술, 혀, 인후 부종",
-      "복통, 구토, 설사",
-      "심한 경우 호흡곤란, 혈압 저하",
-    ],
-  },
-  {
-    name: "알레르기 검사",
-    description:
-      "알레르기 질환의 원인이 되는 특정 알레르겐을 규명하기 위한 검사입니다. 혈액검사(특이 IgE 항체 검사)를 통해 수십 가지 알레르겐에 대한 감작 여부를 한 번에 확인할 수 있으며, 검사 결과를 바탕으로 맞춤형 회피 전략과 치료 계획을 수립합니다.",
-    symptoms: [
-      "원인 불명의 반복적 알레르기 증상",
-      "특정 음식 섭취 후 이상 반응",
-      "계절에 따른 비염, 결막염 증상",
-      "알레르기 가족력이 있는 경우",
-    ],
-  },
+const diseases = [
+  { name: "알레르기 비염", desc: "재채기, 맑은 콧물, 코막힘이 반복된다면 알레르기 비염일 수 있습니다.\n집먼지진드기, 꽃가루, 동물털 등이 주요 원인입니다.\n항원 검사로 원인을 찾아 효과적으로 치료합니다." },
+  { name: "두드러기", desc: "피부에 갑자기 붉은 팽진이 생기고 심한 가려움이 동반됩니다.\n음식, 약물, 스트레스 등 다양한 원인으로 발생합니다.\n원인 파악과 항히스타민제로 증상을 조절합니다." },
+  { name: "아토피 피부염", desc: "만성 재발성 습진으로 심한 가려움과 피부 건조가 특징입니다.\n어린 시절부터 시작되는 경우가 많으며 성인에서도 나타납니다.\n보습 관리와 항원 회피가 치료의 기본입니다." },
+  { name: "식품 알레르기", desc: "특정 음식 섭취 후 두드러기, 복통, 구토가 나타납니다.\n혈액검사로 원인 식품을 정확히 파악할 수 있습니다.\n심한 경우 아나필락시스로 응급 상황이 될 수 있습니다." },
 ];
 
 export default function AllergyPage() {
@@ -69,106 +20,147 @@ export default function AllergyPage() {
         subtitle="알레르기 질환의 정확한 원인 분석과 맞춤 치료를 제공합니다."
       />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* Center overview */}
-          <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                센터 소개
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                김정재탑내과의원 알레르기센터는 알레르기 비염, 두드러기, 아토피
-                피부염, 식품 알레르기 등 다양한 알레르기 질환을 전문적으로
-                진료합니다. 혈액검사 기반의 정밀 알레르기 검사를 통해 원인
-                알레르겐을 정확히 파악하고, 환자 개인별 맞춤 치료 및 생활 관리
-                방법을 안내합니다. 재발 방지와 삶의 질 향상을 목표로 체계적인
-                관리 프로그램을 운영하고 있습니다.
-              </p>
-            </div>
-          </ScrollReveal>
+      <WhyKimtop
+        box="알레르기, 왜 김정재탑내과일까?+"
+        overlay="알레르기 원인 분석"
+        description="혈액 알레르기 검사로 원인 항원을 정확히 찾아 근본적으로 치료합니다."
+        features={["혈액 알레르기 검사", "원인 항원 분석", "면역치료 연계", "전문의 직접 진료"]}
+      />
 
-          {/* Conditions */}
-          <div className="space-y-10">
-            {conditions.map((condition, index) => (
-              <ScrollReveal key={condition.name} delay={index * 80}>
-                <div className="border border-gray-100 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
-                  <h3 className="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-sky-500 inline-block"></span>
-                    {condition.name}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {condition.description}
-                  </p>
-                  <div>
-                    <h4 className="text-sm font-semibold text-navy-900 mb-2">
-                      주요 증상 및 적응증
-                    </h4>
-                    <ul className="grid sm:grid-cols-2 gap-2">
-                      {condition.symptoms.map((symptom) => (
-                        <li
-                          key={symptom}
-                          className="flex items-center gap-2 text-gray-500 text-sm"
-                        >
-                          <svg
-                            className="w-4 h-4 text-sky-500 shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          {symptom}
-                        </li>
-                      ))}
-                    </ul>
+      {/* Stats Banner */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">혈액 알레르기 검사</p>
+              <p className="text-sky-300 text-sm font-medium">100여 가지 항원 분석</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">원인 항원 분석</p>
+              <p className="text-sky-300 text-sm font-medium">정밀 원인 파악</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">면역치료 연계</p>
+              <p className="text-sky-300 text-sm font-medium">근본적 치료 가능</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <ScrollReveal>
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+                <div
+                  className="w-full h-full bg-cover bg-center img-zoom"
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&auto=format&fit=crop')" }}
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">알레르기 전문 진료</h2>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"알레르기 원인을 정확히 찾아 근본적으로 치료합니다."}</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Disease Cards */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              주요 진료 <span className="text-sky-500">질환</span>
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {diseases.map((d, i) => (
+              <ScrollReveal key={d.name} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                  <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
                   </div>
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">{d.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{d.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Testing section */}
-          <ScrollReveal delay={200}>
-            <div className="mt-16 bg-navy-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                검사 안내
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                알레르기 원인을 정확히 파악하기 위해 혈액 기반 정밀 검사를
-                시행합니다. 검사 결과에 따라 맞춤형 회피 요법 및 치료 계획을
-                수립합니다.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-5">
-                  <h4 className="font-semibold text-navy-900 mb-2">
-                    MAST 알레르기 검사
-                  </h4>
-                  <p className="text-gray-500 text-sm">
-                    소량의 혈액 채취만으로 음식, 흡입 항원 등 수십 가지
-                    알레르겐에 대한 특이 IgE 항체를 동시에 측정합니다. 항히스타민제
-                    복용 중에도 검사가 가능하며, 결과는 약 5~7일 후 확인할 수
-                    있습니다.
-                  </p>
+      {/* Diagnosis */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              <span className="text-sky-500">검사</span> 방법
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {["혈액 알레르기 검사", "피부반응 검사", "원인 항원 분석"].map((item, i) => (
+              <ScrollReveal key={item} delay={i * 100}>
+                <div className="text-center p-6 bg-navy-50 rounded-2xl">
+                  <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <p className="text-navy-900 font-semibold text-sm">{item}</p>
                 </div>
-                <div className="bg-white rounded-xl p-5">
-                  <h4 className="font-semibold text-navy-900 mb-2">
-                    총 IgE 검사
-                  </h4>
-                  <p className="text-gray-500 text-sm">
-                    혈중 총 면역글로불린 E(IgE) 수치를 측정하여 알레르기 체질
-                    여부를 평가합니다. 아토피 피부염, 알레르기 비염, 천식 등의
-                    진단 보조 자료로 활용되며, 치료 경과 모니터링에도 유용합니다.
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cautions */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+                <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                주의사항
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "원인 항원 노출 최소화",
+                  "항히스타민제 상비 권장",
+                ].map((c) => (
+                  <li key={c} className="flex items-start gap-2 text-gray-700 text-sm">
+                    <span className="text-sky-500 font-bold mt-0.5">※</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              자주 묻는 <span className="text-sky-500">질문</span>
+            </h2>
+          </ScrollReveal>
+          <FAQ items={[
+            { q: "알레르기 검사는 어떻게 진행되나요?", a: "혈액 채취로 100여 가지 항원에 대한 반응을 확인합니다." },
+            { q: "알레르기는 완치가 가능한가요?", a: "면역치료로 근본적인 치료가 가능한 경우도 있습니다." },
+            { q: "음식 알레르기가 있으면 평생 못 먹나요?", a: "전문의 지도하에 면역치료로 내성을 키울 수 있습니다." },
+            { q: "두드러기가 갑자기 생겼을 때 어떻게 해야 하나요?", a: "원인 물질 회피 후 항히스타민제 복용, 심하면 즉시 내원하세요." },
+            { q: "알레르기 비염과 감기는 어떻게 구분하나요?", a: "알레르기는 맑은 콧물과 재채기가 주증상이며 발열이 없습니다." },
+          ]} />
         </div>
       </section>
     </>

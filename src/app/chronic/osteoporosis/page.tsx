@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import CountUp from "@/components/CountUp";
+import FAQ from "@/components/FAQ";
 
 export default function OsteoporosisPage() {
   return (
@@ -10,251 +14,187 @@ export default function OsteoporosisPage() {
         title="골다공증"
         subtitle="뼈 건강을 지키는 조기 진단과 예방 치료"
       />
+      <WhyKimtop
+        box="골다공증, 왜 김정재탑내과일까?+"
+        overlay="골다공증 전문 클리닉"
+        description="골다공증은 조기 발견과 꾸준한 관리가 중요합니다."
+        features={["전문의 직접 진료", "골밀도 검사", "개인별 맞춤 관리", "낙상 예방 관리"]}
+      />
+
+      {/* Stats Banner */}
+      <section className="py-16 bg-gradient-to-r from-navy-900 to-navy-800">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-2">3명 중 1명</p>
+              <p className="text-sky-300 text-sm font-medium">50세 이상 여성</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-2">2~3배</p>
+              <p className="text-sky-300 text-sm font-medium">골절 위험 감소(치료 시)</p>
+            </div>
+            <CountUp end={54} suffix="세" label="골밀도 검사 권장" />
+          </div>
+        </div>
+      </section>
+
+      {/* Intro Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* 골다공증이란 */}
+        <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                골다공증이란?
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                골다공증은 뼈의 밀도와 질이 저하되어 뼈가 약해지고 골절 위험이
-                크게 증가하는 전신 골격 질환입니다. 뼈에 작은 구멍이 많이 생겨
-                스펀지처럼 변하며, 가벼운 충격에도 쉽게 골절이 발생할 수 있습니다.
-                특히 척추, 고관절, 손목 부위에서 골절이 자주 발생하며, 고관절 골절의
-                경우 심각한 합병증과 사망률 증가로 이어질 수 있어 조기 진단과
-                예방이 매우 중요합니다.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* 위험 인자 */}
-          <ScrollReveal delay={100}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                위험 인자
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-navy-50 rounded-2xl p-8">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">
-                    주요 위험 인자
-                  </h3>
-                  <ul className="space-y-3 text-gray-600 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      폐경 후 여성 (에스트로겐 급격히 감소)
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      고령 (65세 이상 남녀 모두)
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      골다공증 가족력
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      저체중 (BMI 18.5 미만)
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      이전 골절 병력
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-navy-50 rounded-2xl p-8">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">
-                    생활습관 및 기타 요인
-                  </h3>
-                  <ul className="space-y-3 text-gray-600 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      칼슘, 비타민 D 부족
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      흡연 및 과음
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      운동 부족, 장기간 부동 상태
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      장기 스테로이드 복용
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-sky-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                      갑상선 기능 항진증, 류마티스 관절염 등 동반 질환
-                    </li>
-                  </ul>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
+                <Image
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop"
+                  alt="골다공증 관리"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 증상 */}
-          <ScrollReveal delay={200}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                골다공증의 증상
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                골다공증은 &apos;소리 없는 질환&apos;으로 불립니다. 골절이 발생하기
-                전까지는 대부분 자각 증상이 없으며, 다음과 같은 변화가 나타날 수
-                있습니다.
-              </p>
-              <div className="bg-navy-50 rounded-2xl p-8">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600">키가 줄어듦 (척추 압박 골절로 인한 신장 감소)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600">등이 굽어짐 (척추 후만증)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600">만성 허리 통증, 등 통증</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600">가벼운 충격에도 골절 발생 (넘어지거나 기침 시)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600">치아 탈락, 잇몸 질환의 악화</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 진단 */}
-          <ScrollReveal delay={300}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                진단 - 골밀도 검사 (DEXA)
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                골다공증의 표준 진단법은 이중에너지 X선 흡수계측법(DEXA)을 이용한
-                골밀도 검사입니다. 요추와 대퇴골 부위의 골밀도를 측정하여 T-점수로
-                평가합니다.
-              </p>
-              <div className="bg-navy-50 rounded-2xl p-8">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-navy-200">
-                        <th className="text-left py-3 text-navy-900 font-semibold">분류</th>
-                        <th className="text-center py-3 text-navy-900 font-semibold">T-점수</th>
-                        <th className="text-left py-3 text-navy-900 font-semibold">설명</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-gray-600">
-                      <tr className="border-b border-navy-100">
-                        <td className="py-3">정상</td>
-                        <td className="text-center py-3">-1.0 이상</td>
-                        <td className="py-3">건강한 젊은 성인의 평균 범위</td>
-                      </tr>
-                      <tr className="border-b border-navy-100">
-                        <td className="py-3">골감소증</td>
-                        <td className="text-center py-3">-1.0 ~ -2.5</td>
-                        <td className="py-3">골밀도가 감소하기 시작한 단계</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 font-medium text-navy-900">골다공증</td>
-                        <td className="text-center py-3 font-medium text-navy-900">-2.5 이하</td>
-                        <td className="py-3">골절 위험이 높은 상태로 치료 필요</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p className="text-gray-500 text-xs mt-4">
-                  * 65세 이상 여성, 70세 이상 남성, 또는 위험 인자가 있는 경우 정기적
-                  골밀도 검사를 권장합니다.
+              <div>
+                <h2 className="text-3xl font-bold text-navy-900 mb-6">
+                  골다공증이란?
+                </h2>
+                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                  {"골다공증은 뼈가 약해져 작은 충격에도 골절되는 질환입니다.\n조기 발견과 꾸준한 치료가 중요합니다.\n폐경 후 여성과 고령 남성에서 주로 발생합니다."}
                 </p>
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
 
-          {/* 치료 */}
-          <ScrollReveal delay={400}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                치료 방법
+      {/* Risk Cards */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                골다공증 골절 위험
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                김정재탑내과의원에서는 골밀도 검사 결과와 골절 위험도를 종합적으로
-                평가하여 환자별 맞춤 치료를 제공합니다.
+              <p className="text-gray-500">
+                골다공증으로 인해 발생할 수 있는 골절 유형입니다
               </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "척추 압박골절",
+                desc: "허리가 점점 구부러지고 키가 줄어듭니다.\n심한 경우 1~2cm 이상 줄어들 수 있습니다.",
+              },
+              {
+                title: "고관절 골절",
+                desc: "낙상 시 엉덩이 골절로 장기 입원, 사망위험이 증가합니다.\n고령자에서 특히 위험합니다.",
+              },
+              {
+                title: "손목 골절",
+                desc: "넘어질 때 손목을 짚으면서 골절이 잘 발생합니다.\n가벼운 충격에도 골절이 일어납니다.",
+              },
+              {
+                title: "늑골 골절",
+                desc: "기침이나 재채기로도 갈비뼈가 부러질 수 있습니다.\n골다공증이 심한 경우 나타납니다.",
+              },
+            ].map((item, idx) => (
+              <ScrollReveal key={idx} delay={idx * 100}>
+                <div className="bg-white rounded-2xl shadow-md p-8 h-full card-hover-glow">
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                    {item.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prevention Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                예방 및 치료
+              </h2>
+              <p className="text-gray-500">
+                골다공증 예방과 치료를 위한 관리 방법
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {["칼슘 섭취", "비타민D", "체중 부하 운동", "낙상 예방", "약물치료"].map(
+              (item, idx) => (
+                <ScrollReveal key={idx} delay={idx * 100}>
+                  <div className="bg-gray-50 rounded-2xl shadow-md p-6 text-center h-full card-hover-glow">
+                    <span className="inline-flex items-center justify-center w-12 h-12 bg-sky-500 text-white rounded-full font-bold text-lg mb-4">
+                      {idx + 1}
+                    </span>
+                    <h3 className="text-base font-bold text-navy-900">
+                      {item}
+                    </h3>
+                  </div>
+                </ScrollReveal>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Cautions */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-white rounded-2xl shadow-lg p-10 border-l-4 border-sky-500">
+              <h2 className="text-2xl font-bold text-navy-900 mb-6">
+                골다공증 관리 시 주의사항
+              </h2>
               <div className="space-y-4">
-                <div className="bg-navy-50 rounded-2xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">약물 치료</h3>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>· 비스포스포네이트 (알렌드로네이트, 졸레드론산 등): 뼈 파괴 억제</li>
-                    <li>· 데노수맙: 6개월마다 피하 주사, 뼈 흡수 억제</li>
-                    <li>· 부갑상선 호르몬 제제 (테리파라타이드): 뼈 형성 촉진</li>
-                    <li>· 선택적 에스트로겐 수용체 조절제 (SERM): 폐경 후 여성</li>
-                  </ul>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-navy-50 rounded-2xl p-6">
-                    <h3 className="font-semibold text-navy-900 mb-2">
-                      칼슘 보충
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      하루 권장량: 800~1,000mg. 유제품, 뼈째 먹는 생선, 두부,
-                      녹색 채소 등을 통해 섭취하고, 부족 시 보충제를 복용합니다.
+                {[
+                  "폐경 후 여성은 매년 골밀도 검사 권장",
+                  "칼슘은 음식으로 섭취 우선",
+                  "햇빛 노출로 비타민D 합성",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center font-bold text-sm">
+                      {idx + 1}
+                    </span>
+                    <p className="text-gray-700 leading-relaxed pt-1">
+                      {item}
                     </p>
                   </div>
-                  <div className="bg-navy-50 rounded-2xl p-6">
-                    <h3 className="font-semibold text-navy-900 mb-2">
-                      비타민 D 보충
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      하루 권장량: 800~1,000IU. 칼슘 흡수를 돕고 근력 유지에
-                      필수적입니다. 혈중 비타민 D 수치를 확인 후 적정 용량을
-                      결정합니다.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
 
-          {/* 운동 권장 */}
-          <ScrollReveal delay={500}>
-            <div className="bg-sky-50 rounded-2xl p-8 border border-sky-100">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                뼈 건강을 위한 운동 권장 사항
+      {/* FAQ */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                자주 묻는 질문
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-600">
-                <div className="bg-white rounded-xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">체중 부하 운동</h3>
-                  <p className="text-sm">
-                    걷기, 조깅, 계단 오르기, 등산 등 뼈에 적절한 자극을 주는 운동을
-                    주 5회 이상 실시합니다.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">근력 강화 운동</h3>
-                  <p className="text-sm">
-                    아령, 탄력밴드 운동 등을 주 2~3회 실시하여 근력을 유지하고
-                    골밀도 감소를 예방합니다.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl p-6">
-                  <h3 className="font-semibold text-navy-900 mb-2">균형 감각 운동</h3>
-                  <p className="text-sm">
-                    태극권, 요가, 한 발 서기 등 균형 감각을 향상시켜 낙상 위험을
-                    줄이는 운동을 병행합니다.
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-500">
+                골다공증에 대해 환자분들이 자주 묻는 질문입니다
+              </p>
             </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <FAQ
+              items={[
+                { q: "골다공증은 증상이 없나요?", a: "골절이 생기기 전까지 증상이 없어 정기 검사가 중요합니다." },
+                { q: "골밀도 검사는 어디서 받나요?", a: "54세, 60세, 66세 여성은 국가검진에서 무료로 받을 수 있습니다." },
+                { q: "우유를 마시면 골다공증을 예방할 수 있나요?", a: "칼슘 보충에 도움이 되나 비타민D와 운동도 함께 필요합니다." },
+                { q: "골다공증 약은 어떻게 복용하나요?", a: "주 1회 또는 월 1회 복용하며 복용 방법을 정확히 지켜야 합니다." },
+                { q: "남성도 골다공증이 생기나요?", a: "네, 70세 이상 남성에서 발생률이 높아집니다." },
+              ]}
+            />
           </ScrollReveal>
         </div>
       </section>

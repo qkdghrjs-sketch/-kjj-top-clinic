@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import FAQ from "@/components/FAQ";
 
 export default function IVTherapyPage() {
   return (
@@ -10,195 +13,169 @@ export default function IVTherapyPage() {
         title="수액클리닉"
         subtitle="피로 회복과 면역력 증진을 위한 맞춤 수액 치료"
       />
+      <WhyKimtop
+        box="수액클리닉, 왜 김정재탑내과일까?+"
+        overlay="수액 전문 클리닉"
+        description="목적에 맞는 다양한 수액 치료로 건강하고 활기찬 생활을 지원합니다."
+        features={["전문의 직접 처방", "다양한 수액 종류", "안전한 시술", "빠른 효과"]}
+      />
+
+      {/* Stats Banner */}
+      <section className="py-16 bg-gradient-to-r from-navy-900 to-navy-800">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-2">다양한 종류</p>
+              <p className="text-sky-300 text-sm font-medium">맞춤형 수액</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-2">30~60분</p>
+              <p className="text-sky-300 text-sm font-medium">투여 시간</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-white mb-2">전문의</p>
+              <p className="text-sky-300 text-sm font-medium">직접 처방</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* 수액치료 소개 */}
+        <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                수액치료란?
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
+                <Image
+                  src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&auto=format&fit=crop"
+                  alt="수액클리닉 소개"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-navy-900 mb-6">
+                  수액클리닉 소개
+                </h2>
+                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                  {"피로 회복부터 면역 강화까지 목적에 맞는 맞춤형 수액 치료를 제공합니다.\n경구 복용보다 흡수율이 100%로 빠른 효과를 기대할 수 있습니다.\n전문의가 개인 건강 상태를 파악 후 처방합니다."}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* IV Type Cards */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                수액 종류
               </h2>
-              <p className="text-gray-600 leading-relaxed">
-                수액치료는 정맥을 통해 수분, 비타민, 미네랄, 아미노산 등 필요한
-                영양소를 직접 체내에 공급하는 치료법입니다. 경구 복용 대비
-                흡수율이 높아 빠르고 효과적인 영양 공급이 가능하며, 피로 회복,
-                면역력 증진, 컨디션 개선에 도움을 줍니다.
+              <p className="text-gray-500">
+                증상과 목적에 맞는 맞춤 수액을 처방합니다
               </p>
             </div>
           </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "피로회복 수액",
+                desc: "비타민B군, 아미노산, 마그네슘을 공급하여 피로와 무기력증을 회복시킵니다.\n과로, 만성 피로에 효과적입니다.",
+              },
+              {
+                title: "면역 강화 수액",
+                desc: "고용량 비타민C(10~20g)를 투여하여 면역력을 높이고 항산화 효과를 냅니다.\n감기 예방과 회복에 도움됩니다.",
+              },
+              {
+                title: "마늘 수액",
+                desc: "알리신 성분으로 피로 회복, 혈액순환 개선, 활력 증진에 효과적입니다.\n체력 저하와 무기력감에 추천합니다.",
+              },
+              {
+                title: "백옥 수액",
+                desc: "글루타치온을 투여하여 미백 효과와 강력한 항산화 작용을 합니다.\n피부 톤 개선과 노화 방지에 효과적입니다.",
+              },
+            ].map((item, idx) => (
+              <ScrollReveal key={idx} delay={idx * 100}>
+                <div className="bg-white rounded-2xl shadow-md p-8 h-full card-hover-glow">
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                    {item.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* 수액 종류 */}
-          <ScrollReveal delay={100}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                맞춤 수액 프로그램
+      {/* Process Steps */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                치료 과정
               </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    name: "피로회복 수액",
-                    desc: "만성 피로, 체력 저하 시 에너지 회복을 도와주는 수액입니다. 비타민B군, 아미노산, 타우린 등이 포함되어 세포의 에너지 대사를 활성화합니다.",
-                    recommended:
-                      "만성 피로를 느끼는 직장인, 과로 후 체력 회복이 필요한 분, 수험생",
-                    duration: "약 40~60분",
-                    color: "border-l-sky-500",
-                  },
-                  {
-                    name: "면역증진 수액",
-                    desc: "고용량 비타민C와 셀레늄, 아연 등 면역 관련 영양소를 공급하여 면역 기능을 강화합니다. 환절기 감기 예방 및 면역력이 저하된 분에게 추천합니다.",
-                    recommended:
-                      "감기에 자주 걸리는 분, 환절기 면역력 강화가 필요한 분, 수술 후 회복기",
-                    duration: "약 40~60분",
-                    color: "border-l-green-500",
-                  },
-                  {
-                    name: "비타민 수액 (백옥주사/신데렐라주사)",
-                    desc: "글루타치온, 비타민C 등 항산화 성분을 공급하여 피부 톤 개선과 항산화 효과를 제공합니다. 피부 건강과 전반적인 컨디션 향상에 도움을 줍니다.",
-                    recommended:
-                      "피부 톤 개선을 원하는 분, 항산화 관리가 필요한 분, 피부 건강이 걱정되는 분",
-                    duration: "약 30~40분",
-                    color: "border-l-purple-500",
-                  },
-                  {
-                    name: "감기 수액",
-                    desc: "감기 초기 증상 완화를 위한 수액으로, 수분 보충과 함께 비타민C, 해열·소염 성분을 공급합니다. 빠른 감기 회복을 도와줍니다.",
-                    recommended:
-                      "감기 초기 증상(오한, 인후통, 발열)이 있는 분, 감기 회복이 더딘 분",
-                    duration: "약 30~50분",
-                    color: "border-l-orange-500",
-                  },
-                  {
-                    name: "숙취해소 수액",
-                    desc: "음주 후 탈수 해소, 간 해독을 돕는 수액입니다. 수분, 전해질, 간 보호 성분(글루타치온, 아미노산)을 공급하여 숙취 증상을 빠르게 완화합니다.",
-                    recommended:
-                      "심한 숙취로 고생하는 분, 잦은 음주로 간 건강이 걱정되는 분, 빠른 회복이 필요한 분",
-                    duration: "약 30~60분",
-                    color: "border-l-amber-500",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`bg-navy-50 rounded-2xl p-8 border-l-4 ${item.color}`}
-                  >
-                    <h3 className="text-xl font-bold text-navy-900 mb-3">
-                      {item.name}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <div className="flex-1 bg-white rounded-xl p-4">
-                        <p className="text-xs font-semibold text-sky-500 mb-1">
-                          추천 대상
-                        </p>
-                        <p className="text-gray-700 text-sm">
-                          {item.recommended}
-                        </p>
-                      </div>
-                      <div className="sm:w-32 bg-white rounded-xl p-4 text-center">
-                        <p className="text-xs font-semibold text-sky-500 mb-1">
-                          소요 시간
-                        </p>
-                        <p className="text-gray-700 text-sm font-medium">
-                          {item.duration}
-                        </p>
-                      </div>
+              <p className="text-gray-500">
+                간편하고 안전한 4단계 과정
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { step: "01", title: "상담" },
+              { step: "02", title: "전문의 처방" },
+              { step: "03", title: "수액 투여(30~60분)" },
+              { step: "04", title: "귀가" },
+            ].map((item, idx) => (
+              <ScrollReveal key={idx} delay={idx * 100}>
+                <div className="relative bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                  <span className="text-5xl font-black text-sky-500/20">
+                    {item.step}
+                  </span>
+                  <h3 className="text-lg font-bold text-navy-900 mt-2">
+                    {item.title}
+                  </h3>
+                  {idx < 3 && (
+                    <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-sky-500 text-2xl">
+                      →
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
+                  )}
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* 시술 과정 */}
-          <ScrollReveal delay={200}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                수액 치료 과정
+      {/* FAQ */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">
+                자주 묻는 질문
               </h2>
-              <div className="space-y-4">
-                {[
-                  {
-                    step: "01",
-                    title: "상담 및 건강 상태 확인",
-                    desc: "현재 건강 상태, 증상, 복용 약물 등을 파악하여 적합한 수액을 선정합니다.",
-                  },
-                  {
-                    step: "02",
-                    title: "맞춤 수액 조제",
-                    desc: "환자의 상태에 따라 최적의 영양 성분을 조합하여 수액을 준비합니다.",
-                  },
-                  {
-                    step: "03",
-                    title: "수액 투여",
-                    desc: "편안한 리클라이너에서 30~60분간 수액을 투여합니다. 투여 중 활력 징후를 모니터링합니다.",
-                  },
-                  {
-                    step: "04",
-                    title: "경과 관찰 및 귀가",
-                    desc: "수액 투여 후 이상 반응 여부를 확인하고, 주의사항을 안내한 후 귀가합니다.",
-                  },
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-4 border border-gray-200 rounded-xl p-5"
-                  >
-                    <span className="flex-shrink-0 w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                      {item.step}
-                    </span>
-                    <div>
-                      <h3 className="font-bold text-navy-900">{item.title}</h3>
-                      <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 안내 사항 */}
-          <ScrollReveal delay={300}>
-            <div className="bg-navy-50 rounded-2xl p-8 mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                수액 치료 안내사항
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "수액 치료 전 공복이 아닌 가벼운 식사를 권장합니다.",
-                  "알레르기 병력이 있는 경우 반드시 사전에 알려주세요.",
-                  "수액 치료 후 충분한 수분 섭취를 권장합니다.",
-                  "정기적인 수액 치료 시 더 좋은 효과를 기대할 수 있습니다.",
-                  "임산부, 신장 질환자는 사전 상담이 필요합니다.",
-                  "치료 당일 과도한 운동은 피해주세요.",
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3 bg-white rounded-xl p-4"
-                  >
-                    <span className="flex-shrink-0 w-6 h-6 bg-sky-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
-                      !
-                    </span>
-                    <p className="text-gray-700 text-sm">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 상담 안내 */}
-          <ScrollReveal delay={400}>
-            <div className="text-center bg-navy-900 text-white rounded-2xl p-10">
-              <h2 className="text-2xl font-bold mb-3">
-                수액클리닉 상담 예약
-              </h2>
-              <p className="text-navy-300 mb-6">
-                증상과 목적에 맞는 맞춤 수액 치료를 받아보세요. 당일 시술도
-                가능합니다.
-              </p>
-              <p className="text-sky-400 text-2xl font-bold">
-                ☎ 02-6798-8880
+              <p className="text-gray-500">
+                수액클리닉에 대해 환자분들이 자주 묻는 질문입니다
               </p>
             </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <FAQ
+              items={[
+                { q: "수액치료는 얼마나 자주 받아야 효과가 있나요?", a: "목적에 따라 다르며 주 1~2회 또는 월 1~2회를 권장합니다." },
+                { q: "수액치료 후 바로 일상생활이 가능한가요?", a: "네, 투여 후 바로 일상생활이 가능합니다." },
+                { q: "고용량 비타민C 수액은 안전한가요?", a: "신장 기능이 정상인 분에게는 안전하며, 신장질환자는 사전 상담이 필요합니다." },
+                { q: "마늘 수액을 맞으면 냄새가 나나요?", a: "투여 중 마늘 냄새가 날 수 있으나 시간이 지나면 사라집니다." },
+                { q: "수액치료와 영양제 복용 중 어떤 게 더 효과적인가요?", a: "수액은 100% 흡수되어 즉각적인 효과를 기대할 수 있습니다." },
+              ]}
+            />
           </ScrollReveal>
         </div>
       </section>

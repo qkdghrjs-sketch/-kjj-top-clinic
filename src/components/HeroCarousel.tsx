@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 interface SlideData {
   image: string;
@@ -11,6 +12,8 @@ interface SlideData {
   subtitle: string;
   tagLabel: string;
   tags: string[];
+  buttonText: string;
+  buttonHref: string;
 }
 
 const slides: SlideData[] = [
@@ -35,6 +38,8 @@ const slides: SlideData[] = [
       "심장",
       "폐",
     ],
+    buttonText: "내시경클리닉 보기 →",
+    buttonHref: "/endoscopy/gastroscopy",
   },
   {
     image:
@@ -53,6 +58,8 @@ const slides: SlideData[] = [
       "건강검진 · 위·대장내시경을 중심으로 진단의 기준을 세웁니다.",
     tagLabel: "핵심 진료",
     tags: ["건강검진", "위내시경", "대장내시경", "심장", "폐"],
+    buttonText: "검진센터 보기 →",
+    buttonHref: "/checkup/cancer",
   },
   {
     image:
@@ -69,6 +76,8 @@ const slides: SlideData[] = [
       "만성질환은 한 번의 치료보다 지속적인 관리가 중요합니다.",
     tagLabel: "만성질환",
     tags: ["고혈압", "당뇨", "고지혈증", "골다공증", "심장 폐질환"],
+    buttonText: "만성질환클리닉 보기 →",
+    buttonHref: "/chronic/hypertension",
   },
 ];
 
@@ -218,15 +227,18 @@ export default function HeroCarousel() {
               className="animate-fade-in-up animation-delay-600"
             >
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="group border-2 border-white/40 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm">
-                  진료안내 보기
-                  <span className="inline-block ml-1.5 group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </button>
-                <button className="bg-sky-500 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30">
+                <Link
+                  href={slide.buttonHref}
+                  className="group border-2 border-white/40 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
+                >
+                  {slide.buttonText}
+                </Link>
+                <a
+                  href="tel:02-6798-8880"
+                  className="bg-sky-500 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30"
+                >
                   전화 예약: 02-6798-8880
-                </button>
+                </a>
               </div>
             </div>
           </div>

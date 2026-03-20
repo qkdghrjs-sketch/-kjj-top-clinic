@@ -1,45 +1,120 @@
 "use client";
 
+import { useState } from "react";
+
+type TooltipId = "blog" | "phone" | "kakao" | null;
+
 export default function FloatingButtons() {
+  const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
+
+  const toggle = (id: TooltipId) => {
+    setActiveTooltip(activeTooltip === id ? null : id);
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-      {/* 블로그 바로가기 */}
-      <a
-        href="https://blog.naver.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
-        aria-label="블로그 바로가기"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-        </svg>
-      </a>
+      {/* 블로그 */}
+      <div className="relative">
+        {activeTooltip === "blog" && (
+          <Tooltip
+            text="네이버 블로그로 이동합니다"
+            href="https://blog.naver.com"
+            external
+            onClose={() => setActiveTooltip(null)}
+          />
+        )}
+        <button
+          onClick={() => toggle("blog")}
+          className="w-14 h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+          style={{ backgroundColor: "#03C75A" }}
+          aria-label="블로그 바로가기"
+        >
+          <span className="text-white font-extrabold text-2xl leading-none">N</span>
+        </button>
+      </div>
 
       {/* 전화예약 */}
-      <a
-        href="tel:02-6798-8880"
-        className="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
-        aria-label="전화예약"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      </a>
+      <div className="relative">
+        {activeTooltip === "phone" && (
+          <Tooltip
+            text="02-6798-8880으로 전화 연결합니다"
+            href="tel:02-6798-8880"
+            onClose={() => setActiveTooltip(null)}
+          />
+        )}
+        <button
+          onClick={() => toggle("phone")}
+          className="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+          aria-label="전화예약"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+        </button>
+      </div>
 
       {/* 카카오톡 */}
-      <a
-        href="https://pf.kakao.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
-        style={{ backgroundColor: "#FEE500" }}
-        aria-label="카카오톡 상담"
-      >
-        <svg className="w-7 h-7" viewBox="0 0 24 24" fill="#191919">
-          <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.72 1.8 5.108 4.508 6.453-.198.74-.716 2.68-.82 3.094-.13.518.19.51.399.371.164-.109 2.61-1.772 3.672-2.492.72.1 1.465.153 2.241.153 5.523 0 10-3.463 10-7.579C22 6.463 17.523 3 12 3z" />
-        </svg>
-      </a>
+      <div className="relative">
+        {activeTooltip === "kakao" && (
+          <Tooltip
+            text="카카오톡 채널로 이동합니다"
+            href="https://pf.kakao.com"
+            external
+            onClose={() => setActiveTooltip(null)}
+          />
+        )}
+        <button
+          onClick={() => toggle("kakao")}
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+          style={{ backgroundColor: "#FEE500" }}
+          aria-label="카카오톡 상담"
+        >
+          <svg className="w-7 h-7" viewBox="0 0 24 24" fill="#191919">
+            <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.72 1.8 5.108 4.508 6.453-.198.74-.716 2.68-.82 3.094-.13.518.19.51.399.371.164-.109 2.61-1.772 3.672-2.492.72.1 1.465.153 2.241.153 5.523 0 10-3.463 10-7.579C22 6.463 17.523 3 12 3z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function Tooltip({
+  text,
+  href,
+  external,
+  onClose,
+}: {
+  text: string;
+  href: string;
+  external?: boolean;
+  onClose: () => void;
+}) {
+  return (
+    <div className="absolute right-[calc(100%+12px)] top-1/2 -translate-y-1/2 animate-fade-in">
+      <div className="relative bg-white rounded-xl shadow-xl px-4 py-3 whitespace-nowrap flex items-center gap-3">
+        <span className="text-navy-900 text-sm font-medium">{text}</span>
+        <div className="flex items-center gap-1.5">
+          <a
+            href={href}
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="bg-sky-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg hover:bg-sky-600 transition-colors"
+            onClick={onClose}
+          >
+            확인
+          </a>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-600 transition-colors p-1"
+            aria-label="닫기"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        {/* Arrow */}
+        <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-white rotate-45 shadow-sm" />
+      </div>
     </div>
   );
 }

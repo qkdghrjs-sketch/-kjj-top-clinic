@@ -2,63 +2,14 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import FAQ from "@/components/FAQ";
 
-const conditions = [
-  {
-    name: "고혈압",
-    description:
-      "혈압이 지속적으로 정상 범위(수축기 140mmHg / 이완기 90mmHg)를 초과하는 상태로, 심혈관 질환의 가장 중요한 위험 인자입니다. 대부분 뚜렷한 증상 없이 진행되어 '침묵의 살인자'로 불리며, 뇌졸중, 심근경색, 신부전 등 치명적인 합병증을 유발할 수 있습니다.",
-    symptoms: [
-      "두통 및 어지럼증",
-      "뒷목 당김, 뻣뻣함",
-      "코피, 안면 홍조",
-      "가슴 두근거림",
-    ],
-  },
-  {
-    name: "부정맥",
-    description:
-      "심장의 전기 전도 시스템에 이상이 생겨 심장 박동이 너무 빠르거나, 느리거나, 불규칙해지는 질환입니다. 심방세동, 심실빈맥 등 다양한 유형이 있으며, 일부는 무증상으로 지나가지만 심한 경우 실신이나 심정지를 유발할 수 있어 정확한 진단과 관리가 필수적입니다.",
-    symptoms: [
-      "심장이 빨리 뛰는 느낌(심계항진)",
-      "가슴 두근거림, 불규칙한 맥박",
-      "어지럼증 또는 실신",
-      "호흡곤란, 피로감",
-    ],
-  },
-  {
-    name: "심부전",
-    description:
-      "심장의 펌프 기능이 저하되어 신체 조직에 필요한 혈액을 충분히 공급하지 못하는 상태입니다. 고혈압, 관상동맥 질환, 심장 판막 질환 등이 원인이 될 수 있으며, 조기에 발견하여 적극적으로 관리하면 증상 개선과 생존율 향상이 가능합니다.",
-    symptoms: [
-      "운동 시 호흡곤란",
-      "하지 부종(발·발목 붓기)",
-      "야간 기침, 누우면 악화되는 호흡곤란",
-      "피로감 및 운동 능력 저하",
-    ],
-  },
-  {
-    name: "협심증",
-    description:
-      "관상동맥이 좁아져 심장 근육으로의 혈류가 감소하면서 발생하는 흉통을 특징으로 하는 질환입니다. 운동이나 스트레스 시 증상이 나타나는 안정형 협심증과, 안정 시에도 발생하는 불안정형 협심증으로 나뉘며, 불안정형의 경우 심근경색으로 진행할 위험이 높습니다.",
-    symptoms: [
-      "가슴 중앙부 압박감, 조이는 느낌",
-      "왼쪽 어깨·팔·턱으로 방사되는 통증",
-      "운동 또는 스트레스 시 악화",
-      "식은땀, 구역감 동반",
-    ],
-  },
-  {
-    name: "심전도 검사",
-    description:
-      "심장의 전기적 활동을 기록하여 부정맥, 심근허혈, 심장 비대 등 다양한 심장 질환을 진단하는 기본 검사입니다. 비침습적이고 통증이 없으며 짧은 시간 내에 시행할 수 있어 심장 건강 상태를 파악하는 1차 선별 검사로 널리 활용됩니다.",
-    symptoms: [
-      "가슴 통증이나 두근거림이 있는 경우",
-      "어지럼증 또는 실신 경험",
-      "고혈압, 당뇨 등 심혈관 위험 인자 보유 시",
-      "건강검진 목적의 정기 검사",
-    ],
-  },
+const diseases = [
+  { name: "고혈압", desc: "혈압이 지속적으로 140/90mmHg 이상인 상태를 고혈압이라고 합니다.\n대부분 증상이 없어 모르고 지내다가 뇌졸중, 심근경색으로 이어질 수 있습니다.\n정기적인 혈압 측정과 약물 치료로 합병증을 예방할 수 있습니다." },
+  { name: "부정맥", desc: "심장이 불규칙하게 뛰는 상태로 두근거림, 어지러움, 실신이 나타날 수 있습니다.\n심전도 검사와 심장초음파로 정확한 진단이 가능합니다.\n조기 발견과 치료로 심각한 합병증을 예방하세요." },
+  { name: "협심증", desc: "심장에 혈액을 공급하는 관상동맥이 좁아져 발생하는 질환입니다.\n운동 시 가슴 통증, 압박감이 느껴진다면 즉시 검사가 필요합니다.\n방치 시 심근경색으로 진행될 수 있어 조기 치료가 매우 중요합니다." },
+  { name: "심부전", desc: "심장 펌프 기능이 저하되어 호흡곤란, 다리 부종, 피로감이 나타납니다.\n일상적인 활동에서도 숨이 차고 누우면 증상이 악화됩니다.\n적절한 약물치료와 생활습관 관리로 증상 개선이 가능합니다." },
 ];
 
 export default function SoonhwangiPage() {
@@ -69,104 +20,147 @@ export default function SoonhwangiPage() {
         subtitle="심장과 혈관 건강을 위한 전문적인 진단과 치료를 제공합니다."
       />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* Center overview */}
-          <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                센터 소개
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                김정재탑내과의원 순환기센터는 고혈압, 부정맥, 협심증, 심부전 등
-                심혈관 질환을 전문적으로 진료합니다. 심전도, 24시간 활동
-                혈압검사, 심장 초음파 등 다양한 검사 장비를 갖추고 있으며,
-                심혈관 질환의 조기 발견과 체계적인 관리를 통해 심각한 합병증을
-                예방하고 환자의 삶의 질을 향상시키는 데 최선을 다하고 있습니다.
-              </p>
-            </div>
-          </ScrollReveal>
+      <WhyKimtop
+        box="순환기, 왜 김정재탑내과일까?+"
+        overlay="심장·혈관 전문 진료"
+        description="고혈압, 심장질환의 정밀 진단과 체계적인 관리를 제공합니다."
+        features={["심전도 정밀 검사", "심장초음파 인증의", "24시간 혈압 모니터링", "전문의 직접 진료"]}
+      />
 
-          {/* Conditions */}
-          <div className="space-y-10">
-            {conditions.map((condition, index) => (
-              <ScrollReveal key={condition.name} delay={index * 80}>
-                <div className="border border-gray-100 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
-                  <h3 className="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-sky-500 inline-block"></span>
-                    {condition.name}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {condition.description}
-                  </p>
-                  <div>
-                    <h4 className="text-sm font-semibold text-navy-900 mb-2">
-                      주요 증상 및 적응증
-                    </h4>
-                    <ul className="grid sm:grid-cols-2 gap-2">
-                      {condition.symptoms.map((symptom) => (
-                        <li
-                          key={symptom}
-                          className="flex items-center gap-2 text-gray-500 text-sm"
-                        >
-                          <svg
-                            className="w-4 h-4 text-sky-500 shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          {symptom}
-                        </li>
-                      ))}
-                    </ul>
+      {/* Stats Banner */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">심전도 검사</p>
+              <p className="text-sky-300 text-sm font-medium">정밀 심장 리듬 분석</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">심장초음파 인증의</p>
+              <p className="text-sky-300 text-sm font-medium">전문 자격 보유</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">24시간 혈압 모니터링</p>
+              <p className="text-sky-300 text-sm font-medium">일상 속 혈압 추적</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <ScrollReveal>
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+                <div
+                  className="w-full h-full bg-cover bg-center img-zoom"
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1628348068343-eb9c7bd51d6e?w=800&auto=format&fit=crop')" }}
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">순환기 전문 진료</h2>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"심장과 혈관 건강을 지키는 전문 진료입니다.\n고혈압·심장질환의 조기 발견과 체계적 관리를 제공합니다."}</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Disease Cards */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              주요 진료 <span className="text-sky-500">질환</span>
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {diseases.map((d, i) => (
+              <ScrollReveal key={d.name} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                  <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
                   </div>
+                  <h3 className="text-lg font-bold text-navy-900 mb-3">{d.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{d.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Testing section */}
-          <ScrollReveal delay={200}>
-            <div className="mt-16 bg-navy-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                검사 안내
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                본원 순환기센터에서는 심장 및 혈관 질환의 정확한 진단을 위해
-                다양한 검사를 시행합니다. 전문의 상담 후 환자 상태에 적합한
-                검사를 선택하여 진행합니다.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-5">
-                  <h4 className="font-semibold text-navy-900 mb-2">
-                    심전도(ECG) 검사
-                  </h4>
-                  <p className="text-gray-500 text-sm">
-                    가슴과 사지에 전극을 부착하여 심장의 전기적 활동을 기록합니다.
-                    부정맥, 심근허혈, 심장 비대 등을 진단할 수 있으며, 약 5분 내에
-                    간편하게 시행됩니다.
-                  </p>
+      {/* Diagnosis */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              <span className="text-sky-500">검사</span> 방법
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {["심전도", "심장초음파", "24시간 혈압 모니터링", "혈액검사"].map((item, i) => (
+              <ScrollReveal key={item} delay={i * 100}>
+                <div className="text-center p-6 bg-navy-50 rounded-2xl">
+                  <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <p className="text-navy-900 font-semibold text-sm">{item}</p>
                 </div>
-                <div className="bg-white rounded-xl p-5">
-                  <h4 className="font-semibold text-navy-900 mb-2">
-                    24시간 활동 혈압검사
-                  </h4>
-                  <p className="text-gray-500 text-sm">
-                    24시간 동안 자동으로 혈압을 측정하는 휴대용 장비를 착용합니다.
-                    백의 고혈압과 가면 고혈압을 감별하고, 하루 중 혈압 변동
-                    패턴을 정밀하게 파악할 수 있습니다.
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cautions */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+                <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                주의사항
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "고혈압 약은 임의 중단 금지",
+                  "정기적 혈압 측정 권장",
+                ].map((c) => (
+                  <li key={c} className="flex items-start gap-2 text-gray-700 text-sm">
+                    <span className="text-sky-500 font-bold mt-0.5">※</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              자주 묻는 <span className="text-sky-500">질문</span>
+            </h2>
+          </ScrollReveal>
+          <FAQ items={[
+            { q: "혈압약은 평생 먹어야 하나요?", a: "대부분의 경우 꾸준한 복용이 필요하며 임의 중단은 위험합니다." },
+            { q: "가정에서 혈압을 측정하는 올바른 방법은?", a: "아침 기상 후 30분 이내, 저녁 취침 전 측정을 권장합니다." },
+            { q: "심전도 검사는 얼마나 걸리나요?", a: "약 5~10분으로 간단하게 받으실 수 있습니다." },
+            { q: "두근거림이 있으면 바로 병원에 가야 하나요?", a: "지속적이거나 실신이 동반된다면 즉시 내원하세요." },
+            { q: "고혈압에 좋은 음식은 무엇인가요?", a: "저염식, 채소, 과일, 통곡물 위주의 식단을 권장합니다." },
+          ]} />
         </div>
       </section>
     </>

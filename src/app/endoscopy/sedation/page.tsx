@@ -2,6 +2,39 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
+import WhyKimtop from "@/components/WhyKimtop";
+import CountUp from "@/components/CountUp";
+import FAQ from "@/components/FAQ";
+
+const advantages = [
+  { name: "통증 없음", desc: "수면 유도제 효과로 검사 중 아무런 통증과\n불편감을 느끼지 않습니다.\n내시경 공포증이 있는 분도 편안하게 받을 수 있습니다." },
+  { name: "더 정확한 검사", desc: "환자의 움직임이 없어 의사가 더 꼼꼼하게\n관찰할 수 있습니다.\n작은 병변도 놓치지 않는 정밀한 검사가 가능합니다." },
+  { name: "빠른 검사", desc: "협조가 잘 되어 일반 내시경보다\n검사 시간이 단축됩니다.\n위내시경은 5~10분, 대장내시경은 15~30분이면 완료됩니다." },
+  { name: "심리적 안정", desc: "내시경 검사에 대한 두려움으로\n미루고 계셨다면 수면내시경을 선택하세요.\n검사 후 \"생각보다 편했다\"고 하시는 분이 대부분입니다." },
+];
+
+const safetySteps = [
+  { num: "01", title: "전문 의료진 투여", desc: "전문 교육을 받은 의료진이 투여합니다." },
+  { num: "02", title: "활력징후 모니터링", desc: "투여 전후 혈압, 맥박, 산소포화도를 지속 측정합니다." },
+  { num: "03", title: "개인 맞춤 용량", desc: "체중, 나이, 건강 상태에 따라 적정 용량을 조절합니다." },
+  { num: "04", title: "완전 각성 확인", desc: "완전히 깨어난 것을 확인 후 귀가를 안내합니다." },
+];
+
+const cautions = [
+  { label: "보호자 동반 필수", desc: "혼자 오시면 검사가 불가능합니다" },
+  { label: "검사 당일 운전 절대 금지", desc: "대중교통 또는 보호자 차량 이용" },
+  { label: "검사 당일 음주, 중요한 계약·결정 금지", desc: "" },
+  { label: "고령자, 비만, 수면무호흡증 환자는 사전 상담 필수", desc: "" },
+  { label: "임산부, 특정 약물 복용자는 사전 상담 필수", desc: "" },
+];
+
+const faqItems = [
+  { q: "수면내시경 후 바로 운전할 수 없나요?", a: "당일 운전은 절대 불가합니다.\n수면 유도제가 완전히 깨어난 것처럼 느껴지더라도\n판단력에 영향을 줄 수 있어 보호자 동반이 필수입니다." },
+  { q: "수면에서 깨어나는 데 얼마나 걸리나요?", a: "보통 30~60분 후 완전히 각성됩니다.\n회복실에서 충분히 쉬신 후 귀가하실 수 있습니다." },
+  { q: "수면내시경을 못 받는 경우가 있나요?", a: "임산부, 수면 유도제 알레르기가 있는 분, 특정 약물 복용자는\n사전 상담이 필요합니다." },
+  { q: "검사 중에 깨어날 수도 있나요?", a: "드물게 각성되는 경우가 있으나 추가 투여로 조절 가능합니다.\n검사 내용은 기억하지 못하는 것이 정상입니다." },
+  { q: "수면내시경 비용은 얼마인가요?", a: "보험 적용 여부에 따라 다릅니다.\n자세한 비용은 내원 시 또는 전화 상담으로 안내해 드립니다." },
+];
 
 export default function SedationEndoscopyPage() {
   return (
@@ -11,267 +44,142 @@ export default function SedationEndoscopyPage() {
         subtitle="편안하고 고통 없는 수면 내시경 검사"
       />
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          {/* 수면내시경이란 */}
+      <WhyKimtop
+        box="수면내시경, 왜 김정재탑내과일까?+"
+        overlay="편안한 수면내시경"
+        description="통증 없이 편안하게 받는 수면내시경으로 정확한 검사를 제공합니다."
+        features={["통증 없는 검사", "안전한 수면 유도", "소화기내시경 세부전문의", "빠른 회복"]}
+      />
+
+      {/* Stats Banner */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05]">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-3 gap-8">
+            <CountUp end={99} suffix="%" label="수면내시경 만족도" />
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white mb-2">5~15분</p>
+              <p className="text-sky-300 text-sm font-medium">검사 소요시간</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white mb-2">30~60분</p>
+              <p className="text-sky-300 text-sm font-medium">회복시간</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 수면내시경이란 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <ScrollReveal>
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+                <div
+                  className="w-full h-full bg-cover bg-center img-zoom"
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&auto=format&fit=crop')" }}
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-5">통증 없이 편안하게, 더 정확하게 검사합니다</h2>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"수면내시경은 안전한 수면 유도제를 사용하여\n검사 중 의식이 없는 상태에서 진행하는 내시경입니다.\n\n검사 중 아무런 불편감을 느끼지 못하며\n검사 내용을 기억하지 못하는 것이 정상입니다.\n\n일반 내시경보다 환자의 협조가 잘 되어\n더 꼼꼼하고 정확한 검사가 가능합니다."}</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 수면내시경의 장점 */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                수면내시경이란?
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                수면내시경은 진정제(수면유도제)를 정맥주사로 투여하여 가벼운
-                수면 상태에서 내시경 검사를 시행하는 방법입니다. 환자분은 검사
-                과정에서 통증이나 불편감을 거의 느끼지 못하며, 검사가 끝난 후
-                자연스럽게 깨어나게 됩니다. 검사에 대한 공포나 거부감이 있는
-                분들도 편안하게 검사를 받으실 수 있어, 현재 대부분의 환자분들이
-                수면내시경을 선택하고 계십니다.
-              </p>
-            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              수면내시경의 <span className="text-sky-500">장점</span>
+            </h2>
           </ScrollReveal>
-
-          {/* 수면 vs 일반 비교 */}
-          <ScrollReveal delay={100}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                수면내시경 vs 일반내시경
-              </h2>
-              <div className="overflow-hidden rounded-2xl border border-gray-100">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-navy-900 text-white">
-                      <th className="p-4 text-left font-semibold">구분</th>
-                      <th className="p-4 text-left font-semibold">
-                        수면내시경
-                      </th>
-                      <th className="p-4 text-left font-semibold">
-                        일반내시경
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      {
-                        label: "통증/불편감",
-                        sedation: "거의 없음",
-                        regular: "구역감, 불편감 있음",
-                      },
-                      {
-                        label: "검사 중 의식",
-                        sedation: "가벼운 수면 상태",
-                        regular: "의식 유지",
-                      },
-                      {
-                        label: "검사 기억",
-                        sedation: "대부분 기억 못함",
-                        regular: "검사 과정 기억",
-                      },
-                      {
-                        label: "검사 정밀도",
-                        sedation: "환자 협조로 정밀 관찰 용이",
-                        regular: "구역 반사로 관찰 제한 가능",
-                      },
-                      {
-                        label: "회복 시간",
-                        sedation: "30분~1시간 회복 필요",
-                        regular: "즉시 일상 복귀 가능",
-                      },
-                      {
-                        label: "당일 운전",
-                        sedation: "불가 (보호자 동반 필요)",
-                        regular: "가능",
-                      },
-                    ].map((row, i) => (
-                      <tr
-                        key={row.label}
-                        className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                      >
-                        <td className="p-4 font-semibold text-navy-900">
-                          {row.label}
-                        </td>
-                        <td className="p-4 text-gray-600">{row.sedation}</td>
-                        <td className="p-4 text-gray-600">{row.regular}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* 진정 과정 */}
-          <ScrollReveal delay={200}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                수면내시경 진행 과정
-              </h2>
-              <div className="grid sm:grid-cols-4 gap-4">
-                {[
-                  {
-                    step: "01",
-                    title: "사전 상담",
-                    desc: "기저질환, 알레르기, 복용 약물 등을 확인하여 수면 진정의 안전성을 평가합니다.",
-                  },
-                  {
-                    step: "02",
-                    title: "진정제 투여",
-                    desc: "정맥주사를 통해 진정제를 투여합니다. 1~2분 내 가벼운 수면 상태에 진입합니다.",
-                  },
-                  {
-                    step: "03",
-                    title: "내시경 검사",
-                    desc: "수면 상태에서 편안하게 검사를 시행합니다. 필요 시 조직 검사나 용종 절제도 진행합니다.",
-                  },
-                  {
-                    step: "04",
-                    title: "회복 및 귀가",
-                    desc: "회복실에서 30분~1시간 안정 후 의식이 회복되면 결과 상담 후 귀가합니다.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.step}
-                    className="text-center p-5 bg-gray-50 rounded-2xl"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
-                      {item.step}
-                    </div>
-                    <h3 className="text-base font-bold text-navy-900 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {advantages.map((item, i) => (
+              <ScrollReveal key={item.name} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                  <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
+                  <h3 className="text-lg font-bold text-navy-900 mb-2">{item.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* 안전 모니터링 */}
-          <ScrollReveal delay={300}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                안전 모니터링 시스템
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                김정재탑내과의원은 수면내시경의 안전성을 최우선으로 생각합니다.
-                검사 전 과정에서 첨단 모니터링 장비를 통해 환자분의 상태를
-                실시간으로 확인하며, 숙련된 의료진이 만일의 상황에 즉각
-                대응합니다.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "산소포화도 모니터링",
-                    desc: "맥박산소측정기(Pulse Oximeter)로 혈중 산소 농도를 실시간 감시합니다.",
-                  },
-                  {
-                    title: "심전도 모니터링",
-                    desc: "심박수와 심장 리듬을 지속적으로 관찰하여 이상 징후를 조기에 감지합니다.",
-                  },
-                  {
-                    title: "혈압 모니터링",
-                    desc: "자동 혈압계를 통해 검사 중 혈압 변화를 주기적으로 확인합니다.",
-                  },
-                  {
-                    title: "응급 대응 체계",
-                    desc: "응급 약물 및 기도 확보 장비를 항시 구비하고, 숙련된 의료진이 대기합니다.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="p-4 border border-gray-100 rounded-xl"
-                  >
-                    <h4 className="font-semibold text-navy-900 mb-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-500 text-sm">{item.desc}</p>
+      {/* 수면 유도제 안전성 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              <span className="text-sky-500">안전</span>하게 관리됩니다
+            </h2>
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {safetySteps.map((item, i) => (
+              <ScrollReveal key={item.num} delay={i * 100}>
+                <div className="text-center p-6 bg-gray-50 rounded-2xl border border-gray-100 card-hover-glow h-full">
+                  <div className="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                    {item.num}
                   </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
+                  <h3 className="text-base font-bold text-navy-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* 회복 및 퇴원 안내 */}
-          <ScrollReveal delay={350}>
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                회복 및 퇴원 안내
-              </h2>
-              <div className="space-y-3">
-                {[
-                  "검사 후 회복실에서 30분~1시간 정도 안정을 취합니다.",
-                  "의식이 충분히 회복된 후 담당 의사가 검사 결과를 설명합니다.",
-                  "검사 당일은 운전, 기계 조작, 중요한 의사결정을 피합니다.",
-                  "보호자 동반 하에 귀가하시며, 대중교통 이용을 권장합니다.",
-                  "검사 후 1~2시간 경과 후 가벼운 식사부터 시작합니다.",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
+      {/* 주의사항 */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              수면내시경 <span className="text-sky-500">주의사항</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+              <ul className="space-y-4">
+                {cautions.map((item) => (
+                  <li key={item.label} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-sky-100 flex items-center justify-center shrink-0 mt-0.5">
-                      <svg
-                        className="w-3 h-3 text-sky-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M5 13l4 4L19 7"
-                        />
+                      <svg className="w-3 h-3 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 text-sm">{item}</span>
-                  </div>
+                    <span className="text-gray-700">
+                      <strong>{item.label}</strong>{item.desc ? ` (${item.desc})` : ""}
+                    </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
 
-          {/* FAQ 섹션 */}
-          <ScrollReveal delay={400}>
-            <div className="bg-navy-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6">
-                자주 묻는 질문
-              </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    q: "수면내시경은 완전히 잠드는 건가요?",
-                    a: "완전한 수면(전신마취)이 아닌 가벼운 진정 상태입니다. 의식이 완전히 소실되지 않고 얕은 수면 상태를 유지하여, 호흡과 기본 반사는 정상적으로 유지됩니다. 검사 후에는 대부분 검사 과정을 기억하지 못합니다.",
-                  },
-                  {
-                    q: "수면내시경이 위험하지는 않나요?",
-                    a: "수면내시경은 매우 안전한 검사입니다. 사용되는 진정제(미다졸람, 프로포폴 등)는 작용 시간이 짧고, 검사 중 산소포화도, 심전도, 혈압을 실시간으로 모니터링하므로 안전합니다. 다만 심각한 심폐질환이 있는 경우 사전에 담당 의사와 충분히 상담합니다.",
-                  },
-                  {
-                    q: "수면에서 깨어나지 못하면 어떡하나요?",
-                    a: "진정제의 효과는 일시적이며, 검사 종료 후 자연스럽게 깨어납니다. 만약 각성이 지연될 경우 진정제의 효과를 즉시 되돌리는 길항제(플루마제닐)를 투여할 수 있어 안심하셔도 됩니다.",
-                  },
-                  {
-                    q: "수면내시경 후 언제부터 정상 활동이 가능한가요?",
-                    a: "검사 당일은 진정제의 잔여 효과로 판단력과 반사 능력이 저하될 수 있으므로 운전, 기계 조작, 중요한 계약 등은 피하셔야 합니다. 다음 날부터는 정상적인 일상 활동이 가능합니다.",
-                  },
-                  {
-                    q: "어르신이나 기저질환자도 수면내시경이 가능한가요?",
-                    a: "고령이시거나 심장, 폐, 간 질환 등 기저질환이 있는 경우에도 사전 평가를 통해 진정제 용량을 개별 조절하여 안전하게 시행할 수 있습니다. 검사 전 상담 시 기저질환과 복용 약물을 정확히 알려주시면 최적의 방법으로 진행합니다.",
-                  },
-                ].map((faq) => (
-                  <div
-                    key={faq.q}
-                    className="border-b border-navy-100 pb-5 last:border-b-0 last:pb-0"
-                  >
-                    <h4 className="font-semibold text-navy-900 mb-2">
-                      Q. {faq.q}
-                    </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* FAQ */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">
+              자주 묻는 <span className="text-sky-500">질문</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <FAQ items={faqItems} />
           </ScrollReveal>
         </div>
       </section>
