@@ -219,13 +219,12 @@ html {
     padding-right: max(16px, env(safe-area-inset-right));
   }
 
-  /* Prevent horizontal overflow on all elements */
-  * {
+  /* Prevent horizontal overflow */
+  section, div, main, article {
     max-width: 100vw;
   }
-  img, video, iframe {
+  img, video {
     max-width: 100%;
-    height: auto;
   }
 
   /* Word break for long text */

@@ -4,25 +4,20 @@ import { useEffect, useRef } from "react";
 
 export default function KakaoMap() {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const rendered = useRef(false);
 
   useEffect(() => {
-    if (rendered.current || !wrapperRef.current) return;
-    rendered.current = true;
-
     const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    // Prevent duplicate iframes
+    if (wrapper.querySelector("iframe")) return;
+
     const containerWidth = wrapper.clientWidth || 640;
-    const containerHeight = wrapper.clientHeight || 400;
+    const containerHeight = Math.max(wrapper.clientHeight, 360);
 
     const iframe = document.createElement("iframe");
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.position = "absolute";
-    iframe.style.top = "0";
-    iframe.style.left = "0";
-    iframe.style.border = "none";
-    iframe.srcdoc = `
-<!DOCTYPE html>
+    iframe.style.cssText = "width:100%;height:100%;position:absolute;top:0;left:0;border:none;";
+    iframe.srcdoc = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -53,6 +48,12 @@ export default function KakaoMap() {
 </html>`;
 
     wrapper.appendChild(iframe);
+
+    return () => {
+      // Cleanup on unmount so it re-renders on navigation
+      const existingIframe = wrapper.querySelector("iframe");
+      if (existingIframe) existingIframe.remove();
+    };
   }, []);
 
   return (
