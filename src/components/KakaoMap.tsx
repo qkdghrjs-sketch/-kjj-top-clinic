@@ -9,7 +9,6 @@ export default function KakaoMap() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    // Prevent duplicate iframes
     if (wrapper.querySelector("iframe")) return;
 
     const containerWidth = wrapper.clientWidth || 640;
@@ -30,16 +29,16 @@ export default function KakaoMap() {
   .root_daum_roughmap .wrap_map img { max-width: none !important; }
   .root_daum_roughmap iframe { width: 100% !important; height: 100% !important; }
   .root_daum_roughmap .wrap_controllers { display: none !important; }
-  #daumRoughmapContainer1773981124729 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+  #daumRoughmapContainer1774176752847 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 </style>
 </head>
 <body>
-<div id="daumRoughmapContainer1773981124729" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+<div id="daumRoughmapContainer1774176752847" class="root_daum_roughmap root_daum_roughmap_landing"></div>
 <script charset="UTF-8" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"><\/script>
 <script charset="UTF-8">
   new daum.roughmap.Lander({
-    "timestamp" : "1773981124729",
-    "key" : "jnpn8etexgw",
+    "timestamp" : "1774176752847",
+    "key" : "jecesz2ed5a",
     "mapWidth" : "${containerWidth}",
     "mapHeight" : "${containerHeight}"
   }).render();
@@ -50,7 +49,6 @@ export default function KakaoMap() {
     wrapper.appendChild(iframe);
 
     return () => {
-      // Cleanup on unmount so it re-renders on navigation
       const existingIframe = wrapper.querySelector("iframe");
       if (existingIframe) existingIframe.remove();
     };
