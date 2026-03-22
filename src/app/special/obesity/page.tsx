@@ -126,7 +126,7 @@ export default function ObesityPage() {
             {[
               { step: "01", title: "체성분 분석" },
               { step: "02", title: "원인 파악" },
-              { step: "03", title: "맞춤 식단·운동 처방" },
+              { step: "03", title: "맞춤 식단·운동" },
               { step: "04", title: "약물치료(필요시)" },
               { step: "05", title: "정기 모니터링" },
             ].map((item, idx) => (

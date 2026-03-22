@@ -73,7 +73,7 @@ export default function ComprehensiveCheckupPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&auto=format&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/232af9f1a11e8.jpeg')" }}
                 />
               </div>
             </ScrollReveal>

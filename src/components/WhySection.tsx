@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const tabs = [
   {
@@ -37,6 +37,8 @@ const tabs = [
 
 export default function WhySection() {
   const [current, setCurrent] = useState(0);
+  const [showFade, setShowFade] = useState(true);
+  const tabsRef = useRef<HTMLDivElement>(null);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % tabs.length);
@@ -50,6 +52,28 @@ export default function WhySection() {
     const timer = setInterval(next, 7000);
     return () => clearInterval(timer);
   }, [next]);
+
+  // Auto-scroll to active tab on mobile
+  useEffect(() => {
+    const container = tabsRef.current;
+    if (!container) return;
+    const activeBtn = container.children[current] as HTMLElement;
+    if (!activeBtn) return;
+    activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [current]);
+
+  // Show/hide right fade based on scroll position
+  useEffect(() => {
+    const container = tabsRef.current;
+    if (!container) return;
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setShowFade(scrollLeft + clientWidth < scrollWidth - 10);
+    };
+    handleScroll();
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="py-0">
@@ -66,46 +90,55 @@ export default function WhySection() {
             </div>
 
             {/* Tab list - horizontal scroll on mobile, vertical on desktop */}
-            <div className="flex lg:flex-col lg:flex-1 overflow-x-auto lg:overflow-x-visible scrollbar-hide">
-              {tabs.map((tab, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`flex items-center gap-2 lg:gap-3 lg:justify-between px-4 py-3 lg:px-6 lg:py-4 text-left text-xs lg:text-sm font-medium border-b border-gray-100 transition-all duration-300 whitespace-nowrap shrink-0 ${
-                    i === current
-                      ? "bg-navy-800 text-white"
-                      : "bg-white text-gray-500 hover:bg-navy-50 hover:text-navy-700"
-                  }`}
-                >
-                  <span className="flex items-center gap-2 lg:gap-3">
-                    <span
-                      className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold shrink-0 ${
-                        i === current
-                          ? "bg-sky-400 text-white"
-                          : "bg-gray-200 text-gray-500"
-                      }`}
-                    >
-                      {i + 1}
-                    </span>
-                    {tab.title}
-                  </span>
-                  <svg
-                    className={`w-4 h-4 shrink-0 transition-colors hidden lg:block ${
-                      i === current ? "text-sky-400" : "text-gray-300"
+            <div className="relative lg:flex-1">
+              <div
+                ref={tabsRef}
+                className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible scrollbar-hide"
+              >
+                {tabs.map((tab, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={`flex items-center gap-2 lg:gap-3 lg:justify-between min-w-[160px] lg:min-w-0 px-4 py-3 lg:px-6 lg:py-4 text-left text-xs lg:text-sm font-medium border-b border-gray-100 transition-all duration-300 whitespace-nowrap shrink-0 lg:shrink ${
+                      i === current
+                        ? "bg-navy-800 text-white"
+                        : "bg-white text-gray-500 hover:bg-navy-50 hover:text-navy-700"
                     }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              ))}
+                    <span className="flex items-center gap-2 lg:gap-3">
+                      <span
+                        className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold shrink-0 ${
+                          i === current
+                            ? "bg-sky-400 text-white"
+                            : "bg-gray-200 text-gray-500"
+                        }`}
+                      >
+                        {i + 1}
+                      </span>
+                      {tab.title}
+                    </span>
+                    <svg
+                      className={`w-4 h-4 shrink-0 transition-colors hidden lg:block ${
+                        i === current ? "text-sky-400" : "text-gray-300"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                ))}
+              </div>
+              {/* Right fade indicator (mobile only) */}
+              {showFade && (
+                <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none lg:hidden" />
+              )}
             </div>
           </div>
 

@@ -196,7 +196,7 @@ export default function Home() {
               {
                 num: "03",
                 title: "과정",
-                desc: "검사 전·중·후 전 과정 상세 설명 제공",
+                desc: "검사 전·중·후\n전 과정 상세 설명 제공",
                 icon: (
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -219,7 +219,7 @@ export default function Home() {
               {
                 num: "05",
                 title: "소독 및 감염관리",
-                desc: "오픈세척실 운영 및 체계적 소독 시스템 구축",
+                desc: "오픈세척실 운영 및\n체계적 소독 시스템 구축",
                 icon: (
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -229,7 +229,7 @@ export default function Home() {
               {
                 num: "06",
                 title: "진정(수면)내시경",
-                desc: "의료진 전원 진정내시경 교육 이수 완료",
+                desc: "의료진 전원\n진정내시경 교육 이수 완료",
                 icon: (
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />

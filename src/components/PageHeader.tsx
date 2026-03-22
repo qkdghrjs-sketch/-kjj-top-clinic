@@ -7,7 +7,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="relative bg-navy-900 text-white -mt-24 pt-24 md:-mt-48 md:pt-48 pb-12 md:pb-20 overflow-hidden">
+    <section className="relative bg-navy-900 text-white -mt-28 pt-28 md:-mt-48 md:pt-48 pb-12 md:pb-20 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>

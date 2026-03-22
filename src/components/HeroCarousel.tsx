@@ -134,7 +134,7 @@ export default function HeroCarousel() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[75vh] md:h-[85vh] -mt-24 pt-24 md:-mt-48 md:pt-48 overflow-hidden">
+    <section className="relative h-[70vh] md:h-[85vh] -mt-28 pt-28 md:-mt-48 md:pt-48 overflow-hidden">
       {/* Slides background */}
       {slides.map((s, i) => (
         <div
@@ -227,16 +227,16 @@ export default function HeroCarousel() {
               key={`btn-${current}`}
               className="animate-fade-in-up animation-delay-600"
             >
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
                 <Link
                   href={slide.buttonHref}
-                  className="group border-2 border-white/40 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
+                  className="group border-2 border-white/40 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base whitespace-nowrap"
                 >
                   {slide.buttonText}
                 </Link>
                 <button
                   onClick={handleReservation}
-                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base cursor-pointer"
+                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base cursor-pointer whitespace-nowrap"
                 >
                   전화 예약: 02-6798-8880
                 </button>

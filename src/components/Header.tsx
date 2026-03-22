@@ -124,9 +124,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className={`max-w-7xl mx-auto px-4 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? "h-16 md:h-20" : "h-24 md:h-48"
-      }`}>
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 flex items-center justify-center lg:justify-between relative h-28 md:h-48">
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -134,9 +132,7 @@ export default function Header() {
             alt="김정재탑내과의원"
             width={640}
             height={200}
-            className={`w-auto transition-all duration-300 ${
-              scrolled ? "h-[40px] md:h-[50px]" : "h-[80px] md:h-[200px]"
-            }`}
+            className="w-auto h-[120px] md:h-[300px]"
             priority
           />
         </Link>
@@ -211,7 +207,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden p-3 rounded-lg transition-colors text-white"
+          className="lg:hidden absolute right-3 p-3 rounded-lg transition-colors text-white"
           onClick={() => {
             setMenuOpen(!menuOpen);
             setMobileExpanded(null);
@@ -225,19 +221,9 @@ export default function Header() {
             viewBox="0 0 24 24"
           >
             {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>

@@ -59,11 +59,11 @@ export default function WhyKimtop({ box, overlay, description, features, image }
           {/* Right - Content */}
           <ScrollReveal delay={150}>
             <div>
-              <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold italic">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5">
+                <span className="text-white text-xl sm:text-3xl md:text-4xl font-bold italic">
                   WHY KIMTOP
                 </span>
-                <span className="inline-block bg-sky-500 text-white text-xs font-bold px-4 py-2 rounded-lg">
+                <span className="inline-block bg-sky-500 text-white text-[11px] sm:text-xs font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg whitespace-nowrap">
                   {box}
                 </span>
               </div>
@@ -74,7 +74,7 @@ export default function WhyKimtop({ box, overlay, description, features, image }
 
               <div className="w-24 h-[2px] bg-gradient-to-r from-gold-400 to-transparent mb-6" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
                 {features.map((feature, i) => (
                   <div key={feature} className="flex items-start gap-3 bg-white/[0.06] backdrop-blur-sm rounded-xl p-3 border border-white/[0.08]">
                     <div className="w-9 h-9 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0 text-sky-400">

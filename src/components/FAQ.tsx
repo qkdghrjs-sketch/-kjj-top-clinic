@@ -27,11 +27,11 @@ export default function FAQ({ items }: FAQProps) {
               onClick={() => setOpenIndex(isOpen ? null : i)}
               className="w-full flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 text-left min-h-[48px]"
             >
-              <span className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+              <span className="flex items-start gap-3">
+                <span className="w-7 h-7 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                   Q
                 </span>
-                <span className="text-navy-900 font-semibold text-sm md:text-base">
+                <span className="text-navy-900 font-semibold text-sm md:text-base text-left leading-relaxed">
                   {item.q}
                 </span>
               </span>

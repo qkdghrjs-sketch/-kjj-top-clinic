@@ -38,7 +38,7 @@ const features = [
     ),
   },
   {
-    label: "매주 일요일\n검진",
+    label: "매월 1, 3번째 주\n일요일 예약검진",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
