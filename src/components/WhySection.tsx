@@ -53,13 +53,16 @@ export default function WhySection() {
     return () => clearInterval(timer);
   }, [next]);
 
-  // Auto-scroll to active tab on mobile
+  // Auto-scroll to active tab on mobile (horizontal only, no page scroll)
   useEffect(() => {
     const container = tabsRef.current;
     if (!container) return;
     const activeBtn = container.children[current] as HTMLElement;
     if (!activeBtn) return;
-    activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    const containerRect = container.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+    const scrollLeft = container.scrollLeft + (btnRect.left + btnRect.width / 2) - (containerRect.left + containerRect.width / 2);
+    container.scrollTo({ left: scrollLeft, behavior: "smooth" });
   }, [current]);
 
   // Show/hide right fade based on scroll position
