@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "frame-src 'self' https://maps.google.com https://www.google.com https://maps.googleapis.com https://*.google.com;",
+            value: "frame-src 'self' https://*.daumcdn.net https://*.kakao.com https://*.daum.net blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.daumcdn.net;",
           },
         ],
       },

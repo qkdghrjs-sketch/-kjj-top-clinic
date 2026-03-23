@@ -1,20 +1,63 @@
-export default function GoogleMap() {
+"use client";
+
+import { useEffect, useRef } from "react";
+
+export default function KakaoMap() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    if (wrapper.querySelector("iframe")) return;
+
+    const containerWidth = wrapper.clientWidth || 640;
+    const containerHeight = Math.max(wrapper.clientHeight, 360);
+
+    const iframe = document.createElement("iframe");
+    iframe.style.cssText = "width:100%;height:100%;position:absolute;top:0;left:0;border:none;";
+    iframe.srcdoc = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html { width: 100%; height: 100%; overflow: hidden; }
+  .root_daum_roughmap { width: 100% !important; height: 100% !important; }
+  .root_daum_roughmap .wrap_map { width: 100% !important; height: 100% !important; }
+  .root_daum_roughmap .wrap_map img { max-width: none !important; }
+  .root_daum_roughmap iframe { width: 100% !important; height: 100% !important; }
+  .root_daum_roughmap .wrap_controllers { display: none !important; }
+  #daumRoughmapContainer1774176752847 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+</style>
+</head>
+<body>
+<div id="daumRoughmapContainer1774176752847" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+<script charset="UTF-8" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"><\/script>
+<script charset="UTF-8">
+  new daum.roughmap.Lander({
+    "timestamp" : "1774176752847",
+    "key" : "jecesz2ed5a",
+    "mapWidth" : "${containerWidth}",
+    "mapHeight" : "${containerHeight}"
+  }).render();
+<\/script>
+</body>
+</html>`;
+
+    wrapper.appendChild(iframe);
+
+    return () => {
+      const existingIframe = wrapper.querySelector("iframe");
+      if (existingIframe) existingIframe.remove();
+    };
+  }, []);
+
   return (
-    <div style={{ width: "100%", height: "100%", minHeight: "360px", position: "relative" }}>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.4!2d126.8490!3d37.5503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e4b3f5c2a1d%3A0x8e5f3a2c1b4d6e8f!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDtlZzroZzroZwgMTM1!5e0!3m2!1sko!2skr!4v1234567890!5m2!1sko!2skr"
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          border: "none",
-        }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
+    <div
+      ref={wrapperRef}
+      style={{ width: "100%", height: "100%", minHeight: "360px", position: "relative" }}
+    />
   );
 }
