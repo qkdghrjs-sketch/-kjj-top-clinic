@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LocationSection from "@/components/LocationSection";
 import FloatingButtons from "@/components/FloatingButtons";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${geistSans.variable} antialiased`}>
+        <ScrollToTop />
         <Header />
         <main className="min-h-screen pt-28 md:pt-48">{children}</main>
         <LocationSection />
