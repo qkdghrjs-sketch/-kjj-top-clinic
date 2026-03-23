@@ -8,11 +8,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "frame-src 'self' https://maps.google.com https://www.google.com https://maps.googleapis.com;",
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
+            value: "frame-src 'self' https://maps.google.com https://www.google.com https://maps.googleapis.com https://*.google.com;",
           },
         ],
       },
