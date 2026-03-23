@@ -124,7 +124,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1920px] mx-auto px-3 md:px-6 flex items-center justify-center lg:justify-between relative h-16 md:h-48">
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 flex items-center justify-center lg:justify-between relative h-36 md:h-48">
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -132,7 +132,7 @@ export default function Header() {
             alt="김정재탑내과의원"
             width={640}
             height={200}
-            className="w-auto h-[45px] md:h-[300px]"
+            className="!w-auto !h-[120px] md:!h-[300px]"
             priority
           />
         </Link>
