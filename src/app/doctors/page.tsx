@@ -13,29 +13,29 @@ export default function DoctorsPage() {
       />
 
       {/* ===== 김정재 원장 ===== */}
-      <section className="py-12 sm:py-16 lg:py-28 bg-white">
+      <section className="py-10 sm:py-16 lg:py-28 bg-white">
         <div className="max-w-[1180px] mx-auto px-5 lg:px-6">
           {/* Kicker */}
           <ScrollReveal>
             <div className="flex items-center gap-3.5 mb-9">
               <div className="w-14 h-0.5 bg-navy-900 opacity-90" />
-              <span className="text-xs font-[850] tracking-[0.22em] text-navy-900 uppercase">
+              <span className="text-sm font-[850] tracking-[0.22em] text-navy-900 uppercase">
                 DOCTOR PROFILE
               </span>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-9 lg:gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[440px_1fr] gap-9 lg:gap-14 items-start">
             {/* Left — Portrait */}
             <ScrollReveal>
-              <aside className="lg:sticky lg:top-24 max-w-[420px] mx-auto lg:mx-0">
+              <aside className="lg:sticky lg:top-24 max-w-[480px] mx-auto lg:mx-0">
                 <div className="border border-gray-100 bg-white rounded-2xl overflow-hidden shadow-[0_22px_70px_-42px_rgba(2,6,23,.45)]">
-                  <div className="relative aspect-[4/5.3] overflow-hidden">
+                  <div className="relative aspect-[4/5.3] overflow-hidden bg-gray-50 p-6">
                     <Image
-                      src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/8426903259b3e.png"
+                      src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/560df20de82d6.jpeg"
                       alt="김정재 원장님 프로필"
                       fill
-                      className="object-cover object-[50%_35%]"
+                      className="object-contain object-center"
                       sizes="(max-width:1024px) 420px, 360px"
                     />
                   </div>
@@ -43,7 +43,7 @@ export default function DoctorsPage() {
                     <p className="text-[15px] font-extrabold text-gray-900 tracking-tight">
                       김정재 원장
                     </p>
-                    <p className="text-[13px] text-gray-500 font-semibold mt-1.5 leading-relaxed">
+                    <p className="text-sm text-gray-500 font-semibold mt-1.5 leading-relaxed">
                       내과 · 소화기 · 내시경 전문의
                     </p>
                   </div>
@@ -56,7 +56,7 @@ export default function DoctorsPage() {
               {/* Header */}
               <ScrollReveal>
                 <header className="pb-6 border-b border-gray-900/10">
-                  <h2 className="text-[34px] lg:text-[42px] font-[950] tracking-tight text-gray-900 leading-tight flex flex-wrap items-baseline gap-2.5 lg:gap-3.5">
+                  <h2 className="text-[26px] sm:text-[34px] lg:text-[42px] font-[950] tracking-tight text-gray-900 leading-tight flex flex-wrap items-baseline gap-2.5 lg:gap-3.5">
                     김정재
                     <span className="text-lg font-extrabold text-navy-800 tracking-tight opacity-95">
                       내과 · 소화기 · 내시경 전문의
@@ -74,7 +74,7 @@ export default function DoctorsPage() {
                     ].map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-2 border border-gray-100 rounded-full bg-white text-[13px] text-gray-500 font-semibold"
+                        className="px-3 py-2 border border-gray-100 rounded-full bg-white text-sm text-gray-500 font-semibold"
                       >
                         {tag}
                       </span>
@@ -90,20 +90,28 @@ export default function DoctorsPage() {
                     진료 철학
                   </h3>
                   <p className="text-[15.5px] leading-[1.85] text-gray-800 font-semibold">
-                    경제적으로 어려운 시기,{" "}
+                    경제적으로 어려운 시기,
+                    <br />
                     <strong className="text-navy-800 font-black">
                       건강이라는 가장 중요한 자산
                     </strong>
-                    을 정직하게 지켜드리는 든든한 지역 주치의가 되겠습니다.
+                    을
+                    <br />
+                    정직하게 지켜드리는 든든한 지역 주치의가 되겠습니다.
                   </p>
                   <p className="text-[15.5px] leading-[1.85] text-gray-800 font-semibold mt-3">
-                    대학병원 임상교수로서 다양한 케이스를 진단하며 쌓은 경험을
-                    바탕으로,{" "}
+                    대학병원 임상교수로서
+                    <br />
+                    다양한 케이스를 진단하며 쌓은 경험을 바탕으로,
+                    <br />
                     <strong className="text-navy-800 font-black">
                       꼭 필요한 검사와 치료
                     </strong>
-                    만을 제안하겠습니다. 과잉 진료에 대한 불안함 없이, 가족을
-                    대하는 마음으로 곁을 지키겠습니다.
+                    만을 제안하겠습니다.
+                    <br />
+                    과잉 진료에 대한 불안함 없이,
+                    <br />
+                    가족을 대하는 마음으로 곁을 지키겠습니다.
                   </p>
                 </div>
               </ScrollReveal>
@@ -128,7 +136,7 @@ export default function DoctorsPage() {
                       ].map((item, i) => (
                         <li
                           key={i}
-                          className="relative pl-3.5 text-sm leading-relaxed text-gray-800 font-semibold"
+                          className="relative pl-3.5 text-base leading-relaxed text-gray-800 font-semibold"
                         >
                           <span className="absolute left-0 top-[0.62em] w-1.5 h-1.5 rounded-sm bg-navy-900/85" />
                           {item.bold && (
@@ -161,7 +169,7 @@ export default function DoctorsPage() {
                       ].map((item, i) => (
                         <li
                           key={i}
-                          className="relative pl-3.5 text-sm leading-relaxed text-gray-800 font-semibold"
+                          className="relative pl-3.5 text-base leading-relaxed text-gray-800 font-semibold"
                         >
                           <span className="absolute left-0 top-[0.62em] w-1.5 h-1.5 rounded-sm bg-navy-900/85" />
                           {item}

@@ -7,7 +7,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="relative bg-navy-900 text-white -mt-28 pt-28 md:-mt-48 md:pt-48 pb-12 md:pb-20 overflow-hidden">
+    <section className="relative bg-navy-900 text-white pb-12 md:pb-20 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
@@ -17,7 +17,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
         <div className="animate-fade-in-left">
           <div className="w-10 h-0.5 bg-gold-400 mb-6"></div>
           <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">{title}</h1>
-          <p className="text-navy-300 text-sm md:text-lg">{subtitle}</p>
+          <p className="text-navy-300 text-base md:text-lg whitespace-pre-line">{subtitle}</p>
         </div>
       </div>
     </section>

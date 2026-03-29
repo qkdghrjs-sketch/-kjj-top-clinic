@@ -29,14 +29,14 @@ export default function MedicalInfoPage() {
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <span className="text-gold-400 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-gold-400 font-semibold text-base uppercase tracking-widest">
               Non-Covered Items
             </span>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mt-2 mb-2">
               비급여 항목 안내
             </h2>
             <div className="w-12 h-0.5 bg-gold-400 mb-4"></div>
-            <p className="text-gray-400 text-sm mb-8">
+            <p className="text-gray-400 text-base mb-8">
               아래 비용은 변동될 수 있으며, 정확한 비용은 병원으로 문의해 주시기
               바랍니다.
             </p>
@@ -73,7 +73,7 @@ export default function MedicalInfoPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-4 text-xs text-gray-400">
+            <p className="mt-4 text-sm text-gray-400">
               * 상기 금액은 부가세 포함 금액이며, 의료보험 적용 여부에 따라
               달라질 수 있습니다.
             </p>

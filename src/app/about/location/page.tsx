@@ -34,7 +34,7 @@ export default function LocationPage() {
                     href="https://map.naver.com/search/%EA%B9%80%EC%A0%95%EC%9E%AC%ED%83%91%EB%82%B4%EA%B3%BC"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-green-500 text-white font-semibold text-sm hover:bg-green-600 transition-colors shadow-sm"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-green-500 text-white font-semibold text-base hover:bg-green-600 transition-colors shadow-sm"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -46,7 +46,7 @@ export default function LocationPage() {
                     href="https://map.kakao.com/link/search/%EA%B9%80%EC%A0%95%EC%9E%AC%ED%83%91%EB%82%B4%EA%B3%BC"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold hover:brightness-95 transition-all shadow-sm"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-base font-semibold hover:brightness-95 transition-all shadow-sm"
                     style={{ backgroundColor: "#FEE500", color: "#191919" }}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -72,9 +72,9 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-sm">주소</p>
-                        <p className="text-gray-600 text-sm mt-0.5">서울 강서구 화곡로 135 상원빌딩 3,4층</p>
-                        <p className="text-gray-400 text-xs mt-0.5">김정재탑내과</p>
+                        <p className="text-navy-900 font-semibold text-base">주소</p>
+                        <p className="text-gray-600 text-base mt-0.5">서울 강서구 화곡로 135 상원빌딩 3,4층</p>
+                        <p className="text-gray-400 text-sm mt-0.5">김정재탑내과</p>
                       </div>
                     </div>
                     <div className="border-t border-navy-100"></div>
@@ -85,7 +85,7 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-sm">대표전화</p>
+                        <p className="text-navy-900 font-semibold text-base">대표전화</p>
                         <a href="tel:02-6798-8880" className="text-sky-600 hover:underline font-bold text-lg">02-6798-8880</a>
                       </div>
                     </div>
@@ -97,8 +97,8 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-sm">안내</p>
-                        <p className="text-gray-600 text-sm mt-0.5">진료 및 예약 문의는 대표전화로 안내받으실 수 있습니다.</p>
+                        <p className="text-navy-900 font-semibold text-base">안내</p>
+                        <p className="text-gray-600 text-base mt-0.5">진료 및 예약 문의는 대표전화로 안내받으실 수 있습니다.</p>
                       </div>
                     </div>
                   </div>
@@ -109,9 +109,9 @@ export default function LocationPage() {
                   <table className="w-full">
                     <thead>
                       <tr className="bg-navy-900 text-white">
-                        <th className="px-5 py-3 text-left text-sm font-semibold">요일</th>
-                        <th className="px-5 py-3 text-left text-sm font-semibold">진료시간</th>
-                        <th className="px-5 py-3 text-left text-sm font-semibold">비고</th>
+                        <th className="px-5 py-3 text-left text-base font-semibold">요일</th>
+                        <th className="px-5 py-3 text-left text-base font-semibold">진료시간</th>
+                        <th className="px-5 py-3 text-left text-base font-semibold">비고</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -132,16 +132,16 @@ export default function LocationPage() {
                                     : "bg-white"
                             }`}
                           >
-                            <td className={`px-5 py-3 text-sm font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
+                            <td className={`px-5 py-3 text-base font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
                               {h.day}
                               {isToday && (
                                 <span className="ml-2 inline-block px-1.5 py-0.5 bg-sky-500 text-white text-[10px] font-bold rounded">TODAY</span>
                               )}
                             </td>
-                            <td className={`px-5 py-3 text-sm ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
+                            <td className={`px-5 py-3 text-base ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
                               {h.time}
                             </td>
-                            <td className={`px-5 py-3 text-sm ${isToday ? "text-sky-600" : "text-gray-400"}`}>
+                            <td className={`px-5 py-3 text-base ${isToday ? "text-sky-600" : "text-gray-400"}`}>
                               {h.note}
                             </td>
                           </tr>
@@ -151,7 +151,7 @@ export default function LocationPage() {
                   </table>
                 </div>
                 <div className="mt-3 bg-sky-50 rounded-xl p-3.5">
-                  <p className="text-sky-700 text-sm">
+                  <p className="text-sky-700 text-base">
                     <strong>※</strong> 매월 1, 3번째 주 일요일은 예약검진을 진행합니다.
                   </p>
                 </div>
@@ -165,8 +165,8 @@ export default function LocationPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-navy-900 font-semibold text-sm">주차</p>
-                      <p className="text-gray-600 text-sm mt-0.5">건물 주차 가능합니다. 승용차(타워 주차), SUV(지상주차) 주차 가능합니다.</p>
+                      <p className="text-navy-900 font-semibold text-base">주차</p>
+                      <p className="text-gray-600 text-base mt-0.5">건물 주차 가능합니다. 승용차(타워 주차), SUV(지상주차) 주차 가능합니다.</p>
                     </div>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-sm">남/녀 화장실 구분</p>
+                        <p className="text-navy-900 font-semibold text-base">남/녀 화장실 구분</p>
                       </div>
                     </div>
                     <div className="border-t border-navy-100"></div>
@@ -192,7 +192,7 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-sm">3층 외래 접수</p>
+                        <p className="text-navy-900 font-semibold text-base">3층 외래 접수</p>
                       </div>
                     </div>
                     <div className="border-t border-navy-100"></div>
@@ -203,7 +203,7 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-sm">4층 위·대장내시경 센터</p>
+                        <p className="text-navy-900 font-semibold text-base">4층 위·대장내시경 센터</p>
                       </div>
                     </div>
                   </div>

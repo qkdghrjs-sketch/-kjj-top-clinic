@@ -8,32 +8,32 @@ import FAQ from "@/components/FAQ";
 const vaccinations = [
   {
     name: "독감 (인플루엔자)",
-    desc: "매년 유행하는 인플루엔자 바이러스를 예방합니다.\n고위험군(65세 이상, 만성질환자, 임산부 등)은 매년 접종을 권장합니다.\n접종 후 약 2주 후부터 면역이 형성됩니다.",
+    desc: "인플루엔자 바이러스를 예방합니다.\n고위험군은 매년 접종 권장, 접종 후 약 2주 후 면역 형성됩니다.",
     target: "전 연령",
   },
   {
     name: "폐렴구균",
-    desc: "폐렴, 수막염 등 심각한 감염을 예방합니다.\n65세 이상 어르신, 만성질환자에게 특히 중요합니다.\n13가 및 23가 백신을 상황에 맞게 접종합니다.",
+    desc: "폐렴, 수막염 등 심각한 감염을 예방합니다.\n65세 이상, 만성질환자는 13가·23가 백신 접종을 권장합니다.",
     target: "65세 이상, 만성질환자",
   },
   {
     name: "대상포진",
-    desc: "수두 바이러스 재활성화로 발생하는 대상포진을 예방합니다.\n극심한 신경통을 동반할 수 있어 예방이 중요합니다.\n50세 이상에서 접종을 권장합니다.",
+    desc: "수두 바이러스 재활성화로 발생하는 대상포진을 예방합니다.\n극심한 신경통 동반 가능, 50세 이상 접종을 권장합니다.",
     target: "50세 이상",
   },
   {
     name: "A형간염",
-    desc: "오염된 음식·물을 통해 전파되는 A형간염을 예방합니다.\n항체가 없는 성인은 2회 접종으로 평생 면역이 가능합니다.\n20~40대에서 항체 보유율이 낮아 접종이 권장됩니다.",
+    desc: "오염된 음식·물을 통해 전파되는 A형간염을 예방합니다.\n항체 미보유 성인은 2회 접종으로 평생 면역이 가능합니다.",
     target: "항체 미보유 성인",
   },
   {
     name: "B형간염",
-    desc: "혈액·체액을 통해 전파되는 B형간염을 예방합니다.\n만성 간질환, 간암의 주요 원인이 되는 질환입니다.\n항체가 없는 경우 3회 접종을 권장합니다.",
+    desc: "혈액·체액을 통해 전파되는 B형간염을 예방합니다.\n만성 간질환·간암의 주요 원인, 항체 없는 경우 3회 접종 권장합니다.",
     target: "항체 미보유자",
   },
   {
     name: "HPV (자궁경부암)",
-    desc: "인유두종 바이러스(HPV) 감염을 예방합니다.\n자궁경부암, 항문암 등 다양한 암을 예방할 수 있습니다.\n남녀 모두 접종이 가능하며, 조기 접종이 효과적입니다.",
+    desc: "인유두종 바이러스(HPV) 감염을 예방합니다.\n자궁경부암 등 다양한 암 예방 가능, 남녀 모두 조기 접종 권장합니다.",
     target: "9~45세 남녀",
   },
 ];
@@ -70,15 +70,15 @@ export default function VaccinationPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">성인 예방접종</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">맞춤 백신 상담</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">맞춤 백신 상담</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">국가예방접종</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">지정의료기관</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">지정의료기관</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">접종 후 관리</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">이상반응 모니터링</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">이상반응 모니터링</p>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function VaccinationPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
                   style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/993b4f8749e43.jpeg')" }}
@@ -100,8 +100,8 @@ export default function VaccinationPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 건강을 지키는 <span className="text-sky-500">첫걸음</span>, 예방접종
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
-{"예방접종은 감염병으로부터 나와 가족을 보호하는 가장 효과적인 방법입니다.\n김정재탑내과에서는 성인에게 필요한 다양한 예방접종을 제공하며,\n전문의 상담을 통해 개인의 건강 상태에 맞는 접종 계획을 수립합니다."}
+              <p className="text-gray-600 leading-relaxed text-base">
+                예방접종은 감염병으로부터 나와 가족을 보호하는 가장 효과적인 방법입니다. 김정재탑내과에서는 성인에게 필요한 다양한 예방접종을 제공하며, 전문의 상담을 통해 개인의 건강 상태에 맞는 접종 계획을 수립합니다.
               </p>
             </ScrollReveal>
           </div>
@@ -122,7 +122,7 @@ export default function VaccinationPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {vaccinations.map((v, i) => (
               <ScrollReveal key={v.name} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                <div className="bg-white rounded-2xl p-4 sm:p-7 border border-gray-100 card-hover-glow h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -131,9 +131,9 @@ export default function VaccinationPage() {
                     </div>
                     <h3 className="text-lg font-bold text-navy-900">{v.name}</h3>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line mb-4">{v.desc}</p>
+                  <p className="text-gray-500 text-base leading-relaxed mb-4 whitespace-pre-line">{v.desc}</p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-sky-50 text-sky-600 text-xs font-semibold px-3 py-1.5 rounded-full">
+                    <span className="inline-block bg-sky-50 text-sky-600 text-sm font-semibold px-3 py-1.5 rounded-full">
                       {v.target}
                     </span>
                   </div>
@@ -156,7 +156,7 @@ export default function VaccinationPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { num: "01", title: "접수 및 문진" },
                 { num: "02", title: "전문의 상담" },
@@ -164,9 +164,9 @@ export default function VaccinationPage() {
                 { num: "04", title: "접종 후 경과 관찰" },
               ].map((step, i) => (
                 <div key={step.num} className="relative">
-                  <div className="border-2 border-gray-200 rounded-2xl p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
-                    <span className="text-3xl font-black text-sky-500 block mb-3">{step.num}</span>
-                    <h4 className="text-navy-900 font-bold text-base">{step.title}</h4>
+                  <div className="border-2 border-gray-200 rounded-2xl p-4 sm:p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
+                    <span className="text-2xl sm:text-3xl font-black text-sky-500 block mb-2 sm:mb-3">{step.num}</span>
+                    <h4 className="text-navy-900 font-bold text-sm sm:text-base">{step.title}</h4>
                   </div>
                   {i < 3 && (
                     <div className="hidden md:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10">
@@ -186,7 +186,7 @@ export default function VaccinationPage() {
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-4 sm:p-8">
               <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
                 <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
@@ -200,7 +200,7 @@ export default function VaccinationPage() {
                   "임신 중이거나 임신 계획이 있는 경우 사전에 상담해 주세요",
                   "현재 복용 중인 약물이 있다면 접종 전 알려주세요",
                 ].map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-gray-700 text-sm">
+                  <li key={c} className="flex items-start gap-2 text-gray-700 text-base">
                     <span className="text-sky-500 font-bold mt-0.5">※</span>
                     {c}
                   </li>

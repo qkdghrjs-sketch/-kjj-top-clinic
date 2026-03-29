@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const features = [
   {
-    label: "소화기내시경\n세부전문의",
+    label: "내시경\n세부전문의",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -38,7 +38,7 @@ const features = [
     ),
   },
   {
-    label: "매월 1, 3번째 주\n일요일 예약검진",
+    label: "1,3번째 주\n일요일 예약",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -94,7 +94,7 @@ export default function EndoscopyShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-28 md:py-36 overflow-hidden"
+      className="relative py-12 sm:py-28 md:py-36 overflow-hidden"
     >
       {/* Ken Burns background */}
       <div
@@ -144,16 +144,16 @@ export default function EndoscopyShowcase() {
         {/* Main title with neon glow */}
         <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-8 md:mb-16">
           전문{" "}
-          <span className="endoscopy-neon-text">내시경</span>
+          <span className="endoscopy-neon-text" style={{ fontSize: 'inherit' }}>내시경</span>
           센터
         </h2>
 
         {/* Feature cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
           {features.map((item, i) => (
             <div
               key={item.label}
-              className={`group relative rounded-2xl py-7 px-3 cursor-default transition-all duration-500 ease-out
+              className={`group relative rounded-xl sm:rounded-2xl py-4 sm:py-7 px-2 sm:px-3 cursor-default transition-all duration-500 ease-out
                 bg-white/[0.07] backdrop-blur-md border border-white/[0.12]
                 hover:-translate-y-2 hover:bg-white/[0.14] hover:border-sky-400/50 hover:shadow-[0_0_25px_rgba(56,189,248,0.2)]
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -165,13 +165,13 @@ export default function EndoscopyShowcase() {
               <div className="absolute top-0 left-4 right-4 h-[2px] rounded-full bg-gradient-to-r from-transparent via-sky-400/60 to-transparent" />
 
               {/* Icon */}
-              <div className="w-14 h-14 rounded-full bg-sky-500/15 border border-sky-400/25 flex items-center justify-center mx-auto mb-4 text-sky-400 group-hover:bg-sky-400 group-hover:text-white group-hover:border-sky-400 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-sky-500/15 border border-sky-400/25 flex items-center justify-center mx-auto mb-2 sm:mb-4 text-sky-400 group-hover:bg-sky-400 group-hover:text-white group-hover:border-sky-400 group-hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-500 [&>div>svg]:w-5 [&>div>svg]:h-5 sm:[&>div>svg]:w-7 sm:[&>div>svg]:h-7">
                 <div className="transition-transform duration-500 group-hover:rotate-[360deg]">
                   {item.icon}
                 </div>
               </div>
 
-              <p className="text-white text-sm font-medium leading-snug whitespace-pre-line">
+              <p className="text-white text-xs sm:text-xl font-medium leading-snug whitespace-pre-line">
                 {item.label}
               </p>
             </div>

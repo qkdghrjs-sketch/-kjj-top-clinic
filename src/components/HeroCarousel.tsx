@@ -48,12 +48,8 @@ const slides: SlideData[] = [
     badgeEn: "CHECKUP & ENDOSCOPY",
     badgeKo: "검사 중심",
     titleParts: [
-      { text: "필요한 검사 " },
-      { text: "명확하게", highlight: true },
-    ],
-    titleLine2: [
-      { text: "결과는 " },
-      { text: "이해하기 쉽게", highlight: true },
+      { text: "정확한 검사, " },
+      { text: "쉬운 결과", highlight: true },
     ],
     subtitle:
       "건강검진 · 위·대장내시경을 중심으로 진단의 기준을 세웁니다.",
@@ -67,11 +63,10 @@ const slides: SlideData[] = [
       "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/39792de6e7263.jpeg",
     badgeEn: "CHRONIC DISEASE",
     badgeKo: "만성질환",
-    titleParts: [{ text: "고혈압·당뇨·고지혈증" }],
-    titleLine2: [
-      { text: "" },
-      { text: "꾸준한 관리가", highlight: true },
-      { text: " 치료입니다" },
+    titleParts: [
+      { text: "만성질환, " },
+      { text: "꾸준한 관리", highlight: true },
+      { text: "가 답입니다" },
     ],
     subtitle:
       "만성질환은 한 번의 치료보다 지속적인 관리가 중요합니다.",
@@ -91,11 +86,11 @@ function TitleLine({
     <>
       {parts.map((p, i) =>
         p.highlight ? (
-          <span key={i} className="text-sky-400">
+          <span key={i} className="text-sky-400" style={{ fontSize: 'inherit' }}>
             {p.text}
           </span>
         ) : (
-          <span key={i} className="text-white">
+          <span key={i} className="text-white" style={{ fontSize: 'inherit' }}>
             {p.text}
           </span>
         )
@@ -134,7 +129,7 @@ export default function HeroCarousel() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[70vh] md:h-[85vh] -mt-28 pt-28 md:-mt-48 md:pt-48 overflow-hidden">
+    <section className="relative h-[70vh] md:h-[88vh] overflow-hidden">
       {/* Slides background */}
       {slides.map((s, i) => (
         <div
@@ -160,20 +155,20 @@ export default function HeroCarousel() {
 
       {/* Content */}
       <div className="relative z-[3] h-full flex items-center">
-        <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="text-center max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 w-full">
+          <div className="text-center max-w-3xl lg:max-w-5xl mx-auto">
             {/* Badge */}
             <div
               key={`badge-${current}`}
-              className="animate-fade-in-up mb-8"
+              className="animate-fade-in-up mb-4 md:mb-6"
             >
               <div className="inline-flex items-center gap-2 sm:gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 py-1.5 sm:px-5 sm:py-2">
                 <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-                <span className="text-xs sm:text-sm text-white/80 font-medium tracking-wider uppercase">
+                <span className="text-xs sm:text-sm md:text-lg text-white/80 font-medium tracking-wider uppercase">
                   {slide.badgeEn}
                 </span>
-                <span className="w-px h-3.5 bg-white/30" />
-                <span className="text-xs sm:text-sm text-sky-300 font-medium">
+                <span className="w-px h-3.5 md:h-5 bg-white/30" />
+                <span className="text-xs sm:text-sm md:text-lg text-sky-300 font-medium">
                   {slide.badgeKo}
                 </span>
               </div>
@@ -181,7 +176,7 @@ export default function HeroCarousel() {
 
             {/* Title */}
             <div key={`title-${current}`} className="animate-fade-in-up">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3 md:mb-5">
                 <TitleLine parts={slide.titleParts} />
                 {slide.titleLine2 && (
                   <>
@@ -197,7 +192,7 @@ export default function HeroCarousel() {
               key={`sub-${current}`}
               className="animate-fade-in-up animation-delay-200"
             >
-              <p className="text-sm sm:text-lg md:text-xl text-gray-300/90 mb-6 md:mb-8 leading-relaxed">
+              <p className="text-sm sm:text-lg md:text-2xl text-gray-300/90 mb-4 md:mb-6 leading-relaxed">
                 {slide.subtitle}
               </p>
             </div>
@@ -207,14 +202,14 @@ export default function HeroCarousel() {
               key={`tags-${current}`}
               className="animate-fade-in-up animation-delay-400"
             >
-              <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-6 md:mb-10">
-                <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-xs sm:text-sm font-semibold border border-sky-400/30">
+              <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 md:gap-2.5 mb-6 md:mb-8">
+                <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full bg-sky-500/20 text-sky-300 text-xs sm:text-sm md:text-base font-semibold border border-sky-400/30">
                   {slide.tagLabel}
                 </span>
                 {slide.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/8 backdrop-blur-sm text-white/70 text-xs sm:text-sm border border-white/10 hover:bg-sky-500/20 hover:text-sky-300 hover:border-sky-400/30 transition-all duration-300 cursor-default"
+                    className="px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full bg-white/8 backdrop-blur-sm text-white/70 text-xs sm:text-sm md:text-base border border-white/10 hover:bg-sky-500/20 hover:text-sky-300 hover:border-sky-400/30 transition-all duration-300 cursor-default"
                   >
                     {tag}
                   </span>
@@ -230,13 +225,13 @@ export default function HeroCarousel() {
               <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
                 <Link
                   href={slide.buttonHref}
-                  className="group border-2 border-white/40 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base whitespace-nowrap"
+                  className="group border-2 border-white/40 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base md:text-lg whitespace-nowrap"
                 >
                   {slide.buttonText}
                 </Link>
                 <button
                   onClick={handleReservation}
-                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base cursor-pointer whitespace-nowrap"
+                  className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base md:text-lg cursor-pointer whitespace-nowrap"
                 >
                   전화 예약: 02-6798-8880
                 </button>

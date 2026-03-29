@@ -23,7 +23,7 @@ export default function HoursPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <span className="text-gold-400 font-semibold text-sm uppercase tracking-widest">
+            <span className="text-gold-400 font-semibold text-base uppercase tracking-widest">
               Office Hours
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mt-2 mb-2">
@@ -82,7 +82,7 @@ export default function HoursPage() {
 
           <ScrollReveal delay={200}>
             <div className="mt-6 bg-gradient-to-r from-navy-50 to-sky-50 border-l-4 border-gold-400 p-5 rounded-r-xl">
-              <p className="text-sm text-navy-700">
+              <p className="text-base text-navy-700">
                 <strong className="text-navy-900">안내:</strong> 내시경 검사는
                 사전 예약제로 운영됩니다. 전화(
                 <a href="tel:02-6798-8880" className="text-sky-600 font-semibold hover:underline">
@@ -95,7 +95,7 @@ export default function HoursPage() {
 
           <ScrollReveal delay={300}>
             <div className="mt-4 bg-sky-50 rounded-xl p-4">
-              <p className="text-sky-700 text-sm">
+              <p className="text-sky-700 text-base">
                 <strong>※</strong> 매월 1, 3번째 주 일요일은 예약검진을 진행합니다.
               </p>
             </div>

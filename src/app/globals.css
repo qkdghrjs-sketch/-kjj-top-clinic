@@ -43,14 +43,34 @@ body {
   background: #ffffff;
   color: #1f2937;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.7;
   overflow-x: hidden;
 }
 
-/* Increase paragraph / list text globally */
-p, li, td, th, span, label {
-  font-size: 17px;
+@media (min-width: 640px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Increase paragraph / list text globally — use low specificity so Tailwind classes win */
+p:not([class*="text-"]),
+li:not([class*="text-"]),
+td, th,
+span:not([class*="text-"]),
+label {
+  font-size: 15px;
+}
+
+@media (min-width: 640px) {
+  p:not([class*="text-"]),
+  li:not([class*="text-"]),
+  td, th,
+  span:not([class*="text-"]),
+  label {
+    font-size: 17px;
+  }
 }
 
 /* Reduce section vertical gaps */

@@ -30,7 +30,7 @@ export default function HairLossPage() {
             <CountUp end={80} suffix="%+" label="조기치료 효과" />
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">6개월</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">최소 치료 기간</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">최소 치료 기간</p>
             </div>
           </div>
         </div>
@@ -53,8 +53,8 @@ export default function HairLossPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   탈모클리닉 소개
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
-                  {"탈모는 조기 치료가 가장 효과적입니다.\n전문의가 탈모 유형을 정확히 파악해 맞춤 치료를 제공합니다.\n하루 100개 이상 빠진다면 탈모를 의심해볼 수 있습니다."}
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  탈모는 조기 치료가 가장 효과적입니다. 전문의가 탈모 유형을 정확히 파악해 맞춤 치료를 제공합니다. 하루 100개 이상 빠진다면 탈모를 의심해볼 수 있습니다.
                 </p>
               </div>
             </div>
@@ -79,19 +79,19 @@ export default function HairLossPage() {
             {[
               {
                 title: "남성형 탈모",
-                desc: "안드로겐 호르몬의 영향으로 M자형 또는 정수리부터 탈모가 시작됩니다.\n가장 흔한 탈모 유형으로 유전적 요인이 큽니다.",
+                desc: "안드로겐 호르몬의 영향으로 M자형 또는 정수리부터 탈모가 시작됩니다. 가장 흔한 유형으로 유전적 요인이 큽니다.",
               },
               {
                 title: "여성형 탈모",
-                desc: "전체적으로 모발 밀도가 감소하며 가르마 부위가 넓어집니다.\n호르몬 변화, 빈혈, 영양 부족이 원인일 수 있습니다.",
+                desc: "전체적으로 모발 밀도가 감소하며 가르마 부위가 넓어집니다. 호르몬 변화, 빈혈, 영양 부족이 원인일 수 있습니다.",
               },
               {
                 title: "원형 탈모",
-                desc: "자가면역반응으로 동전 모양의 국소 탈모가 발생합니다.\n스트레스가 주요 유발 인자입니다.",
+                desc: "자가면역반응으로 동전 모양의 국소 탈모가 발생합니다. 스트레스가 주요 유발 인자입니다.",
               },
               {
                 title: "휴지기 탈모",
-                desc: "출산, 극심한 스트레스, 급격한 체중감량 후 일시적으로 발생합니다.\n원인 제거 후 자연 회복되는 경우가 많습니다.",
+                desc: "출산, 극심한 스트레스, 급격한 체중감량 후 일시적으로 발생합니다. 원인 제거 후 자연 회복되는 경우가 많습니다.",
               },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
@@ -99,7 +99,7 @@ export default function HairLossPage() {
                   <h3 className="text-lg font-bold text-navy-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  <p className="text-gray-600 text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

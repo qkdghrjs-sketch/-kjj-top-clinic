@@ -28,15 +28,15 @@ export default function IVTherapyPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">다양한 종류</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">맞춤형 수액</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">맞춤형 수액</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">1인</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">프리미엄 수액실</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">프리미엄 수액실</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">스트레스 검사</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">연계 맞춤 처방</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">연계 맞춤 처방</p>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function IVTherapyPage() {
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
+              <div className="relative w-full h-52 sm:h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
                   src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1815f9c56aac8.jpeg"
                   alt="수액클리닉 소개"
@@ -60,7 +60,7 @@ export default function IVTherapyPage() {
                   수액클리닉 소개
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
-                  {"피로 회복부터 면역 강화까지 목적에 맞는 맞춤형 수액 치료를 제공합니다.\n경구 복용보다 흡수율이 100%로 빠른 효과를 기대할 수 있습니다.\n전문의가 개인 건강 상태를 파악 후 처방합니다."}
+                  {"피로 회복부터 면역 강화까지 목적에 맞는 맞춤형 수액 치료를\n제공합니다. 경구 복용보다 흡수율이 100%로 빠른 효과를 기대할 수\n있습니다. 전문의가 개인 건강 상태를 파악 후 처방합니다."}
                 </p>
               </div>
             </div>
@@ -81,49 +81,54 @@ export default function IVTherapyPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="space-y-4">
             {[
               {
                 title: "피로회복 수액",
-                desc: "비타민B군, 아미노산, 마그네슘을 공급하여 피로와 무기력증을 회복시킵니다.\n과로, 만성 피로에 효과적입니다.",
+                desc: "비타민B군, 아미노산, 마그네슘을 공급하여\n피로와 무기력증을 회복시킵니다.\n과로, 만성 피로에 효과적입니다.",
               },
               {
                 title: "면역 강화 수액",
-                desc: "고용량 비타민C(10~20g)를 투여하여 면역력을 높이고 항산화 효과를 냅니다.\n감기 예방과 회복에 도움됩니다.",
+                desc: "고용량 비타민C(10~20g)를 투여하여\n면역력을 높이고 항산화 효과를 냅니다.\n감기 예방과 회복에 도움됩니다.",
               },
               {
                 title: "마늘 수액",
-                desc: "알리신 성분으로 피로 회복, 혈액순환 개선, 활력 증진에 효과적입니다.\n체력 저하와 무기력감에 추천합니다.",
+                desc: "알리신 성분으로 피로 회복, 혈액순환 개선,\n활력 증진에 효과적입니다.\n체력 저하와 무기력감에 추천합니다.",
               },
               {
                 title: "백옥 수액",
-                desc: "글루타치온을 투여하여 미백 효과와 강력한 항산화 작용을 합니다.\n피부 톤 개선과 노화 방지에 효과적입니다.",
+                desc: "글루타치온을 투여하여 미백 효과와\n강력한 항산화 작용을 합니다.\n피부 톤 개선과 노화 방지에 효과적입니다.",
               },
               {
                 title: "비타민 D 수액",
-                desc: "비타민 D를 직접 투여하여 골다공증 예방과 면역력 강화에 도움을 줍니다.",
+                desc: "비타민 D를 직접 투여하여\n골다공증 예방과 면역력 강화에 도움을 줍니다.",
               },
               {
                 title: "태반 수액",
-                desc: "태반 추출물을 투여하여 피로 회복, 피부 재생, 호르몬 균형에 효과적입니다.",
+                desc: "태반 추출물을 투여하여 피로 회복,\n피부 재생, 호르몬 균형에 효과적입니다.",
               },
               {
                 title: "생리통 수액",
-                desc: "생리통 완화에 필요한 영양소를 공급하여 통증과 불편감을 줄여줍니다.",
+                desc: "생리통 완화에 필요한 영양소를 공급하여\n통증과 불편감을 줄여줍니다.",
               },
               {
                 title: "이명, 어지럼증 수액",
-                desc: "혈액순환 개선과 신경 안정에 도움을 주어 이명과 어지럼증 증상을 완화합니다.",
+                desc: "혈액순환 개선과 신경 안정에 도움을 주어\n이명과 어지럼증 증상을 완화합니다.",
               },
             ].map((item, idx) => (
-              <ScrollReveal key={idx} delay={idx * 100}>
-                <div className="bg-white rounded-2xl shadow-md p-8 h-full card-hover-glow">
-                  <h3 className="text-lg font-bold text-navy-900 mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
-                    {item.desc}
-                  </p>
+              <ScrollReveal key={idx} delay={idx * 80}>
+                <div className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="flex items-stretch">
+                    <div className="w-2 bg-sky-500 group-hover:bg-sky-400 transition-colors duration-300 shrink-0" />
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8 px-6 py-5 w-full">
+                      <div className="shrink-0">
+                        <span className="text-sm font-bold text-sky-500 tracking-wide">{String(idx + 1).padStart(2, '0')}</span>
+                        <h3 className="text-lg font-bold text-navy-900">{item.title}</h3>
+                      </div>
+                      <div className="hidden sm:block w-px h-12 bg-gray-200 shrink-0" />
+                      <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">{item.desc}</p>
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -144,7 +149,7 @@ export default function IVTherapyPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
               { step: "01", title: "상담" },
               { step: "02", title: "스트레스 검사" },
@@ -152,8 +157,8 @@ export default function IVTherapyPage() {
               { step: "04", title: "귀가" },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
-                <div className="relative bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                  <span className="text-5xl font-black text-sky-500/20">
+                <div className="relative bg-gray-50 rounded-2xl p-5 sm:p-8 text-center hover:shadow-lg transition-shadow">
+                  <span className="text-4xl sm:text-5xl font-black text-sky-500/20">
                     {item.step}
                   </span>
                   <h3 className="text-lg font-bold text-navy-900 mt-2">

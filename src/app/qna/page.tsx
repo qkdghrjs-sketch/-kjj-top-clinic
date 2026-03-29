@@ -205,7 +205,7 @@ export default function QnAPage() {
           </div>
 
           {/* Results count */}
-          <p className="text-sm text-gray-500 mb-6">
+          <p className="text-base text-gray-500 mb-6">
             총 <span className="font-bold text-navy-900">{filtered.length}</span>개의 글
           </p>
 
@@ -226,29 +226,29 @@ export default function QnAPage() {
                     <div className="p-5">
                       {/* Top row: number + category */}
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-navy-200 text-xs font-bold tracking-wider">
+                        <span className="text-navy-200 text-sm font-bold tracking-wider">
                           #{String(globalIdx).padStart(2, "0")}
                         </span>
-                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold ${style?.bg || "bg-gray-50"} ${style?.text || "text-gray-500"}`}>
+                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${style?.bg || "bg-gray-50"} ${style?.text || "text-gray-500"}`}>
                           {style?.icon}
                           {post.category}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-navy-900 font-bold text-[15px] leading-snug mb-4 line-clamp-2 group-hover:text-sky-600 transition-colors duration-300">
+                      <h3 className="text-navy-900 font-bold text-base leading-snug mb-4 line-clamp-2 group-hover:text-sky-600 transition-colors duration-300">
                         {post.title}
                       </h3>
 
                       {/* Bottom */}
                       <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                        <span className="text-gray-400 text-xs flex items-center gap-1">
+                        <span className="text-gray-400 text-sm flex items-center gap-1">
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                           김정재 원장
                         </span>
-                        <span className="text-sky-500 text-xs font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+                        <span className="text-sky-500 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
                           읽기
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -266,7 +266,7 @@ export default function QnAPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <p className="text-gray-400 text-lg">검색 결과가 없습니다</p>
-              <p className="text-gray-300 text-sm mt-1">다른 키워드로 검색해보세요</p>
+              <p className="text-gray-300 text-base mt-1">다른 키워드로 검색해보세요</p>
             </div>
           )}
 

@@ -6,10 +6,10 @@ import WhyKimtop from "@/components/WhyKimtop";
 import FAQ from "@/components/FAQ";
 
 const diseases = [
-  { name: "비염", desc: "코막힘, 재채기, 후비루로 일상이 불편하다면 이비인후과 진료가 필요합니다.\n원인 항원을 찾아 정확한 치료 계획을 수립합니다.\n약물치료와 면역치료를 병행하면 더욱 효과적입니다." },
-  { name: "급성 후두염", desc: "목소리 변화와 기침, 목 통증이 동반되는 후두 염증 질환입니다.\n적절한 약물치료와 음성 안정으로 빠른 회복이 가능합니다.\n증상이 지속되면 후두 내시경 검사를 통해 정확한 진단이 필요합니다." },
-  { name: "급성 편도염", desc: "심한 목 통증과 고열이 동반되는 편도 감염 질환입니다.\n적절한 항생제 치료로 빠른 회복이 가능합니다.\n반복적으로 발생한다면 편도 수술을 고려할 수 있습니다." },
-  { name: "중이염", desc: "귀 통증과 청력 저하, 이명이 주요 증상입니다.\n소아에서 흔하며 적절한 치료 없이 만성화될 수 있습니다.\n항생제와 소염제로 치료하며 심한 경우 고막절개가 필요합니다." },
+  { name: "비염", desc: "코막힘, 재채기, 후비루로 일상이 불편하다면 진료가 필요합니다.\n원인 항원을 찾아 약물치료와 면역치료를 병행하면 효과적입니다." },
+  { name: "급성 후두염", desc: "목소리 변화, 기침, 목 통증이 동반되는 후두 염증 질환입니다.\n약물치료와 음성 안정으로 빠른 회복이 가능합니다." },
+  { name: "급성 편도염", desc: "심한 목 통증과 고열이 동반되는 편도 감염 질환입니다.\n항생제 치료로 회복이 가능하며, 반복 시 수술을 고려합니다." },
+  { name: "중이염", desc: "귀 통증, 청력 저하, 이명이 주요 증상입니다.\n소아에서 흔하며 적절한 치료 없이 만성화될 수 있어 조기 치료가 중요합니다." },
 ];
 
 export default function EntPage() {
@@ -36,11 +36,11 @@ export default function EntPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">내시경 비인두 검사</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">정밀 비인두 관찰</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">정밀 비인두 관찰</p>
             </div>
             <div className="text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">소아 감기 진료</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">소아 전문 진료</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">소아 전문 진료</p>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function EntPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
                   style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/993b4f8749e43.jpeg')" }}
@@ -60,7 +60,7 @@ export default function EntPage() {
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">이비인후과 전문 진료</h2>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"귀·코·목 질환의 전문적인 진료를 제공합니다."}</p>
+              <p className="text-gray-600 leading-relaxed">귀·코·목 질환의 전문적인 진료를 제공합니다.</p>
             </ScrollReveal>
           </div>
         </div>
@@ -77,14 +77,14 @@ export default function EntPage() {
           <div className="grid sm:grid-cols-2 gap-6">
             {diseases.map((d, i) => (
               <ScrollReveal key={d.name} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                <div className="bg-white rounded-2xl p-4 sm:p-7 border border-gray-100 card-hover-glow h-full">
                   <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-navy-900 mb-3">{d.name}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{d.desc}</p>
+                  <p className="text-gray-500 text-base leading-relaxed whitespace-pre-line">{d.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -100,14 +100,14 @@ export default function EntPage() {
               <span className="text-sky-500">검사</span> 방법
             </h2>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {["문진", "내시경 비인두 검사", "혈액 검사"].map((item, i) => (
               <ScrollReveal key={item} delay={i * 100}>
                 <div className="text-center p-6 bg-navy-50 rounded-2xl">
                   <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <p className="text-navy-900 font-semibold text-sm">{item}</p>
+                  <p className="text-navy-900 font-semibold text-base">{item}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -119,7 +119,7 @@ export default function EntPage() {
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-4 sm:p-8">
               <h3 className="text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
                 <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
@@ -131,7 +131,7 @@ export default function EntPage() {
                   "귀 자가 세척 금지",
                   "코 세척 시 생리식염수 사용 권장",
                 ].map((c) => (
-                  <li key={c} className="flex items-start gap-2 text-gray-700 text-sm">
+                  <li key={c} className="flex items-start gap-2 text-gray-700 text-base">
                     <span className="text-sky-500 font-bold mt-0.5">※</span>
                     {c}
                   </li>

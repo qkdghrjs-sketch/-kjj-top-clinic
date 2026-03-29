@@ -25,7 +25,7 @@ const DEFAULT_IMAGE = "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/41981d
 
 export default function WhyKimtop({ box, overlay, description, bottomText, features, image }: WhyKimtopProps) {
   return (
-    <section className="relative py-12 md:py-24 overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
+    <section className="relative py-8 md:py-12 overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
       {/* Decorative blurs */}
       <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
         <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-sky-400 rounded-full blur-[120px]" />
@@ -38,7 +38,7 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
           <ScrollReveal>
             <div className="relative">
               <div
-                className="w-full h-[240px] sm:h-[320px] md:h-[380px] bg-cover bg-center shadow-2xl"
+                className="w-full h-[160px] sm:h-[200px] md:h-[240px] bg-cover bg-center shadow-2xl"
                 style={{
                   backgroundImage:
                     `url('${image || DEFAULT_IMAGE}')`,
@@ -53,8 +53,8 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
               {/* Gold line */}
               <div className="absolute bottom-0 left-0 w-3/4 h-[3px] bg-gradient-to-r from-gold-400 to-transparent" />
               {/* Overlay text */}
-              <div className="absolute bottom-6 left-0 bg-navy-900/85 backdrop-blur-sm px-5 py-3">
-                <p className="text-white font-semibold text-sm">{overlay}</p>
+              <div className="absolute bottom-4 sm:bottom-6 left-0 bg-navy-900/85 backdrop-blur-sm px-3 sm:px-5 py-2 sm:py-3">
+                <p className="text-white font-semibold text-sm sm:text-base">{overlay}</p>
               </div>
             </div>
           </ScrollReveal>
@@ -71,24 +71,24 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
                 </span>
               </div>
 
-              <p className="text-white/80 text-sm leading-relaxed mb-6 whitespace-pre-line">
+              <p className="text-white/80 text-sm leading-relaxed mb-3 whitespace-pre-line">
                 {description}
               </p>
 
-              <div className="w-24 h-[2px] bg-gradient-to-r from-gold-400 to-transparent mb-6" />
+              <div className="w-20 h-[2px] bg-gradient-to-r from-gold-400 to-transparent mb-3" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-2 mb-4">
                 {features.map((feature, i) => {
                   const title = typeof feature === "string" ? feature : feature.title;
                   const sub = typeof feature === "string" ? null : feature.sub;
                   return (
-                    <div key={title} className="flex items-start gap-3 bg-white/[0.06] backdrop-blur-sm rounded-xl p-3 border border-white/[0.08]">
-                      <div className="w-9 h-9 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0 text-sky-400">
+                    <div key={title} className="flex items-center gap-1.5 sm:gap-2 bg-white/[0.06] backdrop-blur-sm rounded-lg px-2 sm:px-3 py-2 border border-white/[0.08]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0 text-sky-400 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-4 sm:[&>svg]:h-4">
                         {featureIcons[i % featureIcons.length]}
                       </div>
-                      <div className="pt-1">
-                        <span className="text-white font-medium text-sm">{title}</span>
-                        {sub && <p className="text-white/60 text-xs mt-0.5">{sub}</p>}
+                      <div className="min-w-0">
+                        <span className="text-white font-medium text-xs sm:text-sm">{title}</span>
+                        {sub && <p className="text-white/60 text-[10px] sm:text-xs truncate">{sub}</p>}
                       </div>
                     </div>
                   );
@@ -96,7 +96,7 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
               </div>
 
               {bottomText && (
-                <p className="text-white/80 text-sm leading-relaxed mb-6 whitespace-pre-line">
+                <p className="text-white/80 text-base leading-relaxed mb-6 whitespace-pre-line">
                   {bottomText}
                 </p>
               )}

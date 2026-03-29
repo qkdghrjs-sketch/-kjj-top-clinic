@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} antialiased`}>
         <ScrollToTop />
         <Header />
-        <main className="min-h-screen pt-28 md:pt-48">{children}</main>
+        <main className="min-h-screen pt-20 sm:pt-36 md:pt-48">{children}</main>
         <LocationSection />
         <Footer />
         <FloatingButtons />

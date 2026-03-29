@@ -26,7 +26,7 @@ export default function LocationSection({ forceShow = false }: { forceShow?: boo
     <section id="location" className="py-12 sm:py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-16">
             <span className="text-gold-400 font-semibold text-sm uppercase tracking-widest">
               Location
             </span>
@@ -120,7 +120,7 @@ export default function LocationSection({ forceShow = false }: { forceShow?: boo
 
               <h3 className="text-xl font-bold text-navy-900 mb-4">진료시간</h3>
               <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                <table className="w-full">
+                <table className="w-full table-fixed sm:table-auto">
                   <thead>
                     <tr className="bg-navy-900 text-white">
                       <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold">요일</th>

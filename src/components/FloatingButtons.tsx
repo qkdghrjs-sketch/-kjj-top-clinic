@@ -52,7 +52,7 @@ export default function FloatingButtons() {
         {activeTooltip === "kakao" && (
           <Tooltip
             text="카카오톡 채널로 이동합니다"
-            href="https://pf.kakao.com"
+            href="https://pf.kakao.com/_GdEZX"
             external
             onClose={() => setActiveTooltip(null)}
           />

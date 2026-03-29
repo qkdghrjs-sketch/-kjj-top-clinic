@@ -27,15 +27,15 @@ export default function DementiaPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">10명 중 1명</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">65세 이상 치매</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">65세 이상 치매</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">조기발견</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">진행 지연 가능</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">진행 지연 가능</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">66세 이상</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">무료 치매검진</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">무료 치매검진</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function DementiaPage() {
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:gap-12 items-center">
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
+              <div className="relative w-full h-52 sm:h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg img-zoom">
                 <Image
                   src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/6be165f9af0aa.jpeg"
                   alt="치매클리닉 소개"
@@ -58,8 +58,8 @@ export default function DementiaPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   치매클리닉 소개
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
-                  {"치매는 조기 발견이 가장 중요합니다.\n정기적인 인지기능 검사로 치매를 예방하고 관리하세요.\n알츠하이머병(70%), 혈관성 치매(20%), 기타 원인에 의한 치매로 분류됩니다."}
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  치매는 조기 발견이 가장 중요합니다. 정기적인 인지기능 검사로 치매를 예방하고 관리하세요. 알츠하이머병(70%), 혈관성 치매(20%), 기타 원인에 의한 치매로 분류됩니다.
                 </p>
               </div>
             </div>
@@ -84,27 +84,27 @@ export default function DementiaPage() {
             {[
               {
                 title: "기억력 저하",
-                desc: "최근 일을 자꾸 잊으며 약속이나 물건 둔 곳을 기억하지 못합니다.\n같은 질문을 반복하는 것이 초기 증상입니다.",
+                desc: "최근 일을 자꾸 잊으며 약속이나 물건 둔 곳을 기억하지 못합니다. 같은 질문을 반복하는 것이 초기 증상입니다.",
               },
               {
                 title: "언어 장애",
-                desc: "단어가 잘 떠오르지 않고 대화 중 엉뚱한 말을 하게 됩니다.\n글을 읽거나 쓰는 데 어려움이 생깁니다.",
+                desc: "단어가 잘 떠오르지 않고 대화 중 엉뚱한 말을 하게 됩니다. 글을 읽거나 쓰는 데 어려움이 생깁니다.",
               },
               {
                 title: "방향 감각 상실",
-                desc: "익숙한 장소에서 길을 잃거나 시간 감각이 흐려집니다.\n외출 시 귀가하는 길을 찾지 못할 수 있습니다.",
+                desc: "익숙한 장소에서 길을 잃거나 시간 감각이 흐려집니다. 외출 시 귀가하는 길을 찾지 못할 수 있습니다.",
               },
               {
                 title: "판단력 저하",
-                desc: "일상적인 결정이 어려워지고 금전 관리에 실수가 잦아집니다.\n위험한 상황을 인지하지 못할 수 있습니다.",
+                desc: "일상적인 결정이 어려워지고 금전 관리에 실수가 잦아집니다. 위험한 상황을 인지하지 못할 수 있습니다.",
               },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
-                <div className="bg-white rounded-2xl shadow-md p-8 h-full card-hover-glow">
+                <div className="bg-white rounded-2xl shadow-md p-4 sm:p-8 h-full card-hover-glow">
                   <h3 className="text-lg font-bold text-navy-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  <p className="text-gray-600 text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -127,15 +127,15 @@ export default function DementiaPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {[
               { step: "01", title: "MMSE & GDS 검사" },
               { step: "02", title: "혈액 검사" },
               { step: "03", title: "문진" },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
-                <div className="relative bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                  <span className="text-5xl font-black text-sky-500/20">
+                <div className="relative bg-gray-50 rounded-2xl p-5 sm:p-8 text-center hover:shadow-lg transition-shadow">
+                  <span className="text-4xl sm:text-5xl font-black text-sky-500/20">
                     {item.step}
                   </span>
                   <h3 className="text-lg font-bold text-navy-900 mt-2">

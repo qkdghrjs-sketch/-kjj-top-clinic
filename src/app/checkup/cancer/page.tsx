@@ -24,10 +24,10 @@ const steps = [
 
 const faqItems = [
   { q: "5대암 검진은 무료인가요?", a: "국민건강보험 적용으로 본인부담금이 최소화됩니다." },
-  { q: "어떤 암이 5대암에 포함되나요?", a: "위암, 대장암, 간암, 유방암, 자궁경부암, 폐암 총 6가지 암 검진을 시행합니다" },
-  { q: "검진 주기는 어떻게 되나요?", a: "생애 주기 검사 항목에 맞춰 나이대 별로 검진 종류가 다르게 시행됩니다" },
+  { q: "어떤 암이 5대암에 포함되나요?", a: "위암, 대장암, 간암, 유방암, 자궁경부암, 폐암 총 6가지 암 검진을 시행합니다." },
+  { q: "검진 주기는 어떻게 되나요?", a: "생애 주기 검사 항목에 맞춰 나이대별로 검진 종류가 다르게 시행됩니다." },
   { q: "검진 결과는 언제 확인할 수 있나요?", a: "검사 항목에 따라 당일 또는 2주 내 결과를 안내합니다." },
-  { q: "가족력이 있으면 더 자주 검진받아야 하나요?", a: "1촌 이내 암의 가족력이 있다면 국가 검진보다 더 자주 받는 것을 권장합니다" },
+  { q: "가족력이 있으면 더 자주 검진받아야 하나요?", a: "1촌 이내 암 가족력이 있다면 국가 검진보다 더 자주 받는 것을 권장합니다." },
 ];
 
 export default function CancerScreeningPage() {
@@ -59,8 +59,8 @@ export default function CancerScreeningPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={5} suffix="대암" label="국가 암검진" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">조기발견</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">완치율 90%+</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">조기발견</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">완치율 90%+</p>
             </div>
             <CountUp end={100} suffix="%" label="보험 적용" />
           </div>
@@ -72,7 +72,7 @@ export default function CancerScreeningPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
                   style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg')" }}
@@ -84,7 +84,7 @@ export default function CancerScreeningPage() {
                 5대암 <span className="text-sky-500">조기발견</span> 프로그램
               </h2>
               <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
-                {"질병 발생 전 예방하는 것을 목적으로, 5대암 검진을 통해 조기암이 발견될 경우 완치율도 90% 이상으로 높아집니다."}
+                {"질병 발생 전 예방을 목적으로, 5대암 검진을 통해 조기암이 발견될 경우\n완치율이 90% 이상으로 높아집니다."}
               </p>
             </ScrollReveal>
           </div>
@@ -103,18 +103,43 @@ export default function CancerScreeningPage() {
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {screeningCards.map((card, i) => (
-              <ScrollReveal key={card.title} delay={i * 100}>
-                <div className="bg-white rounded-2xl shadow-md p-6 h-full card-hover-glow">
-                  <h3 className="text-xl font-bold text-navy-900 mb-4">{card.title}</h3>
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <p><span className="font-semibold text-navy-900">대상</span> {card.대상}</p>
-                    <p><span className="font-semibold text-navy-900">주기</span> {card.주기}</p>
-                    <p><span className="font-semibold text-navy-900">방법</span> {card.방법}</p>
+            {screeningCards.map((card, i) => {
+              const colors = [
+                "from-sky-500 to-sky-600",
+                "from-emerald-500 to-emerald-600",
+                "from-amber-500 to-amber-600",
+                "from-rose-500 to-rose-600",
+                "from-violet-500 to-violet-600",
+                "from-navy-700 to-navy-800",
+              ];
+              const icons = ["🔬", "🩺", "🫁", "💗", "🩻", "🫁"];
+              return (
+                <ScrollReveal key={card.title} delay={i * 100}>
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden h-full card-hover-glow group">
+                    {/* 상단 컬러 헤더 */}
+                    <div className={`bg-gradient-to-r ${colors[i]} px-6 py-4 flex items-center justify-between`}>
+                      <h3 className="text-xl font-bold text-white">{card.title}</h3>
+                      <span className="text-2xl">{icons[i]}</span>
+                    </div>
+                    {/* 정보 영역 */}
+                    <div className="px-6 py-5 space-y-3">
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-14 text-sm font-bold text-white bg-navy-900 rounded-md px-2 py-1 text-center">대상</span>
+                        <span className="text-base text-gray-700 pt-0.5">{card.대상}</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-14 text-sm font-bold text-white bg-sky-500 rounded-md px-2 py-1 text-center">주기</span>
+                        <span className="text-base text-gray-700 pt-0.5">{card.주기}</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-14 text-sm font-bold text-white bg-emerald-500 rounded-md px-2 py-1 text-center">방법</span>
+                        <span className="text-base text-gray-700 pt-0.5">{card.방법}</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -131,12 +156,12 @@ export default function CancerScreeningPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {steps.map((step, i) => (
                 <div key={step.num} className="relative">
-                  <div className="border-2 border-gray-200 rounded-2xl p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
-                    <span className="text-3xl font-black text-sky-500 block mb-3">{step.num}</span>
-                    <h4 className="text-navy-900 font-bold text-base">{step.title}</h4>
+                  <div className="border-2 border-gray-200 rounded-2xl p-4 sm:p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
+                    <span className="text-2xl sm:text-3xl font-black text-sky-500 block mb-2 sm:mb-3">{step.num}</span>
+                    <h4 className="text-navy-900 font-bold text-sm sm:text-base">{step.title}</h4>
                   </div>
                   {i < 3 && (
                     <div className="hidden md:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10">

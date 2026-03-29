@@ -42,17 +42,17 @@ export default function HomeVisitPage() {
                   체계적으로 준비 중이며, 빠른 시일 내에 서비스를 개시할
                   예정입니다.
                 </p>
-                <p className="text-gray-500 text-sm mb-8">
+                <p className="text-gray-500 text-base mb-8">
                   방문진료 서비스에 대한 문의사항이 있으시면 아래 연락처로
                   편하게 연락해 주세요.
                 </p>
 
                 <div className="bg-white rounded-xl p-6">
-                  <p className="text-sm text-gray-500 mb-2">문의 전화</p>
+                  <p className="text-base text-gray-500 mb-2">문의 전화</p>
                   <p className="text-sky-500 text-xl font-bold">
                     ☎ 02-6798-8880
                   </p>
-                  <p className="text-sm text-gray-500 mt-3">
+                  <p className="text-base text-gray-500 mt-3">
                     평일 09:00 ~ 18:00 | 토요일 09:00 ~ 13:00
                   </p>
                 </div>

@@ -6,10 +6,10 @@ import WhyKimtop from "@/components/WhyKimtop";
 import FAQ from "@/components/FAQ";
 
 const programCards = [
-  { title: "기본 종합검진", desc: "혈액검사 + 소변검사 + 심전도 + 흉부X-ray를 포함합니다.\n기본적인 건강 상태를 빠르게 확인할 수 있습니다." },
-  { title: "정밀 종합검진", desc: "기본 + 복부초음파 + 위내시경을 포함합니다.\n소화기 질환의 조기 발견에 효과적입니다." },
-  { title: "프리미엄 검진", desc: "정밀 + 대장내시경 + 갑상선초음파를 포함합니다.\n보다 꼼꼼한 건강 확인이 가능합니다." },
-  { title: "VIP 검진", desc: "프리미엄 + CT + 골밀도 검사를 포함합니다.\n최고 수준의 종합적인 건강 평가입니다." },
+  { title: "기본 종합검진", desc: "혈액, 소변, 심전도, 흉부X-ray를 포함하여 기본 건강 상태를 빠르게 확인합니다." },
+  { title: "정밀 종합검진", desc: "기본 항목에 복부초음파와 위내시경을 추가하여 소화기 질환을 조기에 발견합니다." },
+  { title: "프리미엄 검진", desc: "정밀 항목에 대장내시경과 갑상선초음파를 추가하여 더 꼼꼼하게 확인합니다." },
+  { title: "VIP 검진", desc: "프리미엄 항목에 CT와 골밀도 검사를 추가한 최고 수준의 종합 건강평가입니다." },
 ];
 
 const steps = [
@@ -21,10 +21,10 @@ const steps = [
 ];
 
 const faqItems = [
-  { q: "종합검진은 보험이 되나요?", a: "일부 항목은 보험 적용이 되나 대부분 비급여입니다.\n내원 시 상세 안내해 드립니다." },
-  { q: "검진 전 준비사항은?", a: "검진 전날 밤 9시 이후 금식이 필요합니다.\n복용 중인 약은 전문의와 상담하세요." },
+  { q: "종합검진은 보험이 되나요?", a: "일부 항목은 보험 적용이 되나 대부분 비급여입니다. 내원 시 상세 안내해 드립니다." },
+  { q: "검진 전 준비사항은?", a: "검진 전날 밤 9시 이후 금식이 필요합니다. 복용 중인 약은 전문의와 상담하세요." },
   { q: "검진 소요시간은 얼마나 되나요?", a: "프로그램에 따라 1~3시간 정도 소요됩니다." },
-  { q: "여성 검진 시 주의사항이 있나요?", a: "생리 기간을 피해서 예약하시는 것을 권장합니다.\n검사 전까지 소변을 참아주세요" },
+  { q: "여성 검진 시 주의사항이 있나요?", a: "생리 기간을 피해 예약하시고, 검사 전까지 소변을 참아주세요." },
   { q: "검진 결과 이상이 나오면?", a: "전문의가 직접 결과를 설명하고 필요시 추가 검사를 안내합니다." },
 ];
 
@@ -52,15 +52,15 @@ export default function ComprehensiveCheckupPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">1:1</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">검진 상담</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">검진 상담</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">대학병원급</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">의료 장비</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">의료 장비</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">검진 후</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">지속 관리</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">지속 관리</p>
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function ComprehensiveCheckupPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
                   style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/232af9f1a11e8.jpeg')" }}
@@ -101,15 +101,29 @@ export default function ComprehensiveCheckupPage() {
               <div className="w-16 h-1 bg-sky-500 mx-auto" />
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {programCards.map((card, i) => (
-              <ScrollReveal key={card.title} delay={i * 100}>
-                <div className="bg-white rounded-2xl shadow-md p-6 h-full card-hover-glow">
-                  <h3 className="text-xl font-bold text-navy-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{card.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {programCards.map((card, i) => {
+              const tiers = [
+                { color: "border-sky-400", bg: "bg-sky-50", badge: "bg-sky-500", icon: "🩺" },
+                { color: "border-emerald-400", bg: "bg-emerald-50", badge: "bg-emerald-500", icon: "🔬" },
+                { color: "border-amber-400", bg: "bg-amber-50", badge: "bg-amber-500", icon: "⭐" },
+                { color: "border-violet-400", bg: "bg-violet-50", badge: "bg-violet-500", icon: "👑" },
+              ];
+              const t = tiers[i];
+              return (
+                <ScrollReveal key={card.title} delay={i * 100}>
+                  <div className={`rounded-2xl border-2 ${t.color} overflow-hidden h-full card-hover-glow bg-white`}>
+                    <div className={`${t.bg} px-5 py-4 text-center`}>
+                      <span className="text-2xl block mb-1">{t.icon}</span>
+                      <h3 className="text-lg font-bold text-navy-900">{card.title}</h3>
+                    </div>
+                    <div className="px-5 py-4">
+                      <p className="text-gray-600 text-base leading-relaxed">{card.desc}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -126,12 +140,12 @@ export default function ComprehensiveCheckupPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
               {steps.map((step, i) => (
                 <div key={step.num} className="relative">
-                  <div className="border-2 border-gray-200 rounded-2xl p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
-                    <span className="text-3xl font-black text-sky-500 block mb-3">{step.num}</span>
-                    <h4 className="text-navy-900 font-bold text-base">{step.title}</h4>
+                  <div className="border-2 border-gray-200 rounded-2xl p-4 sm:p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
+                    <span className="text-2xl sm:text-3xl font-black text-sky-500 block mb-2 sm:mb-3">{step.num}</span>
+                    <h4 className="text-navy-900 font-bold text-sm sm:text-base">{step.title}</h4>
                   </div>
                   {i < 4 && (
                     <div className="hidden md:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10">

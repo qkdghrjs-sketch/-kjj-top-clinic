@@ -6,10 +6,10 @@ import WhyKimtop from "@/components/WhyKimtop";
 import FAQ from "@/components/FAQ";
 
 const checkupCards = [
-  { title: "일반검진", desc: "혈압, 혈당, 콜레스테롤, 간기능 등을 확인합니다.\n만 20세 이상 직장가입자 및 세대주가 대상입니다.\n2년에 1회 무료로 받을 수 있습니다." },
-  { title: "구강검진", desc: "치아 및 잇몸 건강을 확인합니다.\n충치, 치주질환, 구강암 등을 조기에 발견합니다." },
-  { title: "암검진", desc: "위암, 대장암, 간암, 폐암 검진을 시행합니다.\n연령과 성별에 따라 검진 항목이 다릅니다." },
-  { title: "생애전환기 검진", desc: "40세, 66세 대상 추가 검진을 시행합니다.\n심뇌혈관질환 위험 평가와 골밀도 검사가 포함됩니다." },
+  { title: "일반검진", desc: "혈압, 혈당, 콜레스테롤, 간기능 등을 확인하며, 만 20세 이상 대상으로 2년에 1회 무료입니다." },
+  { title: "구강검진", desc: "치아 및 잇몸 건강을 확인하고 충치, 치주질환, 구강암 등을 조기에 발견합니다." },
+  { title: "암검진", desc: "위암, 대장암, 간암, 폐암 검진을 시행하며, 연령과 성별에 따라 항목이 다릅니다." },
+  { title: "생애전환기 검진", desc: "40세, 66세 대상으로 심뇌혈관질환 위험 평가와 골밀도 검사 등을 추가 시행합니다." },
 ];
 
 const steps = [
@@ -51,15 +51,15 @@ export default function NationalScreeningPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">2년마다</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">무료 검진</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">무료 검진</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">결과 안내</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">결과 안내</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">전문의</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">직접 판독</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">직접 판독</p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function NationalScreeningPage() {
                 체계적인 <span className="text-sky-500">국가건강검진</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
-                {"국가건강검진부터 성·연령별 맞춤 검진까지 체계적으로 진행합니다.\n건강보험공단에서 대상자 여부를 확인 후 예약하세요."}
+                {"국가건강검진부터 성·연령별 맞춤 검진까지 체계적으로 진행합니다. 건강보험공단에서 대상자 여부를 확인 후 예약하세요."}
               </p>
             </ScrollReveal>
           </div>
@@ -105,7 +105,7 @@ export default function NationalScreeningPage() {
               <ScrollReveal key={card.title} delay={i * 100}>
                 <div className="bg-white rounded-2xl shadow-md p-6 h-full card-hover-glow">
                   <h3 className="text-xl font-bold text-navy-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{card.desc}</p>
+                  <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">{card.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

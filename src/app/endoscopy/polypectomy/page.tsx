@@ -7,9 +7,9 @@ import CountUp from "@/components/CountUp";
 import FAQ from "@/components/FAQ";
 
 const whyRemoveCards = [
-  { name: "대장암과의 연관성", desc: "대장암의 90%는 용종에서 시작됩니다.\n선종성 용종을 제거하면 대장암 발생을\n90% 이상 예방할 수 있습니다.\n크기가 작을수록 제거가 쉽고 안전합니다." },
-  { name: "무증상이 더 위험합니다", desc: "대부분의 용종은 아무런 증상이 없습니다.\n증상이 나타났을 때는 이미 진행된 경우가 많습니다.\n정기적인 대장내시경만이 유일한 조기 발견 방법입니다." },
-  { name: "당일 즉시 제거 가능", desc: "김정재탑내과는 검사 중 발견된 용종을\n당일 즉시 제거합니다.\n별도 예약이나 재방문 없이\n한 번의 검사로 해결됩니다." },
+  { name: "대장암과의 연관성", desc: "대장암의 90%는 용종에서 시작됩니다. 선종성 용종을 제거하면 대장암 발생을 90% 이상 예방할 수 있으며, 크기가 작을수록 제거가 쉽고 안전합니다." },
+  { name: "무증상이 더 위험합니다", desc: "대부분의 용종은 아무런 증상이 없습니다. 증상이 나타났을 때는 이미 진행된 경우가 많아 정기적인 대장내시경이 유일한 조기 발견 방법입니다." },
+  { name: "당일 즉시 제거 가능", desc: "김정재탑내과는 검사 중 발견된 용종을 당일 즉시 제거합니다. 별도 예약이나 재방문 없이 한 번의 검사로 해결됩니다." },
 ];
 
 const methods = [
@@ -28,10 +28,10 @@ const postCare = [
 
 const faqItems = [
   { q: "용종 절제 후 흉터가 남나요?", a: "내시경으로 절제하므로 외부 흉터는 전혀 없습니다." },
-  { q: "절제한 용종이 재발할 수 있나요?", a: "같은 자리에 재발하지는 않지만 새로운 용종이 생길 수 있습니다.\n정기적인 추적 검사가 반드시 필요합니다." },
-  { q: "용종 절제 후 언제부터 운동할 수 있나요?", a: "용종 크기와 절제 방법에 따라 다르나\n보통 1주일 후부터 가벼운 운동이 가능합니다." },
-  { q: "용종이 악성인지 어떻게 알 수 있나요?", a: "절제 후 조직검사로 확인합니다.\n결과는 1~2주 후 확인 가능하며 악성인 경우 추가 치료를 안내해 드립니다." },
-  { q: "용종 절제는 아프지 않나요?", a: "수면 상태에서 진행하므로 통증이 없습니다.\n시술 후 가벼운 복부 불편감이 있을 수 있으나 곧 호전됩니다." },
+  { q: "절제한 용종이 재발할 수 있나요?", a: "같은 자리에 재발하지는 않지만 새로운 용종이 생길 수 있습니다. 정기적인 추적 검사가 반드시 필요합니다." },
+  { q: "용종 절제 후 언제부터 운동할 수 있나요?", a: "용종 크기와 절제 방법에 따라 다르나 보통 1주일 후부터 가벼운 운동이 가능합니다." },
+  { q: "용종이 악성인지 어떻게 알 수 있나요?", a: "절제 후 조직검사로 확인합니다. 결과는 1~2주 후 확인 가능하며 악성인 경우 추가 치료를 안내해 드립니다." },
+  { q: "용종 절제는 아프지 않나요?", a: "수면 상태에서 진행하므로 통증이 없습니다. 시술 후 가벼운 복부 불편감이 있을 수 있으나 곧 호전됩니다." },
   { q: "용종 절제 후 언제부터 식사할 수 있나요?", a: "용종의 크기와 개수에 따라 다르지만 보통 6시간 후 복통이나 혈변이 없다면 가능합니다." },
 ];
 
@@ -61,11 +61,11 @@ export default function PolypectomyPage() {
             <CountUp end={5000} suffix="례+" label="용종 절제 시술 건수" />
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 절제</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">당일 용종 절제</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">당일 용종 절제</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">안전 시술</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">합병증 없는 시술</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">합병증 없는 시술</p>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function PolypectomyPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
             <ScrollReveal>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
                   style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/3ba604da11869.jpeg')" }}
@@ -84,8 +84,10 @@ export default function PolypectomyPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">대장암 예방의 첫걸음, 용종을 조기에 제거하세요</h2>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"용종은 대장 점막에서 혹처럼 돌출된 조직으로\n대부분 무증상으로 발견이 어렵습니다.\n\n선종성 용종은 방치할 경우 5~10년 내\n대장암으로 진행될 수 있어 조기 제거가 매우 중요합니다.\n\n김정재탑내과는 검사와 동시에 당일 즉시 절제가 가능하여\n별도의 입원 없이 원스톱으로 치료합니다."}</p>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">대장암 예방의 첫걸음, 용종을 조기에</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">용종은 대장 점막에서 혹처럼 돌출된 조직으로 대부분 무증상이라 발견이 어렵습니다.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">선종성 용종은 방치할 경우 5~10년 내 대장암으로 진행될 수 있어 조기 제거가 매우 중요합니다.</p>
+              <p className="text-gray-600 leading-relaxed">김정재탑내과는 검사와 동시에 당일 즉시 절제가 가능하여 별도의 입원 없이 원스톱으로 치료합니다.</p>
             </ScrollReveal>
           </div>
         </div>
@@ -102,14 +104,14 @@ export default function PolypectomyPage() {
           <div className="grid sm:grid-cols-3 gap-6">
             {whyRemoveCards.map((item, i) => (
               <ScrollReveal key={item.name} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-7 border border-gray-100 card-hover-glow h-full">
+                <div className="bg-white rounded-2xl p-4 sm:p-7 border border-gray-100 card-hover-glow h-full">
                   <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center mb-4">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">{item.name}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">{item.desc}</p>
+                  <p className="text-gray-500 text-base leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -134,7 +136,7 @@ export default function PolypectomyPage() {
                     {item.num}
                   </div>
                   <h3 className="text-lg font-bold text-navy-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-500 text-base leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -151,7 +153,7 @@ export default function PolypectomyPage() {
             </h2>
           </ScrollReveal>
           <ScrollReveal>
-            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8">
+            <div className="bg-sky-50 border border-sky-200 rounded-2xl p-4 sm:p-8">
               <ul className="space-y-4">
                 {postCare.map((item) => (
                   <li key={item.label} className="flex items-start gap-3">

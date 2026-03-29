@@ -102,13 +102,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 bg-navy-900 ${
         scrolled
-          ? "bg-navy-900/85 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "shadow-lg"
+          : ""
       }`}
     >
-      <div className="max-w-[1920px] mx-auto px-3 md:px-6 flex items-center justify-center lg:justify-between relative h-36 md:h-48">
+      <div className="max-w-[1920px] mx-auto px-3 md:px-6 flex items-center justify-center lg:justify-between relative h-20 sm:h-36 md:h-48">
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
@@ -116,7 +116,7 @@ export default function Header() {
             alt="김정재탑내과의원"
             width={640}
             height={200}
-            className="!w-auto !h-[160px] md:!h-[340px]"
+            className="!w-auto !h-[60px] sm:!h-[107px] md:!h-[227px]"
             priority
           />
         </Link>
@@ -139,7 +139,7 @@ export default function Header() {
                 onClick={(e) => {
                   if (item.href === "#") e.preventDefault();
                 }}
-                className={`px-3 xl:px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 whitespace-nowrap inline-block text-white/90 hover:text-white hover:bg-white/10 ${activeDropdown === idx ? "bg-white/10 text-white" : ""}`}
+                className={`px-3 xl:px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 whitespace-nowrap inline-block text-white/90 hover:text-white hover:bg-white/10 ${activeDropdown === idx ? "bg-white/10 text-white" : ""}`}
               >
                 {item.label}
                 {item.children && (
@@ -173,7 +173,7 @@ export default function Header() {
                           if (sub.disabled) e.preventDefault();
                           setActiveDropdown(null);
                         }}
-                        className={`block px-5 py-2.5 text-[15px] transition-all duration-200 ${
+                        className={`block px-5 py-2.5 text-lg transition-all duration-200 ${
                           sub.disabled
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-navy-700 hover:bg-gradient-to-r hover:from-navy-50 hover:to-sky-50 hover:text-navy-900 hover:pl-6"

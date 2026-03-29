@@ -28,10 +28,10 @@ export default function FAQ({ items }: FAQProps) {
               className="w-full flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 text-left min-h-[48px]"
             >
               <span className="flex items-start gap-3">
-                <span className="w-7 h-7 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-7 h-7 rounded-full bg-sky-500 text-white text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">
                   Q
                 </span>
-                <span className="text-navy-900 font-semibold text-sm md:text-base text-left leading-relaxed">
+                <span className="text-navy-900 font-semibold text-sm sm:text-base md:text-lg text-left leading-relaxed">
                   {item.q}
                 </span>
               </span>
@@ -48,12 +48,12 @@ export default function FAQ({ items }: FAQProps) {
             <div
               className="overflow-hidden transition-all duration-300"
               style={{
-                maxHeight: isOpen ? "200px" : "0",
+                maxHeight: isOpen ? "500px" : "0",
                 opacity: isOpen ? 1 : 0,
               }}
             >
-              <div className="px-4 pb-4 pl-12 sm:px-6 sm:pb-5 sm:pl-16">
-                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{item.a}</p>
+              <div className="px-4 pb-4 pl-10 sm:px-6 sm:pb-5 sm:pl-16">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">{item.a}</p>
               </div>
             </div>
           </div>
