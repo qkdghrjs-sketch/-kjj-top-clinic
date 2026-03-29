@@ -10,7 +10,7 @@ const hours = [
   { day: "목요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
   { day: "금요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
   { day: "토요일", time: "09:00 - 14:00", note: "", dayNum: 6 },
-  { day: "일요일·공휴일", time: "정기휴무", note: "", dayNum: 0 },
+  { day: "일요일·공휴일", time: "매월 1, 3번째 주 일요일은 예약검진을 진행합니다", note: "", dayNum: 0 },
 ];
 
 export default function HoursPage() {

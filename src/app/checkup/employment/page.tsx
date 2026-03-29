@@ -7,8 +7,8 @@ import FAQ from "@/components/FAQ";
 
 const checkupCards = [
   { title: "기본 신체검사", desc: "신장, 체중, 시력, 혈압을 측정합니다.\n기본적인 신체 상태를 확인합니다." },
-  { title: "혈액검사", desc: "빈혈, 간기능, 혈당, 콜레스테롤을 확인합니다.\n주요 건강 지표를 한 번에 확인할 수 있습니다." },
-  { title: "소변검사", desc: "단백뇨, 혈뇨, 당뇨를 확인합니다.\n신장 기능과 당뇨 여부를 확인합니다." },
+  { title: "혈액검사", desc: "간기능, 신기능, 혈당, 콜레스테롤, 감염질환 등 검사\n주요 건강 지표를 한 번에 확인할 수 있습니다." },
+  { title: "대/소변검사", desc: "단백뇨, 혈뇨, 당뇨, 마약검사를 확인합니다.\n장티푸스, 파라티푸스 검사를 포함합니다.\n신장 기능과 당뇨 여부를 확인합니다." },
   { title: "흉부 X-ray", desc: "폐결핵, 심장비대를 확인합니다.\n흉부 질환을 빠르게 스크리닝합니다." },
 ];
 
@@ -37,9 +37,9 @@ export default function EmploymentCheckupPage() {
       <WhyKimtop
         box="채용검진, 왜 김정재탑내과일까?+"
         overlay="빠르고 정확한 채용검진"
-        description="20-25분 내 빠른 검진 완료, 당일 결과 확인 가능합니다."
-        features={["당일 결과 확인", "20-25분 신속 검진", "전문의 직접 판독", "국가검진 지정기관"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/f71e11c2c9add.jpeg"
+        description="전문의가 직접 판독하며, 당일 결과 확인 가능합니다."
+        features={["당일 결과 확인", "신속한 채용검사서 발급", "전문의 직접 판독", "국가검진 지정기관"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/f657980e4a3dc.jpeg"
       />
 
       {/* Stats Banner */}
@@ -50,16 +50,16 @@ export default function EmploymentCheckupPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">20~25분</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">신속 검진</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">대변검사</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium"></p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">결과 확인</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">성병 및</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">감염 질환 검사</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">전문의</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">직접 판독</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">혈액/소변</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">마약 검사</p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function EmploymentCheckupPage() {
                 빠르고 정확한 <span className="text-sky-500">채용검진</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
-                {"20-25분 내 빠른 검진 완료, 당일 결과 확인 가능합니다.\n취업, 이직 시 필요한 채용검진을 빠르고 정확하게 제공합니다."}
+{"당일 검사 결과 확인으로 신속한 채용검사서 발급해드립니다.\n취업, 이직 시 필요한 채용검진을 빠르고 정확하게 제공합니다."}
               </p>
             </ScrollReveal>
           </div>

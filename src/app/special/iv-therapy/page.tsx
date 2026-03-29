@@ -16,8 +16,9 @@ export default function IVTherapyPage() {
       <WhyKimtop
         box="수액클리닉, 왜 김정재탑내과일까?+"
         overlay="수액 전문 클리닉"
-        description="목적에 맞는 다양한 수액 치료로 건강하고 활기찬 생활을 지원합니다."
-        features={["전문의 직접 처방", "다양한 수액 종류", "안전한 시술", "빠른 효과"]}
+        description="몸살, 피로 회복, 면역력 증진, 생리통 등 다양한 증상에 대한 맞춤 수액 치료를 제공합니다."
+        bottomText="자율신경계 스트레스 검사를 통해 원인을 파악하고 맞춤 수액을 처방해 드립니다."
+        features={["전문의 직접 진료", "1인 프리미엄 수액실", "다양한 맞춤 수액", "스트레스 검사 진행"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
@@ -30,12 +31,12 @@ export default function IVTherapyPage() {
               <p className="text-sky-300 text-xs sm:text-sm font-medium">맞춤형 수액</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">30~60분</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">투여 시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">1인</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">프리미엄 수액실</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">전문의</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">직접 처방</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">스트레스 검사</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">연계 맞춤 처방</p>
             </div>
           </div>
         </div>
@@ -98,6 +99,22 @@ export default function IVTherapyPage() {
                 title: "백옥 수액",
                 desc: "글루타치온을 투여하여 미백 효과와 강력한 항산화 작용을 합니다.\n피부 톤 개선과 노화 방지에 효과적입니다.",
               },
+              {
+                title: "비타민 D 수액",
+                desc: "비타민 D를 직접 투여하여 골다공증 예방과 면역력 강화에 도움을 줍니다.",
+              },
+              {
+                title: "태반 수액",
+                desc: "태반 추출물을 투여하여 피로 회복, 피부 재생, 호르몬 균형에 효과적입니다.",
+              },
+              {
+                title: "생리통 수액",
+                desc: "생리통 완화에 필요한 영양소를 공급하여 통증과 불편감을 줄여줍니다.",
+              },
+              {
+                title: "이명, 어지럼증 수액",
+                desc: "혈액순환 개선과 신경 안정에 도움을 주어 이명과 어지럼증 증상을 완화합니다.",
+              },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
                 <div className="bg-white rounded-2xl shadow-md p-8 h-full card-hover-glow">
@@ -130,8 +147,8 @@ export default function IVTherapyPage() {
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { step: "01", title: "상담" },
-              { step: "02", title: "전문의 처방" },
-              { step: "03", title: "수액 투여(30~60분)" },
+              { step: "02", title: "스트레스 검사" },
+              { step: "03", title: "수액 투여" },
               { step: "04", title: "귀가" },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>

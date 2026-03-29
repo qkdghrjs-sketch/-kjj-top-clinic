@@ -13,9 +13,9 @@ const whyRemoveCards = [
 ];
 
 const methods = [
-  { num: "01", title: "올가미 절제술", desc: "작은 용종(1cm 이하)을 올가미로 잡아 전기로 절제합니다." },
-  { num: "02", title: "점막절제술(EMR)", desc: "점막하 주사 후 올가미로 절제하며 중간 크기 용종에 적용합니다." },
-  { num: "03", title: "냉올가미 절제술", desc: "전기 사용 없이 올가미로 절제하여 합병증이 적습니다." },
+  { num: "01", title: "용종생검술", desc: "0.1~0.3cm 이하의 용종을 생검겸자로 제거합니다." },
+  { num: "02", title: "점막절제술(EMR)", desc: "올가미로 잡아 전기로 절제합니다." },
+  { num: "03", title: "냉올가미 용종 절제술", desc: "전기 사용 없이 올가미로 절제합니다." },
 ];
 
 const postCare = [
@@ -32,6 +32,7 @@ const faqItems = [
   { q: "용종 절제 후 언제부터 운동할 수 있나요?", a: "용종 크기와 절제 방법에 따라 다르나\n보통 1주일 후부터 가벼운 운동이 가능합니다." },
   { q: "용종이 악성인지 어떻게 알 수 있나요?", a: "절제 후 조직검사로 확인합니다.\n결과는 1~2주 후 확인 가능하며 악성인 경우 추가 치료를 안내해 드립니다." },
   { q: "용종 절제는 아프지 않나요?", a: "수면 상태에서 진행하므로 통증이 없습니다.\n시술 후 가벼운 복부 불편감이 있을 수 있으나 곧 호전됩니다." },
+  { q: "용종 절제 후 언제부터 식사할 수 있나요?", a: "용종의 크기와 개수에 따라 다르지만 보통 6시간 후 복통이나 혈변이 없다면 가능합니다." },
 ];
 
 export default function PolypectomyPage() {
@@ -57,14 +58,14 @@ export default function PolypectomyPage() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            <CountUp end={90} suffix="%+" label="대장암이 용종에서 시작" />
+            <CountUp end={5000} suffix="례+" label="용종 절제 시술 건수" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 가능</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">즉시 절제</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 절제</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">당일 용종 절제</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5~20분</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">시술 소요시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">안전 시술</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">합병증 없는 시술</p>
             </div>
           </div>
         </div>

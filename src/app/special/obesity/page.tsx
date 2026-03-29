@@ -17,8 +17,8 @@ export default function ObesityPage() {
       <WhyKimtop
         box="비만클리닉, 왜 김정재탑내과일까?+"
         overlay="비만 전문 클리닉"
-        description="전문의가 직접 진료하는 체계적인 비만 관리 프로그램을 제공합니다."
-        features={["전문의 직접 진료", "개인 맞춤 처방", "체성분 분석", "안전한 시술"]}
+        description="과도한 비만은 심뇌혈관 질환 발생율을 매우 높입니다. 체계적인 약물 치료와 생활습관 개선을 통해 체중 감량 및 아름다움을 쟁취하세요."
+        features={["혈액 검사", "정밀 간초음파", "전문의 문진", "약물 치료 (GLP-1 receptor agonist)"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
@@ -26,11 +26,17 @@ export default function ObesityPage() {
       <section className="py-12 sm:py-16 bg-gradient-to-r from-navy-900 to-navy-800">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
-            <CountUp end={25} suffix="+" label="BMI 비만 판정" />
-            <CountUp end={50} suffix="%" label="합병증 위험 감소" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">3개월</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">집중 프로그램</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">64%</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">뇌졸중 위험 감소</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">30%</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">심근경색 위험 감소</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">40%</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">당뇨 발생율 감소</p>
             </div>
           </div>
         </div>
@@ -78,7 +84,7 @@ export default function ObesityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
-                title: "대사증후군",
+                title: "당뇨, 고혈압, 고지혈증",
                 desc: "혈압, 혈당, 콜레스테롤이 동시에 나빠집니다.\n비만은 대사증후군의 가장 큰 위험인자입니다.",
               },
               {
@@ -90,7 +96,7 @@ export default function ObesityPage() {
                 desc: "목 주변 지방으로 기도가 좁아져 수면 중 호흡이 멈춥니다.\n낮 시간 졸음과 피로감의 원인이 됩니다.",
               },
               {
-                title: "지방간",
+                title: "심뇌혈관 질환",
                 desc: "간에 지방이 쌓여 간경화로 진행될 수 있습니다.\n체중의 5~10%만 감량해도 개선됩니다.",
               },
             ].map((item, idx) => (
@@ -125,9 +131,9 @@ export default function ObesityPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { step: "01", title: "체성분 분석" },
-              { step: "02", title: "원인 파악" },
-              { step: "03", title: "맞춤 식단·운동" },
-              { step: "04", title: "약물치료(필요시)" },
+              { step: "02", title: "혈액 검사" },
+              { step: "03", title: "초음파 검사" },
+              { step: "04", title: "약물치료" },
               { step: "05", title: "정기 모니터링" },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
@@ -169,7 +175,7 @@ export default function ObesityPage() {
                 { q: "다이어트 약은 안전한가요?", a: "전문의 처방하에 적절히 사용하면 안전하고 효과적입니다." },
                 { q: "단기간에 살을 빼면 요요가 오나요?", a: "급격한 체중 감량은 요요 위험이 높아 천천히 감량하는 것이 중요합니다." },
                 { q: "비만클리닉은 보험이 되나요?", a: "일부 검사는 보험 적용이 되나 치료비는 대부분 비급여입니다." },
-                { q: "비만치료 효과는 언제부터 나타나나요?", a: "개인마다 다르나 보통 1~2개월 후 효과가 나타납니다." },
+                { q: "비만치료 효과는 언제부터 나타나나요?", a: "철저한 식단 조절과 적절한 약물을 사용하신다면 보통 1~2개월 후 효과가 나타납니다" },
                 { q: "지방흡입과 비만클리닉 치료의 차이는 무엇인가요?", a: "비만클리닉은 내과적 치료로 전신 건강을 함께 관리합니다." },
               ]}
             />

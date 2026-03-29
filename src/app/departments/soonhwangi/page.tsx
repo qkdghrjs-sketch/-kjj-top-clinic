@@ -24,7 +24,7 @@ export default function SoonhwangiPage() {
         box="순환기, 왜 김정재탑내과일까?+"
         overlay="심장·혈관 전문 진료"
         description="고혈압, 심장질환의 정밀 진단과 체계적인 관리를 제공합니다."
-        features={["심전도 정밀 검사", "심장초음파 인증의", "24시간 혈압 모니터링", "전문의 직접 진료"]}
+        features={["정밀 혈액검사", "정밀 심장초음파", "24시간 혈압/심전도 모니터링", "전문의 직접 진료"]}
       />
 
       {/* Stats Banner */}
@@ -35,16 +35,16 @@ export default function SoonhwangiPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">심전도 검사</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">24시간 심전도 검사</p>
               <p className="text-sky-300 text-xs sm:text-sm font-medium">정밀 심장 리듬 분석</p>
             </div>
             <div className="text-center">
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">심장초음파 인증의</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">전문 자격 보유</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">24시간 혈압 검사</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">일상 속 혈압 추적</p>
             </div>
             <div className="text-center">
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">24시간 혈압 모니터링</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">일상 속 혈압 추적</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">정밀 심장초음파</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">전문 자격 보유</p>
             </div>
           </div>
         </div>
@@ -58,13 +58,13 @@ export default function SoonhwangiPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/076b4234b6bf3.jpeg')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/2e2eeda0b29c9.jpeg')" }}
                 />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">순환기 전문 진료</h2>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"심장과 혈관 건강을 지키는 전문 진료입니다.\n고혈압·심장질환의 조기 발견과 체계적 관리를 제공합니다."}</p>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"호흡곤란, 다리부종, 알 수 없는 두근거림으로 불안하셨나요?\n혼자 고민하지 마시고 김정재탑내과 순환기센터를 찾아주세요.\n정밀 검사와 전문 상담으로 원인을 정확히 파악하고\n맞춤 치료를 도와드리겠습니다."}</p>
             </ScrollReveal>
           </div>
         </div>
@@ -104,8 +104,8 @@ export default function SoonhwangiPage() {
               <span className="text-sky-500">검사</span> 방법
             </h2>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {["심전도", "심장초음파", "24시간 혈압 모니터링", "혈액검사"].map((item, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {["문진", "혈액검사", "24시간 혈압/심전도 모니터링", "동맥경화도 검사", "심장초음파"].map((item, i) => (
               <ScrollReveal key={item} delay={i * 100}>
                 <div className="text-center p-6 bg-navy-50 rounded-2xl">
                   <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">

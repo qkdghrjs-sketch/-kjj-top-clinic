@@ -13,7 +13,7 @@ const hours = [
   { day: "목요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
   { day: "금요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
   { day: "토요일", time: "09:00 - 14:00", note: "", dayNum: 6 },
-  { day: "일요일", time: "정기휴무", note: "", dayNum: 0 },
+  { day: "일요일", time: "매월 1, 3번째 주 일요일은 예약검진을 진행합니다", note: "", dayNum: 0 },
 ];
 
 export default function LocationSection({ forceShow = false }: { forceShow?: boolean }) {
@@ -168,6 +168,59 @@ export default function LocationSection({ forceShow = false }: { forceShow?: boo
                 <p className="text-sky-700 text-sm">
                   <strong>※</strong> 매월 1, 3번째 주 일요일은 예약검진을 진행합니다.
                 </p>
+              </div>
+
+              <h3 className="text-xl font-bold text-navy-900 mt-8 mb-4">주차 안내</h3>
+              <div className="bg-navy-50 rounded-2xl p-6 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h8m-8 4h4m6 4H6a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-navy-900 font-semibold text-sm">주차</p>
+                    <p className="text-gray-600 text-sm mt-0.5">건물 주차 가능합니다. 승용차(타워 주차), SUV(지상주차) 주차 가능합니다.</p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 className="text-xl font-bold text-navy-900 mt-8 mb-4">시설 안내</h3>
+              <div className="bg-navy-50 rounded-2xl p-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-navy-900 font-semibold text-sm">남/녀 화장실 구분</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-navy-100"></div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-navy-900 font-semibold text-sm">3층 외래 접수</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-navy-100"></div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-navy-900 font-semibold text-sm">4층 위·대장내시경 센터</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </ScrollReveal>

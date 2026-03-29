@@ -18,7 +18,7 @@ export default function ColonEndoscopyPage() {
         box="대장내시경, 왜 김정재탑내과일까?+"
         overlay="대장내시경 전문 클리닉"
         description="대장암 조기발견을 위한 정밀 대장내시경 검사를 제공합니다."
-        features={["소화기내시경 세부전문의", "당일 용종절제 가능", "수면내시경 시행", "선종발견율 49%"]}
+        features={["내시경 세부전문의", "당일 용종절제 가능", "수면/비수면내시경 시행", "최고 사양 올림푸스 내시경"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
       />
 
@@ -29,11 +29,14 @@ export default function ColonEndoscopyPage() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            <CountUp end={49} suffix="%" label="선종발견율" />
-            <CountUp end={90} suffix="%+" label="대장암 예방율" />
+            <CountUp end={5000} suffix="례+" label="용종 절제 시술 건수" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 가능</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">용종절제</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">입원 치료 없는</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">용종 절제</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">먹기 편한</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">장 정결제</p>
             </div>
           </div>
         </div>
@@ -81,7 +84,7 @@ export default function ColonEndoscopyPage() {
               },
               {
                 name: "변비·설사 반복",
-                desc: "변비와 설사가 번갈아 나타난다면\n과민성장증후군이나 대장염을 의심하세요.\n정확한 원인 파악을 위해 대장내시경으로\n직접 확인이 필요합니다.",
+                desc: "변비와 설사가 번갈아 나타나거나 체중감소가 동반된다면\n과민성장증후군이나 대장염을 의심하세요.\n정확한 원인 파악을 위해 대장내시경으로\n직접 확인이 필요합니다.",
               },
               {
                 name: "복통·복부 팽만",
@@ -118,7 +121,8 @@ export default function ColonEndoscopyPage() {
           </ScrollReveal>
           <div className="space-y-4">
             {[
-              { step: "검사 전날 점심", detail: "가벼운 식사 (죽, 미음)" },
+              { step: "검사 이틀 전", detail: "섬유질/씨/껍질/잡곡/견과류 등 찌꺼기 남는 음식 지양" },
+              { step: "검사 전날 점심", detail: "죽" },
               { step: "검사 전날 저녁", detail: "장정결제 1차 복용 시작" },
               { step: "검사 당일 새벽", detail: "장정결제 2차 복용" },
               { step: "완료 기준", detail: "맑은 물 같은 변이 나올 때까지" },
@@ -188,8 +192,8 @@ export default function ColonEndoscopyPage() {
               { q: "장정결이 너무 힘든데 더 쉬운 방법이 있나요?", a: "맛이 개선된 다양한 장정결제가 있습니다.\n내원 시 상담을 통해 가장 편한 방법을 선택하실 수 있습니다." },
               { q: "대장내시경은 얼마나 자주 받아야 하나요?", a: "이상 없으면 5년마다, 용종 제거 후에는 1~3년마다 권장합니다.\n가족력이 있다면 더 자주 검사가 필요합니다." },
               { q: "용종을 제거하면 대장암이 예방되나요?", a: "선종성 용종 제거로 대장암 발생을 90% 이상 예방할 수 있습니다.\n정기적인 추적 검사가 매우 중요합니다." },
-              { q: "수면 대장내시경도 가능한가요?", a: "네, 수면내시경으로 편안하게 받으실 수 있습니다.\n단, 보호자 동반과 당일 운전 금지가 필수입니다." },
-              { q: "대장내시경 중 용종이 발견되면 바로 제거하나요?", a: "네, 발견 즉시 당일 절제가 가능합니다.\n별도 예약 없이 한 번의 검사로 진단과 치료가 동시에 이루어집니다." },
+              { q: "비수면 내시경도 가능한가요?", a: "비수면도 가능하지만, 대장내시경 특성상 복통이 동반되므로 수면을 권장드립니다" },
+              { q: "대장내시경 중 용종이 발견되면 바로 제거하나요?", a: "사전에 검사자/수검자간 동의된 사항에 맞춰 용종을 제거해 드립니다" },
             ]}
           />
         </div>

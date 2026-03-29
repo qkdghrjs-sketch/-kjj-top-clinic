@@ -3,11 +3,14 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { handleReservation } from "@/utils/reservation";
 
+type Feature = string | { title: string; sub: string };
+
 interface WhyKimtopProps {
   box: string;
   overlay: string;
   description: string;
-  features: [string, string, string, string];
+  bottomText?: string;
+  features: Feature[];
   image?: string;
 }
 
@@ -20,7 +23,7 @@ const featureIcons = [
 
 const DEFAULT_IMAGE = "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/41981d2e43917.jpeg";
 
-export default function WhyKimtop({ box, overlay, description, features, image }: WhyKimtopProps) {
+export default function WhyKimtop({ box, overlay, description, bottomText, features, image }: WhyKimtopProps) {
   return (
     <section className="relative py-12 md:py-24 overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
       {/* Decorative blurs */}
@@ -75,15 +78,28 @@ export default function WhyKimtop({ box, overlay, description, features, image }
               <div className="w-24 h-[2px] bg-gradient-to-r from-gold-400 to-transparent mb-6" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8">
-                {features.map((feature, i) => (
-                  <div key={feature} className="flex items-start gap-3 bg-white/[0.06] backdrop-blur-sm rounded-xl p-3 border border-white/[0.08]">
-                    <div className="w-9 h-9 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0 text-sky-400">
-                      {featureIcons[i]}
+                {features.map((feature, i) => {
+                  const title = typeof feature === "string" ? feature : feature.title;
+                  const sub = typeof feature === "string" ? null : feature.sub;
+                  return (
+                    <div key={title} className="flex items-start gap-3 bg-white/[0.06] backdrop-blur-sm rounded-xl p-3 border border-white/[0.08]">
+                      <div className="w-9 h-9 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0 text-sky-400">
+                        {featureIcons[i % featureIcons.length]}
+                      </div>
+                      <div className="pt-1">
+                        <span className="text-white font-medium text-sm">{title}</span>
+                        {sub && <p className="text-white/60 text-xs mt-0.5">{sub}</p>}
+                      </div>
                     </div>
-                    <span className="text-white font-medium text-sm pt-1.5">{feature}</span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
+
+              {bottomText && (
+                <p className="text-white/80 text-sm leading-relaxed mb-6 whitespace-pre-line">
+                  {bottomText}
+                </p>
+              )}
 
               <button
                 onClick={handleReservation}

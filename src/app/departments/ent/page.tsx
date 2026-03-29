@@ -7,9 +7,9 @@ import FAQ from "@/components/FAQ";
 
 const diseases = [
   { name: "비염", desc: "코막힘, 재채기, 후비루로 일상이 불편하다면 이비인후과 진료가 필요합니다.\n원인 항원을 찾아 정확한 치료 계획을 수립합니다.\n약물치료와 면역치료를 병행하면 더욱 효과적입니다." },
+  { name: "급성 후두염", desc: "목소리 변화와 기침, 목 통증이 동반되는 후두 염증 질환입니다.\n적절한 약물치료와 음성 안정으로 빠른 회복이 가능합니다.\n증상이 지속되면 후두 내시경 검사를 통해 정확한 진단이 필요합니다." },
   { name: "급성 편도염", desc: "심한 목 통증과 고열이 동반되는 편도 감염 질환입니다.\n적절한 항생제 치료로 빠른 회복이 가능합니다.\n반복적으로 발생한다면 편도 수술을 고려할 수 있습니다." },
   { name: "중이염", desc: "귀 통증과 청력 저하, 이명이 주요 증상입니다.\n소아에서 흔하며 적절한 치료 없이 만성화될 수 있습니다.\n항생제와 소염제로 치료하며 심한 경우 고막절개가 필요합니다." },
-  { name: "어지럼증", desc: "갑작스러운 회전성 어지러움, 구역감이 있다면 이석증일 수 있습니다.\n이석 재위치술로 대부분 즉시 호전됩니다.\n지속적인 어지러움은 뇌 질환과의 감별이 필요합니다." },
 ];
 
 export default function EntPage() {
@@ -17,14 +17,14 @@ export default function EntPage() {
     <>
       <PageHeader
         title="이비인후과"
-        subtitle="귀, 코, 목 질환의 전문적인 진단과 치료를 제공합니다."
+        subtitle="감기, 코/목 통증, 독감 등 불편한 증상이 있으시다면 편하게 방문해 주세요."
       />
 
       <WhyKimtop
         box="이비인후과, 왜 김정재탑내과일까?+"
         overlay="귀·코·목 전문 진료"
-        description="내시경 비인두 검사부터 청력 검사까지 정밀한 이비인후과 진료를 제공합니다."
-        features={["내시경 비인두 검사", "청력 검사", "현기증 정밀 평가", "전문의 직접 진료"]}
+        description="내시경 비인두 검사부터 혈액검사, 수액치료까지 정밀한 이비인후과 진료를 제공합니다."
+        features={["내시경 비인두 검사", "혈액검사", "수액치료", "전문의 직접 진료"]}
       />
 
       {/* Stats Banner */}
@@ -33,18 +33,14 @@ export default function EntPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">내시경 비인두 검사</p>
               <p className="text-sky-300 text-xs sm:text-sm font-medium">정밀 비인두 관찰</p>
             </div>
             <div className="text-center">
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">청력 검사</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">정밀 청력 평가</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">현기증 정밀 평가</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">원인 감별 진단</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">소아 감기 진료</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">소아 전문 진료</p>
             </div>
           </div>
         </div>
@@ -105,7 +101,7 @@ export default function EntPage() {
             </h2>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {["내시경 비인두 검사", "청력 검사", "현기증 정밀 평가"].map((item, i) => (
+            {["문진", "내시경 비인두 검사", "혈액 검사"].map((item, i) => (
               <ScrollReveal key={item} delay={i * 100}>
                 <div className="text-center p-6 bg-navy-50 rounded-2xl">
                   <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
@@ -155,9 +151,6 @@ export default function EntPage() {
             </h2>
           </ScrollReveal>
           <FAQ items={[
-            { q: "귀가 먹먹하고 이명이 있는데 어떻게 해야 하나요?", a: "청력 검사와 이비인후과 진찰이 필요합니다." },
-            { q: "코피가 자주 나면 어떻게 해야 하나요?", a: "앞으로 숙여 코를 잡고 5~10분 압박 후 호전 없으면 내원하세요." },
-            { q: "이석증은 어떻게 치료하나요?", a: "이석 재위치술로 대부분 1~2회 시술로 호전됩니다." },
             { q: "만성 코막힘의 원인은 무엇인가요?", a: "비중격만곡증, 비염, 비용종 등 다양한 원인이 있습니다." },
             { q: "목소리가 쉬었을 때 언제 병원에 가야 하나요?", a: "2주 이상 지속되면 후두 내시경 검사를 권장합니다." },
           ]} />

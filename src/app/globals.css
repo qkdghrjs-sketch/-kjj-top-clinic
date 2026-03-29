@@ -43,7 +43,34 @@ body {
   background: #ffffff;
   color: #1f2937;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
   overflow-x: hidden;
+}
+
+/* Increase paragraph / list text globally */
+p, li, td, th, span, label {
+  font-size: 17px;
+}
+
+/* Reduce section vertical gaps */
+section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Reduce card internal padding */
+.card-hover-glow,
+[class*="rounded-xl"][class*="shadow"],
+[class*="rounded-2xl"][class*="shadow"] {
+  padding: 1rem 1.25rem;
 }
 
 html {

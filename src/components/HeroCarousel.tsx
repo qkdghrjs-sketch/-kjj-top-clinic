@@ -44,7 +44,7 @@ const slides: SlideData[] = [
   },
   {
     image:
-      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/650558a3c5b73.jpeg",
+      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/dbe9f8335e327.jpeg",
     badgeEn: "CHECKUP & ENDOSCOPY",
     badgeKo: "검사 중심",
     titleParts: [
@@ -64,7 +64,7 @@ const slides: SlideData[] = [
   },
   {
     image:
-      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/c8661c07a2f02.jpeg",
+      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/39792de6e7263.jpeg",
     badgeEn: "CHRONIC DISEASE",
     badgeKo: "만성질환",
     titleParts: [{ text: "고혈압·당뇨·고지혈증" }],

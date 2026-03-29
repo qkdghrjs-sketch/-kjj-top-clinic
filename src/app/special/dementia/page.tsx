@@ -16,8 +16,8 @@ export default function DementiaPage() {
       <WhyKimtop
         box="치매클리닉, 왜 김정재탑내과일까?+"
         overlay="치매 조기검진 클리닉"
-        description="치매 조기검진과 예방 관리로 건강한 노후를 지원합니다."
-        features={["MMSE 검사", "조기 발견", "전문의 직접 진료", "예방 관리 프로그램"]}
+        description="인지기능저하를 조기 발견하고 치매 발생 예방을 위해 체계적 관리를 진행합니다."
+        features={["약물 조절", "MMSE & GDS 검사", "치매 혈액 검사", "예방 관리 프로그램"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
       />
 
@@ -129,9 +129,9 @@ export default function DementiaPage() {
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { step: "01", title: "MMSE 인지기능 검사" },
+              { step: "01", title: "MMSE & GDS 검사" },
               { step: "02", title: "혈액 검사" },
-              { step: "03", title: "신경인지 검사" },
+              { step: "03", title: "문진" },
             ].map((item, idx) => (
               <ScrollReveal key={idx} delay={idx * 100}>
                 <div className="relative bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
@@ -172,8 +172,8 @@ export default function DementiaPage() {
                 { q: "치매와 건망증은 어떻게 다른가요?", a: "건망증은 힌트를 주면 기억나지만, 치매는 사건 자체를 기억하지 못합니다." },
                 { q: "치매 조기검진은 어디서 받나요?", a: "만 66세 이상은 보건소에서 2년마다 무료로 받을 수 있습니다." },
                 { q: "치매 예방에 효과적인 활동은?", a: "규칙적 운동, 독서, 사회활동, 퍼즐 등이 뇌 활성화에 도움됩니다." },
-                { q: "가족이 치매 의심 증상을 보이면?", a: "가능한 빨리 전문의 진료를 받아 정확한 평가를 받으세요." },
-                { q: "치매 치료약이 있나요?", a: "완치약은 없지만 진행을 늦추는 약물이 있으며 조기 투약이 중요합니다." },
+                { q: "가족이 치매 의심 증상을 보이면?", a: "치매 혈액 검사를 통해 치매 발생의 가능성 및 원인을 평가해 볼 수 있습니다" },
+                { q: "치매 치료약이 있나요?", a: "완치약은 없지만 진행을 늦추는 약물이 있으며, 뇌를 건강하게 사용한다면 치매 발생 확률을 낮출 수 있습니다" },
               ]}
             />
           </ScrollReveal>

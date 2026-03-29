@@ -29,28 +29,17 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "진료과목",
-    href: "#",
-    children: [
-      { label: "소화기센터", href: "/departments/sowhagi" },
-      { label: "순환기센터", href: "/departments/soonhwangi" },
-      { label: "호흡기센터", href: "/departments/hoheupgi" },
-      { label: "알레르기센터", href: "/departments/allergy" },
-      { label: "이비인후과", href: "/departments/ent" },
-    ],
-  },
-  {
     label: "건강검진센터",
     href: "#",
     children: [
-      { label: "5대암검진", href: "/checkup/cancer" },
-      { label: "국가검진", href: "/checkup/national" },
+      { label: "5대암국가검진", href: "/checkup/cancer" },
       { label: "종합검진", href: "/checkup/comprehensive" },
       { label: "채용검진", href: "/checkup/employment" },
+      { label: "기타", href: "/checkup/other" },
     ],
   },
   {
-    label: "내시경클리닉",
+    label: "내시경센터",
     href: "#",
     children: [
       { label: "위내시경", href: "/endoscopy/stomach" },
@@ -60,14 +49,14 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "만성질환클리닉",
+    label: "진료과목",
     href: "#",
     children: [
-      { label: "고혈압", href: "/chronic/hypertension" },
-      { label: "당뇨", href: "/chronic/diabetes" },
-      { label: "고지혈증", href: "/chronic/hyperlipidemia" },
-      { label: "골다공증", href: "/chronic/osteoporosis" },
-      { label: "심장 폐질환", href: "/chronic/cardiopulmonary" },
+      { label: "소화기센터", href: "/departments/sowhagi" },
+      { label: "순환기센터", href: "/departments/soonhwangi" },
+      { label: "호흡기·알레르기센터", href: "/departments/hoheupgi" },
+      { label: "이비인후과", href: "/departments/ent" },
+      { label: "만성질환센터", href: "/chronic/hypertension" },
     ],
   },
   {
@@ -75,19 +64,14 @@ const navItems: NavItem[] = [
     href: "#",
     children: [
       { label: "비만클리닉", href: "/special/obesity" },
-      { label: "탈모클리닉", href: "/special/hair-loss" },
       { label: "수액클리닉", href: "/special/iv-therapy" },
       { label: "방문진료 (준비 중)", href: "#", disabled: true },
       { label: "치매클리닉", href: "/special/dementia" },
     ],
   },
   {
-    label: "많이 찾는 Q&A",
-    href: "/qna",
-  },
-  {
-    label: "진료시간 및 오시는길",
-    href: "/info",
+    label: "예방접종",
+    href: "/vaccination",
   },
 ];
 
@@ -128,11 +112,11 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
-            src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/210280187c640.png"
+            src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/51e89d9bf2e45.png"
             alt="김정재탑내과의원"
             width={640}
             height={200}
-            className="!w-auto !h-[120px] md:!h-[300px]"
+            className="!w-auto !h-[160px] md:!h-[340px]"
             priority
           />
         </Link>
@@ -155,7 +139,7 @@ export default function Header() {
                 onClick={(e) => {
                   if (item.href === "#") e.preventDefault();
                 }}
-                className={`px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap inline-block text-white/90 hover:text-white hover:bg-white/10 ${activeDropdown === idx ? "bg-white/10 text-white" : ""}`}
+                className={`px-3 xl:px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 whitespace-nowrap inline-block text-white/90 hover:text-white hover:bg-white/10 ${activeDropdown === idx ? "bg-white/10 text-white" : ""}`}
               >
                 {item.label}
                 {item.children && (
@@ -189,7 +173,7 @@ export default function Header() {
                           if (sub.disabled) e.preventDefault();
                           setActiveDropdown(null);
                         }}
-                        className={`block px-5 py-2.5 text-sm transition-all duration-200 ${
+                        className={`block px-5 py-2.5 text-[15px] transition-all duration-200 ${
                           sub.disabled
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-navy-700 hover:bg-gradient-to-r hover:from-navy-50 hover:to-sky-50 hover:text-navy-900 hover:pl-6"
@@ -272,7 +256,7 @@ export default function Header() {
                               setMobileExpanded(null);
                             }
                           }}
-                          className={`block pl-10 pr-6 py-3 text-sm transition-colors ${
+                          className={`block pl-10 pr-6 py-3 text-[15px] transition-colors ${
                             sub.disabled
                               ? "text-gray-300 cursor-not-allowed"
                               : "text-navy-600 hover:text-navy-900 hover:bg-navy-100/50"

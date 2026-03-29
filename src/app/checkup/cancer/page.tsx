@@ -7,40 +7,47 @@ import CountUp from "@/components/CountUp";
 import FAQ from "@/components/FAQ";
 
 const screeningCards = [
-  { title: "위암", desc: "위내시경으로 검진합니다.\n만 40세 이상, 2년마다 검진 대상입니다.\n소화기내시경 세부전문의가 직접 시행합니다." },
-  { title: "대장암", desc: "분변잠혈검사 + 대장내시경으로 검진합니다.\n만 50세 이상이 대상이며 용종 발견 시 당일 절제 가능합니다." },
-  { title: "간암", desc: "복부초음파 + 혈액검사(AFP)로 검진합니다.\n간경변, B형·C형 간염 등 고위험군 대상, 6개월마다 시행합니다." },
-  { title: "폐암", desc: "저선량 흉부CT로 검진합니다.\n만 54~74세 흡연력 30갑년 이상 고위험군이 대상입니다." },
+  { title: "위암", 대상: "40세 이상", 주기: "2년마다 1회", 방법: "위내시경 검사" },
+  { title: "대장암", 대상: "50세 이상", 주기: "1년마다 1회", 방법: "분변잠혈검사 (이상 시 대장내시경으로 진행)" },
+  { title: "간암", 대상: "40세 이상 고위험군", 주기: "6개월마다 1회", 방법: "간초음파 + AFP (혈청알파태아단백검사)" },
+  { title: "유방암", 대상: "40세 이상 여성", 주기: "2년마다 1회", 방법: "유방촬영 검사" },
+  { title: "자궁경부암", 대상: "20세 이상 여성", 주기: "2년마다 1회", 방법: "자궁경부세포 검사" },
+  { title: "폐암", 대상: "54~74세 고위험군", 주기: "2년마다 1회", 방법: "저선량 흉부 CT" },
 ];
 
 const steps = [
-  { num: "01", title: "예약" },
-  { num: "02", title: "검진 당일 내원" },
+  { num: "01", title: "예약 및 공단 검진 항목 확인" },
+  { num: "02", title: "검진 당일 공복으로 내원" },
   { num: "03", title: "검사 진행" },
   { num: "04", title: "결과 상담" },
 ];
 
 const faqItems = [
   { q: "5대암 검진은 무료인가요?", a: "국민건강보험 적용으로 본인부담금이 최소화됩니다." },
-  { q: "어떤 암이 5대암에 포함되나요?", a: "위암, 대장암, 간암, 폐암, 유방암(여성), 자궁경부암(여성)입니다." },
-  { q: "검진 주기는 어떻게 되나요?", a: "암 종류별로 다르며 1~2년 주기로 시행합니다." },
+  { q: "어떤 암이 5대암에 포함되나요?", a: "위암, 대장암, 간암, 유방암, 자궁경부암, 폐암 총 6가지 암 검진을 시행합니다" },
+  { q: "검진 주기는 어떻게 되나요?", a: "생애 주기 검사 항목에 맞춰 나이대 별로 검진 종류가 다르게 시행됩니다" },
   { q: "검진 결과는 언제 확인할 수 있나요?", a: "검사 항목에 따라 당일 또는 2주 내 결과를 안내합니다." },
-  { q: "가족력이 있으면 더 자주 검진받아야 하나요?", a: "네, 가족력이 있는 경우 일반 권장 연령보다 일찍, 더 자주 받는 것을 권장합니다." },
+  { q: "가족력이 있으면 더 자주 검진받아야 하나요?", a: "1촌 이내 암의 가족력이 있다면 국가 검진보다 더 자주 받는 것을 권장합니다" },
 ];
 
 export default function CancerScreeningPage() {
   return (
     <>
       <PageHeader
-        title="5대암검진"
-        subtitle="국가암검진으로 암을 조기에 발견하고 예방합니다"
+        title="5대암국가검진"
+        subtitle="국민건강보험공단 건강검진 프로그램으로, 암을 조기에 발견하고 예방합니다"
       />
       <WhyKimtop
-        box="5대암검진, 왜 김정재탑내과일까?+"
+        box="5대암국가검진, 왜 김정재탑내과일까?+"
         overlay="국가 5대암 조기발견"
         description="국민건강보험 지정기관으로 5대암을 조기에 발견하고 안전하게 치료합니다."
-        features={["국가검진 지정기관", "소화기내시경 세부전문의", "당일 용종절제 가능", "원스톱 진료"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/f71e11c2c9add.jpeg"
+        features={[
+          { title: "5대암", sub: "위/대장내시경, 복부초음파, 유방/자궁 검진" },
+          { title: "검사 주기 평균 2년", sub: "연령별, 위험도별 상이" },
+          "소화기내시경 세부전문의",
+          "원스톱 진료",
+        ]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
       />
 
       {/* Stats Banner */}
@@ -68,7 +75,7 @@ export default function CancerScreeningPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/e0e484a028ec0.jpeg')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg')" }}
                 />
               </div>
             </ScrollReveal>
@@ -77,7 +84,7 @@ export default function CancerScreeningPage() {
                 5대암 <span className="text-sky-500">조기발견</span> 프로그램
               </h2>
               <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
-                {"국민건강보험 지정기관으로 5대암을 조기에 발견하고 안전하게 치료합니다.\n조기 발견 시 완치율이 90% 이상으로 매우 높습니다."}
+                {"질병 발생 전 예방하는 것을 목적으로, 5대암 검진을 통해 조기암이 발견될 경우 완치율도 90% 이상으로 높아집니다."}
               </p>
             </ScrollReveal>
           </div>
@@ -95,12 +102,16 @@ export default function CancerScreeningPage() {
               <div className="w-16 h-1 bg-sky-500 mx-auto" />
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {screeningCards.map((card, i) => (
               <ScrollReveal key={card.title} delay={i * 100}>
                 <div className="bg-white rounded-2xl shadow-md p-6 h-full card-hover-glow">
-                  <h3 className="text-xl font-bold text-navy-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{card.desc}</p>
+                  <h3 className="text-xl font-bold text-navy-900 mb-4">{card.title}</h3>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <p><span className="font-semibold text-navy-900">대상</span> {card.대상}</p>
+                    <p><span className="font-semibold text-navy-900">주기</span> {card.주기}</p>
+                    <p><span className="font-semibold text-navy-900">방법</span> {card.방법}</p>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}

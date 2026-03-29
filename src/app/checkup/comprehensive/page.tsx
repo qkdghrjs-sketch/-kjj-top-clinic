@@ -16,14 +16,15 @@ const steps = [
   { num: "01", title: "사전 상담" },
   { num: "02", title: "맞춤 설계" },
   { num: "03", title: "검진 시행" },
-  { num: "04", title: "결과 상담" },
+  { num: "04", title: "종합검진결과서 발급" },
+  { num: "05", title: "결과 상담" },
 ];
 
 const faqItems = [
   { q: "종합검진은 보험이 되나요?", a: "일부 항목은 보험 적용이 되나 대부분 비급여입니다.\n내원 시 상세 안내해 드립니다." },
   { q: "검진 전 준비사항은?", a: "검진 전날 밤 9시 이후 금식이 필요합니다.\n복용 중인 약은 전문의와 상담하세요." },
   { q: "검진 소요시간은 얼마나 되나요?", a: "프로그램에 따라 1~3시간 정도 소요됩니다." },
-  { q: "여성 검진 시 주의사항이 있나요?", a: "생리 기간을 피해서 예약하시는 것을 권장합니다." },
+  { q: "여성 검진 시 주의사항이 있나요?", a: "생리 기간을 피해서 예약하시는 것을 권장합니다.\n검사 전까지 소변을 참아주세요" },
   { q: "검진 결과 이상이 나오면?", a: "전문의가 직접 결과를 설명하고 필요시 추가 검사를 안내합니다." },
 ];
 
@@ -38,8 +39,8 @@ export default function ComprehensiveCheckupPage() {
         box="종합검진, 왜 김정재탑내과일까?+"
         overlay="1:1 맞춤형 종합검진"
         description="개인 맞춤형 검진 프로그램으로 정확하고 효율적인 건강검진을 제공합니다."
-        features={["1:1 맞춤 설계", "대학병원급 장비", "전문의 직접 판독", "당일 결과 안내"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/f71e11c2c9add.jpeg"
+        features={["1:1 맞춤 설계", "대학병원급 장비", "전문의 직접 판독", "종합검진결과서 발급"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/2e2eeda0b29c9.jpeg"
       />
 
       {/* Stats Banner */}
@@ -50,16 +51,16 @@ export default function ComprehensiveCheckupPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">1:1 맞춤</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">검진 설계</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">1:1</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">검진 상담</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">대학병원급</p>
               <p className="text-sky-300 text-xs sm:text-sm font-medium">의료 장비</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">결과 안내</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">검진 후</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">지속 관리</p>
             </div>
           </div>
         </div>
@@ -125,14 +126,14 @@ export default function ComprehensiveCheckupPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {steps.map((step, i) => (
                 <div key={step.num} className="relative">
                   <div className="border-2 border-gray-200 rounded-2xl p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
                     <span className="text-3xl font-black text-sky-500 block mb-3">{step.num}</span>
                     <h4 className="text-navy-900 font-bold text-base">{step.title}</h4>
                   </div>
-                  {i < 3 && (
+                  {i < 4 && (
                     <div className="hidden md:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10">
                       <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

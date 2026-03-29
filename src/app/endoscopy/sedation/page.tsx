@@ -31,7 +31,7 @@ const cautions = [
 const faqItems = [
   { q: "수면내시경 후 바로 운전할 수 없나요?", a: "당일 운전은 절대 불가합니다.\n수면 유도제가 완전히 깨어난 것처럼 느껴지더라도\n판단력에 영향을 줄 수 있어 보호자 동반이 필수입니다." },
   { q: "수면에서 깨어나는 데 얼마나 걸리나요?", a: "보통 30~60분 후 완전히 각성됩니다.\n회복실에서 충분히 쉬신 후 귀가하실 수 있습니다." },
-  { q: "수면내시경을 못 받는 경우가 있나요?", a: "임산부, 수면 유도제 알레르기가 있는 분, 특정 약물 복용자는\n사전 상담이 필요합니다." },
+  { q: "수면내시경을 못 받는 경우가 있나요?", a: "임산부, 수면 유도제 알레르기가 있는 분, 특정 약물 복용자,\n뇌, 심장, 폐질환, 급성 호흡기질환 감염 되신 분은\n사전 상담이 필요합니다." },
   { q: "검사 중에 깨어날 수도 있나요?", a: "드물게 각성되는 경우가 있으나 추가 투여로 조절 가능합니다.\n검사 내용은 기억하지 못하는 것이 정상입니다." },
   { q: "수면내시경 비용은 얼마인가요?", a: "보험 적용 여부에 따라 다릅니다.\n자세한 비용은 내원 시 또는 전화 상담으로 안내해 드립니다." },
 ];
@@ -47,8 +47,8 @@ export default function SedationEndoscopyPage() {
       <WhyKimtop
         box="수면내시경, 왜 김정재탑내과일까?+"
         overlay="편안한 수면내시경"
-        description="통증 없이 편안하게 받는 수면내시경으로 정확한 검사를 제공합니다."
-        features={["통증 없는 검사", "안전한 수면 유도", "소화기내시경 세부전문의", "빠른 회복"]}
+        description="대학병원급의 바이탈 사인 감시를 통해, 사고 없는 안전한 수면내시경을 진행합니다."
+        features={["기도 흡입 예방", "안전한 수면 약물 사용", "바이탈 사인 감시", "편안한 회복실"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
       />
 
@@ -59,14 +59,17 @@ export default function SedationEndoscopyPage() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            <CountUp end={99} suffix="%" label="수면내시경 만족도" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5~15분</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">검사 소요시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">대학병원급</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">최신 대학병원급 내시경실</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">30~60분</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">회복시간</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">충분한 회복</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">충분한 회복 시간</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">안전 내시경</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">안전한 내시경</p>
             </div>
           </div>
         </div>
@@ -171,8 +174,28 @@ export default function SedationEndoscopyPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* 경고 */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="bg-red-50 border-2 border-red-400 rounded-2xl p-8">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center shrink-0">
+                  <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                </div>
+                <p className="text-red-700 font-semibold leading-relaxed">
+                  수면내시경은 심장과 호흡 중추를 억제하는 전신마취제를 사용하는 시술로 특정 고위험군에서는 사망으로 이어질 수 있습니다. 시술 전 수면내시경 결정을 위해 의료진과 충분한 상담 및 검사가 필요합니다.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-12">

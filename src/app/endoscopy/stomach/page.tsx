@@ -17,9 +17,9 @@ export default function StomachEndoscopyPage() {
       <WhyKimtop
         box="위내시경, 왜 김정재탑내과일까?+"
         overlay="위내시경 전문 클리닉"
-        description="소화기내시경 세부전문의가 직접 시행하는 안전하고 정확한 위내시경 검사입니다."
-        features={["소화기내시경 세부전문의", "수면내시경 시행", "당일 용종절제 가능", "멸균 소독 철저"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
+        description="내시경 세부전문의가 직접 시행하는 안전하고 정확한 위내시경 검사입니다."
+        features={["내시경 세부전문의", "수면/비수면내시경 시행", "당일 용종절제 가능", "멸균 소독 철저"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
       />
 
       {/* 통계 배너 */}
@@ -31,12 +31,12 @@ export default function StomachEndoscopyPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <CountUp end={100000} suffix="+" label="위내시경 시행" />
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5~10분</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">10분~15분</p>
               <p className="text-sky-300 text-xs sm:text-sm font-medium">검사 소요시간</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">당일 가능</p>
-              <p className="text-sky-300 text-xs sm:text-sm font-medium">용종절제</p>
+              <p className="text-sky-300 text-xs sm:text-sm font-medium">용종절제, 조직검사</p>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function StomachEndoscopyPage() {
                   소화기내시경 세부전문의가 직접 시행합니다
                 </h2>
                 <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                  {"위내시경은 내시경 카메라를 입을 통해 삽입하여\n식도, 위, 십이지장을 직접 관찰하는 검사입니다.\n\n육안으로는 확인이 불가능한 위 점막의 이상 변화를\n실시간으로 관찰하여 정확한 진단이 가능합니다.\n\n김정재탑내과는 소화기내시경 세부전문의가\n모든 내시경 검사를 직접 시행합니다."}
+                  {"위내시경은 내시경 카메라를 입을 통해 삽입하여\n식도, 위, 십이지장을 직접 관찰하는 검사입니다.\n\n육안으로는 확인이 불가능한 위 점막의 이상 변화를\n실시간으로 관찰하여 정확한 진단이 가능합니다.\n\n김정재탑내과는 내시경 세부전문의가 철저한 검사로 조기 위암의 소견을 발견합니다."}
                 </p>
               </div>
             </ScrollReveal>
