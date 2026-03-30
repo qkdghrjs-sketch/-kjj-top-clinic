@@ -26,6 +26,7 @@ export default function SowhagiPage() {
         overlay="소화기내시경 세부전문의"
         description="정확한 진단과 치료를 위해 대학병원급 장비와 전문의가 함께합니다."
         features={["정밀 복부초음파", "당일 내시경, 용종 절제", "수면/비수면 내시경 시행", "소화기내시경 세부전문의"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/70cd169c3a6d6.jpeg"
       />
 
       {/* Stats Banner */}

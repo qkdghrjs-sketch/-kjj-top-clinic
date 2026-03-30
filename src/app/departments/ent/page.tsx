@@ -25,6 +25,7 @@ export default function EntPage() {
         overlay="귀·코·목 전문 진료"
         description="내시경 비인두 검사부터 혈액검사, 수액치료까지 정밀한 이비인후과 진료를 제공합니다."
         features={["내시경 비인두 검사", "혈액검사", "수액치료", "전문의 직접 진료"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/70cd169c3a6d6.jpeg"
       />
 
       {/* Stats Banner */}

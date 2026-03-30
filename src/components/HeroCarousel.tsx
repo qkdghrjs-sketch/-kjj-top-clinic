@@ -233,7 +233,7 @@ export default function HeroCarousel() {
                   onClick={handleReservation}
                   className="bg-sky-500 text-white font-semibold px-5 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg hover:bg-sky-400 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/30 text-sm sm:text-base md:text-lg cursor-pointer whitespace-nowrap"
                 >
-                  전화 예약: 02-6798-8880
+                  전화 예약: 02-2698-8880
                 </button>
               </div>
             </div>

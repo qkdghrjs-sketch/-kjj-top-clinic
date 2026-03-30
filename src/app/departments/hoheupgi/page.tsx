@@ -31,6 +31,7 @@ export default function HoheupgiPage() {
         overlay="폐·기도·알레르기 전문 진료"
         description="폐기능 검사부터 흉부 X-ray 당일 판독, 혈액 알레르기 검사까지 체계적인 진료를 제공합니다."
         features={["폐기능 검사", "흉부 X-ray 당일 판독", "알레르기 검사 176종", "전문의 직접 진료"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/70cd169c3a6d6.jpeg"
       />
 
       {/* Stats Banner */}

@@ -58,8 +58,8 @@ export default function Footer() {
             <div className="mt-3 space-y-1">
               <p className="text-sm">
                 <span className="text-gold-400">T.</span>{" "}
-                <a href="tel:02-6798-8880" className="text-gray-300 hover:text-white transition-colors">
-                  02-6798-8880
+                <a href="tel:02-2698-8880" className="text-gray-300 hover:text-white transition-colors">
+                  02-2698-8880
                 </a>
               </p>
             </div>

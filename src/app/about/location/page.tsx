@@ -86,7 +86,7 @@ export default function LocationPage() {
                       </div>
                       <div>
                         <p className="text-navy-900 font-semibold text-base">대표전화</p>
-                        <a href="tel:02-6798-8880" className="text-sky-600 hover:underline font-bold text-lg">02-6798-8880</a>
+                        <a href="tel:02-2698-8880" className="text-sky-600 hover:underline font-bold text-lg">02-2698-8880</a>
                       </div>
                     </div>
                     <div className="border-t border-navy-100"></div>

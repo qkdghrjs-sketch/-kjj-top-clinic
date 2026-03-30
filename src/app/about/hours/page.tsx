@@ -85,8 +85,8 @@ export default function HoursPage() {
               <p className="text-base text-navy-700">
                 <strong className="text-navy-900">안내:</strong> 내시경 검사는
                 사전 예약제로 운영됩니다. 전화(
-                <a href="tel:02-6798-8880" className="text-sky-600 font-semibold hover:underline">
-                  02-6798-8880
+                <a href="tel:02-2698-8880" className="text-sky-600 font-semibold hover:underline">
+                  02-2698-8880
                 </a>
                 )로 미리 예약해 주시기 바랍니다.
               </p>

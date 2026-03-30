@@ -50,7 +50,7 @@ export default function HomeVisitPage() {
                 <div className="bg-white rounded-xl p-6">
                   <p className="text-base text-gray-500 mb-2">문의 전화</p>
                   <p className="text-sky-500 text-xl font-bold">
-                    ☎ 02-6798-8880
+                    ☎ 02-2698-8880
                   </p>
                   <p className="text-base text-gray-500 mt-3">
                     평일 09:00 ~ 18:00 | 토요일 09:00 ~ 13:00

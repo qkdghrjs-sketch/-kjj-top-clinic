@@ -25,6 +25,7 @@ export default function SoonhwangiPage() {
         overlay="심장·혈관 전문 진료"
         description="고혈압, 심장질환의 정밀 진단과 체계적인 관리를 제공합니다."
         features={["정밀 혈액검사", "정밀 심장초음파", "24시간 혈압/심전도 모니터링", "전문의 직접 진료"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/70cd169c3a6d6.jpeg"
       />
 
       {/* Stats Banner */}

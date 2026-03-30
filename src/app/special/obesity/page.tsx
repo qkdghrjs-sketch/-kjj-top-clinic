@@ -19,7 +19,7 @@ export default function ObesityPage() {
         overlay="비만 전문 클리닉"
         description="과도한 비만은 심뇌혈관 질환 발생율을 매우 높입니다. 체계적인 약물 치료와 생활습관 개선을 통해 체중 감량 및 아름다움을 쟁취하세요."
         features={["혈액 검사", "정밀 간초음파", "전문의 문진", "약물 치료 (GLP-1 receptor agonist)"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
 
       {/* Stats Banner */}

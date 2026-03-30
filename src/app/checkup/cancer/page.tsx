@@ -47,7 +47,7 @@ export default function CancerScreeningPage() {
           "소화기내시경 세부전문의",
           "원스톱 진료",
         ]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/6ffce631e5978.jpeg"
       />
 
       {/* Stats Banner */}

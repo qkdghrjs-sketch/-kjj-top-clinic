@@ -289,7 +289,7 @@ export default function Header() {
               handleReservation();
             }}
           >
-            전화 예약: 02-6798-8880
+            전화 예약: 02-2698-8880
           </button>
         </nav>
       )}

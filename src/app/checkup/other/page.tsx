@@ -34,6 +34,7 @@ export default function OtherCheckupPage() {
         overlay="정확하고 신속한 검진"
         description="전문의가 직접 판독하며, 프라이버시를 철저히 보호합니다."
         features={["전문의 직접 판독", "프라이버시 보호", "신속한 결과 안내", "당일 검사 가능"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
 
       {/* Stats Banner */}

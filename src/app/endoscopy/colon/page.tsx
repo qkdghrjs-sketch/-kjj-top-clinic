@@ -19,7 +19,7 @@ export default function ColonEndoscopyPage() {
         overlay="대장내시경 전문 클리닉"
         description="대장암 조기발견을 위한 정밀 대장내시경 검사를 제공합니다."
         features={["내시경 세부전문의", "당일 용종절제 가능", "수면/비수면내시경 시행", "최고 사양 올림푸스 내시경"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
       />
 
       {/* 통계 배너 */}

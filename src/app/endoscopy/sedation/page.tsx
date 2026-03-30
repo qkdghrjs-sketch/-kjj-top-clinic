@@ -49,7 +49,7 @@ export default function SedationEndoscopyPage() {
         overlay="편안한 수면내시경"
         description="대학병원급의 바이탈 사인 감시를 통해, 사고 없는 안전한 수면내시경을 진행합니다."
         features={["기도 흡입 예방", "안전한 수면 약물 사용", "바이탈 사인 감시", "편안한 회복실"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/1d607a8a37a8d.jpeg"
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
       />
 
       {/* Stats Banner */}

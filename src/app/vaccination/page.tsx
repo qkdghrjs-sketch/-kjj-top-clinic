@@ -59,6 +59,7 @@ export default function VaccinationPage() {
         overlay="안전하고 체계적인 예방접종"
         description="전문의 상담을 통해 개인별 맞춤 예방접종 계획을 수립하고, 안전하게 접종합니다."
         features={["전문의 직접 상담", "개인별 맞춤 접종", "접종 후 경과 관찰", "국가예방접종 지정기관"]}
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
 
       {/* Stats Banner */}

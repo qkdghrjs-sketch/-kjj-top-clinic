@@ -18,7 +18,7 @@ export default function DementiaPage() {
         overlay="치매 조기검진 클리닉"
         description="인지기능저하를 조기 발견하고 치매 발생 예방을 위해 체계적 관리를 진행합니다."
         features={["약물 조절", "MMSE & GDS 검사", "치매 혈액 검사", "예방 관리 프로그램"]}
-        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/0ace4666c2ab8.jpeg"
+        image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
 
       {/* Stats Banner */}
