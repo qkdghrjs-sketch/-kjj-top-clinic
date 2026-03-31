@@ -132,7 +132,7 @@ export default function Home() {
               },
               {
                 num: "05",
-                image: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/dbe9f8335e327.jpeg",
+                image: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/3f7444eec6346.png",
                 desc: "압축 공기와 알코올로\n물기를 완전히 제거합니다.",
               },
               {
