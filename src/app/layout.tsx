@@ -15,7 +15,12 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "김정재탑내과의원 | 내과 전문 진료",
   description:
-    "김정재탑내과의원 - 내과 전문의가 직접 진료하는 신뢰할 수 있는 병원입니다.",
+    "김정재탑내과의원 - 내과 전문의가 직접 진료하는 신뢰할 수 있는 병원입니다. 위내시경, 대장내시경, 건강검진, 만성질환 관리",
+  verification: {
+    other: {
+      "naver-site-verification": "9f7032cfb002c88d7faa6eac2dd6e9669ab79d2c",
+    },
+  },
 };
 
 export default function RootLayout({
