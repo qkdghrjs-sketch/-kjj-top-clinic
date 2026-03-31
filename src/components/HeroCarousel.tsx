@@ -60,7 +60,7 @@ const slides: SlideData[] = [
   },
   {
     image:
-      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/39792de6e7263.jpeg",
+      "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/8da82dc9958a8.jpeg",
     badgeEn: "CHRONIC DISEASE",
     badgeKo: "만성질환",
     titleParts: [

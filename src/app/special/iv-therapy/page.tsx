@@ -11,13 +11,12 @@ export default function IVTherapyPage() {
     <>
       <PageHeader
         title="수액클리닉"
-        subtitle="피로 회복과 면역력 증진을 위한 맞춤 수액 치료"
+        subtitle="몸살, 피로 회복, 면역력 증진, 생리통 등 다양한 증상에 대한 맞춤 수액 치료를 제공합니다."
       />
       <WhyKimtop
         box="수액클리닉, 왜 김정재탑내과일까?+"
         overlay="수액 전문 클리닉"
         description="몸살, 피로 회복, 면역력 증진, 생리통 등 다양한 증상에 대한 맞춤 수액 치료를 제공합니다."
-        bottomText="자율신경계 스트레스 검사를 통해 원인을 파악하고 맞춤 수액을 처방해 드립니다."
         features={["전문의 직접 진료", "1인 프리미엄 수액실", "다양한 맞춤 수액", "스트레스 검사 진행"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />

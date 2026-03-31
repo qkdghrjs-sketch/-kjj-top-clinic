@@ -34,12 +34,12 @@ export default function HoursPage() {
 
           <ScrollReveal delay={100}>
             <div className="overflow-x-auto rounded-2xl shadow-lg border border-gray-100">
-              <table className="w-full border-collapse">
+              <table className="w-full border-collapse table-fixed sm:table-auto">
                 <thead>
                   <tr className="bg-gradient-to-r from-navy-800 to-navy-700 text-white">
-                    <th className="px-6 py-4 text-left font-semibold">요일</th>
-                    <th className="px-6 py-4 text-left font-semibold">진료시간</th>
-                    <th className="px-6 py-4 text-left font-semibold">비고</th>
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm md:text-base font-semibold">요일</th>
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm md:text-base font-semibold">진료시간</th>
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm md:text-base font-semibold hidden sm:table-cell">비고</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -58,18 +58,18 @@ export default function HoursPage() {
                               : "hover:bg-navy-50"
                         }`}
                       >
-                        <td className={`px-6 py-4 font-medium ${isToday ? "text-sky-700 font-bold" : isClosed ? "text-red-500" : "text-navy-800"}`}>
+                        <td className={`px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm md:text-base font-medium ${isToday ? "text-sky-700 font-bold" : isClosed ? "text-red-500" : "text-navy-800"}`}>
                           {h.day}
                           {isToday && (
-                            <span className="ml-2 inline-block px-1.5 py-0.5 bg-sky-500 text-white text-[10px] font-bold rounded">
+                            <span className="ml-1 sm:ml-2 inline-block px-1 py-0.5 bg-sky-500 text-white text-[9px] sm:text-[10px] font-bold rounded">
                               TODAY
                             </span>
                           )}
                         </td>
-                        <td className={`px-6 py-4 ${isClosed ? "text-red-500 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
+                        <td className={`px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm md:text-base ${isClosed ? "text-red-500 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
                           {h.time}
                         </td>
-                        <td className={`px-6 py-4 ${isToday ? "text-sky-600" : "text-gray-400"}`}>
+                        <td className={`px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm md:text-base hidden sm:table-cell ${isToday ? "text-sky-600" : "text-gray-400"}`}>
                           {h.note || (isClosed ? "-" : "")}
                         </td>
                       </tr>
@@ -82,7 +82,7 @@ export default function HoursPage() {
 
           <ScrollReveal delay={200}>
             <div className="mt-6 bg-gradient-to-r from-navy-50 to-sky-50 border-l-4 border-gold-400 p-5 rounded-r-xl">
-              <p className="text-base text-navy-700">
+              <p className="text-sm sm:text-base text-navy-700">
                 <strong className="text-navy-900">안내:</strong> 내시경 검사는
                 사전 예약제로 운영됩니다. 전화(
                 <a href="tel:02-2698-8880" className="text-sky-600 font-semibold hover:underline">

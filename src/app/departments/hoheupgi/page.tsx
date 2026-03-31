@@ -138,7 +138,7 @@ export default function HoheupgiPage() {
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {["문진", "알레르기 검사 176종", "X-ray", "폐기능검사"].map((item, i) => (
+            {["문진", "혈액검사", "X-ray", "폐기능검사"].map((item, i) => (
               <ScrollReveal key={item} delay={i * 100}>
                 <div className="text-center p-6 bg-navy-50 rounded-2xl">
                   <div className="w-12 h-12 rounded-full bg-navy-900 text-white flex items-center justify-center mx-auto mb-3 text-sm font-bold">
@@ -190,7 +190,7 @@ export default function HoheupgiPage() {
           </ScrollReveal>
           <FAQ items={[
             { q: "기침이 8주 이상 지속되면 어떻게 해야 하나요?", a: "만성 기침의 원인은 다양하므로 정확한 검사가 필요합니다." },
-            { q: "폐기능 검사는 어떻게 진행되나요?", a: "천식 의심 시 기도 확장 흡입기 사용 후 추가 검사 필요" },
+            { q: "폐기능 검사는 어떻게 진행되나요?", a: "천식 의심 시 기도 확장 흡입기 사용 후 추가 검사가 필요합니다." },
             { q: "흡연자는 얼마나 자주 폐 검사를 받아야 하나요?", a: "무엇보다 금연이 우선입니다. 스스로 금연이 어려울 경우 금연 클리닉을 이용하세요" },
             { q: "알레르기 검사는 어떻게 진행되나요?", a: "혈액 채취로 176종 항원에 대한 반응을 확인합니다" },
           ]} />

@@ -11,7 +11,7 @@ export default function DementiaPage() {
     <>
       <PageHeader
         title="치매클리닉"
-        subtitle="조기 발견과 체계적 관리로 치매를 예방합니다"
+        subtitle="인지기능저하를 조기 발견하고 치매 발생 예방을 위해 체계적 관리를 진행합니다."
       />
       <WhyKimtop
         box="치매클리닉, 왜 김정재탑내과일까?+"

@@ -63,7 +63,7 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
           <ScrollReveal delay={150}>
             <div>
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5">
-                <span className="text-white text-xl sm:text-3xl md:text-4xl font-bold italic">
+                <span className="text-white text-lg sm:text-3xl md:text-4xl font-bold italic">
                   WHY KIMTOP
                 </span>
                 <span className="inline-block bg-sky-500 text-white text-[11px] sm:text-xs font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg whitespace-nowrap">
@@ -71,7 +71,7 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
                 </span>
               </div>
 
-              <p className="text-white/80 text-sm leading-relaxed mb-3 whitespace-pre-line">
+              <p className="text-white/80 text-xs sm:text-sm leading-relaxed mb-3 whitespace-pre-line">
                 {description}
               </p>
 
@@ -88,7 +88,7 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
                       </div>
                       <div className="min-w-0">
                         <span className="text-white font-medium text-xs sm:text-sm">{title}</span>
-                        {sub && <p className="text-white/60 text-[10px] sm:text-xs truncate">{sub}</p>}
+                        {sub && <p className="text-white/60 text-[10px] sm:text-xs line-clamp-2">{sub}</p>}
                       </div>
                     </div>
                   );

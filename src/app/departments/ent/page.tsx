@@ -16,14 +16,14 @@ export default function EntPage() {
   return (
     <>
       <PageHeader
-        title="이비인후과"
-        subtitle="감기, 코/목 통증, 독감 등 불편한 증상이 있으시다면 편하게 방문해 주세요."
+        title="이비인후과 전문 진료"
+        subtitle="귀·코·목 질환의 전문적인 진료를 제공합니다."
       />
 
       <WhyKimtop
         box="이비인후과, 왜 김정재탑내과일까?+"
-        overlay="귀·코·목 전문 진료"
-        description="내시경 비인두 검사부터 혈액검사, 수액치료까지 정밀한 이비인후과 진료를 제공합니다."
+        overlay="이비인후과"
+        description="감기, 코/목 통증, 독감 등 불편한 증상이 있으시다면 편하게 방문해 주세요."
         features={["내시경 비인두 검사", "혈액검사", "수액치료", "전문의 직접 진료"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/70cd169c3a6d6.jpeg"
       />
@@ -43,26 +43,6 @@ export default function EntPage() {
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">소아 감기 진료</p>
               <p className="text-sky-300 text-sm sm:text-base font-medium">소아 전문 진료</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
-            <ScrollReveal>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
-                <div
-                  className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/993b4f8749e43.jpeg')" }}
-                />
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={150}>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">이비인후과 전문 진료</h2>
-              <p className="text-gray-600 leading-relaxed">귀·코·목 질환의 전문적인 진료를 제공합니다.</p>
-            </ScrollReveal>
           </div>
         </div>
       </section>

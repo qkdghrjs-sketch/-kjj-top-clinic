@@ -16,8 +16,8 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="animate-fade-in-left">
           <div className="w-10 h-0.5 bg-gold-400 mb-6"></div>
-          <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">{title}</h1>
-          <p className="text-navy-300 text-base md:text-lg whitespace-pre-line">{subtitle}</p>
+          <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mb-2 md:mb-3">{title}</h1>
+          <p className="text-navy-300 text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line">{subtitle}</p>
         </div>
       </div>
     </section>

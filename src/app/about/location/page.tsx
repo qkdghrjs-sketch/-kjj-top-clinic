@@ -11,7 +11,7 @@ const hours = [
   { day: "목요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
   { day: "금요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
   { day: "토요일", time: "09:00 - 14:00", note: "", dayNum: 6 },
-  { day: "일요일", time: "매월 1, 3번째 주 일요일은 예약검진을 진행합니다", note: "", dayNum: 0 },
+  { day: "일요일", time: "휴진", note: "", dayNum: 0 },
 ];
 
 export default function LocationPage() {
@@ -97,8 +97,8 @@ export default function LocationPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="text-navy-900 font-semibold text-base">안내</p>
-                        <p className="text-gray-600 text-base mt-0.5">진료 및 예약 문의는 대표전화로 안내받으실 수 있습니다.</p>
+                        <p className="text-navy-900 font-semibold text-sm sm:text-base">안내</p>
+                        <p className="text-gray-600 text-xs sm:text-sm md:text-base mt-0.5">진료 및 예약 문의는 대표전화로 안내받으실 수 있습니다.</p>
                       </div>
                     </div>
                   </div>
@@ -106,12 +106,12 @@ export default function LocationPage() {
 
                 <h3 className="text-xl font-bold text-navy-900 mb-4">진료시간</h3>
                 <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                  <table className="w-full">
+                  <table className="w-full table-fixed sm:table-auto">
                     <thead>
                       <tr className="bg-navy-900 text-white">
-                        <th className="px-5 py-3 text-left text-base font-semibold">요일</th>
-                        <th className="px-5 py-3 text-left text-base font-semibold">진료시간</th>
-                        <th className="px-5 py-3 text-left text-base font-semibold">비고</th>
+                        <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm md:text-base font-semibold">요일</th>
+                        <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm md:text-base font-semibold">진료시간</th>
+                        <th className="px-3 sm:px-5 py-2.5 sm:py-3 text-left text-xs sm:text-sm md:text-base font-semibold hidden sm:table-cell">비고</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -132,16 +132,16 @@ export default function LocationPage() {
                                     : "bg-white"
                             }`}
                           >
-                            <td className={`px-5 py-3 text-base font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
+                            <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm md:text-base font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
                               {h.day}
                               {isToday && (
-                                <span className="ml-2 inline-block px-1.5 py-0.5 bg-sky-500 text-white text-[10px] font-bold rounded">TODAY</span>
+                                <span className="ml-1 sm:ml-2 inline-block px-1 py-0.5 bg-sky-500 text-white text-[9px] sm:text-[10px] font-bold rounded">TODAY</span>
                               )}
                             </td>
-                            <td className={`px-5 py-3 text-base ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
+                            <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm md:text-base ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
                               {h.time}
                             </td>
-                            <td className={`px-5 py-3 text-base ${isToday ? "text-sky-600" : "text-gray-400"}`}>
+                            <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm md:text-base hidden sm:table-cell ${isToday ? "text-sky-600" : "text-gray-400"}`}>
                               {h.note}
                             </td>
                           </tr>

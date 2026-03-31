@@ -12,7 +12,7 @@ export default function ObesityPage() {
     <>
       <PageHeader
         title="비만클리닉"
-        subtitle="건강한 체중 관리를 위한 의학적 접근"
+        subtitle="과도한 비만은 심뇌혈관 질환 발생율을 매우 높입니다. 체계적인 약물 치료와 생활습관 개선을 통해 체중 감량 및 아름다움을 쟁취하세요."
       />
       <WhyKimtop
         box="비만클리닉, 왜 김정재탑내과일까?+"

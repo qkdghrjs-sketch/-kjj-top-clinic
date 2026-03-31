@@ -34,8 +34,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "5대암국가검진", href: "/checkup/cancer" },
       { label: "종합검진", href: "/checkup/comprehensive" },
-      { label: "채용검진", href: "/checkup/employment" },
-      { label: "기타", href: "/checkup/other" },
+      { label: "채용검진 + 성병검사", href: "/checkup/employment" },
     ],
   },
   {
@@ -57,6 +56,7 @@ const navItems: NavItem[] = [
       { label: "호흡기·알레르기센터", href: "/departments/hoheupgi" },
       { label: "이비인후과", href: "/departments/ent" },
       { label: "만성질환센터", href: "/chronic/hypertension" },
+      { label: "예방접종", href: "/vaccination" },
     ],
   },
   {
@@ -68,10 +68,6 @@ const navItems: NavItem[] = [
       { label: "방문진료 (준비 중)", href: "#", disabled: true },
       { label: "치매클리닉", href: "/special/dementia" },
     ],
-  },
-  {
-    label: "예방접종",
-    href: "/vaccination",
   },
 ];
 
@@ -256,7 +252,7 @@ export default function Header() {
                               setMobileExpanded(null);
                             }
                           }}
-                          className={`block pl-10 pr-6 py-3 text-[15px] transition-colors ${
+                          className={`block pl-10 pr-4 py-3 text-[13px] sm:text-[15px] transition-colors ${
                             sub.disabled
                               ? "text-gray-300 cursor-not-allowed"
                               : "text-navy-600 hover:text-navy-900 hover:bg-navy-100/50"

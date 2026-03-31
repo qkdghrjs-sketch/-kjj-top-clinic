@@ -39,7 +39,7 @@ export default function Home() {
               },
               {
                 title: "내시경클리닉",
-                desc: "최신 장비로 위·대장내시경\n정확하고 편안하게",
+                desc: "위·대장내시경\n정확하고 편안하게",
                 image:
                   "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/747e8bf1cb3a3.jpeg",
                 href: "/endoscopy/stomach",
