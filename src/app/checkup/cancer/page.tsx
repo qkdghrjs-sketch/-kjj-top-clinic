@@ -55,13 +55,15 @@ export default function CancerScreeningPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-sky-400 rounded-full blur-[120px]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            <CountUp end={5} suffix="대암" label="국가 암검진" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="text-center">
-              <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">조기발견</p>
-              <p className="text-sky-300 text-sm sm:text-base font-medium">완치율 90%+</p>
+              <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">5대암</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">위/대장내시경, 복부초음파, 유방/자궁 검진</p>
             </div>
-            <CountUp end={100} suffix="%" label="보험 적용" />
+            <div className="text-center">
+              <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">검사 주기 평균 2년</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">연령별, 위험도별 상이</p>
+            </div>
           </div>
         </div>
       </section>
@@ -82,7 +84,7 @@ export default function CancerScreeningPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 5대암 <span className="text-sky-500">조기발견</span> 프로그램
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
                 {"질병 발생 전 예방을 목적으로, 5대암 검진을 통해 조기암이 발견될 경우\n완치율이 90% 이상으로 높아집니다."}
               </p>
             </ScrollReveal>

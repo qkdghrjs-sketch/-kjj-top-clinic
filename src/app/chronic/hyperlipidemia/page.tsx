@@ -56,7 +56,7 @@ export default function HyperlipidemiaPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   고지혈증이란?
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
                   {"고지혈증은 증상이 없어도 혈관을 조용히 막습니다.\n심근경색·뇌졸중 예방을 위해 정기 관리가 필요합니다.\n혈액검사로만 발견이 가능합니다."}
                 </p>
               </div>

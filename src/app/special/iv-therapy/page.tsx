@@ -16,7 +16,7 @@ export default function IVTherapyPage() {
       <WhyKimtop
         box="수액클리닉, 왜 김정재탑내과일까?+"
         overlay="수액 전문 클리닉"
-        description="몸살, 피로 회복, 면역력 증진, 생리통 등 다양한 증상에 대한 맞춤 수액 치료를 제공합니다."
+        description=""
         features={["전문의 직접 진료", "1인 프리미엄 수액실", "다양한 맞춤 수액", "스트레스 검사 진행"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
@@ -58,7 +58,7 @@ export default function IVTherapyPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   수액클리닉 소개
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
                   {"피로 회복부터 면역 강화까지 목적에 맞는 맞춤형 수액 치료를\n제공합니다. 경구 복용보다 흡수율이 100%로 빠른 효과를 기대할 수\n있습니다. 전문의가 개인 건강 상태를 파악 후 처방합니다."}
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function IVTherapyPage() {
                         <h3 className="text-lg font-bold text-navy-900">{item.title}</h3>
                       </div>
                       <div className="hidden sm:block w-px h-12 bg-gray-200 shrink-0" />
-                      <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">{item.desc}</p>
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">{item.desc}</p>
                     </div>
                   </div>
                 </div>

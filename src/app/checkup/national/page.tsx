@@ -81,7 +81,7 @@ export default function NationalScreeningPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 체계적인 <span className="text-sky-500">국가건강검진</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
                 {"국가건강검진부터 성·연령별 맞춤 검진까지 체계적으로 진행합니다. 건강보험공단에서 대상자 여부를 확인 후 예약하세요."}
               </p>
             </ScrollReveal>
@@ -105,7 +105,7 @@ export default function NationalScreeningPage() {
               <ScrollReveal key={card.title} delay={i * 100}>
                 <div className="bg-white rounded-2xl shadow-md p-6 h-full card-hover-glow">
                   <h3 className="text-xl font-bold text-navy-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">{card.desc}</p>
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">{card.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

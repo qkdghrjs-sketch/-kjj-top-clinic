@@ -82,7 +82,7 @@ export default function ComprehensiveCheckupPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 개인 맞춤형 <span className="text-sky-500">종합검진</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
                 {"개인 맞춤형 검진 프로그램으로 정확하고 효율적인 건강검진을 제공합니다.\n연령, 가족력, 생활습관을 기반으로 꼭 필요한 항목을 설계합니다."}
               </p>
             </ScrollReveal>

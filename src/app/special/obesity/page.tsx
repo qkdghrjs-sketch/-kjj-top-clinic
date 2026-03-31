@@ -17,7 +17,7 @@ export default function ObesityPage() {
       <WhyKimtop
         box="비만클리닉, 왜 김정재탑내과일까?+"
         overlay="비만 전문 클리닉"
-        description="과도한 비만은 심뇌혈관 질환 발생율을 매우 높입니다. 체계적인 약물 치료와 생활습관 개선을 통해 체중 감량 및 아름다움을 쟁취하세요."
+        description=""
         features={["혈액 검사", "정밀 간초음파", "전문의 문진", "약물 치료 (GLP-1 receptor agonist)"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
@@ -59,7 +59,7 @@ export default function ObesityPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   비만클리닉 소개
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
                   {"비만은 단순한 외모 문제가 아닌 질병입니다.\n전문의 처방으로 안전하고 효과적인 체중 감량을 도와드립니다.\n고혈압, 당뇨, 고지혈증, 수면무호흡증 등 다양한 질환의 원인입니다."}
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function ObesityPage() {
                   <h3 className="text-lg font-bold text-navy-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed whitespace-pre-line">
                     {item.desc}
                   </p>
                 </div>

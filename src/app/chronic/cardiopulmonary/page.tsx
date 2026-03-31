@@ -58,7 +58,7 @@ export default function CardiopulmonaryPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   심장 폐질환이란?
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
                   {"심장과 폐는 서로 밀접하게 연관되어 있습니다.\n심장 기능이 저하되면 폐에 물이 차는 폐부종이 발생합니다.\n폐 기능이 저하되면 심장에 부담을 주어 폐성심이 발생합니다."}
                 </p>
               </div>

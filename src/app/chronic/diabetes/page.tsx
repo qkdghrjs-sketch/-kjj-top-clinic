@@ -53,7 +53,7 @@ export default function DiabetesPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   당뇨병이란?
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
                   {"당뇨병은 꾸준한 관리가 가장 중요한 치료입니다.\n합병증 예방을 위해 전문의와 함께 관리하세요.\n한국인의 경우 비만과 운동 부족이 주요 위험인자입니다."}
                 </p>
               </div>

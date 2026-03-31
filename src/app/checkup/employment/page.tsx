@@ -92,7 +92,7 @@ export default function EmploymentCheckupPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 빠르고 정확한 <span className="text-sky-500">채용검진</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
 {"당일 검사 결과 확인으로 신속하게 채용검사서를 발급해드립니다.\n취업, 이직 시 필요한 채용검진을 빠르고 정확하게 제공합니다."}
               </p>
             </ScrollReveal>
@@ -155,7 +155,7 @@ export default function EmploymentCheckupPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-4">
                 정확하고 신뢰할 수 있는 <span className="text-sky-500">성병검사</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
 {"성병(성매개감염)은 초기 증상이 없는 경우가 많아 정기 검사가 중요합니다.\n프라이버시를 철저히 보호하며 정확한 검사와 신속한 결과\n안내를 제공합니다. 익명 검사도 가능하오니 부담 없이 방문해 주세요."}
               </p>
             </ScrollReveal>
@@ -184,7 +184,7 @@ export default function EmploymentCheckupPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-navy-900 mb-3">{card.title}</h3>
-                  <p className="text-gray-500 text-base leading-relaxed whitespace-pre-line">{card.desc}</p>
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed whitespace-pre-line">{card.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

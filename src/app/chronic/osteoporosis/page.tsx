@@ -56,7 +56,7 @@ export default function OsteoporosisPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   골다공증이란?
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
                   {"골다공증은 뼈가 약해져 작은 충격에도 골절되는 질환입니다.\n조기 발견과 꾸준한 치료가 중요합니다.\n폐경 후 여성과 고령 남성에서 주로 발생합니다."}
                 </p>
               </div>

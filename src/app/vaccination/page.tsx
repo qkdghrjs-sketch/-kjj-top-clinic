@@ -8,32 +8,32 @@ import FAQ from "@/components/FAQ";
 const vaccinations = [
   {
     name: "독감 (인플루엔자)",
-    desc: "인플루엔자 바이러스를 예방합니다.\n고위험군은 매년 접종 권장, 접종 후 약 2주 후 면역 형성됩니다.",
+    desc: "인플루엔자 바이러스를 예방합니다. 고위험군은 매년 접종 권장, 접종 후 약 2주 후 면역 형성됩니다.",
     target: "전 연령",
   },
   {
     name: "폐렴구균",
-    desc: "폐렴, 수막염 등 심각한 감염을 예방합니다.\n65세 이상, 만성질환자는 13가·23가 백신 접종을 권장합니다.",
+    desc: "폐렴, 수막염 등 심각한 감염을 예방합니다. 65세 이상, 만성질환자는 13가·23가 백신 접종을 권장합니다.",
     target: "65세 이상, 만성질환자",
   },
   {
     name: "대상포진",
-    desc: "수두 바이러스 재활성화로 발생하는 대상포진을 예방합니다.\n극심한 신경통 동반 가능, 50세 이상 접종을 권장합니다.",
+    desc: "수두 바이러스 재활성화로 발생하는 대상포진을 예방합니다. 극심한 신경통 동반 가능, 50세 이상 접종을 권장합니다.",
     target: "50세 이상",
   },
   {
     name: "A형간염",
-    desc: "오염된 음식·물을 통해 전파되는 A형간염을 예방합니다.\n항체 미보유 성인은 2회 접종으로 평생 면역이 가능합니다.",
+    desc: "오염된 음식·물을 통해 전파되는 A형간염을 예방합니다. 항체 미보유 성인은 2회 접종으로 평생 면역이 가능합니다.",
     target: "항체 미보유 성인",
   },
   {
     name: "B형간염",
-    desc: "혈액·체액을 통해 전파되는 B형간염을 예방합니다.\n만성 간질환·간암의 주요 원인, 항체 없는 경우 3회 접종 권장합니다.",
+    desc: "혈액·체액을 통해 전파되는 B형간염을 예방합니다. 만성 간질환·간암의 주요 원인, 항체 없는 경우 3회 접종 권장합니다.",
     target: "항체 미보유자",
   },
   {
     name: "HPV (자궁경부암)",
-    desc: "인유두종 바이러스(HPV) 감염을 예방합니다.\n자궁경부암 등 다양한 암 예방 가능, 남녀 모두 조기 접종 권장합니다.",
+    desc: "인유두종 바이러스(HPV) 감염을 예방합니다. 자궁경부암 등 다양한 암 예방 가능, 남녀 모두 조기 접종 권장합니다.",
     target: "9~45세 남녀",
   },
 ];
@@ -132,7 +132,7 @@ export default function VaccinationPage() {
                     </div>
                     <h3 className="text-lg font-bold text-navy-900">{v.name}</h3>
                   </div>
-                  <p className="text-gray-500 text-base leading-relaxed mb-4 whitespace-pre-line">{v.desc}</p>
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-4 whitespace-pre-line">{v.desc}</p>
                   <div className="mt-auto">
                     <span className="inline-block bg-sky-50 text-sky-600 text-sm font-semibold px-3 py-1.5 rounded-full">
                       {v.target}

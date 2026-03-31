@@ -16,7 +16,7 @@ export default function DementiaPage() {
       <WhyKimtop
         box="치매클리닉, 왜 김정재탑내과일까?+"
         overlay="치매 조기검진 클리닉"
-        description="인지기능저하를 조기 발견하고 치매 발생 예방을 위해 체계적 관리를 진행합니다."
+        description=""
         features={["약물 조절", "MMSE & GDS 검사", "치매 혈액 검사", "예방 관리 프로그램"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbc74aded6bb4.jpeg"
       />
@@ -58,7 +58,7 @@ export default function DementiaPage() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-6">
                   치매클리닉 소개
                 </h2>
-                <p className="text-gray-600 leading-relaxed text-lg">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
                   치매는 조기 발견이 가장 중요합니다. 정기적인 인지기능 검사로 치매를 예방하고 관리하세요. 알츠하이머병(70%), 혈관성 치매(20%), 기타 원인에 의한 치매로 분류됩니다.
                 </p>
               </div>
