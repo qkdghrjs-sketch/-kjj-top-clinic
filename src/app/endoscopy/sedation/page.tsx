@@ -139,7 +139,7 @@ export default function SedationEndoscopyPage() {
                     {item.num}
                   </div>
                   <h3 className="text-base font-bold text-navy-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-500 text-base leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

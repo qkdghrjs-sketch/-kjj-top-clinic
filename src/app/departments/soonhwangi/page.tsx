@@ -89,7 +89,7 @@ export default function SoonhwangiPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-navy-900 mb-3">{d.name}</h3>
-                  <p className="text-gray-500 text-base leading-relaxed">{d.desc}</p>
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed">{d.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

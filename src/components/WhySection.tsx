@@ -102,7 +102,7 @@ export default function WhySection() {
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`flex items-center gap-2 lg:gap-3 lg:justify-between min-w-[160px] lg:min-w-0 px-4 py-3 lg:px-6 lg:py-4 text-left text-xs lg:text-sm font-medium border-b border-gray-100 transition-all duration-300 whitespace-nowrap shrink-0 lg:shrink ${
+                    className={`flex items-center gap-2 lg:gap-3 lg:justify-between min-w-[130px] sm:min-w-[160px] lg:min-w-0 px-4 py-3 lg:px-6 lg:py-4 text-left text-xs lg:text-sm font-medium border-b border-gray-100 transition-all duration-300 whitespace-nowrap shrink-0 lg:shrink ${
                       i === current
                         ? "bg-navy-800 text-white"
                         : "bg-white text-gray-500 hover:bg-navy-50 hover:text-navy-700"

@@ -118,7 +118,7 @@ export default function ComprehensiveCheckupPage() {
                       <h3 className="text-lg font-bold text-navy-900">{card.title}</h3>
                     </div>
                     <div className="px-5 py-4">
-                      <p className="text-gray-600 text-base leading-relaxed">{card.desc}</p>
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>

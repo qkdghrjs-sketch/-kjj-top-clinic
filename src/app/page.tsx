@@ -60,7 +60,7 @@ export default function Home() {
               },
             ].map((card, i) => (
               <ScrollReveal key={card.title} delay={i * 100}>
-                <div className="group relative rounded-2xl overflow-hidden h-44 sm:h-72 cursor-default shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="group relative rounded-2xl overflow-hidden h-52 sm:h-72 cursor-default shadow-md hover:shadow-xl transition-shadow duration-300">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                     style={{ backgroundImage: `url('${card.image}')` }}

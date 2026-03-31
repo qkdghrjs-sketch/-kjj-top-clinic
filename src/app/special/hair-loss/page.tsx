@@ -99,7 +99,7 @@ export default function HairLossPage() {
                   <h3 className="text-lg font-bold text-navy-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-base leading-relaxed">
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

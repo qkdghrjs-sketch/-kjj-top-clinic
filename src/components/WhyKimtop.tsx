@@ -88,7 +88,7 @@ export default function WhyKimtop({ box, overlay, description, bottomText, featu
                       </div>
                       <div className="min-w-0">
                         <span className="text-white font-medium text-xs sm:text-sm">{title}</span>
-                        {sub && <p className="text-white/60 text-[10px] sm:text-xs line-clamp-2">{sub}</p>}
+                        {sub && <p className="text-white/60 text-[10px] sm:text-xs">{sub}</p>}
                       </div>
                     </div>
                   );

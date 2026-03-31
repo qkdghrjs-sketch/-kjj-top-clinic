@@ -236,7 +236,7 @@ export default function QnAPage() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-navy-900 font-bold text-base leading-snug mb-4 line-clamp-2 group-hover:text-sky-600 transition-colors duration-300">
+                      <h3 className="text-navy-900 font-bold text-sm sm:text-base leading-snug mb-4 line-clamp-3 sm:line-clamp-2 group-hover:text-sky-600 transition-colors duration-300">
                         {post.title}
                       </h3>
 

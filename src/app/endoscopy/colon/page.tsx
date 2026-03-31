@@ -109,7 +109,7 @@ export default function ColonEndoscopyPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-navy-900 mb-3">{item.name}</h3>
-                  <p className="text-gray-500 text-base leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
