@@ -5,7 +5,7 @@ import { handleReservation } from "@/utils/reservation";
 
 type TooltipId = "blog" | "phone" | "kakao" | null;
 
-const BLOG_URL = "https://blog.naver.com";
+const BLOG_URL = "https://blog.naver.com/dr_gastroboom";
 const KAKAO_URL = "https://pf.kakao.com/_GdEZX";
 
 function isMobile() {
