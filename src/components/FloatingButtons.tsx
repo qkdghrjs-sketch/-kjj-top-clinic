@@ -1,16 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { handleReservation } from "@/utils/reservation";
 
 type TooltipId = "blog" | "phone" | "kakao" | null;
 
+const BLOG_URL = "https://blog.naver.com";
+const KAKAO_URL = "https://pf.kakao.com/_GdEZX";
+
+function isMobile() {
+  return window.innerWidth < 640;
+}
+
 export default function FloatingButtons() {
   const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
 
-  const toggle = (id: TooltipId) => {
-    setActiveTooltip(activeTooltip === id ? null : id);
-  };
+  const handleBlogClick = useCallback(() => {
+    if (isMobile()) {
+      window.open(BLOG_URL, "_blank", "noopener,noreferrer");
+    } else {
+      setActiveTooltip((prev) => (prev === "blog" ? null : "blog"));
+    }
+  }, []);
+
+  const handleKakaoClick = useCallback(() => {
+    if (isMobile()) {
+      window.open(KAKAO_URL, "_blank", "noopener,noreferrer");
+    } else {
+      setActiveTooltip((prev) => (prev === "kakao" ? null : "kakao"));
+    }
+  }, []);
 
   return (
     <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
@@ -19,13 +38,13 @@ export default function FloatingButtons() {
         {activeTooltip === "blog" && (
           <Tooltip
             text="네이버 블로그로 이동합니다"
-            href="https://blog.naver.com"
+            href={BLOG_URL}
             external
             onClose={() => setActiveTooltip(null)}
           />
         )}
         <button
-          onClick={() => toggle("blog")}
+          onClick={handleBlogClick}
           className="w-11 h-11 sm:w-14 sm:h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
           style={{ backgroundColor: "#03C75A" }}
           aria-label="블로그 바로가기"
@@ -52,13 +71,13 @@ export default function FloatingButtons() {
         {activeTooltip === "kakao" && (
           <Tooltip
             text="카카오톡 채널로 이동합니다"
-            href="https://pf.kakao.com/_GdEZX"
+            href={KAKAO_URL}
             external
             onClose={() => setActiveTooltip(null)}
           />
         )}
         <button
-          onClick={() => toggle("kakao")}
+          onClick={handleKakaoClick}
           className="w-11 h-11 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
           style={{ backgroundColor: "#FEE500" }}
           aria-label="카카오톡 상담"
