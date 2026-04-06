@@ -105,17 +105,45 @@ export default function Header() {
       }`}
     >
       <div className="max-w-[1920px] mx-auto px-3 md:px-6 flex items-center justify-center lg:justify-between relative h-20 sm:h-36 md:h-48">
-        {/* Logo */}
-        <Link href="/" className="shrink-0">
-          <Image
-            src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/51e89d9bf2e45.png"
-            alt="김정재탑내과의원"
-            width={640}
-            height={200}
-            className="!w-auto !h-[60px] sm:!h-[107px] md:!h-[227px]"
-            priority
-          />
-        </Link>
+        {/* Logo + Social Icons */}
+        <div className="flex items-center gap-3 md:gap-4 shrink-0">
+          <Link href="/" className="shrink-0">
+            <Image
+              src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/51e89d9bf2e45.png"
+              alt="김정재탑내과의원"
+              width={640}
+              height={200}
+              className="!w-auto !h-[60px] sm:!h-[107px] md:!h-[227px]"
+              priority
+            />
+          </Link>
+          <div className="hidden lg:flex items-center gap-2">
+            {/* Naver Blog */}
+            <a
+              href="https://blog.naver.com/dr_gastroboom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#03C75A] hover:brightness-110 transition-all shadow-md"
+              aria-label="네이버 블로그"
+            >
+              <span className="text-white font-extrabold text-lg leading-none">B</span>
+              <span className="text-white font-semibold text-base whitespace-nowrap">블로그 바로가기</span>
+            </a>
+            {/* KakaoTalk */}
+            <a
+              href="https://pf.kakao.com/_GdEZX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#FEE500] hover:brightness-110 transition-all shadow-md"
+              aria-label="카카오톡 상담"
+            >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#3C1E1E">
+                <path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.8 5.22 4.52 6.6-.2.72-.72 2.6-.82 3 0 0-.02.16.08.22.1.06.22.02.22.02.3-.04 3.42-2.26 3.96-2.64.64.1 1.32.14 2.04.14 5.52 0 10-3.58 10-7.9S17.52 3 12 3z" />
+              </svg>
+              <span className="text-[#3C1E1E] font-semibold text-base whitespace-nowrap">카카오톡 바로가기</span>
+            </a>
+          </div>
+        </div>
 
         {/* Desktop nav */}
         <nav
@@ -185,99 +213,111 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden absolute right-3 p-3 rounded-lg transition-colors text-white"
-          onClick={() => {
-            setMenuOpen(!menuOpen);
-            setMobileExpanded(null);
-          }}
-          aria-label="메뉴 열기"
-        >
-          <svg
-            className="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {/* Mobile: social icons + hamburger */}
+        <div className="lg:hidden absolute right-2 flex items-center gap-1">
+          <a
+            href="https://blog.naver.com/dr_gastroboom"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-[#03C75A] hover:brightness-110 transition-all shadow-sm"
+            aria-label="네이버 블로그"
           >
-            {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+            <span className="text-white font-extrabold text-sm leading-none">B</span>
+          </a>
+          <a
+            href="https://pf.kakao.com/_GdEZX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-[#FEE500] hover:brightness-110 transition-all shadow-sm"
+            aria-label="카카오톡 상담"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="#3C1E1E">
+              <path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.8 5.22 4.52 6.6-.2.72-.72 2.6-.82 3 0 0-.02.16.08.22.1.06.22.02.22.02.3-.04 3.42-2.26 3.96-2.64.64.1 1.32.14 2.04.14 5.52 0 10-3.58 10-7.9S17.52 3 12 3z" />
+            </svg>
+          </a>
+          <button
+            className="p-2 rounded-lg transition-colors text-white"
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+              setMobileExpanded(null);
+            }}
+            aria-label="메뉴 열기"
+          >
+            <svg
+              className="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {menuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile nav - all categories expanded */}
       {menuOpen && (
         <nav className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 animate-slide-down max-h-[80vh] overflow-y-auto">
-          {navItems.map((item, idx) => (
-            <div key={idx} className="border-b border-gray-50">
-              {item.children ? (
-                <>
-                  <button
-                    className="w-full flex items-center justify-between px-6 py-3.5 text-navy-700 hover:bg-navy-50 font-medium transition-colors"
-                    onClick={() =>
-                      setMobileExpanded(mobileExpanded === idx ? null : idx)
-                    }
-                  >
-                    {item.label}
-                    <svg
-                      className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                        mobileExpanded === idx ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {mobileExpanded === idx && (
-                    <div className="bg-navy-50/50 animate-slide-down">
-                      {item.children.map((sub, si) => (
-                        <Link
-                          key={si}
-                          href={sub.disabled ? "#" : sub.href}
-                          onClick={(e) => {
-                            if (sub.disabled) e.preventDefault();
-                            else {
-                              setMenuOpen(false);
-                              setMobileExpanded(null);
-                            }
-                          }}
-                          className={`block pl-10 pr-4 py-3 text-[13px] sm:text-[15px] transition-colors ${
-                            sub.disabled
-                              ? "text-gray-300 cursor-not-allowed"
-                              : "text-navy-600 hover:text-navy-900 hover:bg-navy-100/50"
-                          }`}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="block px-6 py-3.5 text-navy-700 hover:bg-navy-50 hover:text-navy-900 font-medium transition-colors"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setMobileExpanded(null);
-                  }}
-                >
+          {/* Social links */}
+          <div className="flex gap-2 px-5 py-3 border-b border-gray-100">
+            <a
+              href="https://blog.naver.com/dr_gastroboom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-full bg-[#03C75A] hover:brightness-110 transition-all shadow-sm"
+            >
+              <span className="text-white font-extrabold text-sm leading-none">B</span>
+              <span className="text-white font-semibold text-sm">블로그 바로가기</span>
+            </a>
+            <a
+              href="https://pf.kakao.com/_GdEZX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-full bg-[#FEE500] hover:brightness-110 transition-all shadow-sm"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#3C1E1E">
+                <path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.8 5.22 4.52 6.6-.2.72-.72 2.6-.82 3 0 0-.02.16.08.22.1.06.22.02.22.02.3-.04 3.42-2.26 3.96-2.64.64.1 1.32.14 2.04.14 5.52 0 10-3.58 10-7.9S17.52 3 12 3z" />
+              </svg>
+              <span className="text-[#3C1E1E] font-semibold text-sm">카카오톡 바로가기</span>
+            </a>
+          </div>
+
+          {/* All categories expanded */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-0">
+            {navItems.map((item, idx) => (
+              <div key={idx} className="border-b border-r border-gray-100 px-4 py-3">
+                <p className="text-navy-800 font-bold text-[13px] sm:text-[15px] mb-1.5">
                   {item.label}
-                </Link>
-              )}
-            </div>
-          ))}
+                </p>
+                {item.children && (
+                  <div className="flex flex-col gap-0.5">
+                    {item.children.map((sub, si) => (
+                      <Link
+                        key={si}
+                        href={sub.disabled ? "#" : sub.href}
+                        onClick={(e) => {
+                          if (sub.disabled) e.preventDefault();
+                          else setMenuOpen(false);
+                        }}
+                        className={`text-[12px] sm:text-[14px] py-1 transition-colors ${
+                          sub.disabled
+                            ? "text-gray-300 cursor-not-allowed"
+                            : "text-navy-600 hover:text-navy-900"
+                        }`}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
           <button
             className="block w-full text-left px-6 py-3.5 text-gold-400 font-semibold hover:bg-gold-100 transition-colors cursor-pointer"
             onClick={() => {

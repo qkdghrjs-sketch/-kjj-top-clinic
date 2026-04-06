@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import LocationSection from "@/components/LocationSection";
 import FloatingButtons from "@/components/FloatingButtons";
 import ScrollToTop from "@/components/ScrollToTop";
+import PopupBanner from "@/components/PopupBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +61,7 @@ export default function RootLayout({
         <LocationSection />
         <Footer />
         <FloatingButtons />
+        <PopupBanner />
       </body>
     </html>
   );
