@@ -57,7 +57,7 @@ export default function PopupBanner() {
         {/* Image */}
         <div className="relative w-full">
           <Image
-            src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/cbe349a70f53a.png"
+            src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/e1268e10989ac.png"
             alt="공지 팝업"
             width={400}
             height={0}
