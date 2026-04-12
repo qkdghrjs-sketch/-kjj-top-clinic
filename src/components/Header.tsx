@@ -126,7 +126,7 @@ export default function Header() {
               className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#03C75A] hover:brightness-110 transition-all shadow-md"
               aria-label="네이버 블로그"
             >
-              <span className="text-white font-extrabold text-lg leading-none">B</span>
+              <span className="text-white font-extrabold text-lg leading-none">N</span>
               <span className="text-white font-semibold text-base whitespace-nowrap">블로그 바로가기</span>
             </a>
             {/* KakaoTalk */}
