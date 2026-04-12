@@ -213,8 +213,8 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile: social icons + hamburger */}
-        <div className="lg:hidden absolute right-2 flex items-center gap-1">
+        {/* Mobile: social icons (left) + hamburger (right) */}
+        <div className="lg:hidden absolute left-2 flex items-center gap-1">
           <a
             href="https://blog.naver.com/dr_gastroboom"
             target="_blank"
@@ -222,7 +222,7 @@ export default function Header() {
             className="flex items-center justify-center w-9 h-9 rounded-full bg-[#03C75A] hover:brightness-110 transition-all shadow-sm"
             aria-label="네이버 블로그"
           >
-            <span className="text-white font-extrabold text-sm leading-none">B</span>
+            <span className="text-white font-extrabold text-sm leading-none">N</span>
           </a>
           <a
             href="https://pf.kakao.com/_GdEZX"
@@ -235,6 +235,8 @@ export default function Header() {
               <path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.8 5.22 4.52 6.6-.2.72-.72 2.6-.82 3 0 0-.02.16.08.22.1.06.22.02.22.02.3-.04 3.42-2.26 3.96-2.64.64.1 1.32.14 2.04.14 5.52 0 10-3.58 10-7.9S17.52 3 12 3z" />
             </svg>
           </a>
+        </div>
+        <div className="lg:hidden absolute right-2 flex items-center">
           <button
             className="p-2 rounded-lg transition-colors text-white"
             onClick={() => {

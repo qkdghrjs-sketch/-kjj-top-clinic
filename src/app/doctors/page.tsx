@@ -32,7 +32,7 @@ export default function DoctorsPage() {
                 <div className="border border-gray-100 bg-white rounded-2xl overflow-hidden shadow-[0_22px_70px_-42px_rgba(2,6,23,.45)]">
                   <div className="relative aspect-[4/5.3] overflow-hidden bg-gray-50 p-6">
                     <Image
-                      src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/560df20de82d6.jpeg"
+                      src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/6ffce631e5978.jpeg"
                       alt="김정재 원장님 프로필"
                       fill
                       className="object-contain object-center"
