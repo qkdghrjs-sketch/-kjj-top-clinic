@@ -81,53 +81,67 @@ export default function PopupBanner() {
   const visiblePopups = POPUPS.filter((p) => visibleMap[p.id]);
   if (visiblePopups.length === 0) return null;
 
-  return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-auto py-4 px-2 pointer-events-none">
-      <div className="pointer-events-auto flex flex-col sm:flex-row items-start gap-3 w-full sm:w-auto sm:justify-center">
-        {visiblePopups.map((popup) => (
-          <div
-            key={popup.id}
-            className="relative w-full sm:w-[320px] max-w-[320px] mx-auto sm:mx-0 shadow-xl rounded-lg overflow-hidden flex-shrink-0"
-          >
-            <button
-              onClick={() => handleClose(popup.id)}
-              className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors cursor-pointer"
-              aria-label="닫기"
-            >
-              <CloseIcon />
-            </button>
+  const renderCard = (popup: (typeof POPUPS)[number], className: string) => (
+    <div key={popup.id} className={`relative shadow-xl rounded-lg overflow-hidden flex-shrink-0 ${className}`}>
+      <button
+        onClick={() => handleClose(popup.id)}
+        className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors cursor-pointer"
+        aria-label="닫기"
+      >
+        <CloseIcon />
+      </button>
 
-            <div className="relative w-full">
-              <Image
-                src={popup.src}
-                alt={popup.alt}
-                width={320}
-                height={0}
-                className="w-full h-auto"
-                sizes="320px"
-                priority
-              />
-            </div>
+      <div className="relative w-full">
+        <Image
+          src={popup.src}
+          alt={popup.alt}
+          width={320}
+          height={0}
+          className="w-full h-auto"
+          sizes="320px"
+          priority
+        />
+      </div>
 
-            <div className="flex items-center justify-between bg-white px-4 py-3 text-sm text-gray-700">
-              <label className="flex items-center gap-2 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  onChange={() => handleHideToday(popup.storageKey, popup.id)}
-                  className="w-4 h-4 accent-gray-600"
-                />
-                오늘 하루 보지 않기
-              </label>
-              <button
-                onClick={() => handleClose(popup.id)}
-                className="text-gray-500 hover:text-gray-800 transition-colors cursor-pointer"
-              >
-                닫기
-              </button>
-            </div>
-          </div>
-        ))}
+      <div className="flex items-center justify-between bg-white px-4 py-3 text-sm text-gray-700">
+        <label className="flex items-center gap-2 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            onChange={() => handleHideToday(popup.storageKey, popup.id)}
+            className="w-4 h-4 accent-gray-600"
+          />
+          오늘 하루 보지 않기
+        </label>
+        <button
+          onClick={() => handleClose(popup.id)}
+          className="text-gray-500 hover:text-gray-800 transition-colors cursor-pointer"
+        >
+          닫기
+        </button>
       </div>
     </div>
+  );
+
+  return (
+    <>
+      {/* PC: 가로 배열, 화면 중앙 */}
+      <div className="hidden sm:flex fixed inset-0 z-[9999] items-center justify-center pointer-events-none">
+        <div className="pointer-events-auto flex flex-row gap-3">
+          {visiblePopups.map((popup) => renderCard(popup, "w-[320px]"))}
+        </div>
+      </div>
+
+      {/* 모바일: 가로 스와이프 (scroll-snap) */}
+      <div className="sm:hidden fixed inset-0 z-[9999] flex items-center pointer-events-none">
+        <div
+          className="pointer-events-auto flex flex-row gap-4 overflow-x-auto snap-x snap-mandatory w-full px-[8vw] scroll-smooth"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {visiblePopups.map((popup) => renderCard(popup, "snap-center w-[84vw]"))}
+          {/* 마지막 카드 오른쪽 여백 */}
+          <div className="flex-shrink-0 w-[8vw]" />
+        </div>
+      </div>
+    </>
   );
 }
