@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Footer />
         <FloatingButtons />
         <PopupBanner />
+        <Script id="avocado-vno" strategy="afterInteractive">{`(function(){var w=window;if(w.AvocadoVno){return w.console.error("AvocadoVno script included twice.");}var vno=function(){vno.c(arguments);};vno.q=[];vno.c=function(args){vno.q.push(args);};w.AvocadoVno=vno;function l(){if(w.AvocadoVnoInitialized){return;}w.AvocadoVnoInitialized=true;var s=document.createElement("script");s.async=true;s.charset="UTF-8";s.src="https://img.itshealth.co.kr/widget/avocado-vno-plugin.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();} else {w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})(); AvocadoVno("1704", "050377498047", "pop1bottomright");`}</Script>
       </body>
     </html>
   );

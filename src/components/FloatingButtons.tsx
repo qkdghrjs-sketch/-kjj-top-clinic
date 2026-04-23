@@ -32,7 +32,7 @@ export default function FloatingButtons() {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
+    <div className="fixed bottom-[316px] right-3 sm:bottom-[324px] sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
       {/* 블로그 */}
       <div className="relative">
         {activeTooltip === "blog" && (

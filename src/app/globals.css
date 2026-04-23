@@ -253,6 +253,16 @@ html {
   border-radius: 2px;
 }
 
+/* AvocadoVno 위젯을 플로팅 버튼 위로 올림 */
+#avocado-vno-plugin-entry {
+  bottom: 530px !important;
+}
+@media (max-width: 599px) {
+  #avocado-vno-plugin-entry {
+    bottom: 480px !important;
+  }
+}
+
 /* ── Mobile-only styles (768px and below) ── */
 @media (max-width: 768px) {
   /* Readability: line-height and spacing */
