@@ -66,10 +66,15 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-navy-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} 김정재탑내과의원. All rights
-            reserved.
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-xs text-gray-500">
+              &copy; {new Date().getFullYear()} 김정재탑내과의원. All rights
+              reserved.
+            </p>
+            <p className="text-xs text-gray-500">
+              사업자등록번호: 479-94-01922
+            </p>
+          </div>
           <div className="flex gap-6 text-xs text-gray-500">
             <Link href="/medical-info" className="hover:text-gray-300 transition-colors">진료안내</Link>
             <Link href="/doctors" className="hover:text-gray-300 transition-colors">의료진</Link>
