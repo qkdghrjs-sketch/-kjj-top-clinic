@@ -141,10 +141,10 @@ export default function PopupBanner() {
         <Image
           src={popup.activeSrc}
           alt={popup.activeAlt}
-          width={320}
+          width={480}
           height={0}
           className="w-full h-auto"
-          sizes="(max-width: 640px) 84vw, 320px"
+          sizes="(max-width: 640px) 90vw, 480px"
           priority
         />
       </div>
@@ -173,19 +173,19 @@ export default function PopupBanner() {
       {/* PC: 가로 배열, 화면 중앙 */}
       <div className="hidden sm:flex fixed inset-0 z-[9999] items-center justify-center pointer-events-none">
         <div className="pointer-events-auto flex flex-row gap-3">
-          {visiblePopups.map((popup) => renderCard(popup, "w-[320px]"))}
+          {visiblePopups.map((popup) => renderCard(popup, "w-[480px]"))}
         </div>
       </div>
 
       {/* 모바일: 가로 스와이프 (scroll-snap) */}
       <div className="sm:hidden fixed inset-0 z-[9999] flex items-center pointer-events-none">
         <div
-          className="pointer-events-auto flex flex-row gap-4 overflow-x-auto snap-x snap-mandatory w-full px-[8vw] scroll-smooth"
+          className="pointer-events-auto flex flex-row gap-4 overflow-x-auto snap-x snap-mandatory w-full px-[5vw] scroll-smooth"
           style={{ scrollbarWidth: "none" }}
         >
-          {visiblePopups.map((popup) => renderCard(popup, "snap-center w-[84vw]"))}
+          {visiblePopups.map((popup) => renderCard(popup, "snap-center w-[90vw]"))}
           {/* 마지막 카드 오른쪽 여백 */}
-          <div className="flex-shrink-0 w-[8vw]" />
+          <div className="flex-shrink-0 w-[5vw]" />
         </div>
       </div>
     </>
