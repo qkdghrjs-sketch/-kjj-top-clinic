@@ -32,7 +32,7 @@ const POPUPS = [
     src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/50fe2f3ed37ae.png",
     alt: "5월 진료안내",
     // 5월 25일 00시 이후 replaceSrc로 자동 전환
-    expiresAt: new Date("2026-05-25T00:00:00"),
+    expiresAt: new Date("2026-05-26T00:00:00"),
     replaceSrc: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/78331d920565c.png",
     replaceAlt: "공지 팝업 3",
     replaceStorageKey: "popup3_replace_hidden_date",
