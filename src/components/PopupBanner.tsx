@@ -7,9 +7,13 @@ const POPUPS = [
   {
     id: "popup1",
     storageKey: "popup_hidden_date",
-    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/e1268e10989ac.png",
+    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/aefca81a9e2d9.png",
     alt: "공지 팝업 1",
     expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
   },
   {
     id: "popup2",
@@ -17,15 +21,31 @@ const POPUPS = [
     src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/630c213e9a057.png",
     alt: "공지 팝업 2",
     expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
   },
   {
     id: "popup3",
     storageKey: "popup3_hidden_date",
     src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/50fe2f3ed37ae.png",
-    alt: "공지 팝업 3",
-    expiresAt: new Date("2026-06-01T00:00:00"),
+    alt: "5월 진료안내",
+    // 5월 25일 00시 이후 replaceSrc로 자동 전환
+    expiresAt: new Date("2026-05-25T00:00:00"),
+    replaceSrc: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/78331d920565c.png",
+    replaceAlt: "공지 팝업 3",
+    replaceStorageKey: "popup3_replace_hidden_date",
+    replaceExpiresAt: new Date("2026-07-01T00:00:00"),
   },
 ];
+
+type ActivePopup = {
+  id: string;
+  activeSrc: string;
+  activeAlt: string;
+  activeStorageKey: string;
+};
 
 const CloseIcon = () => (
   <svg
@@ -46,22 +66,48 @@ const CloseIcon = () => (
 
 export default function PopupBanner() {
   const [visibleMap, setVisibleMap] = useState<Record<string, boolean>>({});
+  const [activePopups, setActivePopups] = useState<ActivePopup[]>([]);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
     const now = new Date();
     const newMap: Record<string, boolean> = {};
+    const resolved: ActivePopup[] = [];
 
     for (const popup of POPUPS) {
-      if (popup.expiresAt && now >= popup.expiresAt) {
+      const isExpired = popup.expiresAt && now >= popup.expiresAt;
+
+      if (isExpired && popup.replaceSrc) {
+        // 만료 후 대체 이미지로 자동 전환
+        const replaceExpired = popup.replaceExpiresAt && now >= popup.replaceExpiresAt;
+        if (replaceExpired) {
+          newMap[popup.id] = false;
+          continue;
+        }
+        const hiddenDate = localStorage.getItem(popup.replaceStorageKey!);
+        newMap[popup.id] = hiddenDate !== today;
+        resolved.push({
+          id: popup.id,
+          activeSrc: popup.replaceSrc,
+          activeAlt: popup.replaceAlt ?? popup.alt,
+          activeStorageKey: popup.replaceStorageKey!,
+        });
+      } else if (isExpired) {
         newMap[popup.id] = false;
-        continue;
+      } else {
+        const hiddenDate = localStorage.getItem(popup.storageKey);
+        newMap[popup.id] = hiddenDate !== today;
+        resolved.push({
+          id: popup.id,
+          activeSrc: popup.src,
+          activeAlt: popup.alt,
+          activeStorageKey: popup.storageKey,
+        });
       }
-      const hiddenDate = localStorage.getItem(popup.storageKey);
-      newMap[popup.id] = hiddenDate !== today;
     }
 
+    setActivePopups(resolved);
     setVisibleMap(newMap);
     setMounted(true);
   }, []);
@@ -78,10 +124,10 @@ export default function PopupBanner() {
 
   if (!mounted) return null;
 
-  const visiblePopups = POPUPS.filter((p) => visibleMap[p.id]);
+  const visiblePopups = activePopups.filter((p) => visibleMap[p.id]);
   if (visiblePopups.length === 0) return null;
 
-  const renderCard = (popup: (typeof POPUPS)[number], className: string) => (
+  const renderCard = (popup: ActivePopup, className: string) => (
     <div key={popup.id} className={`relative shadow-xl rounded-lg overflow-hidden flex-shrink-0 ${className}`}>
       <button
         onClick={() => handleClose(popup.id)}
@@ -93,12 +139,12 @@ export default function PopupBanner() {
 
       <div className="relative w-full">
         <Image
-          src={popup.src}
-          alt={popup.alt}
+          src={popup.activeSrc}
+          alt={popup.activeAlt}
           width={320}
           height={0}
           className="w-full h-auto"
-          sizes="320px"
+          sizes="(max-width: 640px) 84vw, 320px"
           priority
         />
       </div>
@@ -107,7 +153,7 @@ export default function PopupBanner() {
         <label className="flex items-center gap-2 cursor-pointer select-none">
           <input
             type="checkbox"
-            onChange={() => handleHideToday(popup.storageKey, popup.id)}
+            onChange={() => handleHideToday(popup.activeStorageKey, popup.id)}
             className="w-4 h-4 accent-gray-600"
           />
           오늘 하루 보지 않기
