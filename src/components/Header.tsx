@@ -34,6 +34,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "5대암국가검진", href: "/checkup/cancer" },
       { label: "종합검진", href: "/checkup/comprehensive" },
+      { label: "여성암검진", href: "/checkup/women-cancer" },
       { label: "채용검진 + 성병검사", href: "/checkup/employment" },
     ],
   },
