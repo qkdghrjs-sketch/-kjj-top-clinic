@@ -1,259 +1,54 @@
 "use client";
 
-import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
 import WhyKimtop from "@/components/WhyKimtop";
+import FAQ from "@/components/FAQ";
 
-const whyItems = [
+const cancerItems = [
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    icon: "💗",
     color: "from-rose-500 to-rose-600",
-    bg: "bg-rose-50",
     border: "border-rose-200",
-    title: "여성암 조기 진단",
-    desc: "유방암, 자궁경부암, 난소암, 갑상선암 등 여성 고위험 암종 정밀 검사",
+    title: "유방암 검진",
+    method: "유방촬영 + 유방 초음파",
+    target: "40세 이상 여성 (국가검진 지원)",
+    desc: "유방촬영기를 이용한 정밀 촬영으로 미세석회화 및 종양을 조기에 발견합니다.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
+    icon: "🩺",
     color: "from-violet-500 to-violet-600",
-    bg: "bg-violet-50",
     border: "border-violet-200",
-    title: "뇌혈관 질환 (뇌졸중 등)",
-    desc: "뇌 MRI/MRA 및 경동맥 초음파로 뇌혈관 이상 조기 발견",
+    title: "자궁경부암 검진",
+    method: "자궁경부세포 검사 (PAP)",
+    target: "20세 이상 여성 (국가검진 지원)",
+    desc: "자궁경부 세포진 검사로 자궁경부암 및 전구병변을 조기에 발견합니다.",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    icon: "🦋",
     color: "from-sky-500 to-sky-600",
-    bg: "bg-sky-50",
     border: "border-sky-200",
-    title: "심장 질환 (심근경색 등)",
-    desc: "관상동맥 CT 및 심장초음파를 통한 심혈관 이상 확인",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-      </svg>
-    ),
-    color: "from-emerald-500 to-emerald-600",
-    bg: "bg-emerald-50",
-    border: "border-emerald-200",
-    title: "소화기 암 (위암·대장암 등)",
-    desc: "수면 위/대장 내시경, 복부 초음파, 복부 CT로 정밀 진단",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-      </svg>
-    ),
-    color: "from-amber-500 to-amber-600",
-    bg: "bg-amber-50",
-    border: "border-amber-200",
-    title: "폐암",
-    desc: "저선량 폐 CT를 통한 정밀 진단으로 폐암 조기 발견",
+    title: "갑상선암 검진",
+    method: "갑상선 초음파",
+    target: "증상 또는 가족력이 있는 경우",
+    desc: "갑상선 초음파로 갑상선 결절 및 이상 소견을 정밀하게 확인합니다.",
   },
 ];
 
-const programs = [
-  {
-    tier: "CLASSIC",
-    color: "border-sky-400",
-    headerBg: "bg-gradient-to-br from-sky-500 to-sky-600",
-    badge: "bg-sky-500",
-    badgeText: "실속형",
-    composition: "BASIC 검진 + 폐기능검사 + 선택검사 2종",
-    feature: "실속 있고 체계적인 기본 여성 특화 검진",
-    note: "※ 대장내시경 선택 제외",
-    items: [
-      "BASIC 검진 전 항목",
-      "폐기능검사",
-      "선택검사 2종",
-    ],
-    highlight: false,
-  },
-  {
-    tier: "VIP",
-    color: "border-violet-400",
-    headerBg: "bg-gradient-to-br from-violet-500 to-violet-700",
-    badge: "bg-violet-500",
-    badgeText: "심화형",
-    composition: "BASIC 검진 + 폐기능검사 + MRI 또는 MRA 또는 선택검사 3종 중 택 1",
-    feature: "뇌혈관 질환 또는 특화 항목을 집중적으로 검사할 수 있는 심화 프로그램",
-    note: "",
-    items: [
-      "BASIC 검진 전 항목",
-      "폐기능검사",
-      "MRI (뇌) 또는",
-      "MRA (뇌혈관) 또는",
-      "선택검사 3종",
-    ],
-    highlight: true,
-  },
-  {
-    tier: "VVIP",
-    color: "border-gold-400",
-    headerBg: "bg-gradient-to-br from-gold-400 to-gold-600",
-    badge: "bg-gold-400",
-    badgeText: "프리미엄",
-    composition: "BASIC 검진 + 폐기능검사 + [MRI+선택 1종 또는 MRA+선택 1종 또는 선택검사 4종 중 택 1] + 생체나이검사(Bio-age)",
-    feature: "뇌혈관 정밀 진단과 다양한 선택검사, 신체 노화도까지 확인하는 최고급 프리미엄 프로그램",
-    note: "",
-    items: [
-      "BASIC 검진 전 항목",
-      "폐기능검사",
-      "MRI + 선택검사 1종 또는",
-      "MRA + 선택검사 1종 또는",
-      "선택검사 4종",
-      "생체나이검사 (Bio-age)",
-    ],
-    highlight: false,
-  },
+const steps = [
+  { num: "01", title: "예약 및 검진 항목 확인" },
+  { num: "02", title: "검진 당일 내원" },
+  { num: "03", title: "검사 진행" },
+  { num: "04", title: "결과 상담" },
 ];
 
-const optionalItems = [
-  {
-    category: "저선량 CT",
-    icon: "🔬",
-    desc: "뇌, 폐, 요추, 경추 중 선택하여 정밀 CT 촬영",
-    detail: "방사선 피폭을 최소화한 저선량 CT로 뇌·폐·척추 부위를 정밀하게 촬영합니다.",
-  },
-  {
-    category: "특수 초음파",
-    icon: "🩻",
-    desc: "유방 초음파 또는 경동맥 초음파 선택",
-    detail: "유방 초음파: 유방 멍울, 낭종, 종양 등 정밀 확인 / 경동맥 초음파: 동맥경화·혈관 협착 여부 확인",
-  },
-  {
-    category: "대장내시경 (수면)",
-    icon: "💉",
-    desc: "수면 상태에서 진행하는 대장 정밀 검사",
-    detail: "대장암, 대장 용종 등을 조기에 발견할 수 있으며, 수면 마취로 편안하게 진행됩니다.",
-  },
-  {
-    category: "종양표지자 검사",
-    icon: "🧬",
-    desc: "혈액 반응을 이용한 암 조기검사",
-    detail: "간암(AFP), 대장암(CEA), 소화기암(CA19-9), 난소암(CA125) 등 주요 암종 표지자를 혈액으로 확인합니다.",
-  },
-  {
-    category: "생체나이검사 (Bio-age)",
-    icon: "⏱",
-    desc: "신진대사 및 생체 나이 측정 (VVIP 기본 포함)",
-    detail: "실제 나이와 비교하여 신체의 생물학적 노화 정도와 신진대사 상태를 측정합니다. VVIP 프로그램에 기본 포함됩니다.",
-  },
+const faqItems = [
+  { q: "유방촬영은 아프지 않나요?", a: "압박 시 약간의 불편함이 있을 수 있지만, 검사 시간이 짧아 금방 끝납니다. 불편하신 점은 검사 전 말씀해 주세요." },
+  { q: "자궁경부암 검진은 어떻게 진행되나요?", a: "전용 도구로 자궁경부 세포를 채취하는 간단한 검사로, 통증이 거의 없고 5분 내외로 완료됩니다." },
+  { q: "국가암검진과 자체 검진의 차이는 무엇인가요?", a: "국가암검진은 건강보험이 적용되어 무료 또는 본인부담금이 최소화됩니다. 자체 검진은 더 다양한 항목을 포함한 정밀 검진입니다." },
+  { q: "검진 결과는 언제 확인할 수 있나요?", a: "대부분의 결과는 1~2주 내에 안내드리며, 이상 소견 시 빠른 상담을 진행합니다." },
+  { q: "가족력이 있으면 더 자주 검진받아야 하나요?", a: "1촌 이내 암 가족력이 있다면 국가 검진 주기보다 더 자주 받는 것을 권장합니다. 전문의 상담을 통해 맞춤 주기를 안내해 드립니다." },
 ];
-
-const basicCategories = [
-  {
-    title: "여성 특화 검사",
-    color: "border-rose-300",
-    bg: "bg-rose-50",
-    titleColor: "text-rose-700",
-    icon: "👩‍⚕️",
-    items: ["유방 촬영", "자궁 초음파", "자궁경부 세포진 검사", "골다공증"],
-  },
-  {
-    title: "정밀 영상 및 기기 검사",
-    color: "border-sky-300",
-    bg: "bg-sky-50",
-    titleColor: "text-sky-700",
-    icon: "🏥",
-    items: ["위 내시경 (수면)", "복부 초음파", "갑상선 초음파", "심전도 검사 (EKG)", "흉부 X-선 촬영"],
-  },
-  {
-    title: "기본 검사",
-    color: "border-emerald-300",
-    bg: "bg-emerald-50",
-    titleColor: "text-emerald-700",
-    icon: "📋",
-    items: ["신체계측 및 체성분", "청력 검사", "시력 / 안압 검사"],
-  },
-  {
-    title: "정밀 진단 검사",
-    color: "border-amber-300",
-    bg: "bg-amber-50",
-    titleColor: "text-amber-700",
-    icon: "🔭",
-    items: ["소변 / 대변 검사", "종합 혈액 검사"],
-  },
-  {
-    title: "종합 혈액 검사 상세",
-    color: "border-violet-300",
-    bg: "bg-violet-50",
-    titleColor: "text-violet-700",
-    icon: "🧪",
-    items: [
-      "일반혈액", "전해질", "염증성", "간기능",
-      "A형간염", "B형간염", "C형간염", "췌장기능",
-      "혈중지질", "당뇨", "관절염", "신장기능",
-      "통풍", "성병", "갑상선기능",
-    ],
-  },
-];
-
-function OptionalAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  return (
-    <div className="space-y-3">
-      {optionalItems.map((item, i) => {
-        const isOpen = openIndex === i;
-        return (
-          <div
-            key={i}
-            className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
-          >
-            <button
-              onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="w-full flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 text-left"
-            >
-              <span className="flex items-center gap-3">
-                <span className="text-2xl">{item.icon}</span>
-                <span>
-                  <span className="text-navy-900 font-semibold text-sm sm:text-base block">
-                    {item.category}
-                  </span>
-                  <span className="text-gray-500 text-xs sm:text-sm">{item.desc}</span>
-                </span>
-              </span>
-              <svg
-                className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div
-              className="overflow-hidden transition-all duration-300"
-              style={{ maxHeight: isOpen ? "300px" : "0", opacity: isOpen ? 1 : 0 }}
-            >
-              <div className="px-4 pb-4 sm:px-6 sm:pb-5 pl-14 sm:pl-20">
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.detail}</p>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 export default function WomenCancerPage() {
   return (
@@ -266,47 +61,53 @@ export default function WomenCancerPage() {
       <WhyKimtop
         box="여성암검진, 왜 김정재탑내과일까?+"
         overlay="여성 특화 정밀검진"
-        description={`성인 여성을 위한 프로그램으로 주요 장기의 기능 진단,\n성인병 예방과 주요 장기의 조기암 진단 및 예방을 목적으로 실시하는 정밀 건강검진입니다.`}
+        description={`성인 여성을 위한 맞춤형 여성암 검진을 실시합니다.\n유방암·자궁경부암·갑상선암 등 여성에게 발생하기 쉬운 주요 암종을\n전문 장비로 정밀 검사하여 조기에 발견하고 예방합니다.`}
         features={[
-          { title: "여성 고위험 암종 정밀 검사", sub: "유방암·자궁경부암·난소암·갑상선암" },
-          { title: "뇌혈관·심장 정밀 진단", sub: "MRI/MRA, 관상동맥 CT" },
+          { title: "여성암 조기 진단", sub: "유방암·자궁경부암·갑상선암 정밀 검사" },
+          { title: "전문 검진 장비 직접 보유", sub: "유방촬영기·PAP 검사기 운영" },
           "소화기내시경 세부전문의",
-          "1:1 맞춤 프로그램 설계",
+          "원스톱 여성 특화 검진",
         ]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/2e2eeda0b29c9.jpeg"
       />
 
-      {/* Section 1: 왜 여성 정밀 검진이 필요한가 */}
+      {/* Section 1: 여성암 검진 항목 */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-10 md:mb-14">
               <p className="text-sm sm:text-base text-sky-600 font-semibold uppercase tracking-widest mb-2">
-                Why Women&#39;s Check-up
+                Women&apos;s Cancer Screening
               </p>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
-                왜 여성 정밀 검진이 필요할까요?
+                여성암 검진을 실시합니다
               </h2>
               <div className="w-16 h-1 bg-sky-500 mx-auto mb-5" />
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-                100세 시대, 생명을 위협하는 심각한 질환은 <strong className="text-navy-900">조기 발견이 가장 중요</strong>합니다.
-                한국인의 주요 사망 원인인 암, 뇌혈관질환, 심장질환을 비롯해 여성에게 발생하기 쉬운 주요 암종을 체계적으로 검사합니다.
+                조기 발견이 곧 완치입니다. 김정재탑내과에서는 여성에게 발생하기 쉬운 주요 암종에 대한
+                <strong className="text-navy-900"> 정밀 검진을 직접 시행</strong>합니다.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whyItems.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 80}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {cancerItems.map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 100}>
                 <div className={`rounded-2xl border-2 ${item.border} bg-white overflow-hidden h-full card-hover-glow`}>
-                  <div className={`${item.bg} px-5 py-4 flex items-center gap-3`}>
-                    <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center text-white shrink-0`}>
-                      {item.icon}
-                    </div>
-                    <h3 className="font-bold text-navy-900 text-sm sm:text-base">{item.title}</h3>
+                  <div className={`bg-gradient-to-r ${item.color} px-6 py-4 flex items-center gap-3`}>
+                    <span className="text-2xl">{item.icon}</span>
+                    <h3 className="text-lg font-bold text-white">{item.title}</h3>
                   </div>
-                  <div className="px-5 py-4">
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.desc}</p>
+                  <div className="px-5 py-4 space-y-3">
+                    <div className="flex items-start gap-2">
+                      <span className="shrink-0 text-xs font-bold text-white bg-navy-900 rounded-md px-2 py-1">방법</span>
+                      <span className="text-sm text-gray-700 pt-0.5">{item.method}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="shrink-0 text-xs font-bold text-white bg-sky-500 rounded-md px-2 py-1">대상</span>
+                      <span className="text-sm text-gray-700 pt-0.5">{item.target}</span>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-3">{item.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -315,151 +116,120 @@ export default function WomenCancerPage() {
         </div>
       </section>
 
-      {/* Section 2: 여성 검진 프로그램 안내 */}
+      {/* Section 2: 전문 검진 장비 */}
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-10 md:mb-14">
               <p className="text-sm sm:text-base text-sky-600 font-semibold uppercase tracking-widest mb-2">
-                Program Guide
+                Examination Equipment
               </p>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
-                여성 검진 프로그램 안내
+                전문 검진 장비
+              </h2>
+              <div className="w-16 h-1 bg-sky-500 mx-auto mb-5" />
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                김정재탑내과는 여성암 검진을 위한{" "}
+                <strong className="text-navy-900">전문 장비를 직접 보유·운영</strong>합니다.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ScrollReveal delay={0}>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-md card-hover-glow h-full">
+                <div className="h-64 sm:h-72 overflow-hidden">
+                  <img
+                    src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/da52c66ce9629.jpeg"
+                    alt="유방촬영기"
+                    className="w-full h-full object-cover img-zoom"
+                  />
+                </div>
+                <div className="px-6 py-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
+                    <h3 className="text-lg font-bold text-navy-900">유방촬영기</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    유방암 조기 발견을 위한 전용 촬영 장비입니다. 미세석회화 및 종양을 정밀하게 촬영하여
+                    육안으로 확인하기 어려운 초기 병변까지 발견할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={150}>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-md card-hover-glow h-full">
+                <div className="h-64 sm:h-72 overflow-hidden">
+                  <img
+                    src="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/d6aafb9e52411.jpeg"
+                    alt="PAP 검사기기"
+                    className="w-full h-full object-cover img-zoom"
+                  />
+                </div>
+                <div className="px-6 py-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-violet-500 shrink-0" />
+                    <h3 className="text-lg font-bold text-navy-900">자궁경부 세포진 검사기기 (PAP)</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    자궁경부암 및 전구병변 조기 발견을 위한 세포진 검사 장비입니다.
+                    간단한 검사로 빠르고 정확하게 자궁경부의 이상 소견을 확인합니다.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: 검진 진행 순서 */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
+                검진 진행 순서
               </h2>
               <div className="w-16 h-1 bg-sky-500 mx-auto" />
             </div>
           </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {programs.map((prog, i) => (
-              <ScrollReveal key={prog.tier} delay={i * 120}>
-                <div
-                  className={`relative rounded-2xl border-2 ${prog.color} bg-white overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
-                    prog.highlight ? "shadow-lg ring-2 ring-violet-300" : "shadow-md"
-                  }`}
-                >
-                  {prog.highlight && (
-                    <div className="absolute top-3 right-3 z-10">
-                      <span className="bg-violet-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
-                        인기
-                      </span>
+          <ScrollReveal delay={100}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {steps.map((step, i) => (
+                <div key={step.num} className="relative">
+                  <div className="border-2 border-gray-200 rounded-2xl p-4 sm:p-6 text-center h-full hover:border-sky-400 hover:-translate-y-1 transition-all duration-300">
+                    <span className="text-2xl sm:text-3xl font-black text-sky-500 block mb-2 sm:mb-3">{step.num}</span>
+                    <h4 className="text-navy-900 font-bold text-sm sm:text-base">{step.title}</h4>
+                  </div>
+                  {i < 3 && (
+                    <div className="hidden md:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10">
+                      <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
                   )}
-
-                  {/* Header */}
-                  <div className={`${prog.headerBg} px-6 py-6 text-center`}>
-                    <span className="inline-block text-white/80 text-xs font-semibold tracking-widest uppercase mb-1">
-                      {prog.badgeText}
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-white">
-                      여성 {prog.tier}
-                    </h3>
-                  </div>
-
-                  {/* Composition */}
-                  <div className="px-5 py-4 bg-gray-50 border-b border-gray-100">
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium mb-1">구성</p>
-                    <p className="text-navy-900 text-sm sm:text-base font-semibold leading-relaxed">
-                      {prog.composition}
-                    </p>
-                    {prog.note && (
-                      <p className="text-amber-600 text-xs mt-1 font-medium">{prog.note}</p>
-                    )}
-                  </div>
-
-                  {/* Items */}
-                  <div className="px-5 py-4 flex-1">
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium mb-3">포함 항목</p>
-                    <ul className="space-y-2">
-                      {prog.items.map((item, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm sm:text-base text-gray-700">
-                          <svg className="w-4 h-4 text-sky-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Feature */}
-                  <div className="px-5 pb-5">
-                    <div className="rounded-xl bg-navy-900/5 px-4 py-3">
-                      <p className="text-navy-800 text-xs sm:text-sm leading-relaxed font-medium">
-                        {prog.feature}
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Section 3: 선택 검사 항목 */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+      {/* FAQ */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
           <ScrollReveal>
-            <div className="text-center mb-10 md:mb-14">
-              <p className="text-sm sm:text-base text-sky-600 font-semibold uppercase tracking-widest mb-2">
-                Optional Examinations
-              </p>
+            <div className="text-center mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
-                선택 검사 항목
+                자주 묻는 질문
               </h2>
-              <div className="w-16 h-1 bg-sky-500 mx-auto mb-5" />
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                VIP 및 VVIP 프로그램에서 <strong className="text-navy-900">건강 상태와 가족력에 맞춰</strong> 선택할 수 있는 정밀 검사 항목입니다.
-              </p>
+              <div className="w-16 h-1 bg-sky-500 mx-auto" />
             </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <OptionalAccordion />
+            <FAQ items={faqItems} />
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Section 4: BASIC 검진 항목 */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-10 md:mb-14">
-              <p className="text-sm sm:text-base text-sky-600 font-semibold uppercase tracking-widest mb-2">
-                Basic Examination Items
-              </p>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
-                BASIC 검진 항목 상세
-              </h2>
-              <div className="w-16 h-1 bg-sky-500 mx-auto mb-5" />
-              <p className="text-gray-600 text-sm sm:text-base">
-                모든 여성 검진 프로그램(CLASSIC·VIP·VVIP)에 기본으로 포함되는 항목입니다.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-            {basicCategories.map((cat, i) => (
-              <ScrollReveal key={cat.title} delay={i * 80}>
-                <div className={`rounded-2xl border-2 ${cat.color} bg-white overflow-hidden h-full card-hover-glow`}>
-                  <div className={`${cat.bg} px-5 py-4 flex items-center gap-2 border-b ${cat.color}`}>
-                    <span className="text-xl">{cat.icon}</span>
-                    <h3 className={`font-bold text-sm sm:text-base ${cat.titleColor}`}>{cat.title}</h3>
-                  </div>
-                  <div className="px-5 py-4">
-                    <ul className="grid grid-cols-2 gap-x-3 gap-y-2">
-                      {cat.items.map((item) => (
-                        <li key={item} className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-700">
-                          <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -472,10 +242,10 @@ export default function WomenCancerPage() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <ScrollReveal>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3">
-              지금 바로 여성 정밀검진을 예약하세요
+              지금 바로 여성암검진을 예약하세요
             </h2>
             <p className="text-navy-200 text-sm sm:text-base mb-8 leading-relaxed">
-              전문의 상담을 통해 나에게 맞는 검진 프로그램을 설계해 드립니다.
+              전문의 상담을 통해 나에게 맞는 검진을 안내해 드립니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
