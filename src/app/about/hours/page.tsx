@@ -4,13 +4,13 @@ import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
 
 const hours = [
-  { day: "월요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 1 },
-  { day: "화요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 2 },
-  { day: "수요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 3 },
-  { day: "목요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
-  { day: "금요일", time: "08:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
+  { day: "월요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 1 },
+  { day: "화요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 2 },
+  { day: "수요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 3 },
+  { day: "목요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
+  { day: "금요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
   { day: "토요일", time: "09:00 - 14:00", note: "", dayNum: 6 },
-  { day: "일요일·공휴일", time: "매월 1, 3번째 주 일요일은 예약검진을 진행합니다", note: "", dayNum: 0 },
+  { day: "일요일·공휴일", time: "09:00 - 13:00", note: "", dayNum: 0 },
 ];
 
 export default function HoursPage() {
@@ -96,7 +96,7 @@ export default function HoursPage() {
           <ScrollReveal delay={300}>
             <div className="mt-4 bg-sky-50 rounded-xl p-4">
               <p className="text-sky-700 text-base">
-                <strong>※</strong> 매월 1, 3번째 주 일요일은 예약검진을 진행합니다.
+                <strong>※</strong> 평일·주말·공휴일 07:00 - 09:00 건강검진 예약 가능합니다.
               </p>
             </div>
           </ScrollReveal>
