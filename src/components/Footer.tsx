@@ -29,20 +29,24 @@ export default function Footer() {
             </h4>
             <ul className="text-sm space-y-2 text-gray-400">
               <li className="flex justify-between">
-                <span>평일</span>
-                <span className="text-gray-300">08:00 - 19:00</span>
+                <span>평일 (월~금)</span>
+                <span className="text-gray-300">09:00 - 20:00</span>
               </li>
               <li className="flex justify-between">
                 <span>토요일</span>
                 <span className="text-gray-300">09:00 - 14:00</span>
               </li>
               <li className="flex justify-between">
+                <span>일요일·공휴일</span>
+                <span className="text-gray-300">09:00 - 13:00</span>
+              </li>
+              <li className="flex justify-between">
                 <span>점심시간</span>
                 <span className="text-gray-300">13:00 - 14:00</span>
               </li>
               <li className="flex justify-between">
-                <span className="text-red-400">일요일</span>
-                <span className="text-red-400">정기휴무</span>
+                <span className="text-sky-400">건강검진 예약</span>
+                <span className="text-sky-400">07:00 - 09:00</span>
               </li>
             </ul>
           </div>
