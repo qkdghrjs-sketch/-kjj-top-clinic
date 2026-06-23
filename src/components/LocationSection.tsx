@@ -146,13 +146,13 @@ export default function LocationSection({ forceShow = false }: { forceShow?: boo
                                   : "bg-white"
                           }`}
                         >
-                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${isToday ? "text-sky-700 font-bold" : isSunday ? "text-gray-400" : "text-navy-900"}`}>
+                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-medium ${isToday ? "text-sky-700 font-bold" : "text-navy-900"}`}>
                             {h.day}
                             {isToday && (
                               <span className="ml-1 sm:ml-2 inline-block px-1 py-0.5 bg-sky-500 text-white text-[9px] sm:text-[10px] font-bold rounded">TODAY</span>
                             )}
                           </td>
-                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm ${isSunday ? "text-gray-400 font-semibold" : isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
+                          <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm ${isToday ? "text-sky-700 font-semibold" : "text-gray-700"}`}>
                             {h.time}
                           </td>
                           <td className={`px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm hidden sm:table-cell ${isToday ? "text-sky-600" : "text-gray-400"}`}>
@@ -166,7 +166,7 @@ export default function LocationSection({ forceShow = false }: { forceShow?: boo
               </div>
               <div className="mt-3 bg-sky-50 rounded-xl p-3.5">
                 <p className="text-sky-700 text-sm">
-                  <strong>※</strong> 매월 1, 3번째 주 일요일은 예약검진을 진행합니다.
+                  <strong>※</strong> 평일·주말·공휴일 07:00 - 09:00 건강검진 및 검사 예약 가능합니다.
                 </p>
               </div>
 
