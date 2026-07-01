@@ -193,12 +193,12 @@ export default function PopupBanner() {
         />
       </div>
 
-      <div className="flex items-center justify-between bg-white px-4 py-3 text-sm text-gray-700">
-        <label className="flex items-center gap-2 cursor-pointer select-none">
+<div className="flex items-center justify-between bg-white px-3 py-2 text-xs text-gray-700 gap-2">
+        <label className="flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap">
           <input
             type="checkbox"
             onChange={() => handleHideToday(popup.activeStorageKey, popup.id)}
-            className="w-4 h-4 accent-gray-600"
+            className="w-3.5 h-3.5 accent-gray-600 flex-shrink-0"
           />
           오늘 하루 보지 않기
         </label>
