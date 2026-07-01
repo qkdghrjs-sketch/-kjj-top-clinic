@@ -214,10 +214,10 @@ export default function PopupBanner() {
 
   return (
     <>
-      {/* PC: 가로 배열, 화면 중앙 */}
-      <div className="hidden sm:flex fixed inset-0 z-[9999] items-center justify-center pointer-events-none">
-        <div className="pointer-events-auto flex flex-row gap-3">
-          {visiblePopups.map((popup) => renderCard(popup, "w-[480px]"))}
+{/* PC: 여러 줄로 자동 배열, 화면 안에 맞춤 */}
+      <div className="hidden sm:flex fixed inset-0 z-[9999] items-center justify-center pointer-events-none p-6">
+        <div className="pointer-events-auto flex flex-row flex-wrap gap-3 justify-center items-start max-w-[92vw] max-h-[90vh] overflow-y-auto">
+          {visiblePopups.map((popup) => renderCard(popup, "w-[220px]"))}
         </div>
       </div>
 
