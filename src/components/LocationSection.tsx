@@ -7,13 +7,13 @@ import KakaoMap from "@/components/KakaoMap";
 const HIDDEN_PATHS = ["/about/location", "/info"];
 
 const hours = [
-  { day: "월요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 1 },
-  { day: "화요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 2 },
-  { day: "수요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 3 },
-  { day: "목요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
-  { day: "금요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
-  { day: "토요일", time: "09:00 - 14:00", note: "", dayNum: 6 },
-  { day: "일요일·공휴일", time: "09:00 - 13:00", note: "", dayNum: 0 },
+  { day: "월요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 1 },
+  { day: "화요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 2 },
+  { day: "수요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 3 },
+  { day: "목요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 4 },
+  { day: "금요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 5 },
+  { day: "토요일·공휴일", time: "09:00 - 14:00", note: "", dayNum: 6 },
+  { day: "일요일", time: "09:00 - 13:00", note: "", dayNum: 0 },
 ];
 
 export default function LocationSection({ forceShow = false }: { forceShow?: boolean }) {
@@ -164,9 +164,12 @@ export default function LocationSection({ forceShow = false }: { forceShow?: boo
                   </tbody>
                 </table>
               </div>
-              <div className="mt-3 bg-sky-50 rounded-xl p-3.5">
+              <div className="mt-3 bg-sky-50 rounded-xl p-3.5 space-y-1.5">
                 <p className="text-sky-700 text-sm">
-                  <strong>※</strong> 평일·주말·공휴일 07:00 - 09:00 건강검진 및 검사 예약 가능합니다.
+                  <strong>※</strong> 일요일·공휴일에도 위·대장내시경 검진이 가능합니다(사전예약 필수).
+                </p>
+                <p className="text-sky-700 text-sm">
+                  <strong>※</strong> 평일 야간진료(18:00 - 20:00)를 운영합니다.
                 </p>
               </div>
 
