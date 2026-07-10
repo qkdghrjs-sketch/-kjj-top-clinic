@@ -48,10 +48,6 @@ export default function Footer() {
                 <span>점심시간 (평일)</span>
                 <span className="text-gray-300">13:00 - 14:00</span>
               </li>
-              <li className="flex justify-between">
-                <span className="text-sky-400">건강검진 예약</span>
-                <span className="text-sky-400">07:00 - 09:00</span>
-              </li>
             </ul>
             <p className="text-xs text-gray-500 mt-3 leading-relaxed">
               ※ 일요일·공휴일에도 위·대장내시경 검진이 가능합니다(사전예약 필수).
