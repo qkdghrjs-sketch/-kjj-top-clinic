@@ -4,11 +4,11 @@ import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
 
 const hours = [
-  { day: "월요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 1 },
-  { day: "화요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 2 },
-  { day: "수요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 3 },
-  { day: "목요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 4 },
-  { day: "금요일", time: "09:00 - 20:00", note: "13:00-14:00 휴게시간 · 야간진료(18:00-20:00) 운영", dayNum: 5 },
+  { day: "월요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 1 },
+  { day: "화요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 2 },
+  { day: "수요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 3 },
+  { day: "목요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
+  { day: "금요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
   { day: "토요일·공휴일", time: "09:00 - 14:00", note: "", dayNum: 6 },
   { day: "일요일", time: "09:00 - 13:00", note: "", dayNum: 0 },
 ];
