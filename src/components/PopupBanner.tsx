@@ -182,6 +182,12 @@ export default function PopupBanner() {
   const visiblePopups = activePopups.filter((p) => visibleMap[p.id]);
   if (visiblePopups.length === 0) return null;
 
+  // PC: 한 줄에 4개씩, 남는 팝업은 다음 줄로 (예: 7개면 4개+3개)
+  const popupRows: ActivePopup[][] = [];
+  for (let i = 0; i < visiblePopups.length; i += 4) {
+    popupRows.push(visiblePopups.slice(i, i + 4));
+  }
+
   const renderCard = (popup: ActivePopup, className: string) => (
     <div key={popup.id} className={`relative shadow-xl rounded-lg overflow-hidden flex-shrink-0 ${className}`}>
       <button
@@ -225,10 +231,14 @@ export default function PopupBanner() {
 
   return (
     <>
-{/* PC: 여러 줄로 자동 배열, 화면 안에 맞춤 */}
+{/* PC: 한 줄에 4개씩, 남으면 다음 줄에 중앙 정렬 (예: 7개 -> 4개+3개) */}
       <div className="hidden sm:flex fixed inset-0 z-[9999] items-center justify-center pointer-events-none p-6">
-        <div className="pointer-events-auto flex flex-row flex-wrap gap-3 justify-center items-start max-w-[92vw] max-h-[90vh] overflow-y-auto">
-          {visiblePopups.map((popup) => renderCard(popup, "w-[220px]"))}
+        <div className="pointer-events-auto flex flex-col gap-3 items-center max-w-[92vw] max-h-[90vh] overflow-y-auto">
+          {popupRows.map((row, ri) => (
+            <div key={ri} className="flex flex-row gap-3 justify-center">
+              {row.map((popup) => renderCard(popup, "w-[220px]"))}
+            </div>
+          ))}
         </div>
       </div>
 
