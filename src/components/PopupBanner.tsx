@@ -82,6 +82,17 @@ const POPUPS = [
     replaceStorageKey: null as string | null,
     replaceExpiresAt: null as Date | null,
   },
+  {
+    id: "popup8",
+    storageKey: "popup8_hidden_date",
+    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/5c0c8ecade616.png",
+    alt: "공지 팝업 8",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+  },
 ];
 
 type ActivePopup = {
