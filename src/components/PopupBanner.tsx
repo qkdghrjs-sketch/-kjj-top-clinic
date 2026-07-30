@@ -130,6 +130,29 @@ const CloseIcon = () => (
   </svg>
 );
 
+/* ── PC 그리드 레이아웃 상수 ────────────────────────────────
+   팝업 이미지 원본 비율이 정사각(1:1)과 A4 세로(1:1.41)로 섞여 있어
+   폭만 고정하면 카드 높이가 들쭉날쭉해진다. 그래서 모든 카드를
+   동일한 3:4 박스로 통일하고 이미지는 object-contain으로 넣는다.
+   카드 폭은 "화면 높이"와 "화면 폭" 두 제약 중 작은 값으로 잡아
+   뷰포트를 최대한 채운다. */
+const GRID_GAP = 12; // 카드 사이 간격(px)
+const CARD_FOOTER_H = 34; // 카드 하단 컨트롤 바 높이(px)
+const CARD_MAX_W = 400; // 초대형 모니터에서 과확대 방지
+const CARD_MIN_W = 290; // 화면이 낮아도 이 폭은 보장(대신 세로 스크롤 허용)
+const MAX_COLS = 4;
+// 격자 바깥 여백 합계: 상하 패딩(32) + 그리드~버튼 간격(12) + 일괄 버튼 높이(38)
+const CHROME_H = 82;
+const GRID_MAX_H = `calc(100vh - ${CHROME_H}px)`;
+
+/** orphan 행(마지막 줄에 1개만 남는 형태)이 생기지 않게 행별 개수를 균등 분배 */
+function balancedRowSizes(count: number): number[] {
+  const rows = Math.ceil(count / MAX_COLS);
+  const base = Math.floor(count / rows);
+  const extra = count % rows;
+  return Array.from({ length: rows }, (_, i) => base + (i < extra ? 1 : 0));
+}
+
 export default function PopupBanner() {
   const [visibleMap, setVisibleMap] = useState<Record<string, boolean>>({});
   const [activePopups, setActivePopups] = useState<ActivePopup[]>([]);
@@ -188,40 +211,86 @@ export default function PopupBanner() {
     setVisibleMap((prev) => ({ ...prev, [id]: false }));
   };
 
+  const handleCloseAll = () => {
+    setVisibleMap({});
+  };
+
+  const handleHideAllToday = () => {
+    const today = new Date().toISOString().split("T")[0];
+    for (const popup of activePopups) {
+      localStorage.setItem(popup.activeStorageKey, today);
+    }
+    setVisibleMap({});
+  };
+
+  // Esc로 전체 닫기
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setVisibleMap({});
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   if (!mounted) return null;
 
   const visiblePopups = activePopups.filter((p) => visibleMap[p.id]);
   if (visiblePopups.length === 0) return null;
 
-  // PC: 한 줄에 4개씩, 남는 팝업은 다음 줄로 (예: 7개면 4개+3개)
+  // PC: orphan 행 없이 균등 분배 (8개 -> 4+4, 9개 -> 3+3+3, 10개 -> 4+3+3)
+  const rowSizes = balancedRowSizes(visiblePopups.length);
   const popupRows: ActivePopup[][] = [];
-  for (let i = 0; i < visiblePopups.length; i += 4) {
-    popupRows.push(visiblePopups.slice(i, i + 4));
+  let cursor = 0;
+  for (const size of rowSizes) {
+    popupRows.push(visiblePopups.slice(cursor, cursor + size));
+    cursor += size;
   }
 
-  const renderCard = (popup: ActivePopup, className: string) => (
-    <div key={popup.id} className={`relative shadow-xl rounded-lg overflow-hidden flex-shrink-0 ${className}`}>
+  const rowCount = rowSizes.length;
+  const colCount = rowSizes[0];
+
+  // 뷰포트 높이 제약과 폭 제약 중 작은 값 -> 화면을 최대한 채우는 카드 폭
+  const limitByHeight = `(100vh - ${
+    CHROME_H + (rowCount - 1) * GRID_GAP + rowCount * CARD_FOOTER_H
+  }px) / ${rowCount} * 0.75`;
+  const limitByWidth = `(94vw - ${(colCount - 1) * GRID_GAP}px) / ${colCount}`;
+  // 폭 제약은 절대 넘지 않게 바깥에서 다시 clamp (좁은 창에서 가로 넘침 방지)
+  const cardWidth = `min(${limitByWidth}, max(${CARD_MIN_W}px, min(${limitByHeight}, ${CARD_MAX_W}px)))`;
+
+  const renderCard = (
+    popup: ActivePopup,
+    index: number,
+    { className = "", width }: { className?: string; width?: string }
+  ) => (
+    <div
+      key={popup.id}
+      className={`relative bg-white shadow-2xl rounded-xl overflow-hidden flex-shrink-0 ${className}`}
+      style={width ? { width } : undefined}
+    >
       <button
         onClick={() => handleClose(popup.id)}
-        className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors cursor-pointer"
+        className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/55 text-white hover:bg-black/75 transition-colors cursor-pointer"
         aria-label="닫기"
       >
         <CloseIcon />
       </button>
 
-      <div className="relative w-full">
+      {/* 3:4 고정 박스 + object-contain -> 원본 비율이 달라도 카드 크기가 통일된다 */}
+      <div className="relative w-full aspect-[3/4] bg-white">
         <Image
           src={popup.activeSrc}
           alt={popup.activeAlt}
-          width={480}
-          height={0}
-          className="w-full h-auto"
-          sizes="(max-width: 640px) 90vw, 480px"
-          priority
+          fill
+          className="object-contain"
+          sizes="(max-width: 640px) 90vw, 400px"
+          priority={index < 4}
         />
       </div>
 
-<div className="flex items-center justify-between bg-white px-3 py-2 text-xs text-gray-700 gap-2">
+      <div
+        className="flex items-center justify-between bg-white border-t border-gray-100 px-3 text-xs text-gray-700 gap-2"
+        style={{ height: CARD_FOOTER_H }}
+      >
         <label className="flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap">
           <input
             type="checkbox"
@@ -240,29 +309,80 @@ export default function PopupBanner() {
     </div>
   );
 
+  const bulkActions = (
+    <div className="flex items-center justify-center gap-2 text-xs sm:text-sm">
+      <button
+        onClick={handleHideAllToday}
+        className="px-4 py-2 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-sm transition-colors cursor-pointer whitespace-nowrap"
+      >
+        오늘 하루 모두 보지 않기
+      </button>
+      <button
+        onClick={handleCloseAll}
+        className="px-4 py-2 rounded-full bg-white text-gray-800 hover:bg-gray-100 font-semibold transition-colors cursor-pointer whitespace-nowrap"
+      >
+        전체 닫기
+      </button>
+    </div>
+  );
+
   return (
     <>
-{/* PC: 한 줄에 4개씩, 남으면 다음 줄에 중앙 정렬 (예: 7개 -> 4개+3개) */}
-      <div className="hidden sm:flex fixed inset-0 z-[9999] items-center justify-center pointer-events-none p-6">
-        <div className="pointer-events-auto flex flex-col gap-3 items-center max-w-[92vw] max-h-[90vh] overflow-y-auto">
+      {/* PC: 균형 격자 (높이·폭 통일, 뷰포트에 맞춰 최대 크기) */}
+      <div className="hidden sm:flex fixed inset-0 z-[9999] flex-col items-center justify-center gap-3 px-4 py-4">
+        {/* 백드롭: 팝업이 페이지 콘텐츠와 섞이지 않게 분리 (클릭 시 전체 닫기) */}
+        <div
+          className="absolute inset-0 bg-black/65 backdrop-blur-sm"
+          onClick={handleCloseAll}
+          aria-hidden="true"
+        />
+
+        <div
+          className="relative flex flex-col gap-3 items-center max-w-[94vw] overflow-y-auto"
+          style={{ maxHeight: GRID_MAX_H }}
+        >
           {popupRows.map((row, ri) => (
             <div key={ri} className="flex flex-row gap-3 justify-center">
-              {row.map((popup) => renderCard(popup, "w-[220px]"))}
+              {row.map((popup, ci) =>
+                renderCard(popup, ri * colCount + ci, { width: cardWidth })
+              )}
             </div>
           ))}
         </div>
+
+        <div className="relative">{bulkActions}</div>
       </div>
 
       {/* 모바일: 가로 스와이프 (scroll-snap) */}
-      <div className="sm:hidden fixed inset-0 z-[9999] flex items-center pointer-events-none">
+      <div className="sm:hidden fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4">
         <div
-          className="pointer-events-auto flex flex-row gap-4 overflow-x-auto snap-x snap-mandatory w-full px-[5vw] scroll-smooth"
+          className="absolute inset-0 bg-black/65 backdrop-blur-sm"
+          onClick={handleCloseAll}
+          aria-hidden="true"
+        />
+
+        <div
+          className="relative flex flex-row gap-4 overflow-x-auto snap-x snap-mandatory w-full px-[5vw] scroll-smooth"
           style={{ scrollbarWidth: "none" }}
         >
-          {visiblePopups.map((popup) => renderCard(popup, "snap-center w-[90vw]"))}
+          {visiblePopups.map((popup, i) =>
+            renderCard(popup, i, {
+              className: "snap-center",
+              // 화면이 낮은 기기에서 카드가 뷰포트를 넘지 않게 높이로도 제한
+              width: "min(90vw, (100vh - 130px) * 0.75)",
+            })
+          )}
           {/* 마지막 카드 오른쪽 여백 */}
           <div className="flex-shrink-0 w-[5vw]" />
         </div>
+
+        {visiblePopups.length > 1 && (
+          <p className="relative text-white/70 text-xs">
+            좌우로 넘겨서 {visiblePopups.length}개 안내 모두 보기
+          </p>
+        )}
+
+        <div className="relative">{bulkActions}</div>
       </div>
     </>
   );
