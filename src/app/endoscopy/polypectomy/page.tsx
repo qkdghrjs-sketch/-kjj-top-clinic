@@ -79,7 +79,7 @@ export default function PolypectomyPage() {
               <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
                 <div
                   className="w-full h-full bg-cover bg-center img-zoom"
-                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/3ba604da11869.jpeg')" }}
+                  style={{ backgroundImage: "url('https://cdn.imweb.me/upload/S20260108b9005a7eb2710/7349d4d12f9ae.png')" }}
                 />
               </div>
             </ScrollReveal>
