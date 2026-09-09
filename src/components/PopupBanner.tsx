@@ -104,6 +104,17 @@ const POPUPS = [
     replaceStorageKey: null as string | null,
     replaceExpiresAt: null as Date | null,
   },
+  {
+    id: "popup10",
+    storageKey: "popup10_hidden_date",
+    src: "/images/popup10.png",
+    alt: "비만 패키지 안내",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+  },
 ];
 
 type ActivePopup = {

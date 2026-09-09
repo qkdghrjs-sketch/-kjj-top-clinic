@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 원본 이미지 작업 폴더 (웹용은 public/images 에 최적화해서 저장)
+/팝업/
+/프로필사진/
