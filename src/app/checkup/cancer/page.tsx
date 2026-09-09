@@ -113,14 +113,12 @@ export default function CancerScreeningPage() {
                 "from-violet-500 to-violet-600",
                 "from-navy-700 to-navy-800",
               ];
-              const icons = ["🔬", "🩺", "🫁", "💗", "🩻", "🫁"];
               return (
                 <ScrollReveal key={card.title} delay={i * 100}>
                   <div className="bg-white rounded-2xl shadow-md overflow-hidden h-full card-hover-glow group">
                     {/* 상단 컬러 헤더 */}
-                    <div className={`bg-gradient-to-r ${colors[i]} px-6 py-4 flex items-center justify-between`}>
+                    <div className={`bg-gradient-to-r ${colors[i]} px-6 py-4 flex items-center`}>
                       <h3 className="text-xl font-bold text-white">{card.title}</h3>
-                      <span className="text-2xl">{icons[i]}</span>
                     </div>
                     {/* 정보 영역 */}
                     <div className="px-6 py-5 space-y-3">
