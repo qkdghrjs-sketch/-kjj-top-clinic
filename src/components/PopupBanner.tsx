@@ -207,6 +207,8 @@ export default function PopupBanner() {
       }
     }
 
+    // localStorage·오늘 날짜는 브라우저에서만 알 수 있어, 붙은 뒤 한 번만 읽어 반영합니다 (의도된 패턴)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActivePopups(resolved);
     setVisibleMap(newMap);
     setMounted(true);

@@ -63,6 +63,8 @@ export default function EndoscopyShowcase() {
   const [particles, setParticles] = useState<Array<{ left: number; top: number; size: number; delay: number; duration: number }>>([]);
 
   useEffect(() => {
+    // 무작위 위치는 서버·브라우저 값이 달라 화면이 어긋나므로, 브라우저에 붙은 뒤 한 번만 만듭니다 (의도된 패턴)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(
       Array.from({ length: 20 }).map(() => ({
         left: Math.random() * 100,
