@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import ScrollReveal from "@/components/ScrollReveal";
 import KakaoMap from "@/components/KakaoMap";
@@ -18,7 +19,8 @@ const hours = [
 
 export default function LocationSection({ forceShow = false }: { forceShow?: boolean }) {
   const pathname = usePathname();
-  const today = new Date().getDay();
+  // "오늘" 표시는 방문자 브라우저에서 계산합니다 (미리 만들어 둔 화면에는 배포한 날 요일이 굳어 버림)
+  const today = useSyncExternalStore(() => () => {}, () => new Date().getDay(), () => -1);
 
   if (!forceShow && HIDDEN_PATHS.includes(pathname)) return null;
 

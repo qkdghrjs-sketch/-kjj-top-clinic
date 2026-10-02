@@ -170,7 +170,7 @@ export default function PopupBanner() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toDateString();
     const now = new Date();
     const newMap: Record<string, boolean> = {};
     const resolved: ActivePopup[] = [];
@@ -217,7 +217,7 @@ export default function PopupBanner() {
   };
 
   const handleHideToday = (storageKey: string, id: string) => {
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toDateString();
     localStorage.setItem(storageKey, today);
     setVisibleMap((prev) => ({ ...prev, [id]: false }));
   };
@@ -227,7 +227,7 @@ export default function PopupBanner() {
   };
 
   const handleHideAllToday = () => {
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toDateString();
     for (const popup of activePopups) {
       localStorage.setItem(popup.activeStorageKey, today);
     }
