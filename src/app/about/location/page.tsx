@@ -8,11 +8,11 @@ import KakaoMap from "@/components/KakaoMap";
 const hours = [
   { day: "월요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 1 },
   { day: "화요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 2 },
-  { day: "수요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 3 },
+  { day: "수요일", time: "09:00 - 19:00", note: "13:00 - 14:00 휴게시간", dayNum: 3 },
   { day: "목요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 4 },
   { day: "금요일", time: "09:00 - 20:00", note: "13:00 - 14:00 휴게시간", dayNum: 5 },
   { day: "토요일·공휴일", time: "09:00 - 14:00", note: "", dayNum: 6 },
-  { day: "일요일", time: "09:00 - 13:00", note: "", dayNum: 0 },
+  { day: "일요일", time: "09:00 - 13:00", note: "매월 마지막 주 일요일 휴진", dayNum: 0 },
 ];
 
 export default function LocationPage() {
@@ -157,7 +157,10 @@ export default function LocationPage() {
                     <strong>※</strong> 일요일·공휴일에도 위·대장내시경 검진이 가능합니다(사전예약 필수).
                   </p>
                   <p className="text-sky-700 text-base">
-                    <strong>※</strong> 평일 야간진료(18:00 - 20:00)를 운영합니다.
+                    <strong>※</strong> 평일 야간진료(18:00 - 20:00)를 운영합니다. 수요일은 19:00까지 진료합니다.
+                  </p>
+                  <p className="text-sky-700 text-base">
+                    <strong>※</strong> 매월 마지막 주 일요일은 휴진합니다.
                   </p>
                 </div>
 

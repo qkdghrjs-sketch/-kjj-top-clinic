@@ -29,12 +29,16 @@ export default function Footer() {
             </h4>
             <ul className="text-sm space-y-2 text-gray-400">
               <li className="flex justify-between">
-                <span>평일 (월~금)</span>
+                <span>월·화·목·금</span>
                 <span className="text-gray-300">09:00 - 20:00</span>
               </li>
               <li className="flex justify-between">
+                <span>수요일</span>
+                <span className="text-gray-300">09:00 - 19:00</span>
+              </li>
+              <li className="flex justify-between">
                 <span className="text-sky-400">야간진료 (평일)</span>
-                <span className="text-sky-400">18:00 - 20:00</span>
+                <span className="text-sky-400">18:00 - 20:00 (수 19:00)</span>
               </li>
               <li className="flex justify-between">
                 <span>토요일·공휴일</span>
@@ -49,7 +53,10 @@ export default function Footer() {
                 <span className="text-gray-300">13:00 - 14:00</span>
               </li>
             </ul>
-            <p className="text-xs text-gray-500 mt-3 leading-relaxed">
+            <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+              ※ 매월 마지막 주 일요일은 휴진합니다.
+            </p>
+            <p className="text-xs text-gray-500 mt-1 leading-relaxed">
               ※ 일요일·공휴일에도 위·대장내시경 검진이 가능합니다(사전예약 필수).
             </p>
           </div>

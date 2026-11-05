@@ -4,6 +4,19 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const POPUPS = [
+  // 국가건강검진: 병원 요청으로 맨 앞에 두고 테두리로 강조
+  {
+    id: "popup2611_national",
+    storageKey: "popup2611_national_hidden_date",
+    src: "/images/popup-2611-national-checkup.webp",
+    alt: "2026 국가건강검진 안내",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: true,
+  },
   {
     id: "popup1",
     storageKey: "popup_hidden_date",
@@ -14,6 +27,7 @@ const POPUPS = [
     replaceAlt: null as string | null,
     replaceStorageKey: null as string | null,
     replaceExpiresAt: null as Date | null,
+    highlight: false,
   },
   {
     id: "popup2",
@@ -25,6 +39,7 @@ const POPUPS = [
     replaceAlt: null as string | null,
     replaceStorageKey: null as string | null,
     replaceExpiresAt: null as Date | null,
+    highlight: false,
   },
   {
     id: "popup3",
@@ -37,61 +52,7 @@ const POPUPS = [
     replaceAlt: "공지 팝업 3",
     replaceStorageKey: "popup3_replace_hidden_date",
     replaceExpiresAt: new Date("2026-07-01T00:00:00"),
-  },
-  {
-    id: "popup4",
-    storageKey: "popup4_hidden_date",
-    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/44d347578ef5a.jpeg",
-    alt: "공지 팝업 4",
-    expiresAt: null as Date | null,
-    replaceSrc: null as string | null,
-    replaceAlt: null as string | null,
-    replaceStorageKey: null as string | null,
-    replaceExpiresAt: null as Date | null,
-  },
-  {
-    id: "popup5",
-    storageKey: "popup5_hidden_date",
-    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/51fface91f166.jpeg",
-    alt: "공지 팝업 5",
-    expiresAt: null as Date | null,
-    replaceSrc: null as string | null,
-    replaceAlt: null as string | null,
-    replaceStorageKey: null as string | null,
-    replaceExpiresAt: null as Date | null,
-  },
-  {
-    id: "popup6",
-    storageKey: "popup6_hidden_date",
-    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/a2b32db280c0b.jpeg",
-    alt: "공지 팝업 6",
-    expiresAt: null as Date | null,
-    replaceSrc: null as string | null,
-    replaceAlt: null as string | null,
-    replaceStorageKey: null as string | null,
-    replaceExpiresAt: null as Date | null,
-  },
-  {
-    id: "popup7",
-    storageKey: "popup7_hidden_date",
-    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/804ef6411d31c.jpeg",
-    alt: "공지 팝업 7",
-    expiresAt: null as Date | null,
-    replaceSrc: null as string | null,
-    replaceAlt: null as string | null,
-    replaceStorageKey: null as string | null,
-    replaceExpiresAt: null as Date | null,
-  },
-  {
-    id: "popup8",
-    storageKey: "popup8_hidden_date",
-    src: "https://cdn.imweb.me/upload/S20260108b9005a7eb2710/5c0c8ecade616.png",
-    alt: "공지 팝업 8",
-    expiresAt: null as Date | null,
-    replaceSrc: null as string | null,
-    replaceAlt: null as string | null,
-    replaceStorageKey: null as string | null,
-    replaceExpiresAt: null as Date | null,
+    highlight: false,
   },
   {
     id: "popup9",
@@ -103,17 +64,68 @@ const POPUPS = [
     replaceAlt: null as string | null,
     replaceStorageKey: null as string | null,
     replaceExpiresAt: null as Date | null,
+    highlight: false,
+  },
+  // ── 2026-11-05 병원 요청으로 새로 올린 포스터 (내릴 때는 expiresAt에 날짜를 넣거나 블록을 지우면 됩니다) ──
+  {
+    id: "popup2611_flu",
+    storageKey: "popup2611_flu_hidden_date",
+    src: "/images/popup-2611-flu-vaccine.webp",
+    alt: "독감 예방접종 안내",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: false,
   },
   {
-    id: "popup10",
-    storageKey: "popup10_hidden_date",
-    src: "/images/popup10-v2.png",
+    id: "popup2611_test_event",
+    storageKey: "popup2611_test_event_hidden_date",
+    src: "/images/popup-2611-test-event.webp",
+    alt: "검사 이벤트 안내",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: false,
+  },
+  {
+    id: "popup2611_mounjaro",
+    storageKey: "popup2611_mounjaro_hidden_date",
+    src: "/images/popup-2611-mounjaro.webp",
     alt: "비만 패키지 안내",
     expiresAt: null as Date | null,
     replaceSrc: null as string | null,
     replaceAlt: null as string | null,
     replaceStorageKey: null as string | null,
     replaceExpiresAt: null as Date | null,
+    highlight: false,
+  },
+  {
+    id: "popup2611_wegovy",
+    storageKey: "popup2611_wegovy_hidden_date",
+    src: "/images/popup-2611-wegovy.webp",
+    alt: "용량별 가격 안내",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: false,
+  },
+  {
+    id: "popup2611_ozempic",
+    storageKey: "popup2611_ozempic_hidden_date",
+    src: "/images/popup-2611-ozempic.webp",
+    alt: "당뇨 환자 처방 안내",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: false,
   },
 ];
 
@@ -122,6 +134,7 @@ type ActivePopup = {
   activeSrc: string;
   activeAlt: string;
   activeStorageKey: string;
+  highlight: boolean;
 };
 
 const CloseIcon = () => (
@@ -192,6 +205,7 @@ export default function PopupBanner() {
           activeSrc: popup.replaceSrc,
           activeAlt: popup.replaceAlt ?? popup.alt,
           activeStorageKey: popup.replaceStorageKey!,
+          highlight: popup.highlight,
         });
       } else if (isExpired) {
         newMap[popup.id] = false;
@@ -203,6 +217,7 @@ export default function PopupBanner() {
           activeSrc: popup.src,
           activeAlt: popup.alt,
           activeStorageKey: popup.storageKey,
+          highlight: popup.highlight,
         });
       }
     }
@@ -277,7 +292,10 @@ export default function PopupBanner() {
   ) => (
     <div
       key={popup.id}
-      className={`relative bg-white shadow-2xl rounded-xl overflow-hidden flex-shrink-0 ${className}`}
+      className={`relative bg-white shadow-2xl rounded-xl overflow-hidden flex-shrink-0 ${
+        // 스크롤 영역에서 잘리지 않도록 바깥 ring 대신 안쪽 테두리로 강조
+        popup.highlight ? "border-4 border-sky-500" : ""
+      } ${className}`}
       style={width ? { width } : undefined}
     >
       <button

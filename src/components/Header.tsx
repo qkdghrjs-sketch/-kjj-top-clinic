@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
       { label: "5대암국가검진", href: "/checkup/cancer" },
       { label: "종합검진", href: "/checkup/comprehensive" },
       { label: "여성암검진", href: "/checkup/women-cancer" },
-      { label: "채용검진 + 성병검사", href: "/checkup/employment" },
+      { label: "채용검진 + 성병검사 + 마약검사 + 보건증", href: "/checkup/employment" },
     ],
   },
   {
@@ -189,7 +189,7 @@ export default function Header() {
               {/* Dropdown */}
               {item.children && activeDropdown === idx && (
                 <div className="absolute top-full left-0 pt-2 animate-slide-down">
-                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[180px] overflow-hidden">
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[180px] w-max overflow-hidden">
                     {item.children.map((sub, si) => (
                       <Link
                         key={si}
@@ -198,7 +198,7 @@ export default function Header() {
                           if (sub.disabled) e.preventDefault();
                           setActiveDropdown(null);
                         }}
-                        className={`block px-5 py-2.5 text-lg transition-all duration-200 ${
+                        className={`block px-5 py-2.5 text-lg whitespace-nowrap transition-all duration-200 ${
                           sub.disabled
                             ? "text-gray-300 cursor-not-allowed"
                             : "text-navy-700 hover:bg-gradient-to-r hover:from-navy-50 hover:to-sky-50 hover:text-navy-900 hover:pl-6"

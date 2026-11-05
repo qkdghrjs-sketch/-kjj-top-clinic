@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageHeader from "@/components/PageHeader";
 import WhyKimtop from "@/components/WhyKimtop";
@@ -21,6 +22,18 @@ const stdCards = [
   { title: "HPV 검사", desc: "자궁경부암 등의 원인이 되는 인유두종 바이러스 감염 여부를 확인합니다." },
 ];
 
+const drugCards = [
+  { title: "마약 간이검사", desc: "소변으로 헤로인·카페인·코데인·에페드린·암페타민 성분을 확인합니다." },
+  { title: "마약 4종 검사", desc: "소변으로 필로폰·대마·모르핀(아편)·코카인 성분을 확인합니다." },
+  { title: "마약 6종 검사", desc: "마약 4종에 암페타민·엑스터시를 더해 확인합니다." },
+];
+
+const healthCertCards = [
+  { title: "흉부 X-ray", desc: "폐결핵 여부를 확인합니다." },
+  { title: "장티푸스 검사", desc: "장티푸스 감염 여부를 확인합니다." },
+  { title: "준비물", desc: "신분증을 지참해 주세요." },
+];
+
 const steps = [
   { num: "01", title: "접수(신분증 지참)" },
   { num: "02", title: "검사(20~25분)" },
@@ -35,6 +48,8 @@ const faqItems = [
   { q: "예약 없이 방문해도 되나요?", a: "예약 없이 방문 가능하나, 대기시간 단축을 위해 예약을 권장합니다." },
   { q: "금식이 필요한가요?", a: "혈액검사가 포함되므로 8시간 금식을 권장합니다." },
   { q: "성병검사는 익명으로 가능한가요?", a: "네, 익명 검사가 가능하며 개인정보 보호를 철저히 준수합니다." },
+  { q: "보건증은 어떤 검사를 하나요?", a: "흉부 X-ray(폐결핵)와 장티푸스 검사를 시행합니다. 신분증을 지참해 주세요." },
+  { q: "마약검사는 어떻게 하나요?", a: "소변으로 검사하며, 제출처에서 요구하는 항목(간이·4종·6종)을 알려주시면 맞춰 시행합니다." },
   { q: "성병검사 결과는 얼마나 걸리나요?", a: "검사 항목에 따라 당일~3일 정도 소요되며, 결과는 개별 안내해 드립니다." },
 ];
 
@@ -42,11 +57,11 @@ export default function EmploymentCheckupPage() {
   return (
     <>
       <PageHeader
-        title="채용검진 + 성병검사"
-        subtitle="빠르고 정확한 채용건강검진과 성병검사 서비스를 제공합니다"
+        title="채용검진 + 성병검사 + 마약검사 + 보건증"
+        subtitle="채용건강검진, 성병검사, 마약검사, 보건증 발급을 한 곳에서 안내합니다"
       />
       <WhyKimtop
-        box="채용검진 + 성병검사, 왜 김정재탑내과일까?+"
+        box="채용검진 · 성병 · 마약검사 · 보건증, 왜 김정재탑내과일까?+"
         overlay="빠르고 정확한 검진"
         description="전문의가 직접 판독하며, 당일 결과 확인 가능합니다. 프라이버시를 철저히 보호합니다."
         features={["당일 결과 확인", "신속한 서류 발급", "전문의 직접 판독", "프라이버시 보호"]}
@@ -189,6 +204,54 @@ export default function EmploymentCheckupPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 마약검사 · 보건증 */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
+                마약검사 <span className="text-sky-500">·</span> 보건증
+              </h2>
+              <div className="w-16 h-1 bg-sky-500 mx-auto" />
+            </div>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { heading: "마약검사", lead: "채용·제출용 마약검사를 소변 검사로 시행합니다.", cards: drugCards },
+              { heading: "보건증 (건강진단결과서)", lead: "식품·위생 업종 종사자에게 필요한 보건증을 발급합니다.", cards: healthCertCards },
+            ].map((group, gi) => (
+              <ScrollReveal key={group.heading} delay={gi * 100}>
+                <div className="bg-gray-50 rounded-2xl p-5 sm:p-7 h-full">
+                  <h3 className="text-lg sm:text-xl font-bold text-navy-900 mb-1">{group.heading}</h3>
+                  <p className="text-gray-500 text-sm sm:text-base mb-5">{group.lead}</p>
+                  <ul className="space-y-3">
+                    {group.cards.map((c) => (
+                      <li key={c.title} className="bg-white rounded-xl p-4 shadow-sm">
+                        <p className="font-bold text-navy-900 text-sm sm:text-base">{c.title}</p>
+                        <p className="text-gray-600 text-xs sm:text-sm md:text-base mt-1 leading-relaxed">{c.desc}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={200}>
+            <p className="text-center text-gray-500 text-sm sm:text-base mt-8">
+              검사 비용은{" "}
+              <Link href="/medical-info#non-covered" className="text-sky-600 font-semibold hover:underline">
+                비급여 안내
+              </Link>
+              에서, 결과 소요일은 전화(
+              <a href="tel:02-2698-8880" className="text-sky-600 font-semibold hover:underline">
+                02-2698-8880
+              </a>
+              )로 확인해 주세요.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
