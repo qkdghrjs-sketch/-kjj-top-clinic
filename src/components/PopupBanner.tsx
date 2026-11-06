@@ -79,6 +79,19 @@ const POPUPS = [
     replaceExpiresAt: null as Date | null,
     highlight: false,
   },
+  // 2026-11-06 병원 요청: 보건증 안내 포스터
+  {
+    id: "popup2611_health_cert",
+    storageKey: "popup2611_health_cert_hidden_date",
+    src: "/images/popup-2611-health-cert.webp",
+    alt: "보건증 2일 결과 안내 (혈액검사·흉부촬영, 검사비용 3만원, 평일 09:00-16:30·토요일 09:00-11:00)",
+    expiresAt: null as Date | null,
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: false,
+  },
   {
     id: "popup2611_test_event",
     storageKey: "popup2611_test_event_hidden_date",
