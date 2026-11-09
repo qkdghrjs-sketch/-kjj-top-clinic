@@ -41,6 +41,15 @@ const steps = [
   { num: "04", title: "서류 발급" },
 ];
 
+// 2026-11-09 병원 요청(홍지수님 정리): 검사 가능한 날 / 결과 나오는 때
+const resultDays = [
+  { name: "마약 간이(TBPE)", days: "월 ~ 토", result: ["다음날 오전"] },
+  { name: "마약 4종", days: "월 ~ 토", result: ["다음날 오후"] },
+  { name: "마약 6종", days: "월 ~ 토", result: ["다음날 오후"] },
+  { name: "확진검사", days: "월 ~ 금", result: ["3일 뒤 오후"] },
+  { name: "보건증", days: "월 ~ 토", result: ["평일: 다음날", "토: 다음 주 월요일"] },
+];
+
 const faqItems = [
   { q: "채용검진에 필요한 서류는?", a: "신분증만 지참하시면 됩니다." },
   { q: "결과지는 당일 받을 수 있나요?", a: "대부분 당일 수령 가능하며, 일부 항목은 익일 가능합니다." },
@@ -240,16 +249,48 @@ export default function EmploymentCheckupPage() {
             ))}
           </div>
           <ScrollReveal delay={200}>
+            <div id="result-days" className="mt-10 max-w-3xl mx-auto scroll-mt-24">
+              <h3 className="text-lg sm:text-xl font-bold text-navy-900 mb-4 text-center">
+                검사 요일 · 결과 나오는 때
+              </h3>
+              <div className="overflow-hidden rounded-xl shadow-sm bg-white">
+                <table className="w-full text-sm sm:text-base">
+                  <thead>
+                    <tr className="bg-navy-900 text-white">
+                      <th className="text-left font-semibold px-3 sm:px-5 py-3">검사</th>
+                      <th className="text-left font-semibold px-3 sm:px-5 py-3 whitespace-nowrap">검사 요일</th>
+                      <th className="text-left font-semibold px-3 sm:px-5 py-3">결과</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {resultDays.map((r) => (
+                      <tr key={r.name} className="border-t border-gray-100">
+                        <td className="px-3 sm:px-5 py-3 font-semibold text-navy-900">{r.name}</td>
+                        <td className="px-3 sm:px-5 py-3 text-gray-700 whitespace-nowrap">{r.days}</td>
+                        <td className="px-3 sm:px-5 py-3 font-semibold text-sky-700">
+                          {r.result.map((line) => (
+                            <span key={line} className="block whitespace-nowrap">{line}</span>
+                          ))}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-500 text-xs sm:text-sm mt-3 leading-relaxed">
+                ※ 공휴일이 끼면 결과가 늦어질 수 있습니다. 검사 전에 전화(
+                <a href="tel:02-2698-8880" className="text-sky-600 font-semibold hover:underline">
+                  02-2698-8880
+                </a>
+                )로 문의해 주세요.
+              </p>
+            </div>
             <p className="text-center text-gray-500 text-sm sm:text-base mt-8">
               검사 비용은{" "}
               <Link href="/medical-info#non-covered" className="text-sky-600 font-semibold hover:underline">
                 비급여 안내
               </Link>
-              에서, 결과 소요일은 전화(
-              <a href="tel:02-2698-8880" className="text-sky-600 font-semibold hover:underline">
-                02-2698-8880
-              </a>
-              )로 확인해 주세요.
+              에서 확인해 주세요.
             </p>
           </ScrollReveal>
         </div>
