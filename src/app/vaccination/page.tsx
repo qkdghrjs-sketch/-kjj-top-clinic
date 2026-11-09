@@ -109,6 +109,36 @@ export default function VaccinationPage() {
         </div>
       </section>
 
+      {/* Vaccination Poster (2026-11-09 병원 제공 포스터) */}
+      <section id="vaccine-poster" className="py-12 sm:py-16 md:py-20 bg-sky-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-8 sm:mb-10">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-3">
+                예방접종 <span className="text-sky-500">비용 안내</span>
+              </h2>
+              <div className="w-16 h-1 bg-sky-500 mx-auto" />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <div className="max-w-xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-white">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/vaccination-poster-2611.webp"
+                alt="김정재탑내과 예방접종 비용 안내 - 대상포진(싱그릭스) 1회 230,000원(2회 접종, 2회 선결제 45만원), 대상포진(스카이조스터) 130,000원(1회), 자궁경부암(가다실9가) 1회 200,000원(3회 접종, 3회 선결제 52만원), 파상풍·디프테리아(TD) 30,000원, 파상풍·디프테리아·백일해(아다셀) 50,000원, 폐렴구균(프리베나) 150,000원, A형간염 70,000원(2회 접종), B형간염 30,000원(3회 접종)"
+                width={1000}
+                height={1414}
+                loading="lazy"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-4">
+              백신 재고와 접종 가능 여부는 병원으로 문의해 주세요.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Vaccination Cards */}
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
