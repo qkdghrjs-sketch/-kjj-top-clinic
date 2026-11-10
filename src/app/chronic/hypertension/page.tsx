@@ -24,6 +24,10 @@ const diseases = [
     title: "골다공증",
     desc: "뼈 밀도 감소로 골절 위험이 높아지며 조기 검진으로 예방이 가능합니다.",
   },
+  {
+    title: "갑상선",
+    desc: "갑상선 기능 저하증, 갑상선 기능 항진증, 갑상선염을 진료합니다. 혈액검사와 초음파로 상태를 확인하고 꾸준히 관리합니다.",
+  },
 ];
 
 const faqItems = [
@@ -86,7 +90,7 @@ export default function ChronicDiseasePage() {
                   만성질환이란?
                 </h2>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg whitespace-pre-line">
-                  {"만성질환은 고혈압, 당뇨, 고지혈증, 골다공증 등\n오랜 기간에 걸쳐 서서히 진행되는 질환입니다.\n\n대부분 초기 증상이 없어 방치하기 쉽지만,\n적절한 관리 없이는 뇌졸중, 심근경색 등\n심각한 합병증으로 이어질 수 있습니다."}
+                  {"만성질환은 고혈압, 당뇨, 고지혈증, 골다공증, 갑상선 질환 등\n오랜 기간에 걸쳐 서서히 진행되는 질환입니다.\n\n대부분 초기 증상이 없어 방치하기 쉽지만,\n적절한 관리 없이는 뇌졸중, 심근경색 등\n심각한 합병증으로 이어질 수 있습니다."}
                 </p>
               </div>
             </div>
@@ -104,7 +108,7 @@ export default function ChronicDiseasePage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
             {diseases.map((d, i) => (
               <ScrollReveal key={d.title} delay={i * 100}>
                 <div className="bg-white rounded-2xl p-4 sm:p-7 border border-gray-100 card-hover-glow h-full">

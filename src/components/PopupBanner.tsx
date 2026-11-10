@@ -17,6 +17,19 @@ const POPUPS = [
     replaceExpiresAt: null as Date | null,
     highlight: true,
   },
+  // 2026-11-10 병원 요청(홍지수님 웍스): 건강 마무리 20만원 프로젝트 포스터 — 행사 기간 12/31까지, 2027-01-01 0시에 자동으로 내려감
+  {
+    id: "popup2611_200k_project",
+    storageKey: "popup2611_200k_project_hidden_date",
+    src: "/images/popup-2611-200k-project.webp",
+    alt: "good bye 2026 건강 마무리 20만원 프로젝트 (2026.11.01~12.31, 2026년도 위암 대상자) — 위·대장내시경(수면비 포함), 상복부·갑상선 초음파 중 택1, 종합혈액·소변검사 약 50종, 신체계측·흉부촬영·심전도. 문의 02-2698-8880",
+    expiresAt: new Date("2027-01-01T00:00:00"),
+    replaceSrc: null as string | null,
+    replaceAlt: null as string | null,
+    replaceStorageKey: null as string | null,
+    replaceExpiresAt: null as Date | null,
+    highlight: false,
+  },
   {
     id: "popup1",
     storageKey: "popup_hidden_date",

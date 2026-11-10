@@ -71,6 +71,30 @@ export default function SoonhwangiPage() {
         </div>
       </section>
 
+      {/* 심장초음파 (2026-11-10 병원 요청으로 추가. 사진: Unsplash 무료, 출처는 팝업/2026-11/심장초음파사진_출처.txt) */}
+      <section id="echo" className="pb-12 sm:pb-16 md:pb-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+            <ScrollReveal delay={150} className="md:order-2">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[200px] sm:h-[280px] md:h-[320px]">
+                <div
+                  className="w-full h-full bg-cover bg-center img-zoom"
+                  style={{ backgroundImage: "url('/images/soonhwangi-echo-2611.webp')" }}
+                  role="img"
+                  aria-label="심장초음파 검사 장비"
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal className="md:order-1">
+              <div>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">정밀 심장초음파</h2>
+                <p className="text-gray-600 leading-relaxed">심장초음파는 초음파로 심장의 크기, 심장 벽의 움직임, 판막 상태를 확인하는 검사입니다. 바늘이나 방사선 없이 누운 상태에서 진행하며, 두근거림·숨참·가슴 답답함의 원인을 살펴보는 데 도움이 됩니다.</p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Disease Cards */}
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
