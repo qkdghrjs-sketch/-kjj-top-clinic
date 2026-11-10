@@ -399,6 +399,35 @@ export default function Home() {
         <WhySection />
       </section>
 
+      {/* 원내 영상 (2026-11-10 병원 요청, 홍지수님 웍스). 바꿀 땐 public/videos 에 새 이름(-v2)으로 넣고 src 만 바꾼다 */}
+      <section id="clinic-video" className="py-12 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 text-center mb-6 sm:mb-10">
+              영상으로 보는 <span className="text-sky-500">김정재탑내과</span>
+            </h2>
+          </ScrollReveal>
+          <div className="mx-auto w-full max-w-[360px]">
+            <video
+              className="block w-full h-auto"
+              // globals.css 가 rounded+shadow 클래스에 안쪽 여백을 줘서, 모서리·그림자는 style 로 직접 준다
+              style={{ borderRadius: 16, boxShadow: "0 20px 25px -5px rgba(15,29,58,.18), 0 8px 10px -6px rgba(15,29,58,.12)" }}
+              src="/videos/clinic-tour-2611.mp4"
+              poster="/videos/clinic-tour-2611-poster.webp"
+              width={406}
+              height={720}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+              aria-label="김정재탑내과 원내 소개 영상"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 병원 둘러보기 */}
       <GalleryBanner />
 
