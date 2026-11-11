@@ -68,19 +68,8 @@ const POPUPS = [
     replaceExpiresAt: new Date("2026-07-01T00:00:00"),
     highlight: false,
   },
+  // 2026-11-11 독감 예방접종 팝업(popup2611_flu, /images/popup-2611-flu-vaccine.webp)은 홍지수님 웍스 12:56 요청으로 내림
   // ── 2026-11-05 병원 요청으로 새로 올린 포스터 (내릴 때는 expiresAt에 날짜를 넣거나 블록을 지우면 됩니다) ──
-  {
-    id: "popup2611_flu",
-    storageKey: "popup2611_flu_hidden_date",
-    src: "/images/popup-2611-flu-vaccine.webp",
-    alt: "독감 예방접종 안내",
-    expiresAt: null as Date | null,
-    replaceSrc: null as string | null,
-    replaceAlt: null as string | null,
-    replaceStorageKey: null as string | null,
-    replaceExpiresAt: null as Date | null,
-    highlight: false,
-  },
   // ── 2026-11-11 의료광고 점검 반영 (홍지수님 웍스 11:17 요청): 꼭 고치기 6장(마운자로·위고비·오젬픽·검사이벤트·라이넥·보건증) 원본 내리고 고친 그림으로 교체 ──
   // 그림 만들기: 팝업/_tools/make_popups_1111.py
   {
