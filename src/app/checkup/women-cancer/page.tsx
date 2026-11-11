@@ -84,7 +84,7 @@ export default function WomenCancerPage() {
               </h2>
               <div className="w-16 h-1 bg-sky-500 mx-auto mb-5" />
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-                조기 발견이 곧 완치입니다. 김정재탑내과에서는 여성에게 발생하기 쉬운 주요 암종에 대한
+                조기 발견이 중요합니다. 김정재탑내과에서는 여성에게 발생하기 쉬운 주요 암종에 대한
                 <strong className="text-navy-900"> 정밀 검진을 직접 시행</strong>합니다.
               </p>
             </div>

@@ -18,7 +18,7 @@ export default function ColonEndoscopyPage() {
         box="대장내시경, 왜 김정재탑내과일까?+"
         overlay="대장내시경 전문 클리닉"
         description="대장암 조기발견을 위한 정밀 대장내시경 검사를 제공합니다."
-        features={["내시경 세부전문의", "당일 용종절제 가능", "수면/비수면내시경 시행", "최고 사양 올림푸스 내시경"]}
+        features={["내시경 세부전문의", "당일 용종절제 가능", "수면/비수면내시경 시행", "올림푸스 내시경 장비"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
       />
 

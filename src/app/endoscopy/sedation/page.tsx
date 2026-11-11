@@ -7,7 +7,7 @@ import CountUp from "@/components/CountUp";
 import FAQ from "@/components/FAQ";
 
 const advantages = [
-  { name: "통증 없음", desc: "수면 유도제 효과로 검사 중 아무런 통증과 불편감을 느끼지 않습니다.\n내시경 공포증이 있는 분도 편안하게 받을 수 있습니다." },
+  { name: "통증 부담을 줄인 검사", desc: "수면 유도제 효과로 검사 중 불편감을 크게 덜 수 있습니다.\n내시경 공포증이 있는 분도 편안하게 받을 수 있습니다." },
   { name: "더 정확한 검사", desc: "환자의 움직임이 없어 의사가 더 꼼꼼하게 관찰할 수 있습니다.\n작은 병변도 놓치지 않는 정밀한 검사가 가능합니다." },
   { name: "빠른 검사", desc: "협조가 잘 되어 일반 내시경보다 검사 시간이 단축됩니다.\n위내시경 5~10분, 대장내시경 15~30분이면 완료됩니다." },
   { name: "심리적 안정", desc: "내시경에 대한 두려움으로 미루고 계셨다면 수면내시경을 선택하세요.\n검사 후 \"생각보다 편했다\"고 하시는 분이 대부분입니다." },
@@ -47,7 +47,7 @@ export default function SedationEndoscopyPage() {
       <WhyKimtop
         box="수면내시경, 왜 김정재탑내과일까?+"
         overlay="편안한 수면내시경"
-        description="대학병원급의 바이탈 사인 감시를 통해, 사고 없는 안전한 수면내시경을 진행합니다."
+        description="대학병원급 감시 장비로 바이탈 사인을 살피며 수면내시경을 진행합니다."
         features={["기도 흡입 예방", "안전한 수면 약물 사용", "바이탈 사인 감시", "편안한 회복실"]}
         image="https://cdn.imweb.me/upload/S20260108b9005a7eb2710/91c253c9fee17.jpeg"
       />
@@ -88,7 +88,7 @@ export default function SedationEndoscopyPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">통증 없이 편안하게, 더 정확하게</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-5">통증 부담을 줄인 검사, 더 정확하게</h2>
               <p className="text-gray-600 leading-relaxed mb-4 whitespace-pre-line">{"수면내시경은 안전한 수면 유도제를 사용하여 검사 중\n의식이 없는 상태에서 진행하는 내시경입니다."}</p>
               <p className="text-gray-600 leading-relaxed mb-4 whitespace-pre-line">{"검사 중 아무런 불편감을 느끼지 못하며 검사 내용을 기억하지\n못하는 것이 정상입니다."}</p>
               <p className="text-gray-600 leading-relaxed whitespace-pre-line">{"일반 내시경보다 환자의 협조가 잘 되어 더 꼼꼼하고\n정확한 검사가 가능합니다."}</p>

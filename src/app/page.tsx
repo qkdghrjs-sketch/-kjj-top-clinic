@@ -289,7 +289,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="text-center md:text-right md:pr-12 md:border-r border-white/20">
                 <h3 className="text-lg sm:text-3xl font-bold text-white mb-3 sm:mb-5">
-                  최상급 초음파 LOGIQ P9
+                  LOGIQ P9 초음파
                 </h3>
                 <ul className="space-y-2 sm:space-y-3">
                   {[

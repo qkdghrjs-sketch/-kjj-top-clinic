@@ -27,7 +27,10 @@ export default function HairLossPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10">
             <CountUp end={1000} suffix="만명" label="국내 탈모 인구" />
-            <CountUp end={80} suffix="%+" label="조기치료 효과" />
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">조기 진료</p>
+              <p className="text-sky-300 text-sm sm:text-base font-medium">권장</p>
+            </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">6개월</p>
               <p className="text-sky-300 text-sm sm:text-base font-medium">최소 치료 기간</p>
